@@ -1,21 +1,19 @@
-<html lang="pl">
-
-<head>
+<html lang="pl"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebCanvas - strony internetowe</title>
-
+    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
-
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-
+    
     <!-- Iconify -->
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-
+    
     <script>
         tailwind.config = {
             theme: {
@@ -53,40 +51,33 @@
         html {
             scroll-behavior: smooth;
         }
-
+        
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
-
         ::-webkit-scrollbar-track {
             background: #0A0A0A;
         }
-
         ::-webkit-scrollbar-thumb {
             background: #262626;
             border-radius: 4px;
             border: 2px solid #0A0A0A;
         }
-
         ::-webkit-scrollbar-thumb:hover {
             background: #404040;
         }
 
         /* Glass Button Shine Effect */
-        @property --angle-1 {
-            syntax: "<angle>";
-            inherits: false;
-            initial-value: -75deg;
-        }
-
+        @property --angle-1 { syntax: "<angle>"; inherits: false; initial-value: -75deg; }
+        
         .glass-button {
             background: linear-gradient(-75deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
             box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15), inset 0 -1px 1px rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(12px);
             isolation: isolate;
         }
-
+        
         .glass-button::after {
             content: '';
             position: absolute;
@@ -101,19 +92,17 @@
             pointer-events: none;
             transition: --angle-1 0.5s ease;
         }
-
-        .glass-button:hover::after {
-            --angle-1: -125deg;
-        }
-
+        
+        .glass-button:hover::after { --angle-1: -125deg; }
+        
         .bg-glow {
             background: radial-gradient(circle at 50% 0%, rgba(225, 29, 72, 0.15) 0%, rgba(0, 0, 0, 0) 60%);
         }
 
         /* Input Autofill Fix */
         input:-webkit-autofill,
-        input:-webkit-autofill:hover,
-        input:-webkit-autofill:focus,
+        input:-webkit-autofill:hover, 
+        input:-webkit-autofill:focus, 
         textarea:-webkit-autofill,
         textarea:-webkit-autofill:hover,
         textarea:-webkit-autofill:focus {
@@ -124,17 +113,8 @@
 
         /* Text Blur Reveal Animation */
         @keyframes blur-reveal {
-            0% {
-                opacity: 0;
-                filter: blur(12px);
-                transform: translateY(10px) scale(0.95);
-            }
-
-            100% {
-                opacity: 1;
-                filter: blur(0);
-                transform: translateY(0) scale(1);
-            }
+            0% { opacity: 0; filter: blur(12px); transform: translateY(10px) scale(0.95); }
+            100% { opacity: 1; filter: blur(0); transform: translateY(0) scale(1); }
         }
 
         .char-reveal {
@@ -143,7 +123,7 @@
             animation: blur-reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
             white-space: pre;
         }
-
+        
         .word-reveal {
             display: inline-block;
             opacity: 0;
@@ -165,314 +145,98 @@
         }
 
         /* Details Accordion Animation */
-        details>summary {
+        details > summary {
             list-style: none;
         }
-
-        details>summary::-webkit-details-marker {
+        details > summary::-webkit-details-marker {
             display: none;
         }
-
-        details[open] summary~* {
+        details[open] summary ~ * {
             animation: sweep .3s ease-in-out;
         }
-
         @keyframes sweep {
-            0% {
-                opacity: 0;
-                transform: translateY(-10px)
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0)
-            }
+            0%    {opacity: 0; transform: translateY(-10px)}
+            100%  {opacity: 1; transform: translateY(0)}
         }
-
-        details>summary svg {
+        details > summary svg {
             transition: transform 0.3s ease;
         }
-
-        details[open]>summary svg {
+        details[open] > summary svg {
             transform: rotate(180deg);
         }
     </style>
-    <link id="all-fonts-link-font-geist" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap">
-    <style id="all-fonts-style-font-geist">
-        .font-geist {
-            font-family: 'Geist', sans-serif !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-roboto" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&amp;display=swap">
-    <style id="all-fonts-style-font-roboto">
-        .font-roboto {
-            font-family: 'Roboto', sans-serif !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-montserrat" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap">
-    <style id="all-fonts-style-font-montserrat">
-        .font-montserrat {
-            font-family: 'Montserrat', sans-serif !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-poppins" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap">
-    <style id="all-fonts-style-font-poppins">
-        .font-poppins {
-            font-family: 'Poppins', sans-serif !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-playfair" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&amp;display=swap">
-    <style id="all-fonts-style-font-playfair">
-        .font-playfair {
-            font-family: 'Playfair Display', serif !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-instrument-serif" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600;700&amp;display=swap">
-    <style id="all-fonts-style-font-instrument-serif">
-        .font-instrument-serif {
-            font-family: 'Instrument Serif', serif !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-merriweather" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&amp;display=swap">
-    <style id="all-fonts-style-font-merriweather">
-        .font-merriweather {
-            font-family: 'Merriweather', serif !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-bricolage" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&amp;display=swap">
-    <style id="all-fonts-style-font-bricolage">
-        .font-bricolage {
-            font-family: 'Bricolage Grotesque', sans-serif !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-jakarta" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap">
-    <style id="all-fonts-style-font-jakarta">
-        .font-jakarta {
-            font-family: 'Plus Jakarta Sans', sans-serif !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-manrope" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap">
-    <style id="all-fonts-style-font-manrope">
-        .font-manrope {
-            font-family: 'Manrope', sans-serif !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-space-grotesk" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap">
-    <style id="all-fonts-style-font-space-grotesk">
-        .font-space-grotesk {
-            font-family: 'Space Grotesk', sans-serif !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-work-sans" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap">
-    <style id="all-fonts-style-font-work-sans">
-        .font-work-sans {
-            font-family: 'Work Sans', sans-serif !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-pt-serif" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&amp;display=swap">
-    <style id="all-fonts-style-font-pt-serif">
-        .font-pt-serif {
-            font-family: 'PT Serif', serif !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-geist-mono" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&amp;display=swap">
-    <style id="all-fonts-style-font-geist-mono">
-        .font-geist-mono {
-            font-family: 'Geist Mono', monospace !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-space-mono" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap">
-    <style id="all-fonts-style-font-space-mono">
-        .font-space-mono {
-            font-family: 'Space Mono', monospace !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-quicksand" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap">
-    <style id="all-fonts-style-font-quicksand">
-        .font-quicksand {
-            font-family: 'Quicksand', sans-serif !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-nunito" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&amp;display=swap">
-    <style id="all-fonts-style-font-nunito">
-        .font-nunito {
-            font-family: 'Nunito', sans-serif !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-newsreader" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..800&amp;display=swap">
-    <style id="all-fonts-style-font-newsreader">
-        .font-newsreader {
-            font-family: 'Newsreader', serif !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-google-sans-flex" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600;700&amp;display=swap">
-    <style id="all-fonts-style-font-google-sans-flex">
-        .font-google-sans-flex {
-            font-family: 'Google Sans Flex', sans-serif !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-oswald" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&amp;display=swap">
-    <style id="all-fonts-style-font-oswald">
-        .font-oswald {
-            font-family: 'Oswald', sans-serif !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-dm-sans" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&amp;display=swap">
-    <style id="all-fonts-style-font-dm-sans">
-        .font-dm-sans {
-            font-family: 'DM Sans', sans-serif !important;
-        }
-    </style>
-    <link id="all-fonts-link-font-cormorant" rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&amp;display=swap">
-    <style id="all-fonts-style-font-cormorant">
-        .font-cormorant {
-            font-family: 'Cormorant Garamond', serif !important;
-        }
-    </style>
-</head>
-
-<body
-    class="font-sans antialiased w-full flex flex-col relative selection:bg-rose-500/30 selection:text-white bg-black text-neutral-300">
-    <div class="fixed top-0 w-full h-screen -z-10 bg-cover bg-center"
-        style="background-image: url(&quot;https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/c43d79e7-ddeb-4c23-8e46-398a6d18b72a_3840w.jpg&quot;);; mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent)"
-        data-alpha-mask="80"></div>
+<link id="all-fonts-link-font-geist" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist">.font-geist { font-family: 'Geist', sans-serif !important; }</style><link id="all-fonts-link-font-roboto" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-roboto">.font-roboto { font-family: 'Roboto', sans-serif !important; }</style><link id="all-fonts-link-font-montserrat" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-montserrat">.font-montserrat { font-family: 'Montserrat', sans-serif !important; }</style><link id="all-fonts-link-font-poppins" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-poppins">.font-poppins { font-family: 'Poppins', sans-serif !important; }</style><link id="all-fonts-link-font-playfair" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&amp;display=swap"><style id="all-fonts-style-font-playfair">.font-playfair { font-family: 'Playfair Display', serif !important; }</style><link id="all-fonts-link-font-instrument-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-instrument-serif">.font-instrument-serif { font-family: 'Instrument Serif', serif !important; }</style><link id="all-fonts-link-font-merriweather" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&amp;display=swap"><style id="all-fonts-style-font-merriweather">.font-merriweather { font-family: 'Merriweather', serif !important; }</style><link id="all-fonts-link-font-bricolage" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-bricolage">.font-bricolage { font-family: 'Bricolage Grotesque', sans-serif !important; }</style><link id="all-fonts-link-font-jakarta" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-jakarta">.font-jakarta { font-family: 'Plus Jakarta Sans', sans-serif !important; }</style><link id="all-fonts-link-font-manrope" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-manrope">.font-manrope { font-family: 'Manrope', sans-serif !important; }</style><link id="all-fonts-link-font-space-grotesk" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-space-grotesk">.font-space-grotesk { font-family: 'Space Grotesk', sans-serif !important; }</style><link id="all-fonts-link-font-work-sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-work-sans">.font-work-sans { font-family: 'Work Sans', sans-serif !important; }</style><link id="all-fonts-link-font-pt-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-pt-serif">.font-pt-serif { font-family: 'PT Serif', serif !important; }</style><link id="all-fonts-link-font-geist-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist-mono">.font-geist-mono { font-family: 'Geist Mono', monospace !important; }</style><link id="all-fonts-link-font-space-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-space-mono">.font-space-mono { font-family: 'Space Mono', monospace !important; }</style><link id="all-fonts-link-font-quicksand" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-quicksand">.font-quicksand { font-family: 'Quicksand', sans-serif !important; }</style><link id="all-fonts-link-font-nunito" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-nunito">.font-nunito { font-family: 'Nunito', sans-serif !important; }</style><link id="all-fonts-link-font-newsreader" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..800&amp;display=swap"><style id="all-fonts-style-font-newsreader">.font-newsreader { font-family: 'Newsreader', serif !important; }</style><link id="all-fonts-link-font-google-sans-flex" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-google-sans-flex">.font-google-sans-flex { font-family: 'Google Sans Flex', sans-serif !important; }</style><link id="all-fonts-link-font-oswald" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-oswald">.font-oswald { font-family: 'Oswald', sans-serif !important; }</style><link id="all-fonts-link-font-dm-sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-dm-sans">.font-dm-sans { font-family: 'DM Sans', sans-serif !important; }</style><link id="all-fonts-link-font-cormorant" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-cormorant">.font-cormorant { font-family: 'Cormorant Garamond', serif !important; }</style></head>
+<body class="font-sans antialiased w-full flex flex-col relative selection:bg-rose-500/30 selection:text-white bg-black text-neutral-300"><div class="fixed top-0 w-full h-screen -z-10 bg-cover bg-center" style="background-image: url(&quot;https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/c43d79e7-ddeb-4c23-8e46-398a6d18b72a_3840w.jpg&quot;);; mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent)" data-alpha-mask="80"></div>
 
     <!-- Fixed Background -->
-
+    
 
     <!-- Ambient Glow -->
     <div class="fixed inset-0 z-0 pointer-events-none">
-        <div
-            class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-glow opacity-60 blur-3xl rounded-full">
-        </div>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-glow opacity-60 blur-3xl rounded-full"></div>
     </div>
 
     <!-- Navigation -->
-    <nav
-        class="fixed top-0 w-full z-50 px-6 pt-6 flex items-center justify-between max-w-[1400px] mx-auto left-0 right-0 h-20 pointer-events-none">
+    <nav class="fixed top-0 w-full z-50 px-6 pt-6 flex items-center justify-between max-w-[1400px] mx-auto left-0 right-0 h-20 pointer-events-none">
         <!-- Logo -->
         <div class="flex items-center gap-2 group cursor-pointer pointer-events-auto">
-            <div class="flex group-hover:border-white/20 transition-colors w-8 h-8 bg-[url(https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/8bd10c3e-f34f-48d8-99a8-284b89735223_320w.jpg)] bg-cover bg-center border rounded-lg relative backdrop-blur-sm items-center justify-center bg-white/5 border-white/10"
-                style="">
-
+            <div class="flex group-hover:border-white/20 transition-colors w-8 h-8 bg-[url(https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/8bd10c3e-f34f-48d8-99a8-284b89735223_320w.jpg)] bg-cover bg-center border rounded-lg relative backdrop-blur-sm items-center justify-center bg-white/5 border-white/10" style="">
+                
             </div>
-            <span class="text-lg font-semibold text-neutral-50 tracking-tight backdrop-blur-sm">Web<span
-                    class="font-normal text-red-300">Canvas</span></span>
+            <span class="text-lg font-semibold text-neutral-50 tracking-tight backdrop-blur-sm">Web<span class="font-normal text-red-300">Canvas</span></span>
         </div>
 
         <!-- Pill Menu -->
-        <div id="nav-menu"
-            class="hidden md:flex items-center backdrop-blur-xl border rounded-full px-1.5 py-1.5 shadow-2xl pointer-events-auto bg-black/50 border-white/10">
-            <a href="#hero"
-                class="nav-link transition-all text-xs font-medium border border-transparent rounded-full pt-1.5 pr-4 pb-1.5 pl-4 text-neutral-400 hover:text-white">Start</a>
-            <a href="#uslugi"
-                class="nav-link transition-all text-xs font-medium border border-transparent rounded-full pt-1.5 pr-4 pb-1.5 pl-4 text-neutral-400 hover:text-white">Usługi</a>
-            <a href="#portfolio"
-                class="nav-link transition-all text-xs font-medium border border-transparent rounded-full pt-1.5 pr-4 pb-1.5 pl-4 text-neutral-400 hover:text-white">Portfolio</a>
-            <a href="#cennik"
-                class="nav-link transition-all text-xs font-medium border border-transparent rounded-full pt-1.5 pr-4 pb-1.5 pl-4 text-neutral-400 hover:text-white">Cennik</a>
-            <a href="#kontakt"
-                class="nav-link transition-all text-xs font-medium border border-transparent rounded-full pt-1.5 pr-4 pb-1.5 pl-4 text-neutral-400 hover:text-white">Kontakt</a>
+        <div id="nav-menu" class="hidden md:flex items-center backdrop-blur-xl border rounded-full px-1.5 py-1.5 shadow-2xl pointer-events-auto bg-black/50 border-white/10">
+            <a href="#hero" class="nav-link transition-all text-xs font-medium border border-transparent rounded-full pt-1.5 pr-4 pb-1.5 pl-4 text-neutral-400 hover:text-white">Start</a>
+            <a href="#uslugi" class="nav-link transition-all text-xs font-medium border border-transparent rounded-full pt-1.5 pr-4 pb-1.5 pl-4 text-neutral-400 hover:text-white">Usługi</a>
+            <a href="#portfolio" class="nav-link transition-all text-xs font-medium border border-transparent rounded-full pt-1.5 pr-4 pb-1.5 pl-4 text-neutral-400 hover:text-white">Portfolio</a>
+            <a href="#cennik" class="nav-link transition-all text-xs font-medium border border-transparent rounded-full pt-1.5 pr-4 pb-1.5 pl-4 text-neutral-400 hover:text-white">Cennik</a>
+            <a href="#kontakt" class="nav-link transition-all text-xs font-medium border border-transparent rounded-full pt-1.5 pr-4 pb-1.5 pl-4 text-neutral-400 hover:text-white">Kontakt</a>
         </div>
 
         <!-- CTA Button -->
-        <button onclick="openModal()"
-            class="glass-button pointer-events-auto group inline-flex items-center gap-2 no-underline transition-all duration-300 hover:scale-[0.98] active:scale-95 rounded-full py-2 px-5 relative overflow-hidden hidden sm:inline-flex cursor-pointer">
+        <button onclick="openModal()" class="glass-button pointer-events-auto group inline-flex items-center gap-2 no-underline transition-all duration-300 hover:scale-[0.98] active:scale-95 rounded-full py-2 px-5 relative overflow-hidden hidden sm:inline-flex cursor-pointer">
             <span class="relative z-10 text-xs font-semibold tracking-wide text-white">Wyceń Projekt</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                class="relative z-10 transition-transform duration-300 group-hover:translate-x-0.5 text-white" style=""
-                data-icon-set="lucide" data-lucide="arrow-right">
-                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M5 12h14m-7-7l7 7l-7 7" class=""></path>
-            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" class="relative z-10 transition-transform duration-300 group-hover:translate-x-0.5 text-white" style="" data-icon-set="lucide" data-lucide="arrow-right"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7l7 7l-7 7"></path></svg>
         </button>
     </nav>
 
     <!-- Main Content -->
     <main class="w-full flex flex-col relative z-10">
-
+        
         <!-- HERO SECTION -->
         <section class="min-h-screen flex section-spy pt-20 relative items-center justify-center" id="hero">
-            <div
-                class="flex flex-col lg:flex-row w-full max-w-[1400px] mr-auto ml-auto pr-6 pl-6 items-center justify-center">
+            <div class="flex flex-col lg:flex-row w-full max-w-[1400px] mr-auto ml-auto pr-6 pl-6 items-center justify-center">
                 <!-- Text -->
-                <div
-                    class="w-full lg:w-6/12 flex flex-col justify-center py-8 lg:py-0 text-center lg:text-left items-center lg:items-start">
-
+                <div class="w-full lg:w-6/12 flex flex-col justify-center py-8 lg:py-0 text-center lg:text-left items-center lg:items-start">
+                    
                     <div class="inline-flex items-center gap-2 mb-6 animate-fade-in-up">
-                        <span
-                            class="flex animate-pulse-slow bg-lime-500 w-2 h-2 rounded-full shadow-[0_0_8px_rgba(225,29,72,0.6)]"></span>
-                        <span
-                            class="uppercase text-xs font-medium tracking-widest border rounded pt-1 pr-2 pb-1 pl-2 backdrop-blur-sm text-neutral-400 bg-white/5 border-white/10">Otwarty
-                            na nowe projekty</span>
+                        <span class="flex animate-pulse-slow bg-lime-500 w-2 h-2 rounded-full shadow-[0_0_8px_rgba(225,29,72,0.6)]"></span>
+                        <span class="uppercase text-xs font-medium tracking-widest border rounded pt-1 pr-2 pb-1 pl-2 backdrop-blur-sm text-neutral-400 bg-white/5 border-white/10">Otwarty na nowe projekty</span>
                     </div>
-
-                    <h1 class="sm:text-6xl lg:text-7xl leading-[1.05] text-4xl font-semibold text-white tracking-tight mb-6 flex flex-wrap justify-center lg:justify-start gap-x-4 gap-y-1"
-                        id="hero-title">
+                    
+                    <h1 class="sm:text-6xl lg:text-7xl leading-[1.05] text-4xl font-semibold text-white tracking-tight mb-6 flex flex-wrap justify-center lg:justify-start gap-x-4 gap-y-1" id="hero-title">
                         <span class="whitespace-nowrap">
-                            <span class="char-reveal" style="animation-delay: 0s; color: inherit;">T</span><span
-                                class="char-reveal" style="animation-delay: 0.05s; color: inherit;">w</span><span
-                                class="char-reveal" style="animation-delay: 0.1s; color: inherit;">o</span><span
-                                class="char-reveal" style="animation-delay: 0.15s; color: inherit;">r</span><span
-                                class="char-reveal" style="animation-delay: 0.2s; color: inherit;">z</span><span
-                                class="char-reveal" style="animation-delay: 0.25s; color: inherit;">ę</span>
+                            <span class="char-reveal" style="animation-delay: 0s; color: inherit;">T</span><span class="char-reveal" style="animation-delay: 0.05s; color: inherit;">w</span><span class="char-reveal" style="animation-delay: 0.1s; color: inherit;">o</span><span class="char-reveal" style="animation-delay: 0.15s; color: inherit;">r</span><span class="char-reveal" style="animation-delay: 0.2s; color: inherit;">z</span><span class="char-reveal" style="animation-delay: 0.25s; color: inherit;">ę</span>
                         </span>
-
-                        <span
-                            class="word-reveal text-transparent bg-clip-text bg-gradient-to-br from-neutral-100 to-neutral-600 pb-1"
-                            style="animation-delay: 0.4s;">
+                        
+                        <span class="word-reveal text-transparent bg-clip-text bg-gradient-to-br from-neutral-100 to-neutral-600 pb-1" style="animation-delay: 0.4s;">
                             Cyfrową
                         </span>
-
+                        
                         <span class="whitespace-nowrap">
-                            <span class="char-reveal" style="animation-delay: 0.8s; color: inherit;">P</span><span
-                                class="char-reveal" style="animation-delay: 0.85s; color: inherit;">r</span><span
-                                class="char-reveal" style="animation-delay: 0.9s; color: inherit;">z</span><span
-                                class="char-reveal" style="animation-delay: 0.95s; color: inherit;">y</span><span
-                                class="char-reveal" style="animation-delay: 1.0s; color: inherit;">s</span><span
-                                class="char-reveal" style="animation-delay: 1.05s; color: inherit;">z</span><span
-                                class="char-reveal" style="animation-delay: 1.1s; color: inherit;">ł</span><span
-                                class="char-reveal" style="animation-delay: 1.15s; color: inherit;">o</span><span
-                                class="char-reveal" style="animation-delay: 1.2s; color: inherit;">ś</span><span
-                                class="char-reveal" style="animation-delay: 1.25s; color: inherit;">ć</span><span
-                                class="char-reveal" style="animation-delay: 1.3s; color: inherit;">.</span>
+                            <span class="char-reveal" style="animation-delay: 0.8s; color: inherit;">P</span><span class="char-reveal" style="animation-delay: 0.85s; color: inherit;">r</span><span class="char-reveal" style="animation-delay: 0.9s; color: inherit;">z</span><span class="char-reveal" style="animation-delay: 0.95s; color: inherit;">y</span><span class="char-reveal" style="animation-delay: 1.0s; color: inherit;">s</span><span class="char-reveal" style="animation-delay: 1.05s; color: inherit;">z</span><span class="char-reveal" style="animation-delay: 1.1s; color: inherit;">ł</span><span class="char-reveal" style="animation-delay: 1.15s; color: inherit;">o</span><span class="char-reveal" style="animation-delay: 1.2s; color: inherit;">ś</span><span class="char-reveal" style="animation-delay: 1.25s; color: inherit;">ć</span><span class="char-reveal" style="animation-delay: 1.3s; color: inherit;">.</span>
                         </span>
                     </h1>
-
-                    <p class="sm:text-lg leading-relaxed text-base font-normal max-w-lg mb-8 text-neutral-400 animate-fade-in-up"
-                        style="animation-delay: 1.2s">Specjalizuje się w nowoczesnych stronach www, sklepach e-commerce
-                        i dedykowanych aplikacjach, które sprzedają.</p>
-
-                    <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto animate-fade-in-up"
-                        style="animation-delay: 1.4s">
-                        <a href="#uslugi"
-                            class="inline-flex items-center justify-center h-11 px-6 rounded-lg text-xs font-semibold tracking-wide transition-colors shadow-[0_0_20px_rgba(255,255,255,0.1)] bg-white text-black hover:bg-neutral-200">
+                    
+                    <p class="sm:text-lg leading-relaxed text-base font-normal max-w-lg mb-8 text-neutral-400 animate-fade-in-up" style="animation-delay: 1.2s">Specjalizuje się w nowoczesnych stronach www, sklepach e-commerce i dedykowanych aplikacjach, które sprzedają.</p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto animate-fade-in-up" style="animation-delay: 1.4s">
+                        <a href="#uslugi" class="inline-flex items-center justify-center h-11 px-6 rounded-lg text-xs font-semibold tracking-wide transition-colors shadow-[0_0_20px_rgba(255,255,255,0.1)] bg-white text-black hover:bg-neutral-200">
                             Poznaj Usługi
                         </a>
-                        <a href="#portfolio"
-                            class="inline-flex items-center justify-center h-11 px-6 rounded-lg border text-xs font-medium transition-colors backdrop-blur-sm border-white/10 bg-white/5 text-white hover:bg-white/10">
+                        <a href="#portfolio" class="inline-flex items-center justify-center h-11 px-6 rounded-lg border text-xs font-medium transition-colors backdrop-blur-sm border-white/10 bg-white/5 text-white hover:bg-white/10">
                             Zobacz Realizacje
                         </a>
                     </div>
@@ -481,24 +245,17 @@
                 <!-- Abstract Visual -->
                 <div class="hidden lg:flex lg:w-6/12 items-center justify-center relative">
                     <div class="relative w-full max-w-[500px] aspect-square animate-float opacity-80 mix-blend-lighten">
-                        <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/c158dbfd-f9e8-4d08-acfb-c6cd5297bdf9_1600w.jpg"
-                            alt="Abstract" class="opacity-40 w-full h-full object-cover rounded-full blur-xl">
-                        <div
-                            class="bg-gradient-to-tr from-transparent to-rose-500/10 rounded-full absolute top-0 right-0 bottom-0 left-0">
-                        </div>
+                        <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/c158dbfd-f9e8-4d08-acfb-c6cd5297bdf9_1600w.jpg" alt="Abstract" class="opacity-40 w-full h-full object-cover rounded-full blur-xl">
+                        <div class="bg-gradient-to-tr from-transparent to-rose-500/10 rounded-full absolute top-0 right-0 bottom-0 left-0">
+</div>
                     </div>
                 </div>
             </div>
-
+            
             <!-- Scroll Indicator -->
-            <div
-                class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 animate-bounce">
+            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 animate-bounce">
                 <span class="text-[10px] uppercase tracking-widest text-neutral-500">Scroll</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" class="text-white"
-                    style="" data-icon-set="lucide" data-lucide="arrow-down">
-                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                        stroke-width="2" d="M12 5v14m7-7l-7 7l-7-7"></path>
-                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" class="text-white" style="" data-icon-set="lucide" data-lucide="arrow-down"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14m7-7l-7 7l-7-7"></path></svg>
             </div>
         </section>
 
@@ -507,144 +264,71 @@
             <div class="w-full max-w-[1200px] mx-auto px-6">
                 <div class="mb-16 text-center lg:text-left">
                     <h2 class="text-sm font-semibold text-rose-500 tracking-widest uppercase mb-3">Oferta</h2>
-                    <h3 class="lg:text-4xl text-3xl font-semibold text-white tracking-tight">Kompleksowe Rozwiązania
-                    </h3>
+                    <h3 class="lg:text-4xl text-3xl font-semibold text-white tracking-tight">Kompleksowe Rozwiązania</h3>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <!-- Service 1: Websites -->
-                    <div
-                        class="group p-8 rounded-2xl border transition-all duration-300 bg-neutral-900/30 border-white/10 hover:border-white/20 hover:bg-neutral-900/50">
-                        <div
-                            class="w-12 h-12 rounded-xl border flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 bg-neutral-800 border-white/10 text-white">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class=""
-                                style="" data-icon-set="lucide" data-lucide="layout-template">
-                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2">
-                                    <rect width="18" height="7" x="3" y="3" rx="1"></rect>
-                                    <rect width="9" height="7" x="3" y="14" rx="1"></rect>
-                                    <rect width="5" height="7" x="16" y="14" rx="1"></rect>
-                                </g>
-                            </svg>
+                    <div class="group p-8 rounded-2xl border transition-all duration-300 bg-neutral-900/30 border-white/10 hover:border-white/20 hover:bg-neutral-900/50">
+                        <div class="w-12 h-12 rounded-xl border flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 bg-neutral-800 border-white/10 text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="" style="" data-icon-set="lucide" data-lucide="layout-template"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="18" height="7" x="3" y="3" rx="1"></rect><rect width="9" height="7" x="3" y="14" rx="1"></rect><rect width="5" height="7" x="16" y="14" rx="1"></rect></g></svg>
                         </div>
                         <h4 class="text-lg font-semibold mb-3 text-white">Strony Internetowe</h4>
                         <p class="text-sm leading-relaxed mb-6 text-neutral-400">
-                            Ultranowoczesne, responsywne strony wizytówki i landing pages zaprojektowane, by budować
-                            wizerunek i konwertować ruch.
+                            Ultranowoczesne, responsywne strony wizytówki i landing pages zaprojektowane, by budować wizerunek i konwertować ruch.
                         </p>
                     </div>
 
                     <!-- Service 2: E-commerce -->
-                    <div
-                        class="group p-8 rounded-2xl border transition-all duration-300 relative overflow-hidden bg-neutral-900/30 border-white/10 hover:border-white/20 hover:bg-neutral-900/50">
-                        <div
-                            class="w-12 h-12 rounded-xl border flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 bg-neutral-800 border-white/10 text-white">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class=""
-                                style="" data-icon-set="lucide" data-lucide="shopping-cart">
-                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2">
-                                    <circle cx="8" cy="21" r="1"></circle>
-                                    <circle cx="19" cy="21" r="1"></circle>
-                                    <path
-                                        d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12">
-                                    </path>
-                                </g>
-                            </svg>
+                    <div class="group p-8 rounded-2xl border transition-all duration-300 relative overflow-hidden bg-neutral-900/30 border-white/10 hover:border-white/20 hover:bg-neutral-900/50">
+                        <div class="w-12 h-12 rounded-xl border flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 bg-neutral-800 border-white/10 text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="" style="" data-icon-set="lucide" data-lucide="shopping-cart"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path></g></svg>
                         </div>
                         <h4 class="text-lg font-semibold mb-3 text-white">Sklepy Internetowe</h4>
-                        <p class="leading-relaxed text-sm text-neutral-400 mb-6">Skalowalne platformy e-commerce
-                            (Woocommerce) nastawione na maksymalizację sprzedaży i łatwą obsługę.</p>
+                        <p class="leading-relaxed text-sm text-neutral-400 mb-6">Skalowalne platformy e-commerce (Woocommerce) nastawione na maksymalizację sprzedaży i łatwą obsługę.</p>
                     </div>
 
                     <!-- Service 3: Custom/Apps -->
-                    <div
-                        class="group p-8 rounded-2xl border transition-all duration-300 bg-neutral-900/30 border-white/10 hover:border-white/20 hover:bg-neutral-900/50">
-                        <div
-                            class="w-12 h-12 rounded-xl border flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 bg-neutral-800 border-white/10 text-white">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class=""
-                                style="" data-icon-set="lucide" data-lucide="code-2">
-                                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="m18 16l4-4l-4-4M6 8l-4 4l4 4m8.5-12l-5 16"></path>
-                            </svg>
+                    <div class="group p-8 rounded-2xl border transition-all duration-300 bg-neutral-900/30 border-white/10 hover:border-white/20 hover:bg-neutral-900/50">
+                        <div class="w-12 h-12 rounded-xl border flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 bg-neutral-800 border-white/10 text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="" style="" data-icon-set="lucide" data-lucide="code-2"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m18 16l4-4l-4-4M6 8l-4 4l4 4m8.5-12l-5 16"></path></svg>
                         </div>
                         <h4 class="text-lg font-semibold mb-3 text-white">Aplikacje Webowe</h4>
                         <p class="text-sm leading-relaxed mb-6 text-neutral-400">
-                            Zaawansowane systemy B2B/B2C, panele klienta, dashboardy oraz dedykowane oprogramowanie
-                            usprawniające procesy.
+                            Zaawansowane systemy B2B/B2C, panele klienta, dashboardy oraz dedykowane oprogramowanie usprawniające procesy.
                         </p>
                     </div>
 
                     <!-- Service 4: Indywidualny Projekt Graficzny -->
-                    <div
-                        class="group p-8 rounded-2xl border transition-all duration-300 bg-neutral-900/30 border-white/10 hover:border-white/20 hover:bg-neutral-900/50">
-                        <div
-                            class="w-12 h-12 rounded-xl border flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 bg-neutral-800 border-white/10 text-white">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class=""
-                                style="" data-icon-set="lucide" data-lucide="palette">
-                                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M13.5 17.5a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0-5 0M12 3a9 9 0 0 0-9 9a9 9 0 0 0 1.5 5.5m3.5-3.5L8 14m1.8-6h.02M12.6 7h.02M8 12.6h.02">
-                                </path>
-                            </svg>
+                    <div class="group p-8 rounded-2xl border transition-all duration-300 bg-neutral-900/30 border-white/10 hover:border-white/20 hover:bg-neutral-900/50">
+                        <div class="w-12 h-12 rounded-xl border flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 bg-neutral-800 border-white/10 text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="" style="" data-icon-set="lucide" data-lucide="palette"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 17.5a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0-5 0M12 3a9 9 0 0 0-9 9a9 9 0 0 0 1.5 5.5m3.5-3.5L8 14m1.8-6h.02M12.6 7h.02M8 12.6h.02"></path></svg>
                         </div>
                         <h4 class="text-lg font-semibold mb-3 text-white">Indywidualny Projekt Graficzny</h4>
                         <p class="text-sm leading-relaxed mb-6 text-neutral-400">
-                            Unikalny Design UI/UX skrojony pod Twoją markę. Nie korzystamy z gotowych szablonów,
-                            tworzymy sztukę cyfrową.
+                            Unikalny Design UI/UX skrojony pod Twoją markę. Nie korzystamy z gotowych szablonów, tworzymy sztukę cyfrową.
                         </p>
                     </div>
 
                     <!-- Service 5: Hosting & Domena -->
-                    <div
-                        class="group p-8 rounded-2xl border transition-all duration-300 bg-neutral-900/30 border-white/10 hover:border-white/20 hover:bg-neutral-900/50">
-                        <div
-                            class="w-12 h-12 rounded-xl border flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 bg-neutral-800 border-white/10 text-white">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class=""
-                                style="" data-icon-set="lucide" data-lucide="server">
-                                <rect width="20" height="8" x="2" y="2" rx="2" ry="2" fill="none" stroke="currentColor"
-                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></rect>
-                                <rect width="20" height="8" x="2" y="14" rx="2" ry="2" fill="none" stroke="currentColor"
-                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></rect>
-                                <line x1="6" x2="6.01" y1="6" y2="6" fill="none" stroke="currentColor"
-                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></line>
-                                <line x1="6" x2="6.01" y1="18" y2="18" fill="none" stroke="currentColor"
-                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></line>
-                            </svg>
+                    <div class="group p-8 rounded-2xl border transition-all duration-300 bg-neutral-900/30 border-white/10 hover:border-white/20 hover:bg-neutral-900/50">
+                        <div class="w-12 h-12 rounded-xl border flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 bg-neutral-800 border-white/10 text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="" style="" data-icon-set="lucide" data-lucide="server"><rect width="20" height="8" x="2" y="2" rx="2" ry="2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></rect><rect width="20" height="8" x="2" y="14" rx="2" ry="2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></rect><line x1="6" x2="6.01" y1="6" y2="6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></line><line x1="6" x2="6.01" y1="18" y2="18" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></line></svg>
                         </div>
                         <h4 class="text-lg font-semibold mb-3 text-white">Hosting &amp; Domena</h4>
                         <p class="text-sm leading-relaxed mb-6 text-neutral-400">
-                            Szybkie i bezpieczne serwery, konfiguracja certyfikatów SSL oraz pełne zarządzanie domenami
-                            i pocztą e-mail.
+                            Szybkie i bezpieczne serwery, konfiguracja certyfikatów SSL oraz pełne zarządzanie domenami i pocztą e-mail.
                         </p>
                     </div>
 
                     <!-- Service 6: Szkolenie & Wsparcie -->
-                    <div
-                        class="group p-8 rounded-2xl border transition-all duration-300 bg-neutral-900/30 border-white/10 hover:border-white/20 hover:bg-neutral-900/50">
-                        <div
-                            class="w-12 h-12 rounded-xl border flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 bg-neutral-800 border-white/10 text-white">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class=""
-                                style="" data-icon-set="lucide" data-lucide="life-buoy">
-                                <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-linecap="round"
-                                    stroke-linejoin="round" stroke-width="2"></circle>
-                                <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-linecap="round"
-                                    stroke-linejoin="round" stroke-width="2"></circle>
-                                <line x1="4.93" x2="9.17" y1="4.93" y2="9.17" fill="none" stroke="currentColor"
-                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></line>
-                                <line x1="14.83" x2="19.07" y1="14.83" y2="19.07" fill="none" stroke="currentColor"
-                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></line>
-                                <line x1="14.83" x2="19.07" y1="9.17" y2="4.93" fill="none" stroke="currentColor"
-                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></line>
-                                <line x1="14.83" x2="9.17" y1="9.17" y2="14.83" fill="none" stroke="currentColor"
-                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></line>
-                                <line x1="4.93" x2="9.17" y1="19.07" y2="14.83" fill="none" stroke="currentColor"
-                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></line>
-                            </svg>
+                    <div class="group p-8 rounded-2xl border transition-all duration-300 bg-neutral-900/30 border-white/10 hover:border-white/20 hover:bg-neutral-900/50">
+                        <div class="w-12 h-12 rounded-xl border flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 bg-neutral-800 border-white/10 text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="" style="" data-icon-set="lucide" data-lucide="life-buoy"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></circle><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></circle><line x1="4.93" x2="9.17" y1="4.93" y2="9.17" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></line><line x1="14.83" x2="19.07" y1="14.83" y2="19.07" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></line><line x1="14.83" x2="19.07" y1="9.17" y2="4.93" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></line><line x1="14.83" x2="9.17" y1="9.17" y2="14.83" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></line><line x1="4.93" x2="9.17" y1="19.07" y2="14.83" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></line></svg>
                         </div>
                         <h4 class="text-lg font-semibold mb-3 text-white">Szkolenie &amp; Wsparcie</h4>
                         <p class="text-sm leading-relaxed mb-6 text-neutral-400">
-                            Pełne wdrożenie w obsługę systemu CMS, materiały instruktażowe oraz gwarancyjna opieka
-                            techniczna po starcie.
+                            Pełne wdrożenie w obsługę systemu CMS, materiały instruktażowe oraz gwarancyjna opieka techniczna po starcie.
                         </p>
                     </div>
                 </div>
@@ -652,252 +336,130 @@
         </section>
 
         <!-- PORTFOLIO SECTION -->
-        <section class="section-spy border-white/5 border-t pt-24 pb-24 relative" id="portfolio">
-            <div class="absolute inset-0 bg-gradient-to-b pointer-events-none from-black via-neutral-900/20 to-black">
-            </div>
-
-            <div class="w-full max-w-[1200px] mx-auto px-6 relative z-10">
+        <section id="portfolio" class="py-24 border-t relative border-white/5 section-spy">
+             <div class="absolute inset-0 bg-gradient-to-b pointer-events-none from-black via-neutral-900/20 to-black"></div>
+             
+             <div class="w-full max-w-[1200px] mx-auto px-6 relative z-10">
                 <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-                    <div class="">
+                    <div>
                         <h2 class="text-sm font-semibold text-rose-500 tracking-widest uppercase mb-3">Portfolio</h2>
                         <h3 class="text-3xl lg:text-4xl font-semibold tracking-tight text-white">Wybrane Realizacje</h3>
                     </div>
-                    <button
-                        class="text-xs font-medium border-b pb-1 transition-colors flex items-center gap-1 text-white border-white/20 hover:border-white">
-                        Zobacz wszystkie projekty <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-                            viewBox="0 0 24 24" class="" style="" data-icon-set="lucide" data-lucide="arrow-up-right">
-                            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" d="M7 7h10v10M7 17L17 7"></path>
-                        </svg>
+                    <button class="text-xs font-medium border-b pb-1 transition-colors flex items-center gap-1 text-white border-white/20 hover:border-white">
+                        Zobacz wszystkie projekty <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" class="" style="" data-icon-set="lucide" data-lucide="arrow-up-right"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h10v10M7 17L17 7"></path></svg>
                     </button>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <!-- Project 1 -->
                     <div class="group cursor-pointer">
-                        <div
-                            class="relative overflow-hidden rounded-2xl border aspect-[16/10] mb-4 bg-neutral-800 border-white/10">
-                            <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/917d6f93-fb36-439a-8c48-884b67b35381_1600w.jpg"
-                                alt="Projekt 1"
-                                class="w-full h-full object-cover opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700">
-                            <div
-                                class="group-hover:bg-transparent transition-colors bg-center bg-[url(https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/bde7fedb-6fa3-4be2-8628-e51c85ef32e1_1600w.png)] bg-cover absolute top-0 right-0 bottom-0 left-0">
-                            </div>
+                        <div class="relative overflow-hidden rounded-2xl border aspect-[16/10] mb-4 bg-neutral-800 border-white/10">
+                            <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/917d6f93-fb36-439a-8c48-884b67b35381_1600w.jpg" alt="Projekt 1" class="w-full h-full object-cover opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700">
+                            <div class="group-hover:bg-transparent transition-colors bg-[url(https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/66ee3d69-8c0a-47d1-ac68-e60ff8ab129b_1600w.webp)] bg-cover bg-center absolute top-0 right-0 bottom-0 left-0"></div>
                         </div>
                         <div class="flex justify-between items-start">
-                            <div class="">
-                                <h4 class="text-lg font-semibold text-white mb-1">ZKZL Poznań</h4>
-                                <p class="text-xs text-neutral-500">Projekt graficzny • Kodowanie • Wdrożenie</p>
+                            <div>
+                                <h4 class="text-lg font-semibold mb-1 text-white">Fintech Dashboard</h4>
+                                <p class="text-xs text-neutral-500">Web App • SaaS Design</p>
                             </div>
-                            <div
-                                class="w-8 h-8 rounded-full border flex items-center justify-center opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300 border-white/10 text-white">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                    class="" style="" data-icon-set="lucide" data-lucide="arrow-right">
-                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7l7 7l-7 7"></path>
-                                </svg>
+                            <div class="w-8 h-8 rounded-full border flex items-center justify-center opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300 border-white/10 text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" class="" style="" data-icon-set="lucide" data-lucide="arrow-right"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7l7 7l-7 7"></path></svg>
                             </div>
                         </div>
                     </div>
 
                     <!-- Project 2 -->
                     <div class="group cursor-pointer mt-0 md:mt-12">
-                        <div
-                            class="relative overflow-hidden rounded-2xl border aspect-[16/10] mb-4 bg-neutral-800 border-white/10">
-                            <div
-                                class="absolute inset-0 bg-gradient-to-br w-full h-full from-neutral-800 to-neutral-900">
-                            </div>
-                            <!-- Placeholder for image -->
+                        <div class="relative overflow-hidden rounded-2xl border aspect-[16/10] mb-4 bg-neutral-800 border-white/10">
+                            <div class="absolute inset-0 bg-gradient-to-br w-full h-full from-neutral-800 to-neutral-900"></div> 
+                             <!-- Placeholder for image -->
                             <div class="absolute inset-0 flex items-center justify-center text-neutral-600">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
-                                    class="" style="" data-icon-set="lucide" data-lucide="image">
-                                    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2">
-                                        <rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect>
-                                        <circle cx="9" cy="9" r="2"></circle>
-                                        <path d="m21 15l-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path>
-                                    </g>
-                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" class="" style="" data-icon-set="lucide" data-lucide="image"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15l-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path></g></svg>
                             </div>
-                            <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/1ac328b6-9c6f-4bfb-909e-b71a0ba43a70_1600w.webp"
-                                alt="Projekt 2"
-                                class="group-hover:scale-105 group-hover:opacity-90 transition-all duration-700 hover:grayscale-0 opacity-60 w-full h-full object-cover grayscale"
-                                style="">
+                            <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/1ac328b6-9c6f-4bfb-909e-b71a0ba43a70_1600w.webp" alt="Projekt 2" class="group-hover:scale-105 group-hover:opacity-90 transition-all duration-700 hover:grayscale-0 opacity-60 w-full h-full object-cover grayscale" style="">
                         </div>
                         <div class="flex justify-between items-start">
                             <div>
                                 <h4 class="text-lg font-semibold mb-1 text-white">Mono Architecture</h4>
                                 <p class="text-xs text-neutral-500">Website • Branding</p>
                             </div>
-                            <div
-                                class="w-8 h-8 rounded-full border flex items-center justify-center opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300 border-white/10 text-white">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                    class="" style="" data-icon-set="lucide" data-lucide="arrow-right">
-                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7l7 7l-7 7"></path>
-                                </svg>
+                            <div class="w-8 h-8 rounded-full border flex items-center justify-center opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300 border-white/10 text-white">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" class="" style="" data-icon-set="lucide" data-lucide="arrow-right"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7l7 7l-7 7"></path></svg>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+             </div>
         </section>
 
         <!-- PRICING SECTION -->
         <section id="cennik" class="py-24 border-t border-white/5 bg-black section-spy">
-            <div class="w-full max-w-[1200px] mr-auto ml-auto pr-6 pl-6">
+            <div class="w-full max-w-[1200px] mx-auto px-6">
                 <div class="mb-16 text-center">
                     <h2 class="text-sm font-semibold text-rose-500 tracking-widest uppercase mb-3">Inwestycja</h2>
                     <h3 class="lg:text-4xl text-3xl font-semibold text-white tracking-tight">Wybierz swój pakiet</h3>
-                    <p class="text-neutral-400 mt-4 max-w-lg mx-auto text-sm">Przejrzyste zasady współpracy. Wybierz
-                        rozwiązanie idealnie dopasowane do Twoich potrzeb biznesowych.</p>
+                    <p class="text-neutral-400 mt-4 max-w-lg mx-auto text-sm">Przejrzyste zasady współpracy. Wybierz rozwiązanie idealnie dopasowane do Twoich potrzeb biznesowych.</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-
+                    
                     <!-- Pakiet Pro -->
-                    <div
-                        class="p-8 rounded-2xl border bg-neutral-900/20 border-white/10 flex flex-col hover:border-white/20 transition-all">
+                    <div class="p-8 rounded-2xl border bg-neutral-900/20 border-white/10 flex flex-col hover:border-white/20 transition-all">
                         <div class="mb-4">
                             <h4 class="text-xl font-semibold text-white">Pakiet Pro</h4>
-                            <p class="text-xs text-neutral-400 mt-2">Dla firm potrzebujących solidnego startu w sieci.
-                            </p>
+                            <p class="text-xs text-neutral-400 mt-2">Dla firm potrzebujących solidnego startu w sieci.</p>
                         </div>
                         <div class="mb-6 flex items-baseline gap-1">
-                            <span class="text-3xl font-bold text-white">od 2000</span>
+                            <span class="text-3xl font-bold text-white">4.500</span>
                             <span class="text-sm text-neutral-500">PLN netto</span>
                         </div>
                         <ul class="space-y-3 mb-8 flex-1">
-                            <li class="flex items-center gap-3 text-sm text-neutral-300"><svg
-                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                    class="text-rose-500 flex-shrink-0" style="" data-icon-set="lucide"
-                                    data-lucide="check">
-                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path>
-                                </svg> Strona One-Page / Landing</li>
-                            <li class="flex items-center gap-3 text-sm text-neutral-300"><svg
-                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                    class="text-rose-500 flex-shrink-0" style="" data-icon-set="lucide"
-                                    data-lucide="check">
-                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path>
-                                </svg> Responsywny Design (RWD)</li>
-                            <li class="flex items-center gap-3 text-sm text-neutral-300"><svg
-                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                    class="text-rose-500 flex-shrink-0" style="" data-icon-set="lucide"
-                                    data-lucide="check">
-                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path>
-                                </svg> Podstawowa optymalizacja SEO</li>
-                            <li class="flex items-center gap-3 text-sm text-neutral-300"><svg
-                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                    class="text-rose-500 flex-shrink-0" style="" data-icon-set="lucide"
-                                    data-lucide="check">
-                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path>
-                                </svg> Konfiguracja domeny i hostingu</li>
+                            <li class="flex items-center gap-3 text-sm text-neutral-300"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" class="text-rose-500 flex-shrink-0" style="" data-icon-set="lucide" data-lucide="check"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path></svg> Strona One-Page / Landing</li>
+                            <li class="flex items-center gap-3 text-sm text-neutral-300"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" class="text-rose-500 flex-shrink-0" style="" data-icon-set="lucide" data-lucide="check"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path></svg> Responsywny Design (RWD)</li>
+                            <li class="flex items-center gap-3 text-sm text-neutral-300"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" class="text-rose-500 flex-shrink-0" style="" data-icon-set="lucide" data-lucide="check"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path></svg> Podstawowa optymalizacja SEO</li>
+                            <li class="flex items-center gap-3 text-sm text-neutral-300"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" class="text-rose-500 flex-shrink-0" style="" data-icon-set="lucide" data-lucide="check"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path></svg> Konfiguracja domeny i hostingu</li>
                         </ul>
-                        <button onclick="openModal()"
-                            class="w-full py-3 rounded-lg border text-sm font-medium transition-colors border-white/10 hover:bg-white/5 text-white">Wybieram
-                            Pro</button>
+                        <button onclick="openModal()" class="w-full py-3 rounded-lg border text-sm font-medium transition-colors border-white/10 hover:bg-white/5 text-white">Wybieram Pro</button>
                     </div>
 
                     <!-- Pakiet Unique -->
-                    <div
-                        class="flex flex-col md:-mt-4 shadow-rose-900/10 bg-gradient-to-b from-neutral-900/80 to-neutral-900/40 border-rose-500/30 border rounded-2xl pt-8 pr-8 pb-8 pl-8 relative shadow-2xl">
-                        <div
-                            class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-3 py-1 bg-rose-500 text-white text-[10px] font-bold uppercase tracking-widest rounded-full">
-                            Polecany</div>
+                    <div class="p-8 rounded-2xl border bg-gradient-to-b from-neutral-900/80 to-neutral-900/40 border-rose-500/30 flex flex-col relative md:-mt-4 shadow-2xl shadow-rose-900/10">
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-3 py-1 bg-rose-500 text-white text-[10px] font-bold uppercase tracking-widest rounded-full">Polecany</div>
                         <div class="mb-4">
                             <h4 class="text-xl font-semibold text-white">Pakiet Unique</h4>
-                            <p class="text-xs text-neutral-400 mt-2">Kompleksowe wdrożenie sklepu lub zaawansowanej
-                                strony.</p>
+                            <p class="text-xs text-neutral-400 mt-2">Kompleksowe wdrożenie sklepu lub zaawansowanej strony.</p>
                         </div>
                         <div class="mb-6 flex items-baseline gap-1">
-                            <span class="text-3xl font-bold text-white">od 4000</span>
+                            <span class="text-3xl font-bold text-white">od 8.000</span>
                             <span class="text-sm text-neutral-500">PLN netto</span>
                         </div>
                         <ul class="space-y-3 mb-8 flex-1">
-                            <li class="flex items-center gap-3 text-sm text-white"><svg
-                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                    class="text-rose-500 flex-shrink-0" style="" data-icon-set="lucide"
-                                    data-lucide="check">
-                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path>
-                                </svg> Indywidualny projekt graficzny UI</li>
-                            <li class="flex items-center gap-3 text-sm text-white"><svg
-                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                    class="text-rose-500 flex-shrink-0" style="" data-icon-set="lucide"
-                                    data-lucide="check">
-                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path>
-                                </svg> System CMS / E-commerce</li>
-                            <li class="flex items-center gap-3 text-sm text-white"><svg
-                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                    class="text-rose-500 flex-shrink-0" style="" data-icon-set="lucide"
-                                    data-lucide="check">
-                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path>
-                                </svg> Zaawansowane animacje</li>
-                            <li class="flex items-center gap-3 text-sm text-white"><svg
-                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                    class="text-rose-500 flex-shrink-0" style="" data-icon-set="lucide"
-                                    data-lucide="check">
-                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path>
-                                </svg> Szkolenie z obsługi panelu</li>
-
+                            <li class="flex items-center gap-3 text-sm text-white"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" class="text-rose-500 flex-shrink-0" style="" data-icon-set="lucide" data-lucide="check"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path></svg> Indywidualny projekt graficzny UI</li>
+                            <li class="flex items-center gap-3 text-sm text-white"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" class="text-rose-500 flex-shrink-0" style="" data-icon-set="lucide" data-lucide="check"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path></svg> System CMS / E-commerce</li>
+                            <li class="flex items-center gap-3 text-sm text-white"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" class="text-rose-500 flex-shrink-0" style="" data-icon-set="lucide" data-lucide="check"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path></svg> Zaawansowane animacje</li>
+                            <li class="flex items-center gap-3 text-sm text-white"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" class="text-rose-500 flex-shrink-0" style="" data-icon-set="lucide" data-lucide="check"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path></svg> Szkolenie z obsługi panelu</li>
+                            
                         </ul>
-                        <button onclick="openModal()"
-                            class="w-full py-3 rounded-lg font-semibold transition-colors bg-white text-black hover:bg-neutral-200">Wybieram
-                            Unique</button>
+                        <button onclick="openModal()" class="w-full py-3 rounded-lg font-semibold transition-colors bg-white text-black hover:bg-neutral-200">Wybieram Unique</button>
                     </div>
 
                     <!-- Pakiet Hourly -->
-                    <div
-                        class="p-8 rounded-2xl border bg-neutral-900/20 border-white/10 flex flex-col hover:border-white/20 transition-all">
+                    <div class="p-8 rounded-2xl border bg-neutral-900/20 border-white/10 flex flex-col hover:border-white/20 transition-all">
                         <div class="mb-4">
                             <h4 class="text-xl font-semibold text-white">Pakiet Hourly</h4>
-                            <p class="text-xs text-neutral-400 mt-2">Prace programistyczne i rozwój istniejących
-                                projektów.</p>
+                            <p class="text-xs text-neutral-400 mt-2">Prace programistyczne i rozwój istniejących projektów.</p>
                         </div>
                         <div class="mb-6 flex items-baseline gap-1">
                             <span class="text-3xl font-bold text-white">200</span>
                             <span class="text-sm text-neutral-500">PLN / h</span>
                         </div>
                         <ul class="space-y-3 mb-8 flex-1">
-                            <li class="flex items-center gap-3 text-sm text-neutral-300"><svg
-                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                    class="text-rose-500 flex-shrink-0" style="" data-icon-set="lucide"
-                                    data-lucide="check">
-                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path>
-                                </svg> Audyt i optymalizacja kodu</li>
-                            <li class="flex items-center gap-3 text-sm text-neutral-300"><svg
-                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                    class="text-rose-500 flex-shrink-0" style="" data-icon-set="lucide"
-                                    data-lucide="check">
-                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path>
-                                </svg> Wdrażanie nowych funkcji</li>
-                            <li class="flex items-center gap-3 text-sm text-neutral-300"><svg
-                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                    class="text-rose-500 flex-shrink-0" style="" data-icon-set="lucide"
-                                    data-lucide="check">
-                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path>
-                                </svg> Naprawa błędów</li>
-                            <li class="flex items-center gap-3 text-sm text-neutral-300"><svg
-                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                                    class="text-rose-500 flex-shrink-0" style="" data-icon-set="lucide"
-                                    data-lucide="check">
-                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path>
-                                </svg> Konsultacje technologiczne</li>
+                            <li class="flex items-center gap-3 text-sm text-neutral-300"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" class="text-rose-500 flex-shrink-0" style="" data-icon-set="lucide" data-lucide="check"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path></svg> Audyt i optymalizacja kodu</li>
+                            <li class="flex items-center gap-3 text-sm text-neutral-300"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" class="text-rose-500 flex-shrink-0" style="" data-icon-set="lucide" data-lucide="check"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path></svg> Wdrażanie nowych funkcji</li>
+                            <li class="flex items-center gap-3 text-sm text-neutral-300"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" class="text-rose-500 flex-shrink-0" style="" data-icon-set="lucide" data-lucide="check"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path></svg> Naprawa błędów</li>
+                            <li class="flex items-center gap-3 text-sm text-neutral-300"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" class="text-rose-500 flex-shrink-0" style="" data-icon-set="lucide" data-lucide="check"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path></svg> Konsultacje technologiczne</li>
                         </ul>
-                        <button onclick="openModal()"
-                            class="w-full py-3 rounded-lg border text-sm font-medium transition-colors border-white/10 hover:bg-white/5 text-white">Zapytaj
-                            o dostępność</button>
+                        <button onclick="openModal()" class="w-full py-3 rounded-lg border text-sm font-medium transition-colors border-white/10 hover:bg-white/5 text-white">Zapytaj o dostępność</button>
                     </div>
 
                 </div>
@@ -915,82 +477,53 @@
                 <div class="space-y-4">
                     <!-- FAQ 1 -->
                     <details class="group border-b border-white/10 pb-4">
-                        <summary
-                            class="flex cursor-pointer hover:text-rose-400 transition-colors text-base font-medium text-white items-center justify-between">
-                            <span class="">Ile czasu trwa realizacja strony internetowej?</span>
+                        <summary class="flex cursor-pointer items-center justify-between text-base font-medium text-white hover:text-rose-400 transition-colors">
+                            <span>Ile czasu trwa realizacja strony internetowej?</span>
                             <span class="transition-transform group-open:rotate-180">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="" data-lucide="chevron-down" data-icon-set="lucide"
-                                    data-icon-replaced="true" style="color: rgb(251, 113, 133);">
-                                    <path d="m6 9 6 6 6-6"></path>
-                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="" style="" data-icon-set="lucide" data-lucide="chevron-down"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9l6 6l6-6"></path></svg>
                             </span>
                         </summary>
                         <p class="mt-4 text-sm leading-relaxed text-neutral-400">
-                            Standardowy czas realizacji dla prostej strony (Pakiet Pro) to około 7-14 dni roboczych. W
-                            przypadku bardziej zaawansowanych projektów typu E-commerce lub dedykowanych aplikacji
-                            (Pakiet Unique), czas ten może wynosić od 3 do 8 tygodni, w zależności od skomplikowania
-                            funkcjonalności.
+                            Standardowy czas realizacji dla prostej strony (Pakiet Pro) to około 7-14 dni roboczych. W przypadku bardziej zaawansowanych projektów typu E-commerce lub dedykowanych aplikacji (Pakiet Unique), czas ten może wynosić od 3 do 8 tygodni, w zależności od skomplikowania funkcjonalności.
                         </p>
                     </details>
 
                     <!-- FAQ 2 -->
                     <details class="group border-b border-white/10 pb-4">
-                        <summary
-                            class="flex cursor-pointer items-center justify-between text-base font-medium text-white hover:text-rose-400 transition-colors">
+                        <summary class="flex cursor-pointer items-center justify-between text-base font-medium text-white hover:text-rose-400 transition-colors">
                             <span>Czy otrzymam fakturę VAT?</span>
                             <span class="transition-transform group-open:rotate-180">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    class="" style="" data-icon-set="lucide" data-lucide="chevron-down">
-                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2" d="m6 9l6 6l6-6"></path>
-                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="" style="" data-icon-set="lucide" data-lucide="chevron-down"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9l6 6l6-6"></path></svg>
                             </span>
                         </summary>
                         <p class="mt-4 text-sm leading-relaxed text-neutral-400">
-                            Tak, na każdą usługę wystawiam pełną fakturę VAT 23%. Wszystkie podane w cenniku kwoty są
-                            kwotami netto, do których należy doliczyć podatek VAT.
+                            Tak, na każdą usługę wystawiam pełną fakturę VAT 23%. Wszystkie podane w cenniku kwoty są kwotami netto, do których należy doliczyć podatek VAT.
                         </p>
                     </details>
 
                     <!-- FAQ 3 -->
-                    <details class="group border-white/10 border-b pb-4">
-                        <summary
-                            class="flex cursor-pointer items-center justify-between text-base font-medium text-white hover:text-rose-400 transition-colors">
-                            <span class="">Co muszę przygotować przed rozpoczęciem współpracy?</span>
+                    <details class="group border-b border-white/10 pb-4">
+                        <summary class="flex cursor-pointer items-center justify-between text-base font-medium text-white hover:text-rose-400 transition-colors">
+                            <span>Co muszę przygotować przed rozpoczęciem współpracy?</span>
                             <span class="transition-transform group-open:rotate-180">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    class="" style="" data-icon-set="lucide" data-lucide="chevron-down">
-                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2" d="m6 9l6 6l6-6"></path>
-                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="" style="" data-icon-set="lucide" data-lucide="chevron-down"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9l6 6l6-6"></path></svg>
                             </span>
                         </summary>
                         <p class="mt-4 text-sm leading-relaxed text-neutral-400">
-                            Na początek wystarczy ogólny zarys pomysłu. Warto przygotować teksty, logo (jeśli posiadasz)
-                            oraz zdjęcia. Jeśli ich nie masz – spokojnie, w ramach Pakietu Unique pomagam w doborze
-                            materiałów, tworzeniu treści oraz identyfikacji wizualnej.
+                            Na początek wystarczy ogólny zarys pomysłu. Warto przygotować teksty, logo (jeśli posiadasz) oraz zdjęcia. Jeśli ich nie masz – spokojnie, w ramach Pakietu Unique pomagam w doborze materiałów, tworzeniu treści oraz identyfikacji wizualnej.
                         </p>
                     </details>
 
                     <!-- FAQ 4 -->
                     <details class="group border-b border-white/10 pb-4">
-                        <summary
-                            class="flex cursor-pointer items-center justify-between text-base font-medium text-white hover:text-rose-400 transition-colors">
+                        <summary class="flex cursor-pointer items-center justify-between text-base font-medium text-white hover:text-rose-400 transition-colors">
                             <span>Czy będę mógł samodzielnie edytować stronę?</span>
                             <span class="transition-transform group-open:rotate-180">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    class="" style="" data-icon-set="lucide" data-lucide="chevron-down">
-                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2" d="m6 9l6 6l6-6"></path>
-                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="" style="" data-icon-set="lucide" data-lucide="chevron-down"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9l6 6l6-6"></path></svg>
                             </span>
                         </summary>
                         <p class="mt-4 text-sm leading-relaxed text-neutral-400">
-                            Tak. Większość projektów opieram na wygodnych systemach CMS (np. WordPress, Webflow), które
-                            umożliwiają łatwą edycję tekstów i zdjęć bez znajomości programowania. Po zakończeniu
-                            projektu przeprowadzam szkolenie z obsługi panelu.
+                            Tak. Większość projektów opieram na wygodnych systemach CMS (np. WordPress, Sanity), które umożliwiają łatwą edycję tekstów i zdjęć bez znajomości programowania. Po zakończeniu projektu przeprowadzam szkolenie z obsługi panelu.
                         </p>
                     </details>
                 </div>
@@ -1001,45 +534,25 @@
         <section id="kontakt" class="py-24 border-t border-white/5 bg-black section-spy">
             <div class="w-full max-w-[1000px] mx-auto px-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
-
+                    
                     <!-- Contact Info -->
                     <div class="">
                         <h2 class="text-sm font-semibold text-rose-500 tracking-widest uppercase mb-3">Kontakt</h2>
-                        <h3 class="text-3xl lg:text-4xl font-semibold tracking-tight mb-6 text-white">
-                            Rozpocznijmy<br>Współpracę.</h3>
+                        <h3 class="text-3xl lg:text-4xl font-semibold tracking-tight mb-6 text-white">Rozpocznijmy<br>Współpracę.</h3>
                         <p class="text-sm leading-relaxed mb-8 max-w-sm text-neutral-400">
-                            Masz pomysł na projekt? Szukasz partnera technologicznego? Napisz do nas, a przygotujemy
-                            darmową wycenę w 24h.
+                            Masz pomysł na projekt? Szukasz partnera technologicznego? Napisz do nas, a przygotujemy darmową wycenę w 24h.
                         </p>
-
+                        
                         <div class="space-y-4">
-                            <a href="mailto:kontakt@webcanvas"
-                                class="flex items-center gap-3 text-sm transition-colors group text-white hover:text-rose-400">
-                                <div
-                                    class="w-10 h-10 rounded-lg border flex items-center justify-center group-hover:border-rose-500/30 transition-colors bg-neutral-900 border-white/10">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="" data-lucide="mail" data-icon-set="lucide"
-                                        data-icon-replaced="true" style="color: rgb(251, 113, 133);">
-                                        <rect width="20" height="16" x="2" y="4" rx="2"></rect>
-                                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-                                    </svg>
+                            <a href="mailto:kontakt@webcanvas.studio" class="flex items-center gap-3 text-sm transition-colors group text-white hover:text-rose-400">
+                                <div class="w-10 h-10 rounded-lg border flex items-center justify-center group-hover:border-rose-500/30 transition-colors bg-neutral-900 border-white/10">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" class="" style="" data-icon-set="lucide" data-lucide="mail"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m22 7l-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect width="20" height="16" x="2" y="4" rx="2"></rect></g></svg>
                                 </div>
                                 kontakt@webcanvas.studio
                             </a>
-                            <div
-                                class="flex items-center gap-3 text-sm transition-colors group cursor-default text-white hover:text-rose-400">
-                                <div
-                                    class="w-10 h-10 rounded-lg border flex items-center justify-center group-hover:border-rose-500/30 transition-colors bg-neutral-900 border-white/10">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="w-[14px] h-[14px]" data-lucide="phone"
-                                        data-icon-set="lucide" data-icon-replaced="true"
-                                        style="width: 14px; height: 14px; color: rgb(251, 113, 133);">
-                                        <path
-                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-                                        </path>
-                                    </svg>
+                            <div class="flex items-center gap-3 text-sm transition-colors group cursor-default text-white hover:text-rose-400">
+                                <div class="w-10 h-10 rounded-lg border flex items-center justify-center group-hover:border-rose-500/30 transition-colors bg-neutral-900 border-white/10">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" class="" style="" data-icon-set="lucide" data-lucide="map-pin"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></g></svg>
                                 </div>
                                 +48 739 043 596
                             </div>
@@ -1050,36 +563,34 @@
                     <div class="rounded-2xl p-6 border bg-neutral-900/20 border-white/5">
                         <form class="space-y-4">
                             <div>
-                                <label for="name" class="block text-xs font-medium text-neutral-500 mb-1.5 ml-1">Imię i
-                                    Nazwisko</label>
-                                <input type="text" id="name" placeholder="Jan Kowalski"
-                                    class="w-full border rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-rose-500/50 focus:border-rose-500/50 transition-all placeholder:text-neutral-700 bg-neutral-950 border-white/10 text-white">
+                                <label for="name" class="block text-xs font-medium text-neutral-500 mb-1.5 ml-1">Imię i Nazwisko</label>
+                                <input type="text" id="name" placeholder="Jan Kowalski" required="" class="w-full border rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-rose-500/50 focus:border-rose-500/50 transition-all placeholder:text-neutral-700 bg-neutral-950 border-white/10 text-white">
                             </div>
-
+                            
                             <div>
-                                <label for="email" class="block text-xs font-medium text-neutral-500 mb-1.5 ml-1">Adres
-                                    Email</label>
-                                <input type="email" id="email" placeholder="jan@firma.pl"
-                                    class="w-full border rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-rose-500/50 focus:border-rose-500/50 transition-all placeholder:text-neutral-700 bg-neutral-950 border-white/10 text-white">
+                                <label for="email" class="block text-xs font-medium text-neutral-500 mb-1.5 ml-1">Adres Email</label>
+                                <input type="email" id="email" placeholder="jan@firma.pl" required="" class="w-full border rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-rose-500/50 focus:border-rose-500/50 transition-all placeholder:text-neutral-700 bg-neutral-950 border-white/10 text-white">
                             </div>
-
+                            
                             <div>
-                                <label for="message"
-                                    class="block text-xs font-medium text-neutral-500 mb-1.5 ml-1">Wiadomość</label>
-                                <textarea id="message" rows="4" placeholder="Opisz krótko swój projekt..."
-                                    class="w-full border rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-rose-500/50 focus:border-rose-500/50 transition-all placeholder:text-neutral-700 resize-none bg-neutral-950 border-white/10 text-white"></textarea>
+                                <label for="message" class="block text-xs font-medium text-neutral-500 mb-1.5 ml-1">Wiadomość</label>
+                                <textarea id="message" rows="4" placeholder="Opisz krótko swój projekt..." required="" class="w-full border rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-rose-500/50 focus:border-rose-500/50 transition-all placeholder:text-neutral-700 resize-none bg-neutral-950 border-white/10 text-white"></textarea>
                             </div>
 
-                            <button type="button"
-                                class="w-full font-semibold text-sm py-3 rounded-lg transition-colors flex items-center justify-center gap-2 mt-2 bg-white text-black hover:bg-neutral-200">
+                            <!-- GDPR Consent Checkbox -->
+                            <div class="flex items-start gap-3 group pt-1">
+                                <div class="relative flex items-start mt-0.5">
+                                    <input type="checkbox" id="privacy-consent" required="" class="peer h-4 w-4 shrink-0 cursor-pointer appearance-none rounded border border-white/20 bg-transparent checked:border-rose-500 checked:bg-rose-500 focus:outline-none focus:ring-0 focus:ring-offset-0 transition-all">
+                                    <svg class="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white opacity-0 peer-checked:opacity-100 transition-opacity" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                </div>
+                                <label for="privacy-consent" class="text-[10px] leading-relaxed text-neutral-500 font-normal cursor-pointer hover:text-neutral-400 transition-colors">
+                                    Wyrażam zgodę na przetwarzanie moich danych osobowych przez WebCanvas zgodnie z ustawą o ochronie danych osobowych w celu przedstawienia odpowiedzi na wysyłane zapytanie. Wysyłając wiadomość poprzez formularz kontaktowy, akceptujesz naszą politykę prywatności.
+                                </label>
+                            </div>
+
+                            <button type="submit" class="w-full font-semibold text-sm py-3 rounded-lg transition-colors flex items-center justify-center gap-2 mt-2 bg-white text-black hover:bg-neutral-200">
                                 Wyślij Wiadomość
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
-                                    class="" style="" data-icon-set="lucide" data-lucide="send">
-                                    <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2"
-                                        d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11zm7.318-19.539l-10.94 10.939">
-                                    </path>
-                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" class="" style="" data-icon-set="lucide" data-lucide="send"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11zm7.318-19.539l-10.94 10.939"></path></svg>
                             </button>
                         </form>
                     </div>
@@ -1093,44 +604,45 @@
     <!-- Footer -->
     <footer class="w-full border-t py-8 border-white/5 bg-black">
         <div class="max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-            <span class="text-[10px] text-neutral-600 font-mono">© 2026 WebCanvas. Wszelkie prawa zastrzeżone.</span>
-
+            <div class="flex items-center gap-4 flex-col md:flex-row">
+                <span class="text-[10px] text-neutral-600 font-mono">© 2026 WebCanvas. Wszelkie prawa zastrzeżone.</span>
+                <a href="#" class="text-[10px] text-neutral-600 hover:text-neutral-400 transition-colors font-mono">Polityka Prywatności</a>
+            </div>
+            
             <div class="flex items-center gap-6">
-                <a href="#" class="transition-colors text-neutral-600 hover:text-white"><svg
-                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" class="" style=""
-                        data-icon-set="simple-icons" data-simple-icons="instagram">
-                        <path fill="currentColor"
-                            d="M7.03.084c-1.277.06-2.149.264-2.91.563a5.9 5.9 0 0 0-2.124 1.388a5.9 5.9 0 0 0-1.38 2.127C.321 4.926.12 5.8.064 7.076s-.069 1.688-.063 4.947s.021 3.667.083 4.947c.061 1.277.264 2.149.563 2.911c.308.789.72 1.457 1.388 2.123a5.9 5.9 0 0 0 2.129 1.38c.763.295 1.636.496 2.913.552c1.278.056 1.689.069 4.947.063s3.668-.021 4.947-.082c1.28-.06 2.147-.265 2.91-.563a5.9 5.9 0 0 0 2.123-1.388a5.9 5.9 0 0 0 1.38-2.129c.295-.763.496-1.636.551-2.912c.056-1.28.07-1.69.063-4.948c-.006-3.258-.02-3.667-.081-4.947c-.06-1.28-.264-2.148-.564-2.911a5.9 5.9 0 0 0-1.387-2.123a5.9 5.9 0 0 0-2.128-1.38c-.764-.294-1.636-.496-2.914-.55C15.647.009 15.236-.006 11.977 0S8.31.021 7.03.084m.14 21.693c-1.17-.05-1.805-.245-2.228-.408a3.7 3.7 0 0 1-1.382-.895a3.7 3.7 0 0 1-.9-1.378c-.165-.423-.363-1.058-.417-2.228c-.06-1.264-.072-1.644-.08-4.848c-.006-3.204.006-3.583.061-4.848c.05-1.169.246-1.805.408-2.228c.216-.561.477-.96.895-1.382a3.7 3.7 0 0 1 1.379-.9c.423-.165 1.057-.361 2.227-.417c1.265-.06 1.644-.072 4.848-.08c3.203-.006 3.583.006 4.85.062c1.168.05 1.804.244 2.227.408c.56.216.96.475 1.382.895s.681.817.9 1.378c.165.422.362 1.056.417 2.227c.06 1.265.074 1.645.08 4.848c.005 3.203-.006 3.583-.061 4.848c-.051 1.17-.245 1.805-.408 2.23c-.216.56-.477.96-.896 1.38a3.7 3.7 0 0 1-1.378.9c-.422.165-1.058.362-2.226.418c-1.266.06-1.645.072-4.85.079s-3.582-.006-4.848-.06m9.783-16.192a1.44 1.44 0 1 0 1.437-1.442a1.44 1.44 0 0 0-1.437 1.442M5.839 12.012a6.161 6.161 0 1 0 12.323-.024a6.162 6.162 0 0 0-12.323.024M8 12.008A4 4 0 1 1 12.008 16A4 4 0 0 1 8 12.008">
-                        </path>
-                    </svg></a>
-                <a href="#" class="transition-colors text-neutral-600 hover:text-white"><svg
-                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" class="" style=""
-                        data-icon-set="simple-icons" data-simple-icons="twitter">
-                        <path fill="currentColor"
-                            d="M21.543 7.104c.015.211.015.423.015.636c0 6.507-4.954 14.01-14.01 14.01v-.003A13.94 13.94 0 0 1 0 19.539a9.88 9.88 0 0 0 7.287-2.041a4.93 4.93 0 0 1-4.6-3.42a4.9 4.9 0 0 0 2.223-.084A4.926 4.926 0 0 1 .96 9.167v-.062a4.9 4.9 0 0 0 2.235.616A4.93 4.93 0 0 1 1.67 3.148a13.98 13.98 0 0 0 10.15 5.144a4.929 4.929 0 0 1 8.39-4.49a9.9 9.9 0 0 0 3.128-1.196a4.94 4.94 0 0 1-2.165 2.724A9.8 9.8 0 0 0 24 4.555a10 10 0 0 1-2.457 2.549">
-                        </path>
-                    </svg></a>
-                <a href="#" class="transition-colors text-neutral-600 hover:text-white"><svg
-                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" class="" style=""
-                        data-icon-set="simple-icons" data-simple-icons="linkedin">
-                        <path fill="currentColor"
-                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037c-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85c3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.06 2.06 0 0 1-2.063-2.065a2.064 2.064 0 1 1 2.063 2.065m1.782 13.019H3.555V9h3.564zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0z"
-                            class=""></path>
-                    </svg></a>
+                <a href="#" class="transition-colors text-neutral-600 hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" class="" style="" data-icon-set="simple-icons" data-simple-icons="instagram"><path fill="currentColor" d="M7.03.084c-1.277.06-2.149.264-2.91.563a5.9 5.9 0 0 0-2.124 1.388a5.9 5.9 0 0 0-1.38 2.127C.321 4.926.12 5.8.064 7.076s-.069 1.688-.063 4.947s.021 3.667.083 4.947c.061 1.277.264 2.149.563 2.911c.308.789.72 1.457 1.388 2.123a5.9 5.9 0 0 0 2.129 1.38c.763.295 1.636.496 2.913.552c1.278.056 1.689.069 4.947.063s3.668-.021 4.947-.082c1.28-.06 2.147-.265 2.91-.563a5.9 5.9 0 0 0 2.123-1.388a5.9 5.9 0 0 0 1.38-2.129c.295-.763.496-1.636.551-2.912c.056-1.28.07-1.69.063-4.948c-.006-3.258-.02-3.667-.081-4.947c-.06-1.28-.264-2.148-.564-2.911a5.9 5.9 0 0 0-1.387-2.123a5.9 5.9 0 0 0-2.128-1.38c-.764-.294-1.636-.496-2.914-.55C15.647.009 15.236-.006 11.977 0S8.31.021 7.03.084m.14 21.693c-1.17-.05-1.805-.245-2.228-.408a3.7 3.7 0 0 1-1.382-.895a3.7 3.7 0 0 1-.9-1.378c-.165-.423-.363-1.058-.417-2.228c-.06-1.264-.072-1.644-.08-4.848c-.006-3.204.006-3.583.061-4.848c.05-1.169.246-1.805.408-2.228c.216-.561.477-.96.895-1.382a3.7 3.7 0 0 1 1.379-.9c.423-.165 1.057-.361 2.227-.417c1.265-.06 1.644-.072 4.848-.08c3.203-.006 3.583.006 4.85.062c1.168.05 1.804.244 2.227.408c.56.216.96.475 1.382.895s.681.817.9 1.378c.165.422.362 1.056.417 2.227c.06 1.265.074 1.645.08 4.848c.005 3.203-.006 3.583-.061 4.848c-.051 1.17-.245 1.805-.408 2.23c-.216.56-.477.96-.896 1.38a3.7 3.7 0 0 1-1.378.9c-.422.165-1.058.362-2.226.418c-1.266.06-1.645.072-4.85.079s-3.582-.006-4.848-.06m9.783-16.192a1.44 1.44 0 1 0 1.437-1.442a1.44 1.44 0 0 0-1.437 1.442M5.839 12.012a6.161 6.161 0 1 0 12.323-.024a6.162 6.162 0 0 0-12.323.024M8 12.008A4 4 0 1 1 12.008 16A4 4 0 0 1 8 12.008"></path></svg></a>
+                <a href="#" class="transition-colors text-neutral-600 hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" class="" style="" data-icon-set="simple-icons" data-simple-icons="twitter"><path fill="currentColor" d="M21.543 7.104c.015.211.015.423.015.636c0 6.507-4.954 14.01-14.01 14.01v-.003A13.94 13.94 0 0 1 0 19.539a9.88 9.88 0 0 0 7.287-2.041a4.93 4.93 0 0 1-4.6-3.42a4.9 4.9 0 0 0 2.223-.084A4.926 4.926 0 0 1 .96 9.167v-.062a4.9 4.9 0 0 0 2.235.616A4.93 4.93 0 0 1 1.67 3.148a13.98 13.98 0 0 0 10.15 5.144a4.929 4.929 0 0 1 8.39-4.49a9.9 9.9 0 0 0 3.128-1.196a4.94 4.94 0 0 1-2.165 2.724A9.8 9.8 0 0 0 24 4.555a10 10 0 0 1-2.457 2.549"></path></svg></a>
+                <a href="#" class="transition-colors text-neutral-600 hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" class="" style="" data-icon-set="simple-icons" data-simple-icons="linkedin"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037c-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85c3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.06 2.06 0 0 1-2.063-2.065a2.064 2.064 0 1 1 2.063 2.065m1.782 13.019H3.555V9h3.564zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0z"></path></svg></a>
             </div>
         </div>
     </footer>
 
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 max-w-sm w-[calc(100%-2rem)] p-5 z-[60] rounded-xl border shadow-2xl backdrop-blur-md transform transition-all duration-500 translate-y-0 opacity-100 bg-neutral-900/90 border-white/10 flex flex-col gap-4">
+        <div class="">
+            <h4 class="text-xs font-semibold text-white mb-1">Pliki Cookies</h4>
+            <p class="text-[11px] leading-relaxed text-neutral-400">
+                Ta strona korzysta z plików cookies, aby zapewnić najlepszą jakość korzystania z naszej witryny. Kontynuując przeglądanie, wyrażasz zgodę na ich użycie.
+            </p>
+        </div>
+        <div class="flex gap-2">
+            <button onclick="acceptCookies()" class="bg-white hover:bg-neutral-200 text-black text-xs font-medium px-4 py-1.5 rounded-md transition-colors">
+                Akceptuję
+            </button>
+            <button onclick="closeCookies()" class="text-neutral-500 hover:text-white text-xs font-medium px-2 py-1.5 transition-colors">
+                Zamknij
+            </button>
+        </div>
+    </div>
+
     <!-- Quote Modal -->
     <div id="quote-modal" class="fixed inset-0 z-[100] hidden items-center justify-center">
         <!-- Backdrop -->
-        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity opacity-0" id="modal-backdrop"
-            onclick="closeModal()"></div>
-
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity opacity-0" id="modal-backdrop" onclick="closeModal()"></div>
+        
         <!-- Modal Content -->
-        <div class="bg-[#0A0A0A] border border-white/10 rounded-2xl w-full max-w-lg relative z-10 shadow-2xl transform scale-95 opacity-0 transition-all duration-300 m-4 flex flex-col max-h-[90vh]"
-            id="modal-content">
-
+        <div class="bg-[#0A0A0A] border border-white/10 rounded-2xl w-full max-w-lg relative z-10 shadow-2xl transform scale-95 opacity-0 transition-all duration-300 m-4 flex flex-col max-h-[90vh]" id="modal-content">
+            
             <!-- Header -->
             <div class="p-6 border-b border-white/5 flex items-center justify-between">
                 <div>
@@ -1138,11 +650,7 @@
                     <p class="text-xs text-neutral-400 mt-1">Odpowiedz na kilka pytań, aby otrzymać wstępną wycenę.</p>
                 </div>
                 <button onclick="closeModal()" class="text-neutral-500 hover:text-white transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="" style=""
-                        data-icon-set="lucide" data-lucide="x">
-                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="2" d="M18 6L6 18M6 6l12 12"></path>
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" class="" style="" data-icon-set="lucide" data-lucide="x"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6L6 18M6 6l12 12"></path></svg>
                 </button>
             </div>
 
@@ -1151,29 +659,24 @@
                 <form class="space-y-6">
                     <!-- Question 1 -->
                     <div>
-                        <label class="block text-xs font-medium text-neutral-400 mb-3 uppercase tracking-wider">Rodzaj
-                            Projektu</label>
+                        <label class="block text-xs font-medium text-neutral-400 mb-3 uppercase tracking-wider">Rodzaj Projektu</label>
                         <div class="grid grid-cols-2 gap-3">
-                            <label
-                                class="cursor-pointer border border-white/10 rounded-lg p-3 hover:bg-white/5 transition-all has-[:checked]:border-rose-500/50 has-[:checked]:bg-rose-500/10">
+                            <label class="cursor-pointer border border-white/10 rounded-lg p-3 hover:bg-white/5 transition-all has-[:checked]:border-rose-500/50 has-[:checked]:bg-rose-500/10">
                                 <input type="radio" name="project_type" class="hidden">
                                 <span class="text-sm font-medium text-white block mb-1">Strona WWW</span>
                                 <span class="text-[10px] text-neutral-500 block">Landing page / Wizytówka</span>
                             </label>
-                            <label
-                                class="cursor-pointer border border-white/10 rounded-lg p-3 hover:bg-white/5 transition-all has-[:checked]:border-rose-500/50 has-[:checked]:bg-rose-500/10">
+                            <label class="cursor-pointer border border-white/10 rounded-lg p-3 hover:bg-white/5 transition-all has-[:checked]:border-rose-500/50 has-[:checked]:bg-rose-500/10">
                                 <input type="radio" name="project_type" class="hidden">
                                 <span class="text-sm font-medium text-white block mb-1">E-commerce</span>
                                 <span class="text-[10px] text-neutral-500 block">Sklep internetowy</span>
                             </label>
-                            <label
-                                class="cursor-pointer border border-white/10 rounded-lg p-3 hover:bg-white/5 transition-all has-[:checked]:border-rose-500/50 has-[:checked]:bg-rose-500/10">
+                            <label class="cursor-pointer border border-white/10 rounded-lg p-3 hover:bg-white/5 transition-all has-[:checked]:border-rose-500/50 has-[:checked]:bg-rose-500/10">
                                 <input type="radio" name="project_type" class="hidden">
                                 <span class="text-sm font-medium text-white block mb-1">Aplikacja Web</span>
                                 <span class="text-[10px] text-neutral-500 block">System dedykowany</span>
                             </label>
-                            <label
-                                class="cursor-pointer border border-white/10 rounded-lg p-3 hover:bg-white/5 transition-all has-[:checked]:border-rose-500/50 has-[:checked]:bg-rose-500/10">
+                            <label class="cursor-pointer border border-white/10 rounded-lg p-3 hover:bg-white/5 transition-all has-[:checked]:border-rose-500/50 has-[:checked]:bg-rose-500/10">
                                 <input type="radio" name="project_type" class="hidden">
                                 <span class="text-sm font-medium text-white block mb-1">Inne</span>
                                 <span class="text-[10px] text-neutral-500 block">Niestandardowe</span>
@@ -1183,10 +686,8 @@
 
                     <!-- Question 2 -->
                     <div>
-                        <label class="block text-xs font-medium text-neutral-400 mb-3 uppercase tracking-wider">Budżet
-                            (PLN)</label>
-                        <select
-                            class="w-full bg-neutral-950 border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-rose-500/50 transition-colors appearance-none cursor-pointer">
+                        <label class="block text-xs font-medium text-neutral-400 mb-3 uppercase tracking-wider">Budżet (PLN)</label>
+                        <select class="w-full bg-neutral-950 border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-rose-500/50 transition-colors appearance-none cursor-pointer">
                             <option value="" disabled="" selected="">Wybierz przedział budżetowy</option>
                             <option value="low">3,000 - 6,000 PLN</option>
                             <option value="mid">6,000 - 15,000 PLN</option>
@@ -1197,42 +698,30 @@
 
                     <!-- Question 3 -->
                     <div>
-                        <label
-                            class="block text-xs font-medium text-neutral-400 mb-3 uppercase tracking-wider">Dodatkowe
-                            Funkcje</label>
+                        <label class="block text-xs font-medium text-neutral-400 mb-3 uppercase tracking-wider">Dodatkowe Funkcje</label>
                         <div class="space-y-2">
                             <label class="flex items-center gap-3 cursor-pointer group">
-                                <input type="checkbox"
-                                    class="w-4 h-4 rounded border-white/20 bg-transparent text-rose-500 focus:ring-0 focus:ring-offset-0 custom-checkbox appearance-none border transition-all checked:border-rose-500 checked:bg-rose-500">
-                                <span class="text-sm text-neutral-300 group-hover:text-white transition-colors">System
-                                    CMS (Edycja treści)</span>
+                                <input type="checkbox" class="w-4 h-4 rounded border-white/20 bg-transparent text-rose-500 focus:ring-0 focus:ring-offset-0 custom-checkbox appearance-none border transition-all checked:border-rose-500 checked:bg-rose-500">
+                                <span class="text-sm text-neutral-300 group-hover:text-white transition-colors">System CMS (Edycja treści)</span>
                             </label>
                             <label class="flex items-center gap-3 cursor-pointer group">
-                                <input type="checkbox"
-                                    class="w-4 h-4 rounded border-white/20 bg-transparent text-rose-500 focus:ring-0 focus:ring-offset-0 custom-checkbox appearance-none border transition-all checked:border-rose-500 checked:bg-rose-500">
-                                <span
-                                    class="text-sm text-neutral-300 group-hover:text-white transition-colors">Wielojęzyczność</span>
+                                <input type="checkbox" class="w-4 h-4 rounded border-white/20 bg-transparent text-rose-500 focus:ring-0 focus:ring-offset-0 custom-checkbox appearance-none border transition-all checked:border-rose-500 checked:bg-rose-500">
+                                <span class="text-sm text-neutral-300 group-hover:text-white transition-colors">Wielojęzyczność</span>
                             </label>
                             <label class="flex items-center gap-3 cursor-pointer group">
-                                <input type="checkbox"
-                                    class="w-4 h-4 rounded border-white/20 bg-transparent text-rose-500 focus:ring-0 focus:ring-offset-0 custom-checkbox appearance-none border transition-all checked:border-rose-500 checked:bg-rose-500">
-                                <span
-                                    class="text-sm text-neutral-300 group-hover:text-white transition-colors">Copywriting
-                                    / Treści</span>
+                                <input type="checkbox" class="w-4 h-4 rounded border-white/20 bg-transparent text-rose-500 focus:ring-0 focus:ring-offset-0 custom-checkbox appearance-none border transition-all checked:border-rose-500 checked:bg-rose-500">
+                                <span class="text-sm text-neutral-300 group-hover:text-white transition-colors">Copywriting / Treści</span>
                             </label>
                         </div>
                     </div>
-
+                    
                     <!-- Email for contact -->
                     <div>
-                        <label class="block text-xs font-medium text-neutral-400 mb-1.5 uppercase tracking-wider">Twój
-                            Email</label>
-                        <input type="email" placeholder="email@przyklad.pl"
-                            class="w-full bg-neutral-950 border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-rose-500/50 transition-colors">
+                        <label class="block text-xs font-medium text-neutral-400 mb-1.5 uppercase tracking-wider">Twój Email</label>
+                        <input type="email" placeholder="email@przyklad.pl" class="w-full bg-neutral-950 border border-white/10 rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-rose-500/50 transition-colors">
                     </div>
 
-                    <button type="button"
-                        class="w-full bg-white text-black font-semibold text-sm py-3 rounded-lg hover:bg-neutral-200 transition-colors shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+                    <button type="button" class="w-full bg-white text-black font-semibold text-sm py-3 rounded-lg hover:bg-neutral-200 transition-colors shadow-[0_0_15px_rgba(255,255,255,0.1)]">
                         Poproś o wycenę
                     </button>
                 </form>
@@ -1256,11 +745,11 @@
                 if (entry.isIntersecting) {
                     // Remove active from all
                     navLinks.forEach(link => link.classList.remove('active'));
-
+                    
                     // Add active to current
                     const id = entry.target.getAttribute('id');
                     const activeLink = document.querySelector(`.nav-link[href="#${id}"]`);
-                    if (activeLink) {
+                    if(activeLink) {
                         activeLink.classList.add('active');
                     }
                 }
@@ -1289,15 +778,28 @@
             backdrop.classList.add('opacity-0');
             content.classList.remove('scale-100', 'opacity-100');
             content.classList.add('scale-95', 'opacity-0');
-
+            
             setTimeout(() => {
                 modal.classList.add('hidden');
                 modal.classList.remove('flex');
             }, 300);
         }
+
+        // Cookie Logic
+        const cookieBanner = document.getElementById('cookie-banner');
+        
+        function closeCookies() {
+            cookieBanner.classList.add('translate-y-full', 'opacity-0');
+            setTimeout(() => {
+                cookieBanner.style.display = 'none';
+            }, 500);
+        }
+
+        function acceptCookies() {
+            // Logic to save cookie consent would go here
+            closeCookies();
+        }
     </script>
 
 
-</body>
-
-</html>
+</body></html>

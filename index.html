@@ -1085,7 +1085,18 @@
                                     class="w-full border rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-rose-500/50 focus:border-rose-500/50 transition-all placeholder:text-neutral-400 resize-none bg-white border-neutral-300 text-black"></textarea>
                             </div>
 
-                            <button type="button"
+                            <div class="flex items-start gap-3 mt-4 mb-4">
+                                <input type="checkbox" id="rodo-consent-main" required
+                                    class="mt-1 w-4 h-4 rounded border-neutral-300 text-rose-600 focus:ring-rose-500 cursor-pointer text-white">
+                                <label for="rodo-consent-main"
+                                    class="text-xs text-neutral-500 leading-relaxed cursor-pointer">
+                                    Wyrażam zgodę na przetwarzanie moich danych osobowych w celu obsługi zapytania.
+                                    Administratorem danych jest WebCanvas. Szczegóły w <a
+                                        href="polityka-prywatnosci.html" class="text-rose-600 hover:underline">Polityce
+                                        Prywatności</a>.
+                                </label>
+                            </div>
+                            <button type="submit"
                                 class="w-full font-semibold text-sm py-3 rounded-lg transition-colors flex items-center justify-center gap-2 mt-2 shadow-lg shadow-rose-500/20 bg-rose-600 text-white hover:bg-rose-700">
                                 Wyślij Wiadomość
                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
@@ -1108,7 +1119,13 @@
     <!-- Footer -->
     <footer class="w-full border-t py-8 border-neutral-200 bg-white">
         <div class="max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-            <span class="text-[10px] text-neutral-500 font-mono">© 2026 WebCanvas. Wszelkie prawa zastrzeżone.</span>
+            <div class="flex flex-col md:flex-row gap-4 items-center">
+                <span class="text-[10px] text-neutral-500 font-mono">© 2026 WebCanvas. Wszelkie prawa
+                    zastrzeżone.</span>
+                <a href="polityka-prywatnosci.html"
+                    class="text-[10px] text-neutral-500 font-mono hover:text-black transition-colors">Polityka
+                    Prywatności</a>
+            </div>
 
             <div class="flex items-center gap-6">
                 <a href="#" class="transition-colors text-neutral-500 hover:text-black"><svg
@@ -1246,7 +1263,16 @@
                             class="w-full bg-white border border-neutral-300 rounded-lg px-4 py-3 text-sm text-black focus:outline-none focus:border-rose-500 transition-colors">
                     </div>
 
-                    <button type="button"
+                    <div class="flex items-start gap-3 mt-4 mb-4">
+                        <input type="checkbox" id="rodo-consent-modal" required
+                            class="mt-1 w-4 h-4 rounded border-neutral-300 text-rose-600 focus:ring-rose-500 cursor-pointer">
+                        <label for="rodo-consent-modal" class="text-xs text-neutral-500 leading-relaxed cursor-pointer">
+                            Wyrażam zgodę na przetwarzanie moich danych osobowych w celu realizacji wyceny.
+                            Administratorem danych jest WebCanvas. Szczegóły w <a href="polityka-prywatnosci.html"
+                                class="text-rose-600 hover:underline">Polityce Prywatności</a>.
+                        </label>
+                    </div>
+                    <button type="submit"
                         class="w-full font-semibold text-sm py-3 rounded-lg transition-colors shadow-lg shadow-rose-500/20 bg-rose-600 text-white hover:bg-rose-700">
                         Poproś o wycenę
                     </button>
@@ -1313,6 +1339,58 @@
     </script>
 
 
+    <!-- Cookie Banner -->
+    <div id="cookie-banner"
+        class="fixed bottom-0 left-0 right-0 bg-white border-t border-neutral-200 p-4 md:p-6 z-[200] transform translate-y-full transition-transform duration-300 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]"
+        style="display: none;">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="text-sm text-neutral-600 text-center md:text-left">
+                <p>Ta strona używa plików cookies w celu zapewnienia najlepszej jakości usług. Korzystając ze strony,
+                    zgadzasz się na ich użycie. <a href="polityka-prywatnosci.html"
+                        class="text-rose-600 hover:underline font-medium">Dowiedz się więcej</a></p>
+            </div>
+            <div class="flex gap-3">
+                <button onclick="rejectCookies()"
+                    class="px-6 py-2 rounded-lg text-sm font-medium border border-neutral-200 text-neutral-600 hover:bg-neutral-50 hover:text-black transition-colors">Odrzuć</button>
+                <button onclick="acceptCookies()"
+                    class="px-6 py-2 rounded-lg text-sm font-medium bg-rose-600 text-white hover:bg-rose-700 shadow-lg shadow-rose-500/20 transition-colors">Akceptuję</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Cookie Banner Logic
+        const cookieBanner = document.getElementById('cookie-banner');
+
+        function showCookieBanner() {
+            if (!localStorage.getItem('cookieConsent')) {
+                cookieBanner.style.display = 'block';
+                // Force reflow and show
+                setTimeout(() => {
+                    cookieBanner.classList.remove('translate-y-full');
+                }, 50);
+            }
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            hideCookieBanner();
+        }
+
+        function rejectCookies() {
+            localStorage.setItem('cookieConsent', 'rejected');
+            hideCookieBanner();
+        }
+
+        function hideCookieBanner() {
+            cookieBanner.classList.add('translate-y-full');
+            setTimeout(() => {
+                cookieBanner.style.display = 'none';
+            }, 300);
+        }
+
+        window.addEventListener('load', showCookieBanner);
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,43 @@
+# WebCanvas
+
+> WebCanvas to agencja tworzenia stron internetowych działająca zdalnie, obsługująca firmy z całej Polski ze szczególnym naciskiem na lokalny rynek Wielkopolski (Konin, Turek, Koło, Słupca, Poznań). Specjalizuje się w projektowaniu i wdrażaniu stron www, sklepów e-commerce, pozycjonowaniu lokalnym (SEO) oraz kampaniach Google Ads i Meta Ads. Każdy projekt realizowany jest z myślą o szybkim ładowaniu, SEO od pierwszego dnia i długoterminowym wsparciu po starcie.
+
+Właściciel: Adam
+Kontakt: kontakt@web-canvas.pl
+Telefon: +48 739 043 596
+Adres: Biele 126, 62-610 Sompolno
+
+## Usługi
+
+- [Strony internetowe dla firm](https://web-canvas.pl/): Projektowanie i wdrażanie stron wizytówkowych, firmowych i landing page dla małych i średnich firm
+- [Strony internetowe Konin](https://web-canvas.pl/strony-internetowe-konin.html): Lokalna oferta tworzenia stron www dla firm z Konina i okolic
+- [Strony internetowe Poznań](https://web-canvas.pl/strony-internetowe-poznan.html): Projektowanie stron internetowych dla firm z Poznania i Wielkopolski
+- [Strony internetowe Turek](https://web-canvas.pl/strony-internetowe-turek.html): Tworzenie stron www dla firm z Turku
+- [Strony internetowe Koło](https://web-canvas.pl/strony-internetowe-kolo.html): Tworzenie stron www dla firm z Koła
+- [Strony internetowe Słupca](https://web-canvas.pl/strony-internetowe-slupca.html): Tworzenie stron www dla firm ze Słupcy
+
+## Realizacje
+
+- [Portfolio projektów](https://web-canvas.pl/realizacje.html): Galeria zrealizowanych stron internetowych i sklepów e-commerce
+- [Case study ZKZL Poznań](https://web-canvas.pl/case-study-zkzl.html): Strona Dworca Autobusowego w Poznaniu, nacisk na UX i WCAG
+- [Case study Woodbud](https://web-canvas.pl/case-study-woodbud.html): Strona internetowa dla zakładu stolarskiego z galerią realizacji i cennikiem
+- [Case study Opti Group](https://web-canvas.pl/case-study-opti-group.html): Strona dla firmy doradztwa finansowego dla MŚP
+- [Case study Patrycja Górska Psychoterapia](https://web-canvas.pl/case-study-patrycja-gorska.html): Strona gabinetu psychoterapeutycznego w Gdańsku
+- [Case study Centrum Szkoleń Kierowców](https://web-canvas.pl/case-study-szkolenia-kierowcy.html): Strona centrum szkoleń z kursami Kod 95
+
+## Blog
+
+- [Blog WebCanvas](https://web-canvas.pl/blog.html): Artykuły o stronach internetowych, SEO i marketingu dla właścicieli lokalnych firm
+- [Ile kosztuje strona internetowa?](https://web-canvas.pl/blog-ile-kosztuje-strona-internetowa.html): Przewodnik po czynnikach wpływających na cenę projektu webowego
+- [Pozycjonowanie lokalne dla małych firm](https://web-canvas.pl/blog-pozycjonowanie-lokalne-dla-malych-firm.html): Jak działa lokalne SEO i od czego zacząć
+- [Strona www czy Facebook?](https://web-canvas.pl/blog-strona-www-czy-facebook.html): Porównanie narzędzi dla lokalnej firmy w internecie
+- [Proces tworzenia strony internetowej](https://web-canvas.pl/blog-proces-tworzenia-strony-internetowej.html): Etapy współpracy od briefu do wdrożenia
+- [Co powinna zawierać strona internetowa?](https://web-canvas.pl/blog-co-powinna-zawierac-strona-internetowa.html): Lista niezbędnych elementów skutecznej strony firmowej
+- [Landing page vs strona firmowa](https://web-canvas.pl/blog-landing-page-vs-strona-firmowa.html): Czym się różnią i kiedy wybrać każde z nich
+- [Czy warto mieć stronę internetową?](https://web-canvas.pl/blog-strona-internetowa-inwestycja-czy-koszt.html): Analiza zwrotu z inwestycji w stronę www
+- [5 sygnałów że strona wymaga przebudowy](https://web-canvas.pl/blog-stara-strona-internetowa-sygnaly.html): Kiedy czas na redesign strony
+- [Jak wybrać agencję do tworzenia stron?](https://web-canvas.pl/blog-jak-wybrac-agencje-do-tworzenia-stron.html): Kryteria i czerwone flagi przy wyborze wykonawcy
+
+## Optional
+
+- [Polityka prywatności](https://web-canvas.pl/polityka-prywatnosci.html): Zasady przetwarzania danych osobowych przez WebCanvas

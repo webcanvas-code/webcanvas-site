@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-K2QFBR7K');</script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redesign cennika drgil.pl | WebCanvas</title>
+    <meta name="description"
+        content="Case Study drgil.pl: jak przeprojektowanie cennika z listy na zwijane kategorie skróciło czas nawigacji i poprawiło UX na urządzeniach mobilnych.">
+    <link rel="canonical" href="https://web-canvas.pl/case-study-drgil.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Strona główna", "item": "https://web-canvas.pl/" },
+        { "@type": "ListItem", "position": 2, "name": "Realizacje", "item": "https://web-canvas.pl/realizacje.html" },
+        { "@type": "ListItem", "position": 3, "name": "Redesign cennika drgil.pl", "item": "https://web-canvas.pl/case-study-drgil.html" }
+      ]
+    }
+    </script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
+    <link rel="shortcut icon" href="favicon_io/favicon.ico">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: { brand: { rose: '#E11D48', light: '#FAFAFA' } },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'fade-in-up': 'fadeInUp 0.7s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(18px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #F5F5F5; }
+        ::-webkit-scrollbar-thumb { background: #D4D4D4; border-radius: 4px; border: 2px solid #F5F5F5; }
+        ::-webkit-scrollbar-thumb:hover { background: #A3A3A3; }
+        .bg-glow { background: radial-gradient(circle at 50% 0%, rgba(225, 29, 72, 0.07) 0%, rgba(255, 255, 255, 0) 60%); }
+        .fade-item { opacity: 0; animation: fadeInUp 0.7s ease-out forwards; }
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(18px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .counter-box { opacity: 0; animation: fadeInUp 0.6s ease-out forwards; }
+        .counter-box:nth-child(1) { animation-delay: 0.1s; }
+        .counter-box:nth-child(2) { animation-delay: 0.2s; }
+        .counter-box:nth-child(3) { animation-delay: 0.3s; }
+        .counter-box:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-line { position: relative; }
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 19px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #fecdd3, #e5e5e5, transparent);
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased w-full flex flex-col relative selection:bg-rose-500/20 selection:text-rose-900 bg-white text-neutral-700">
+
+    <!-- Fixed Background -->
+    <div class="fixed top-0 w-full h-screen -z-10">
+        <div class="absolute inset-0 bg-gradient-to-br from-rose-50 via-white to-neutral-50"></div>
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-rose-200 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-pulse-slow"></div>
+        <div class="absolute top-1/3 right-1/4 w-96 h-96 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-pulse-slow" style="animation-delay:2s"></div>
+    </div>
+    <div class="fixed inset-0 z-0 pointer-events-none">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-glow opacity-60 blur-3xl rounded-full"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 px-6 pt-6 flex items-center justify-between max-w-[1400px] mx-auto left-0 right-0 h-20 pointer-events-none">
+        <a href="/" class="flex lg:hidden items-center pointer-events-auto">
+            <img src="img/logo.png" alt="WebCanvas" class="h-10 w-auto">
+        </a>
+        <div class="hidden lg:flex items-center gap-0.5 backdrop-blur-xl border rounded-full pl-3 pr-1.5 py-1.5 shadow-lg pointer-events-auto bg-white/90 border-neutral-200 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+            <a href="/" class="flex items-center mr-2">
+                <img src="img/logo.png" alt="WebCanvas" class="h-7 w-auto">
+            </a>
+            <a href="/#hero" class="transition-all text-sm font-medium border border-transparent rounded-full pt-2 pr-3 pb-2 pl-3 text-neutral-600 hover:text-black">Start</a>
+            <a href="/#uslugi" class="transition-all text-sm font-medium border border-transparent rounded-full pt-2 pr-3 pb-2 pl-3 text-neutral-600 hover:text-black">Usługi</a>
+            <a href="realizacje.html" class="transition-all text-sm font-medium border border-transparent rounded-full pt-2 pr-3 pb-2 pl-3 text-neutral-900 bg-neutral-100 border-neutral-200">Realizacje</a>
+            <a href="blog.html" class="transition-all text-sm font-medium border border-transparent rounded-full pt-2 pr-3 pb-2 pl-3 text-neutral-600 hover:text-black">Blog</a>
+            <a href="/#cennik" class="transition-all text-sm font-medium border border-transparent rounded-full pt-2 pr-3 pb-2 pl-3 text-neutral-600 hover:text-black">Cennik</a>
+            <a href="/#kontakt" class="transition-all text-sm font-medium border border-transparent rounded-full pt-2 pr-3 pb-2 pl-3 text-neutral-600 hover:text-black">Kontakt</a>
+        </div>
+        <div class="ml-auto flex items-center gap-3 pointer-events-auto">
+            <a href="/#kontakt" class="group inline-flex items-center gap-2 no-underline transition-all duration-300 hover:scale-[0.98] active:scale-95 rounded-full py-2 px-5 relative overflow-hidden hidden sm:inline-flex cursor-pointer bg-rose-600 text-white hover:bg-rose-700 shadow-[0_4px_14px_0_rgb(225,29,72,0.39)] hover:shadow-[0_6px_20px_rgba(225,29,72,0.23)]">
+                <span class="relative z-10 text-xs font-semibold tracking-wide">Wyceń Projekt</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" class="relative z-10 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14m-7-7l7 7l-7 7"></path>
+                </svg>
+            </a>
+            <button onclick="toggleMobileMenu()" aria-label="Otwórz menu" aria-expanded="false" id="hamburger-btn"
+                class="lg:hidden w-10 h-10 rounded-full border border-neutral-200 bg-white/90 backdrop-blur-sm shadow-lg flex items-center justify-center text-neutral-700 hover:text-rose-600 hover:border-rose-200 transition-colors">
+                <svg id="hamburger-icon-open" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="18" x2="21" y2="18" />
+                </svg>
+                <svg id="hamburger-icon-close" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden" aria-hidden="true">
+                    <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Panel -->
+    <div id="mobile-menu" class="fixed top-24 left-0 right-0 z-40 px-6 lg:hidden hidden pointer-events-none">
+        <div class="max-w-[500px] mx-auto bg-white rounded-2xl border border-neutral-200 shadow-xl p-3 flex flex-col gap-1 pointer-events-auto">
+            <a href="/#hero" onclick="closeMobileMenu()" class="px-4 py-3 rounded-xl text-sm font-medium text-neutral-700 hover:bg-neutral-50 hover:text-rose-600 transition-colors">Start</a>
+            <a href="/#uslugi" onclick="closeMobileMenu()" class="px-4 py-3 rounded-xl text-sm font-medium text-neutral-700 hover:bg-neutral-50 hover:text-rose-600 transition-colors">Usługi</a>
+            <a href="realizacje.html" onclick="closeMobileMenu()" class="px-4 py-3 rounded-xl text-sm font-medium text-neutral-700 hover:bg-neutral-50 hover:text-rose-600 transition-colors">Realizacje</a>
+            <a href="blog.html" onclick="closeMobileMenu()" class="px-4 py-3 rounded-xl text-sm font-medium text-neutral-700 hover:bg-neutral-50 hover:text-rose-600 transition-colors">Blog</a>
+            <a href="/#cennik" onclick="closeMobileMenu()" class="px-4 py-3 rounded-xl text-sm font-medium text-neutral-700 hover:bg-neutral-50 hover:text-rose-600 transition-colors">Cennik</a>
+            <a href="/#kontakt" onclick="closeMobileMenu()" class="px-4 py-3 rounded-xl text-sm font-medium text-neutral-700 hover:bg-neutral-50 hover:text-rose-600 transition-colors">Kontakt</a>
+            <a href="/#kontakt" onclick="closeMobileMenu()" class="mt-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold bg-rose-600 text-white hover:bg-rose-700 transition-colors">
+                Wyceń Projekt
+            </a>
+        </div>
+    </div>
+
+    <!-- Main -->
+    <main class="w-full flex flex-col relative z-10">
+
+        <!-- HERO -->
+        <section class="pt-36 pb-20 px-6 relative overflow-hidden">
+            <div class="w-full max-w-[1000px] mx-auto">
+
+                <nav class="fade-item flex items-center gap-2 text-xs text-neutral-400 mb-8" style="animation-delay:0s" aria-label="Breadcrumb">
+                    <a href="/" class="hover:text-rose-600 transition-colors">Strona główna</a>
+                    <span>/</span>
+                    <a href="realizacje.html" class="hover:text-rose-600 transition-colors">Realizacje</a>
+                    <span>/</span>
+                    <span class="text-neutral-600">Redesign cennika drgil.pl</span>
+                </nav>
+
+                <div class="fade-item inline-flex items-center gap-2 mb-6" style="animation-delay:0.05s">
+                    <span class="text-[10px] font-bold uppercase tracking-widest bg-rose-600 text-white px-3 py-1 rounded-full">Case Study</span>
+                    <span class="text-xs text-neutral-500">Gabinet medycyny estetycznej • Poprawa UX</span>
+                </div>
+
+                <h1 class="fade-item text-4xl sm:text-5xl lg:text-[3.5rem] font-semibold text-black tracking-tight leading-[1.12] mb-6 max-w-3xl" style="animation-delay:0.15s">
+                    Cennik, który nie wymaga <span class="text-rose-600">kilkudziesięciu scrolli</span>
+                </h1>
+
+                <p class="fade-item text-base sm:text-lg text-neutral-600 leading-relaxed max-w-2xl mb-10" style="animation-delay:0.25s">
+                    Strona drgil.pl oferuje dziesiątki zabiegów medycyny estetycznej podzielonych na kilkanaście kategorii. Stary cennik wyświetlał wszystko naraz, tworząc jedną długą listę. Zmiana jednego elementu interfejsu wystarczyła, żeby nawigacja stała się intuicyjna.
+                </p>
+
+                <div class="fade-item flex flex-wrap items-center gap-4 text-xs" style="animation-delay:0.35s">
+                    <a href="https://drgil.pl/" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-rose-600 text-white font-semibold tracking-wide transition-all duration-300 hover:bg-rose-700 hover:scale-[0.98] shadow-lg shadow-rose-500/25">
+                        Odwiedź stronę na żywo
+                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M7 7h10v10M7 17L17 7" />
+                        </svg>
+                    </a>
+                    <div class="flex items-center gap-1.5 text-neutral-500">
+                        <span class="w-2 h-2 rounded-full bg-lime-500 animate-pulse-slow"></span>
+                        Projekt aktywny • drgil.pl
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HERO IMAGE - zdjęcie "przed" -->
+        <section class="px-6 pb-20">
+            <div class="w-full max-w-[1200px] mx-auto">
+                <div class="fade-item relative rounded-2xl overflow-hidden border border-neutral-200 shadow-xl" style="animation-delay:0.4s">
+                    <div class="aspect-[16/9] bg-neutral-100 overflow-hidden">
+                        <img src="img/drgil-cennik-przed.png"
+                            alt="Stary cennik drgil.pl - wszystkie ceny widoczne naraz na jednej długiej stronie"
+                            class="w-full object-cover object-top" loading="eager" width="1200" height="675">
+                    </div>
+                    <div class="absolute top-5 left-5 flex items-center gap-2 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 border border-neutral-200 shadow-sm">
+                        <span class="text-xs font-medium text-neutral-700">Wersja przed redesignem</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECT INFO BAR -->
+        <section class="px-6 pb-20">
+            <div class="w-full max-w-[1200px] mx-auto">
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-5">
+                    <div class="counter-box bg-white rounded-2xl border border-neutral-200 p-6 text-center hover:shadow-md transition-shadow">
+                        <p class="text-xs text-neutral-500 uppercase tracking-wide mb-2">Klient</p>
+                        <p class="text-sm font-semibold text-black">drgil.pl</p>
+                    </div>
+                    <div class="counter-box bg-white rounded-2xl border border-neutral-200 p-6 text-center hover:shadow-md transition-shadow">
+                        <p class="text-xs text-neutral-500 uppercase tracking-wide mb-2">Sektor</p>
+                        <p class="text-sm font-semibold text-black">Medycyna estetyczna</p>
+                    </div>
+                    <div class="counter-box bg-white rounded-2xl border border-neutral-200 p-6 text-center hover:shadow-md transition-shadow">
+                        <p class="text-xs text-neutral-500 uppercase tracking-wide mb-2">Zakres</p>
+                        <p class="text-sm font-semibold text-black">UX / Redesign</p>
+                    </div>
+                    <div class="counter-box bg-white rounded-2xl border border-neutral-200 p-6 text-center hover:shadow-md transition-shadow">
+                        <p class="text-xs text-neutral-500 uppercase tracking-wide mb-2">Strona</p>
+                        <p class="text-sm font-semibold text-black">Cennik</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROBLEM -->
+        <section class="px-6 pb-24 border-t border-neutral-200 pt-24 bg-neutral-50">
+            <div class="w-full max-w-[800px] mx-auto">
+                <span class="inline-block text-xs font-semibold text-rose-600 tracking-widest uppercase mb-4">Problem</span>
+                <h2 class="text-2xl sm:text-3xl font-semibold text-black tracking-tight mb-6">
+                    24 000 pikseli w dół, żeby znaleźć jedną cenę
+                </h2>
+                <div class="text-neutral-600 leading-relaxed space-y-4 text-sm">
+                    <p>
+                        Cennik gabinetu medycyny estetycznej to nie prosta lista. W przypadku drgil.pl to kilkanaście kategorii zabiegów, każda z wieloma pozycjami i wariantami cenowymi. W starej wersji strony wszystkie te dane były widoczne od razu po wejściu: jedna ciągła tabela bez żadnego podziału na sekcje.
+                    </p>
+                    <p>
+                        Efekt był łatwy do zmierzenia. Strona cennika miała ponad 24 000 pikseli wysokości. Ktoś szukający konkretnego zabiegu musiał przewinąć całą stronę, żeby zorientować się co jest w środku, a potem wracać do góry w poszukiwaniu właściwej sekcji. Na telefonie, gdzie większość użytkowników przeglądała stronę, oznaczało to kilkadziesiąt ruchów palcem tylko po to, żeby znaleźć jedną pozycję w cenniku.
+                    </p>
+                    <p>
+                        Długa strona to też problem z pierwszym wrażeniem. Użytkownik, który nie widzi końca listy, ma mniej powodów, żeby zostać i szukać dalej.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ROZWIĄZANIE -->
+        <section class="px-6 py-24 bg-white border-t border-neutral-200">
+            <div class="w-full max-w-[1200px] mx-auto">
+
+                <div class="text-center mb-16">
+                    <span class="inline-block text-xs font-semibold text-rose-600 tracking-widest uppercase mb-4">Rozwiązanie</span>
+                    <h2 class="text-2xl sm:text-3xl font-semibold text-black tracking-tight">
+                        Accordion zamiast jednej długiej listy
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                    <div class="group p-8 rounded-2xl border border-neutral-200 bg-white hover:border-neutral-300 hover:shadow-xl transition-all duration-500 text-center">
+                        <div class="w-14 h-14 rounded-2xl bg-rose-50 border border-rose-100 flex items-center justify-center text-rose-600 mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-base font-semibold text-black mb-3">Pełna lista kategorii na starcie</h3>
+                        <p class="text-sm text-neutral-600 leading-relaxed">
+                            Po wejściu na stronę użytkownik widzi wyłącznie nazwy kategorii zabiegów. Żadnego przewijania, żadnego zgadywania co jest na dole. Pełny przegląd oferty w jednym miejscu.
+                        </p>
+                    </div>
+
+                    <div class="group p-8 rounded-2xl border border-neutral-200 bg-white hover:border-neutral-300 hover:shadow-xl transition-all duration-500 text-center">
+                        <div class="w-14 h-14 rounded-2xl bg-rose-50 border border-rose-100 flex items-center justify-center text-rose-600 mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-base font-semibold text-black mb-3">Kliknięcie rozwija tylko wybraną sekcję</h3>
+                        <p class="text-sm text-neutral-600 leading-relaxed">
+                            Zainteresowany konkretnym zabiegiem klika w jego kategorię. Tabela z cenami rozwija się tylko dla tej jednej sekcji. Reszta pozostaje zwinięta i nie przeszkadza.
+                        </p>
+                    </div>
+
+                    <div class="group p-8 rounded-2xl border border-neutral-200 bg-white hover:border-neutral-300 hover:shadow-xl transition-all duration-500 text-center">
+                        <div class="w-14 h-14 rounded-2xl bg-rose-50 border border-rose-100 flex items-center justify-center text-rose-600 mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12" y2="18"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-base font-semibold text-black mb-3">Naturalne na telefonie</h3>
+                        <p class="text-sm text-neutral-600 leading-relaxed">
+                            Na urządzeniach mobilnych zmiana robi największą różnicę. Zamiast kilkudziesięciu scrolli jedno dotknięcie kategorii pokazuje dokładnie to, czego szuka użytkownik.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- EFEKT -->
+        <section class="px-6 py-24 bg-neutral-50 border-t border-neutral-200">
+            <div class="w-full max-w-[800px] mx-auto">
+                <span class="inline-block text-xs font-semibold text-rose-600 tracking-widest uppercase mb-4">Efekt</span>
+                <h2 class="text-2xl sm:text-3xl font-semibold text-black tracking-tight mb-6">
+                    Ta sama treść, zupełnie inne doświadczenie
+                </h2>
+                <div class="text-neutral-600 leading-relaxed space-y-4 text-sm">
+                    <p>
+                        Żadna cena nie zmieniła się, żaden zabieg nie zniknął z oferty. Zmienił się tylko sposób prezentacji i to wystarczyło. Strona cennika, która wcześniej wymagała cierpliwości, teraz pozwala znaleźć potrzebną informację w kilka sekund.
+                    </p>
+                    <p>
+                        Efekt jest szczególnie zauważalny na telefonie. Strona, która miała ponad 24 000 pikseli wysokości, po zwinięciu kategorii wyświetla pełną listę zabiegów na jednym ekranie. Użytkownik od razu widzi całą strukturę oferty i sam decyduje, co go interesuje.
+                    </p>
+                </div>
+
+                <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-5">
+                    <div class="bg-white rounded-2xl border border-neutral-200 p-6 text-center">
+                        <p class="text-3xl font-semibold text-rose-600 mb-1">24k px</p>
+                        <p class="text-xs text-neutral-500">wysokość strony przed zmianą</p>
+                    </div>
+                    <div class="bg-white rounded-2xl border border-neutral-200 p-6 text-center">
+                        <p class="text-3xl font-semibold text-rose-600 mb-1">1 klik</p>
+                        <p class="text-xs text-neutral-500">żeby otworzyć dowolną kategorię</p>
+                    </div>
+                    <div class="bg-white rounded-2xl border border-neutral-200 p-6 text-center">
+                        <p class="text-3xl font-semibold text-rose-600 mb-1">Mobile</p>
+                        <p class="text-xs text-neutral-500">największy zysk na urządzeniach mobilnych</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="py-24 px-6 bg-white border-t border-neutral-200">
+            <div class="w-full max-w-[740px] mx-auto text-center">
+                <span class="inline-block text-xs font-semibold text-rose-600 tracking-widest uppercase mb-4">Kolejny krok</span>
+                <h2 class="text-3xl lg:text-4xl font-semibold text-black tracking-tight mb-5">Masz podobny problem na swojej stronie?</h2>
+                <p class="text-neutral-600 leading-relaxed mb-8 max-w-lg mx-auto text-sm">
+                    Czasem jedna zmiana w interfejsie robi większą różnicę niż pełen redesign. Chętnie przyjrzę się Twojej stronie i zaproponuję konkretne usprawnienia.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="/#kontakt" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-rose-600 text-white text-xs font-semibold tracking-wide transition-all duration-300 hover:bg-rose-700 hover:scale-[0.98] active:scale-95 shadow-lg shadow-rose-500/25">
+                        Omówmy Twój projekt
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-7-7l7 7-7 7" /></svg>
+                    </a>
+                    <a href="realizacje.html" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg border border-neutral-300 bg-white text-black text-xs font-medium transition-all duration-300 hover:border-rose-200 hover:text-rose-600">
+                        ← Wróć do realizacji
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="border-t border-neutral-200 bg-white">
+        <div class="w-full max-w-[1200px] mx-auto px-6 py-16">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+
+                <!-- Kolumna 1: Marka -->
+                <div class="flex flex-col gap-6">
+                    <a href="/" class="flex items-center">
+                        <img src="img/logo.png" alt="WebCanvas" class="h-8 w-auto">
+                    </a>
+                    <p class="text-sm text-neutral-500 leading-relaxed">
+                        Projektujemy i wdrażamy strony internetowe, sklepy e-commerce oraz kampanie reklamowe dla firm z całej Polski.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <a href="https://www.facebook.com/webcanvaspl" target="_blank" rel="noopener noreferrer" aria-label="Facebook WebCanvas" class="text-neutral-400 hover:text-rose-600 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.988h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12"></path></svg>
+                        </a>
+                        <a href="https://www.instagram.com/_webcanvas/" target="_blank" rel="noopener noreferrer" aria-label="Instagram WebCanvas" class="text-neutral-400 hover:text-rose-600 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M7.03.084c-1.277.06-2.149.264-2.91.563a5.9 5.9 0 0 0-2.124 1.388a5.9 5.9 0 0 0-1.38 2.127C.321 4.926.12 5.8.064 7.076s-.069 1.688-.063 4.947s.021 3.667.083 4.947c.061 1.277.264 2.149.563 2.911c.308.789.72 1.457 1.388 2.123a5.9 5.9 0 0 0 2.129 1.38c.763.295 1.636.496 2.913.552c1.278.056 1.689.069 4.947.063s3.668-.021 4.947-.082c1.28-.06 2.147-.265 2.91-.563a5.9 5.9 0 0 0 2.123-1.388a5.9 5.9 0 0 0 1.38-2.129c.295-.763.496-1.636.551-2.912c.056-1.28.07-1.69.063-4.948c-.006-3.258-.02-3.667-.081-4.947c-.06-1.28-.264-2.148-.564-2.911a5.9 5.9 0 0 0-1.387-2.123a5.9 5.9 0 0 0-2.128-1.38c-.764-.294-1.636-.496-2.914-.55C15.647.009 15.236-.006 11.977 0S8.31.021 7.03.084m.14 21.693c-1.17-.05-1.805-.245-2.228-.408a3.7 3.7 0 0 1-1.382-.895a3.7 3.7 0 0 1-.9-1.378c-.165-.423-.363-1.058-.417-2.228c-.06-1.264-.072-1.644-.08-4.848c-.006-3.204.006-3.583.061-4.848c.05-1.169.246-1.805.408-2.228c.216-.561.477-.96.895-1.382a3.7 3.7 0 0 1 1.379-.9c.423-.165 1.057-.361 2.227-.417c1.265-.06 1.644-.072 4.848-.08c3.203-.006 3.583.006 4.85.062c1.168.05 1.804.244 2.227.408c.56.216.96.475 1.382.895s.681.817.9 1.378c.165.422.362 1.056.417 2.227c.06 1.265.074 1.645.08 4.848c.005 3.203-.006 3.583-.061 4.848c-.051 1.17-.245 1.805-.408 2.23c-.216.56-.477.96-.896 1.38a3.7 3.7 0 0 1-1.378.9c-.422.165-1.058.362-2.226.418c-1.266.06-1.645.072-4.85.079s-3.582-.006-4.848-.06m9.783-16.192a1.44 1.44 0 1 0 1.437-1.442a1.44 1.44 0 0 0-1.437 1.442M5.839 12.012a6.161 6.161 0 1 0 12.323-.024a6.162 6.162 0 0 0-12.323.024M8 12.008A4 4 0 1 1 12.008 16A4 4 0 0 1 8 12.008"></path></svg>
+                        </a>
+                        <a href="https://share.google/e6KXzabuprV7YYIPx" target="_blank" rel="noopener noreferrer" aria-label="Wizytówka Google WebCanvas" class="text-neutral-400 hover:text-rose-600 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Kolumna 2: Nawigacja -->
+                <div class="flex flex-col gap-4">
+                    <p class="text-xs font-semibold text-black uppercase tracking-widest">Nawigacja</p>
+                    <nav class="flex flex-col gap-3">
+                        <a href="/#hero" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Start</a>
+                        <a href="/#uslugi" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Usługi</a>
+                        <a href="realizacje.html" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Realizacje</a>
+                        <a href="blog.html" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Blog</a>
+                        <a href="/#cennik" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Cennik</a>
+                        <a href="/#kontakt" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Kontakt</a>
+                    </nav>
+                </div>
+
+                <!-- Kolumna 3: Usługi -->
+                <div class="flex flex-col gap-4">
+                    <p class="text-xs font-semibold text-black uppercase tracking-widest">Usługi</p>
+                    <nav class="flex flex-col gap-3">
+                        <a href="/#uslugi" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Strony internetowe</a>
+                        <a href="/#uslugi" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Sklepy e-commerce</a>
+                        <a href="/#uslugi" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Pozycjonowanie SEO</a>
+                        <a href="/#uslugi" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Kampanie Google Ads</a>
+                        <a href="/#uslugi" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Kampanie Meta Ads</a>
+                    </nav>
+                </div>
+
+                <!-- Kolumna 4: Lokalizacje -->
+                <div class="flex flex-col gap-4">
+                    <p class="text-xs font-semibold text-black uppercase tracking-widest">Lokalizacje</p>
+                    <nav class="flex flex-col gap-3">
+                        <a href="strony-internetowe-konin.html" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Strony internetowe Konin</a>
+                        <a href="strony-internetowe-turek.html" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Strony internetowe Turek</a>
+                        <a href="strony-internetowe-kolo.html" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Strony internetowe Koło</a>
+                        <a href="strony-internetowe-slupca.html" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Strony internetowe Słupca</a>
+                        <a href="strony-internetowe-poznan.html" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Strony internetowe Poznań</a>
+                    </nav>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Dolny pasek -->
+        <div class="border-t border-neutral-200">
+            <div class="w-full max-w-[1200px] mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+                <p class="text-xs text-neutral-400">© 2026 WebCanvas. Wszelkie prawa zastrzeżone.</p>
+                <a href="polityka-prywatnosci.html" class="text-xs text-neutral-400 hover:text-rose-600 transition-colors">Polityka prywatności</a>
+            </div>
+        </div>
+    </footer>
+
+    </main>
+
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const iconOpen = document.getElementById('hamburger-icon-open');
+        const iconClose = document.getElementById('hamburger-icon-close');
+
+        function toggleMobileMenu() {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            if (isOpen) { closeMobileMenu(); }
+            else {
+                mobileMenu.classList.remove('hidden');
+                iconOpen.classList.add('hidden');
+                iconClose.classList.remove('hidden');
+                hamburgerBtn.setAttribute('aria-expanded', 'true');
+            }
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.add('hidden');
+            iconOpen.classList.remove('hidden');
+            iconClose.classList.add('hidden');
+            hamburgerBtn.setAttribute('aria-expanded', 'false');
+        }
+
+        document.addEventListener('click', function (e) {
+            if (!mobileMenu.classList.contains('hidden') &&
+                !mobileMenu.contains(e.target) &&
+                !hamburgerBtn.contains(e.target)) {
+                closeMobileMenu();
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -74,7 +74,7 @@
   </url>
   <url>
     <loc>https://web-canvas.pl/blog.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-08-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -131,6 +131,12 @@
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://web-canvas.pl/blog-strona-internetowa-dla-malej-firmy.html</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://web-canvas.pl/blog-google-moja-firma-wizytowka.html</loc>

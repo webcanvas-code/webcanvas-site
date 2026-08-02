@@ -40,29 +40,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email_content .= "Wiadomość:\n$message\n\n";
 
     } elseif ($form_type === 'quote') {
-        // --- LOGIKA FORMULARZA WYCENY (kalkulator) ---
-        $name        = strip_tags(trim($_POST['name'] ?? ''));
-        $project_type = strip_tags(trim($_POST['calc_project_type'] ?? 'Nie wybrano'));
-        $scope       = strip_tags(trim($_POST['calc_scope'] ?? ''));
-        $addons      = strip_tags(trim($_POST['calc_addons'] ?? 'Brak'));
-        $urgency     = strip_tags(trim($_POST['calc_urgency'] ?? ''));
-        $budget      = strip_tags(trim($_POST['calc_budget'] ?? ''));
-        $phone       = strip_tags(trim($_POST['phone'] ?? ''));
-        $message     = strip_tags(trim($_POST['message'] ?? ''));
+        // --- LOGIKA FORMULARZA WYCENY ---
+        $project_type = $_POST['project_type'] ?? 'Nie wybrano';
+        $budget = $_POST['budget'] ?? 'Nie wybrano';
+        $feature_list = $_POST['features'] ?? [];
+        $features = is_array($feature_list) ? implode(", ", $feature_list) : 'Brak';
+        
+        // Mapowanie wartości budżetu na czytelne etykiety
+        $budget_labels = [
+            'low' => '2,000 - 4,000 PLN',
+            'mid' => '4,000 - 9,000 PLN',
+            'custom' => 'Pakiet godzinowy'
+        ];
+        $budget_display = $budget_labels[$budget] ?? $budget;
 
         $subject = "Zapytanie o wycenę ze strony WebCanvas";
-
-        $email_content  = "Otrzymałeś nowe zapytanie o wycenę z kalkulatora:\n\n";
-        $email_content .= "Imię / firma: $name\n";
-        $email_content .= "Email: $from\n";
-        if (!empty($phone)) $email_content .= "Telefon: $phone\n";
-        $email_content .= "\n--- Szczegóły projektu ---\n";
+        
+        $email_content = "Otrzymałeś nowe zapytanie o wycenę:\n\n";
         $email_content .= "Rodzaj projektu: $project_type\n";
-        if (!empty($scope))   $email_content .= "Zakres: $scope\n";
-        if (!empty($addons))  $email_content .= "Dodatki: $addons\n";
-        if (!empty($urgency)) $email_content .= "Termin: $urgency\n";
-        if (!empty($budget))  $email_content .= "Budżet: $budget\n";
-        if (!empty($message)) $email_content .= "\nDodatkowe informacje:\n$message\n";
+        $email_content .= "Budżet: $budget_display\n";
+        $email_content .= "Dodatkowe funkcje: $features\n";
+        $email_content .= "Email klienta: $from\n\n";
     }
 
     // Jeśli są błędy, zwróć je

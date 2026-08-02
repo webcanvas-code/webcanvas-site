@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $scope       = strip_tags(trim($_POST['calc_scope'] ?? ''));
         $addons      = strip_tags(trim($_POST['calc_addons'] ?? 'Brak'));
         $urgency     = strip_tags(trim($_POST['calc_urgency'] ?? ''));
-        $price       = strip_tags(trim($_POST['calc_price_estimate'] ?? ''));
+        $budget      = strip_tags(trim($_POST['calc_budget'] ?? ''));
         $phone       = strip_tags(trim($_POST['phone'] ?? ''));
         $message     = strip_tags(trim($_POST['message'] ?? ''));
 
@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!empty($scope))   $email_content .= "Zakres: $scope\n";
         if (!empty($addons))  $email_content .= "Dodatki: $addons\n";
         if (!empty($urgency)) $email_content .= "Termin: $urgency\n";
-        if (!empty($price))   $email_content .= "Wycena orientacyjna: $price\n";
+        if (!empty($budget))  $email_content .= "Budżet: $budget\n";
         if (!empty($message)) $email_content .= "\nDodatkowe informacje:\n$message\n";
     }
 

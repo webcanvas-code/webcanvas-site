@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://web-canvas.pl/</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -74,15 +74,21 @@
   </url>
   <url>
     <loc>https://web-canvas.pl/blog.html</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-10-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://web-canvas.pl/blog-ile-kosztuje-strona-internetowa.html</loc>
-    <lastmod>2026-07-12</lastmod>
+    <loc>https://web-canvas.pl/blog-jak-promowac-firme-w-internecie-konin.html</loc>
+    <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://web-canvas.pl/blog-ile-kosztuje-strona-internetowa.html</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://web-canvas.pl/blog-stara-strona-internetowa-sygnaly.html</loc>

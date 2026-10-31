@@ -1,3 +1,28 @@
+DirectoryIndex index.html
+Options -Indexes
+
+# Security: the site is static, the only PHP script is contact.php.
+# Any other PHP file (e.g. a webshell dropped on the server) is refused.
+<FilesMatch "\.(php\d?|phtml|phar|inc)$">
+    Require all denied
+</FilesMatch>
+<Files "contact.php">
+    Require all granted
+</Files>
+
+# Security: block backups, dumps and config leftovers
+<FilesMatch "\.(bak|bak_.*|old|orig|save|swp|sql|log|ini|env|sh|zip|tar|gz)$">
+    Require all denied
+</FilesMatch>
+
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+    Header always set Strict-Transport-Security "max-age=31536000"
+</IfModule>
+
 RewriteEngine On
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

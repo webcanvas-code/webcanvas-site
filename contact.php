@@ -27,7 +27,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($form_type === 'contact') {
         // --- LOGIKA FORMULARZA KONTAKTOWEGO ---
-        $name = strip_tags(trim($_POST["name"] ?? ''));
+        // Usuń znaki nowej linii, bo imię trafia do tematu maila (header injection)
+        $name = mb_substr(str_replace(["\r", "\n"], ' ', strip_tags(trim($_POST["name"] ?? ''))), 0, 100);
         $message = trim($_POST["message"] ?? '');
 
         if (empty($name)) $errors[] = "Pole Imię i Nazwisko jest wymagane.";

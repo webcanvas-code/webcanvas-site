@@ -24,6 +24,12 @@ Options -Indexes
 </IfModule>
 
 RewriteEngine On
+
+# Security: the only endpoint that accepts form data is contact.php
+RewriteCond %{REQUEST_METHOD} !^(GET|HEAD|OPTIONS)$
+RewriteCond %{REQUEST_URI} !^/contact\.php$
+RewriteRule ^ - [F]
+
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 

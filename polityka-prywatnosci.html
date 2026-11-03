@@ -83,13 +83,27 @@
                     </ul>
                 </section>
 
-                <section>
+                <section id="cookies">
                     <h2 class="text-xl font-semibold text-black mb-4">4. Pliki Cookies</h2>
-                    <p>Serwis korzysta z plików cookies. Są to niewielkie pliki tekstowe wysyłane przez serwer www i
-                        przechowywane przez oprogramowanie komputera przeglądarki. Kiedy przeglądarka ponownie połączy
-                        się ze stroną, witryna rozpoznaje rodzaj urządzenia, z którego łączy się użytkownik. Parametry
-                        pozwalają na odczytanie informacji w nich zawartych jedynie serwerowi, który je utworzył.
-                        Cookies ułatwiają więc korzystanie z wcześniej odwiedzonych witryn.</p>
+                    <p>Serwis korzysta z plików cookies – niewielkich plików tekstowych zapisywanych w przeglądarce
+                        użytkownika. Stosujemy je w następujących celach:</p>
+                    <ul class="list-disc pl-5 mt-2 space-y-1">
+                        <li><strong>Niezbędne</strong> – zapamiętanie Twojej decyzji dotyczącej cookies. Nie wymagają
+                            zgody.</li>
+                        <li><strong>Analityczne</strong> – Google Analytics 4 (dostawca: Google Ireland Ltd.) uruchamiany
+                            przez Google Tag Manager. Pozwala nam zrozumieć, jak użytkownicy korzystają ze strony
+                            (np. odwiedzane podstrony, czas wizyty). Zapisywane wyłącznie po wyrażeniu zgody.</li>
+                        <li><strong>Marketingowe</strong> – pomiar skuteczności kampanii reklamowych Google. Zapisywane
+                            wyłącznie po wyrażeniu zgody.</li>
+                    </ul>
+                    <p class="mt-4">Przy pierwszej wizycie wyświetlamy baner, w którym możesz zaakceptować lub odrzucić
+                        cookies analityczne i marketingowe. Do czasu wyrażenia zgody korzystamy z trybu zgody Google
+                        (Consent Mode v2) – w tym trybie Google nie zapisuje cookies analitycznych ani reklamowych na
+                        Twoim urządzeniu. Zgodę możesz w każdej chwili wycofać lub zmienić, klikając
+                        <button type="button" onclick="window.wcCookies &amp;&amp; window.wcCookies.open()"
+                            class="text-rose-600 hover:underline font-medium">Ustawienia cookies</button>
+                        (link dostępny także w stopce każdej podstrony). Cookies możesz również usunąć lub zablokować
+                        w ustawieniach przeglądarki.</p>
                 </section>
 
                 <section>
@@ -191,6 +205,7 @@
         </div>
     </footer>
 
+    <script src="js/cookies.js?v=1" defer></script>
 </body>
 
 </html>

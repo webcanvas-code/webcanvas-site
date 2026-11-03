@@ -1,6 +1,31 @@
 <html lang="pl">
 
 <head>
+    <!-- Google Consent Mode v2: domyślnie brak zgody (musi być przed GTM) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            analytics_storage: 'denied',
+            functionality_storage: 'granted',
+            security_storage: 'granted',
+            wait_for_update: 500
+        });
+        gtag('set', 'ads_data_redaction', true);
+        try {
+            if (localStorage.getItem('wc_consent') === 'granted') {
+                gtag('consent', 'update', {
+                    ad_storage: 'granted',
+                    ad_user_data: 'granted',
+                    ad_personalization: 'granted',
+                    analytics_storage: 'granted'
+                });
+            }
+        } catch (e) { }
+    </script>
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
             w[l] = w[l] || []; w[l].push({
@@ -11,15 +36,6 @@
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-K2QFBR7K');</script>
     <!-- End Google Tag Manager -->
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1GEXCS5NJ9"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-1GEXCS5NJ9');
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tworzenie stron internetowych dla firm | WebCanvas</title>
@@ -2204,58 +2220,7 @@
     </script>
 
 
-    <!-- Cookie Banner -->
-    <div id="cookie-banner"
-        class="fixed bottom-0 left-0 right-0 bg-white border-t border-neutral-200 p-4 md:p-6 z-[200] transform translate-y-full transition-transform duration-300 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]"
-        style="display: none;">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-            <div class="text-sm text-neutral-600 text-center md:text-left">
-                <p>Ta strona używa plików cookies w celu zapewnienia najlepszej jakości usług. Korzystając ze strony,
-                    zgadzasz się na ich użycie. <a href="polityka-prywatnosci.html"
-                        class="text-rose-600 hover:underline font-medium">Dowiedz się więcej</a></p>
-            </div>
-            <div class="flex gap-3">
-                <button onclick="rejectCookies()"
-                    class="px-6 py-2 rounded-lg text-sm font-medium border border-neutral-200 text-neutral-600 hover:bg-neutral-50 hover:text-black transition-colors">Odrzuć</button>
-                <button onclick="acceptCookies()"
-                    class="px-6 py-2 rounded-lg text-sm font-medium bg-rose-600 text-white hover:bg-rose-700 shadow-lg shadow-rose-500/20 transition-colors">Akceptuję</button>
-            </div>
-        </div>
-    </div>
-
     <script>
-        // Cookie Banner Logic
-        const cookieBanner = document.getElementById('cookie-banner');
-
-        function showCookieBanner() {
-            if (!localStorage.getItem('cookieConsent')) {
-                cookieBanner.style.display = 'block';
-                // Force reflow and show
-                setTimeout(() => {
-                    cookieBanner.classList.remove('translate-y-full');
-                }, 50);
-            }
-        }
-
-        function acceptCookies() {
-            localStorage.setItem('cookieConsent', 'accepted');
-            hideCookieBanner();
-        }
-
-        function rejectCookies() {
-            localStorage.setItem('cookieConsent', 'rejected');
-            hideCookieBanner();
-        }
-
-        function hideCookieBanner() {
-            cookieBanner.classList.add('translate-y-full');
-            setTimeout(() => {
-                cookieBanner.style.display = 'none';
-            }, 300);
-        }
-
-        window.addEventListener('load', showCookieBanner);
-
         // Contact Form Logic
         const contactForm = document.getElementById('contact-form');
         const formMessage = document.getElementById('form-message');
@@ -2375,6 +2340,7 @@
         }
     </script>
 
+    <script src="js/cookies.js?v=1" defer></script>
 </body>
 
 </html>

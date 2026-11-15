@@ -15,6 +15,11 @@ Adres: Biele 126, 62-610 Sompolno
 - [Strony internetowe Turek](https://web-canvas.pl/strony-internetowe-turek.html): Tworzenie stron www dla firm z Turku
 - [Strony internetowe Koło](https://web-canvas.pl/strony-internetowe-kolo.html): Tworzenie stron www dla firm z Koła
 - [Strony internetowe Słupca](https://web-canvas.pl/strony-internetowe-slupca.html): Tworzenie stron www dla firm ze Słupcy
+- [Tworzenie stron internetowych](https://web-canvas.pl/tworzenie-stron-internetowych.html): Oferta projektowania i wdrażania stron www dla firm
+- [Pozycjonowanie SEO](https://web-canvas.pl/pozycjonowanie-seo.html): Pozycjonowanie stron i SEO lokalne dla firm z Wielkopolski
+- [Kampanie Google Ads](https://web-canvas.pl/kampanie-google-ads.html): Prowadzenie kampanii Google Ads, także z kierowaniem lokalnym
+- [Kampanie Meta Ads](https://web-canvas.pl/kampanie-meta-ads.html): Reklamy na Facebooku i Instagramie dla lokalnych firm
+- [Program partnerski](https://web-canvas.pl/program-partnerski.html): Współpraca z biurami rachunkowymi
 
 ## Realizacje
 
@@ -24,6 +29,8 @@ Adres: Biele 126, 62-610 Sompolno
 - [Case study Opti Group](https://web-canvas.pl/case-study-opti-group.html): Strona dla firmy doradztwa finansowego dla MŚP
 - [Case study Patrycja Górska Psychoterapia](https://web-canvas.pl/case-study-patrycja-gorska.html): Strona gabinetu psychoterapeutycznego w Gdańsku
 - [Case study Centrum Szkoleń Kierowców](https://web-canvas.pl/case-study-szkolenia-kierowcy.html): Strona centrum szkoleń z kursami Kod 95
+- [Case study Meritoros](https://web-canvas.pl/case-study-meritoros.html): Wielojęzyczna strona dla firmy księgowej i BPO z kalkulatorami wyceny i sekcją dla inwestorów
+- [Case study drgil.pl](https://web-canvas.pl/case-study-drgil.html): Redesign cennika na stronie drgil.pl
 
 ## Blog
 
@@ -37,6 +44,23 @@ Adres: Biele 126, 62-610 Sompolno
 - [Czy warto mieć stronę internetową?](https://web-canvas.pl/blog-strona-internetowa-inwestycja-czy-koszt.html): Analiza zwrotu z inwestycji w stronę www
 - [5 sygnałów że strona wymaga przebudowy](https://web-canvas.pl/blog-stara-strona-internetowa-sygnaly.html): Kiedy czas na redesign strony
 - [Jak wybrać agencję do tworzenia stron?](https://web-canvas.pl/blog-jak-wybrac-agencje-do-tworzenia-stron.html): Kryteria i czerwone flagi przy wyborze wykonawcy
+- [Firma w kilku miastach](https://web-canvas.pl/blog-firma-w-kilku-miastach-konin-turek-kolo-slupca.html): Jak zdobywać klientów z Konina, Turku, Koła i Słupcy bez ryzyka kar od Google
+- [Jak promować firmę w internecie w Koninie](https://web-canvas.pl/blog-jak-promowac-firme-w-internecie-konin.html): Marketing internetowy dla firm z Konina, Turku, Koła i okolic
+- [Google Moja Firma krok po kroku](https://web-canvas.pl/blog-google-moja-firma-wizytowka.html): Jak uzupełnić wizytówkę Google, żeby być wyżej w wynikach lokalnych
+- [Pozycjonowanie lokalne w Poznaniu](https://web-canvas.pl/blog-pozycjonowanie-lokalne-poznan-dzielnice.html): Frazy z dzielnicą i gminami powiatu poznańskiego dla małych firm
+- [Strona dla firmy budowlanej i OZE](https://web-canvas.pl/blog-strona-internetowa-firma-budowlana-oze-konin.html): Strona firmy budowlanej, fotowoltaicznej i od pomp ciepła z regionu konińskiego
+- [Strona dla obiektu noclegowego nad Jeziorem Powidzkim](https://web-canvas.pl/blog-strona-internetowa-obiekt-noclegowy-jezioro-powidzkie.html): Rezerwacje bezpośrednie dla agroturystyk i domków w okolicach Słupcy
+- [Strona internetowa dla małej firmy](https://web-canvas.pl/blog-strona-internetowa-dla-malej-firmy.html): Przewodnik od A do Z dla właścicieli małych firm
+- [Ile trwa stworzenie strony?](https://web-canvas.pl/blog-ile-trwa-tworzenie-strony-internetowej.html): Realny harmonogram projektu strony
+- [Jak przygotować się do tworzenia strony?](https://web-canvas.pl/blog-jak-przygotowac-sie-do-tworzenia-strony.html): Lista kontrolna przed rozmową z agencją
+- [Rodzaje stron internetowych](https://web-canvas.pl/blog-rodzaje-stron-internetowych.html): Wizytówka, landing page, sklep czy strona firmowa
+- [Strona samemu czy przez agencję?](https://web-canvas.pl/blog-strona-samemu-czy-agencja.html): Kiedy Wix wystarczy, a kiedy lepiej zlecić projekt
+- [Najczęstsze błędy przy tworzeniu strony](https://web-canvas.pl/blog-bledy-przy-tworzeniu-strony.html): Jak nie tracić pieniędzy i klientów od początku
+- [Treści na stronę internetową](https://web-canvas.pl/blog-tresci-na-strone-internetowa.html): Jak pisać teksty, które przyciągają klientów
+- [Responsywna strona internetowa](https://web-canvas.pl/blog-responsywna-strona-internetowa.html): Dlaczego wygląd na telefonie wpływa na SEO i konwersję
+- [Szybkość strony internetowej](https://web-canvas.pl/blog-szybkosc-strony-internetowej.html): Wpływ czasu ładowania na SEO i pozyskiwanie klientów
+- [Jak mierzyć skuteczność strony?](https://web-canvas.pl/blog-jak-mierzyc-skutecznosc-strony-internetowej.html): Google Analytics 4, Search Console i konwersje
+- [Utrzymanie strony internetowej](https://web-canvas.pl/blog-utrzymanie-strony-internetowej.html): Jak dbać o stronę po uruchomieniu
 
 ## Optional
 

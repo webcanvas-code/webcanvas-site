@@ -55,19 +55,52 @@
     <meta property="og:image" content="https://web-canvas.pl/img/og-image.png">
 
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Strony internetowe Słupca",
-      "description": "Tworzenie stron internetowych dla firm ze Słupcy i okolic. Nowoczesne strony www, sklepy online, szybkie wdrożenia.",
-      "url": "https://web-canvas.pl/strony-internetowe-slupca.html",
-      "about": {
-        "@type": "Service",
-        "name": "Projektowanie stron internetowych",
-        "areaServed": { "@type": "City", "name": "Słupca" },
-        "provider": { "@type": "ProfessionalService", "name": "WebCanvas", "url": "https://web-canvas.pl/", "priceRange": "od 3000 PLN", "address": { "@type": "PostalAddress", "streetAddress": "Biele 126", "addressLocality": "Sompolno", "postalCode": "62-610", "addressCountry": "PL" } }
-      }
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Strony internetowe Słupca",
+  "description": "Projektujemy i wdrażamy strony internetowe dla firm ze Słupcy i powiatu słupeckiego, od warsztatów i firm budowlanych po obiekty noclegowe nad Jeziorem Powidzkim. Na pierwsze spotkanie przyjeżdżamy do Ciebie.",
+  "url": "https://web-canvas.pl/strony-internetowe-slupca.html",
+  "about": {
+    "@type": "Service",
+    "name": "Projektowanie stron internetowych",
+    "serviceType": "Tworzenie stron internetowych",
+    "areaServed": {
+      "@type": "City",
+      "name": "Słupca"
+    },
+    "provider": {
+      "@type": "ProfessionalService",
+      "@id": "https://web-canvas.pl/#business",
+      "name": "WebCanvas",
+      "url": "https://web-canvas.pl/",
+      "telephone": "+48739043596",
+      "email": "kontakt@web-canvas.pl",
+      "priceRange": "od 3000 PLN",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Biele 126",
+        "addressLocality": "Sompolno",
+        "postalCode": "62-610",
+        "addressCountry": "PL"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      ]
     }
+  }
+}
     </script>
 
     <script type="application/ld+json">
@@ -82,36 +115,44 @@
     </script>
 
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
     {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Czy muszę być w Słupcy, żeby z Wami pracować?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Nie. Cały proces od briefu, przez akceptację projektu, po wdrożenie prowadzimy zdalnie. Lokalizacja nie wpływa na czas ani jakość realizacji."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Ile trwa realizacja strony internetowej?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Zależy od zakresu. Prosta strona wizytówka to zwykle kilka tygodni, sklep internetowy czy aplikacja dedykowana wymaga więcej czasu. Dokładny harmonogram ustalamy po briefie."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Czy zajmujecie się też hostingiem i domeną?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Tak. Pomagamy skonfigurować domenę, hosting i certyfikat SSL, a po wdrożeniu oferujemy opiekę powdrożeniową, żeby strona działała bez przestojów."
-          }
-        }
-      ]
+      "@type": "Question",
+      "name": "Czy możemy spotkać się osobiście w Słupcy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tak. Do Słupcy dojeżdżamy z Sompolna w około godzinę, więc pierwsze spotkanie możemy zrobić w Twojej firmie lub obiekcie. Kolejne etapy, czyli akceptację projektu i poprawki, zwykle prowadzimy online."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Prowadzę obiekt noclegowy nad Jeziorem Powidzkim. Czy zrobicie dla mnie stronę?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tak. Dla obiektów turystycznych najważniejsze są zdjęcia, opis okolicy, cennik sezonowy i szybki kontakt. Formularz zapytania o termin albo połączenie z systemem rezerwacji, którego już używasz, ustalamy na etapie briefu."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ile trwa realizacja strony internetowej?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Zależy od zakresu. Prosta strona wizytówka to zwykle kilka tygodni, sklep internetowy czy aplikacja dedykowana wymaga więcej czasu. Dokładny harmonogram ustalamy po briefie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Czy zajmujecie się też hostingiem i domeną?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tak. Pomagamy skonfigurować domenę, hosting i certyfikat SSL, a po wdrożeniu oferujemy opiekę powdrożeniową, żeby strona działała bez przestojów."
+      }
     }
+  ]
+}
     </script>
 
     <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
@@ -314,9 +355,7 @@
 
                 <p class="fade-item text-base sm:text-lg text-neutral-600 leading-relaxed max-w-2xl mx-auto mb-10"
                     style="animation-delay:0.25s">
-                    Projektujemy i wdrażamy strony internetowe dla firm ze Słupcy i okolic. Od wizytówek po
-                    sklepy internetowe. Bez pośredników, bez podwykonawców. Jeden zespół odpowiedzialny za
-                    cały projekt od pierwszej rozmowy po wdrożenie.
+                    Projektujemy i wdrażamy strony internetowe dla firm ze Słupcy i powiatu słupeckiego, od warsztatów i firm budowlanych po obiekty noclegowe nad Jeziorem Powidzkim. Na pierwsze spotkanie przyjeżdżamy do Ciebie.
                 </p>
 
                 <div class="fade-item flex flex-wrap items-center justify-center gap-4"
@@ -340,237 +379,59 @@
 
         <!-- WHY LOCAL -->
         <section class="px-6 pb-24">
-            <div class="w-full max-w-[800px] mx-auto">
-                <div class="text-neutral-600 leading-relaxed space-y-4 text-sm bg-neutral-50 border border-neutral-200 rounded-2xl p-8 sm:p-10">
-                    <p>
-                        Firmy ze Słupcy i powiatu słupeckiego coraz częściej konkurują o klientów, którzy najpierw
-                        sprawdzają ofertę w telefonie, a dopiero potem dzwonią albo wpadają do salonu. Strona
-                        internetowa, która ładuje się wolno albo źle wygląda na komórce, kosztuje realne zapytania,
-                        niezależnie od tego, jak dobra jest sama oferta.
-                    </p>
-                    <p>
-                        Pracujemy zdalnie, co oznacza, że odległość od Słupcy do naszego biura nie ma żadnego
-                        znaczenia. Słupca leży około 40 km od Konina i obsługujemy klientów ze Słupcy i okolic,
-                        w tym z Konina i całej Wielkopolski. Każdy projekt zaczyna się od rozmowy o Twoim biznesie,
-                        nie od gotowego szablonu. Cały proces od briefu po wdrożenie prowadzimy online, więc
-                        lokalizacja nie wydłuża realizacji.
-                    </p>
-                    <p>
-                        Obsługujesz klientów ze Słupcy i z innych miast? Sprawdź, jak przygotować
-                        <a href="blog-firma-w-kilku-miastach-konin-turek-kolo-slupca.html" class="text-rose-600 hover:text-rose-700 underline decoration-rose-200">podstrony dla kilku miast bez ryzyka kar od Google</a>.
-                    </p>
+            <div class="w-full max-w-[900px] mx-auto">
+                <span class="inline-block text-xs font-semibold text-rose-600 tracking-widest uppercase mb-4">Lokalnie</span>
+                <h2 class="text-2xl sm:text-3xl font-semibold text-black tracking-tight mb-6">Strony internetowe dla firm ze Słupcy i okolic</h2>
+                <div class="text-neutral-600 leading-relaxed space-y-4 text-sm mb-10">
+                    <p>Powiat słupecki to dwa różne rynki. W samej Słupcy, Strzałkowie i Zagórowie działają głównie firmy usługowe, handlowe i transportowe, korzystające z bliskości autostrady A2. Nad Jeziorem Powidzkim i w Powidzkim Parku Krajobrazowym liczy się turystyka: noclegi, agroturystyka, wypożyczalnie sprzętu i gastronomia.</p>
+                    <p>Te dwa rynki potrzebują innych stron. Firma usługowa ze Słupcy potrzebuje jasnej oferty, obszaru działania i szybkiego kontaktu. Obiekt nad jeziorem potrzebuje dobrych zdjęć, informacji o dostępnych terminach i prostego formularza zapytania, bo turysta z Poznania czy Łodzi porównuje kilka miejsc naraz i wybiera to, które najszybciej odpowie na jego pytania.</p>
+                    <p>Jeśli prowadzisz firmę w Słupcy, a klientów masz też w Koninie czy Kole, przeczytaj, <a href="blog-firma-w-kilku-miastach-konin-turek-kolo-slupca.html" class="text-rose-600 hover:text-rose-700 underline decoration-rose-200">jak być widocznym w kilku miastach jednocześnie</a>. Podstawy lokalnej widoczności opisujemy w artykule o <a href="blog-pozycjonowanie-lokalne-dla-malych-firm.html" class="text-rose-600 hover:text-rose-700 underline decoration-rose-200">pozycjonowaniu lokalnym dla małych firm</a>.</p>
+                    <p>Prowadzisz domki, pensjonat lub agroturystykę? Przeczytaj, <a href="blog-strona-internetowa-obiekt-noclegowy-jezioro-powidzkie.html" class="text-rose-600 hover:text-rose-700 underline decoration-rose-200">jak zrobić stronę obiektu noclegowego nad Jeziorem Powidzkim</a>, która zbiera rezerwacje bez prowizji.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="p-6 rounded-2xl border border-neutral-200 bg-white">
+                        <div class="w-10 h-10 rounded-xl bg-rose-50 border border-rose-100 flex items-center justify-center text-rose-600 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14M6 17l1.5-5h9L18 17"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg>
+                        </div>
+                        <h3 class="text-sm font-semibold text-black mb-2">Spotkanie na miejscu</h3>
+                        <p class="text-sm text-neutral-600 leading-relaxed">Z Sompolna do Słupcy jedziemy około godziny. Pierwsze spotkanie robimy u Ciebie, dalszą część projektu zwykle online.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl border border-neutral-200 bg-white">
+                        <div class="w-10 h-10 rounded-xl bg-rose-50 border border-rose-100 flex items-center justify-center text-rose-600 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <h3 class="text-sm font-semibold text-black mb-2">Obszar, który obsługujemy</h3>
+                        <p class="text-sm text-neutral-600 leading-relaxed">Słupca i gminy powiatu słupeckiego: Lądek, Orchowo, Ostrowite, Powidz, Strzałkowo, Zagórów oraz gmina wiejska Słupca.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl border border-neutral-200 bg-white">
+                        <div class="w-10 h-10 rounded-xl bg-rose-50 border border-rose-100 flex items-center justify-center text-rose-600 mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+                        </div>
+                        <h3 class="text-sm font-semibold text-black mb-2">SEO lokalne</h3>
+                        <p class="text-sm text-neutral-600 leading-relaxed">Turysta szuka „noclegi Powidz”, a nie „noclegi Słupca”. Dlatego treści dopasowujemy do tego, jak faktycznie szukają Twoi klienci, nie do nazwy powiatu.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- BENEFITS -->
-        <section class="px-6 py-24 bg-neutral-50 border-t border-neutral-200">
-            <div class="w-full max-w-[1100px] mx-auto">
-
-                <div class="text-center mb-16">
-                    <span
-                        class="inline-block text-xs font-semibold text-rose-600 tracking-widest uppercase mb-4">Dlaczego my</span>
-                    <h2 class="text-2xl sm:text-3xl font-semibold text-black tracking-tight">
-                        Co dostajesz, zamawiając stronę internetową w WebCanvas
-                    </h2>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-                    <div
-                        class="p-7 rounded-2xl border border-neutral-200 bg-white hover:border-neutral-300 hover:shadow-lg transition-all duration-300">
-                        <div
-                            class="w-11 h-11 rounded-xl bg-rose-50 border border-rose-100 flex items-center justify-center text-rose-600 mb-5">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" aria-hidden="true">
-                                <rect x="5" y="2" width="14" height="20" rx="2" />
-                                <line x1="12" y1="18" x2="12.01" y2="18" />
-                            </svg>
-                        </div>
-                        <h3 class="text-base font-semibold text-black mb-2">Projekt mobile-first</h3>
-                        <p class="text-sm text-neutral-600 leading-relaxed">
-                            Większość ruchu na stronach naszych klientów przychodzi z telefonu. Projektujemy
-                            od makiety mobilnej w górę, nie odwrotnie. Dzięki temu strona działa dobrze
-                            tam, gdzie realnie jest oglądana.
-                        </p>
-                    </div>
-
-                    <div
-                        class="p-7 rounded-2xl border border-neutral-200 bg-white hover:border-neutral-300 hover:shadow-lg transition-all duration-300">
-                        <div
-                            class="w-11 h-11 rounded-xl bg-rose-50 border border-rose-100 flex items-center justify-center text-rose-600 mb-5">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" aria-hidden="true">
-                                <circle cx="11" cy="11" r="8" />
-                                <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                            </svg>
-                        </div>
-                        <h3 class="text-base font-semibold text-black mb-2">SEO od pierwszego dnia</h3>
-                        <p class="text-sm text-neutral-600 leading-relaxed">
-                            Struktura nagłówków, meta dane, szybkość ładowania i dane strukturalne ustawiamy
-                            już na etapie wdrożenia, nie jako "dodatek" po zakończeniu projektu.
-                        </p>
-                    </div>
-
-                    <div
-                        class="p-7 rounded-2xl border border-neutral-200 bg-white hover:border-neutral-300 hover:shadow-lg transition-all duration-300">
-                        <div
-                            class="w-11 h-11 rounded-xl bg-rose-50 border border-rose-100 flex items-center justify-center text-rose-600 mb-5">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" aria-hidden="true">
-                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-                            </svg>
-                        </div>
-                        <h3 class="text-base font-semibold text-black mb-2">Szybki, lekki kod</h3>
-                        <p class="text-sm text-neutral-600 leading-relaxed">
-                            Bez zbędnych wtyczek i bibliotek "na wszelki wypadek". Mniej kodu do pobrania
-                            oznacza szybsze ładowanie strony, a to przekłada się zarówno na wygodę
-                            użytkownika, jak i na ranking w Google.
-                        </p>
-                    </div>
-
-                    <div
-                        class="p-7 rounded-2xl border border-neutral-200 bg-white hover:border-neutral-300 hover:shadow-lg transition-all duration-300">
-                        <div
-                            class="w-11 h-11 rounded-xl bg-rose-50 border border-rose-100 flex items-center justify-center text-rose-600 mb-5">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" aria-hidden="true">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                                <circle cx="9" cy="7" r="4" />
-                                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                            </svg>
-                        </div>
-                        <h3 class="text-base font-semibold text-black mb-2">Jeden kontakt, cała odpowiedzialność</h3>
-                        <p class="text-sm text-neutral-600 leading-relaxed">
-                            Projekt, kod i wdrożenie robi ten sam zespół. Nie musisz koordynować grafika,
-                            programisty i firmy hostingowej osobno. Rozliczamy się z jednego rezultatu.
-                        </p>
-                    </div>
-
-                    <div
-                        class="p-7 rounded-2xl border border-neutral-200 bg-white hover:border-neutral-300 hover:shadow-lg transition-all duration-300">
-                        <div
-                            class="w-11 h-11 rounded-xl bg-rose-50 border border-rose-100 flex items-center justify-center text-rose-600 mb-5">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" aria-hidden="true">
-                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-                            </svg>
-                        </div>
-                        <h3 class="text-base font-semibold text-black mb-2">Wsparcie po wdrożeniu</h3>
-                        <p class="text-sm text-neutral-600 leading-relaxed">
-                            Strona nie znika z naszego radaru w dniu wdrożenia. Pomagamy z drobnymi zmianami,
-                            hostingiem i domeną, bez konieczności szukania nowego wykonawcy za pół roku.
-                        </p>
-                    </div>
-
-                    <div
-                        class="p-7 rounded-2xl border border-neutral-200 bg-white hover:border-neutral-300 hover:shadow-lg transition-all duration-300">
-                        <div
-                            class="w-11 h-11 rounded-xl bg-rose-50 border border-rose-100 flex items-center justify-center text-rose-600 mb-5">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" aria-hidden="true">
-                                <path d="M12 2v20M2 12h20" />
-                            </svg>
-                        </div>
-                        <h3 class="text-base font-semibold text-black mb-2">Wycena bez niedomówień</h3>
-                        <p class="text-sm text-neutral-600 leading-relaxed">
-                            Przed startem dostajesz jasny zakres i wycenę, bez dopłat za coś, co wyszło
-                            po drodze. Jeśli zakres się zmienia, wiesz o tym zanim to wpłynie na cenę.
-                        </p>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- USŁUGI -->
-        <section class="px-6 py-24 bg-white border-t border-neutral-200">
-            <div class="w-full max-w-[1100px] mx-auto">
-                <div class="text-center mb-16">
-                    <span class="inline-block text-xs font-semibold text-rose-600 tracking-widest uppercase mb-4">Oferta</span>
-                    <h2 class="text-2xl sm:text-3xl font-semibold text-black tracking-tight">Kompleksowe usługi dla Twojej firmy</h2>
-                    <p class="text-neutral-600 mt-4 max-w-lg mx-auto text-sm">Od projektu i wdrożenia strony, przez pozycjonowanie, po płatne kampanie reklamowe.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-                    <div class="p-7 rounded-2xl border border-neutral-200 bg-neutral-50 hover:border-rose-200 hover:bg-white hover:shadow-lg hover:shadow-rose-500/5 transition-all duration-300">
-                        <div class="w-11 h-11 rounded-xl bg-rose-50 border border-rose-100 flex items-center justify-center text-rose-600 mb-5">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <rect width="18" height="7" x="3" y="3" rx="1"/><rect width="9" height="7" x="3" y="14" rx="1"/><rect width="5" height="7" x="16" y="14" rx="1"/>
-                            </svg>
-                        </div>
-                        <h3 class="text-base font-semibold text-black mb-2">Strony internetowe</h3>
-                        <p class="text-sm text-neutral-600 leading-relaxed mb-4">Nowoczesne, szybkie strony www i sklepy e-commerce zaprojektowane od zera pod Twoją markę i cele biznesowe.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-xs bg-neutral-100 text-neutral-500 px-2.5 py-1 rounded-full">Landing Page</span>
-                            <span class="text-xs bg-neutral-100 text-neutral-500 px-2.5 py-1 rounded-full">WordPress</span>
-                            <span class="text-xs bg-neutral-100 text-neutral-500 px-2.5 py-1 rounded-full">E-commerce</span>
-                        </div>
-                    </div>
-
-                    <div class="p-7 rounded-2xl border border-neutral-200 bg-neutral-50 hover:border-rose-200 hover:bg-white hover:shadow-lg hover:shadow-rose-500/5 transition-all duration-300">
-                        <div class="w-11 h-11 rounded-xl bg-rose-50 border border-rose-100 flex items-center justify-center text-rose-600 mb-5">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M11 8v6M8 11h6"/>
-                            </svg>
-                        </div>
-                        <h3 class="text-base font-semibold text-black mb-2">Pozycjonowanie SEO</h3>
-                        <p class="text-sm text-neutral-600 leading-relaxed mb-4">Audyt techniczny, optymalizacja treści, budowa linków i monitoring pozycji w Google, żeby Twoja firma była widoczna tam, gdzie szukają klienci.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-xs bg-neutral-100 text-neutral-500 px-2.5 py-1 rounded-full">Audyt SEO</span>
-                            <span class="text-xs bg-neutral-100 text-neutral-500 px-2.5 py-1 rounded-full">Local SEO</span>
-                            <span class="text-xs bg-neutral-100 text-neutral-500 px-2.5 py-1 rounded-full">Link building</span>
-                        </div>
-                    </div>
-
-                    <div class="p-7 rounded-2xl border border-neutral-200 bg-neutral-50 hover:border-rose-200 hover:bg-white hover:shadow-lg hover:shadow-rose-500/5 transition-all duration-300">
-                        <div class="w-11 h-11 rounded-xl bg-rose-50 border border-rose-100 flex items-center justify-center text-rose-600 mb-5">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-                            </svg>
-                        </div>
-                        <h3 class="text-base font-semibold text-black mb-2">Kampanie Google &amp; Meta Ads</h3>
-                        <p class="text-sm text-neutral-600 leading-relaxed mb-4">Płatne kampanie w Google Search, Display oraz Meta (Facebook, Instagram) z pełną obsługą, optymalizacją i miesięcznym raportowaniem wyników.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-xs bg-neutral-100 text-neutral-500 px-2.5 py-1 rounded-full">Google Ads</span>
-                            <span class="text-xs bg-neutral-100 text-neutral-500 px-2.5 py-1 rounded-full">Meta Ads</span>
-                            <span class="text-xs bg-neutral-100 text-neutral-500 px-2.5 py-1 rounded-full">Remarketing</span>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- PORTFOLIO TEASER -->
-        <section class="px-6 py-24 bg-white border-t border-neutral-200">
-            <div class="w-full max-w-[800px] mx-auto text-center">
-                <span
-                    class="inline-block text-xs font-semibold text-rose-600 tracking-widest uppercase mb-4">Realizacje</span>
-                <h2 class="text-2xl sm:text-3xl font-semibold text-black tracking-tight mb-6">
-                    Zobacz, jak wyglądają nasze projekty
-                </h2>
-                <p class="text-neutral-600 leading-relaxed mb-8 max-w-lg mx-auto text-sm">
-                    Od strony gabinetu terapeutycznego po portal instytucji publicznej obsługujący tysiące
-                    użytkowników dziennie. Każdy projekt opisujemy jako case study: jakie było wyzwanie
-                    i jak je rozwiązaliśmy.
+        <!-- JAK PRACUJEMY -->
+        <section class="px-6 py-20 bg-neutral-50 border-t border-neutral-200">
+            <div class="w-full max-w-[900px] mx-auto">
+                <span class="inline-block text-xs font-semibold text-rose-600 tracking-widest uppercase mb-4">Dlaczego my</span>
+                <h2 class="text-2xl sm:text-3xl font-semibold text-black tracking-tight mb-8">Co dostajesz w WebCanvas</h2>
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-sm text-neutral-600 leading-relaxed mb-8">
+                    <li class="flex gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-rose-600 shrink-0 mt-0.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong class="text-black font-medium">Projekt mobile-first:</strong> większość klientów ogląda stronę na telefonie.</span></li>
+                    <li class="flex gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-rose-600 shrink-0 mt-0.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong class="text-black font-medium">SEO od pierwszego dnia:</strong> nagłówki, meta dane, dane strukturalne i szybkość ustawione przy wdrożeniu.</span></li>
+                    <li class="flex gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-rose-600 shrink-0 mt-0.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong class="text-black font-medium">Lekki, szybki kod:</strong> bez zbędnych wtyczek i bibliotek.</span></li>
+                    <li class="flex gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-rose-600 shrink-0 mt-0.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong class="text-black font-medium">Jeden zespół:</strong> projekt, kod i wdrożenie bez pośredników i podwykonawców.</span></li>
+                    <li class="flex gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-rose-600 shrink-0 mt-0.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong class="text-black font-medium">Wsparcie po starcie:</strong> drobne zmiany, hosting i domena.</span></li>
+                    <li class="flex gap-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-rose-600 shrink-0 mt-0.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong class="text-black font-medium">Jasna wycena:</strong> zakres i cena znane przed rozpoczęciem prac.</span></li>
+                </ul>
+                <p class="text-sm text-neutral-600 leading-relaxed">
+                    Poza stronami zajmujemy się też <a href="pozycjonowanie-seo.html" class="text-rose-600 hover:text-rose-700 underline decoration-rose-200">pozycjonowaniem SEO</a>,
+                    <a href="kampanie-google-ads.html" class="text-rose-600 hover:text-rose-700 underline decoration-rose-200">kampaniami Google Ads</a> i <a href="kampanie-meta-ads.html" class="text-rose-600 hover:text-rose-700 underline decoration-rose-200">Meta Ads</a>.
+                    Przykłady naszej pracy, opisane jako case study, znajdziesz w <a href="realizacje.html" class="text-rose-600 hover:text-rose-700 underline decoration-rose-200">realizacjach</a>.
                 </p>
-                <a href="realizacje.html"
-                    class="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-rose-600 text-white text-xs font-semibold tracking-wide transition-all duration-300 hover:bg-rose-700 hover:scale-[0.98] active:scale-95 shadow-lg shadow-rose-500/25">
-                    Przejdź do realizacji
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        aria-hidden="true">
-                        <path d="M5 12h14m-7-7l7 7-7 7" />
-                    </svg>
-                </a>
             </div>
         </section>
 
@@ -643,38 +504,25 @@
         <section class="px-6 py-24 bg-neutral-50 border-t border-neutral-200">
             <div class="w-full max-w-[800px] mx-auto">
                 <div class="mb-14">
-                    <span
-                        class="inline-block text-xs font-semibold text-rose-600 tracking-widest uppercase mb-4">Pytania</span>
-                    <h2 class="text-2xl sm:text-3xl font-semibold text-black tracking-tight">
-                        Najczęstsze pytania od firm ze Słupcy
-                    </h2>
+                    <span class="inline-block text-xs font-semibold text-rose-600 tracking-widest uppercase mb-4">Pytania</span>
+                    <h2 class="text-2xl sm:text-3xl font-semibold text-black tracking-tight">Najczęstsze pytania od firm ze Słupcy</h2>
                 </div>
-
                 <div class="space-y-6">
                     <div class="bg-white border border-neutral-200 rounded-2xl p-6">
-                        <h3 class="text-sm font-semibold text-black mb-2">Czy muszę być w Słupcy, żeby z Wami
-                            pracować?</h3>
-                        <p class="text-sm text-neutral-600 leading-relaxed">
-                            Nie. Cały proces od briefu, przez akceptację projektu, po wdrożenie prowadzimy
-                            zdalnie. Lokalizacja nie wpływa na czas ani jakość realizacji.
-                        </p>
+                        <h3 class="text-sm font-semibold text-black mb-2">Czy możemy spotkać się osobiście w Słupcy?</h3>
+                        <p class="text-sm text-neutral-600 leading-relaxed">Tak. Do Słupcy dojeżdżamy z Sompolna w około godzinę, więc pierwsze spotkanie możemy zrobić w Twojej firmie lub obiekcie. Kolejne etapy, czyli akceptację projektu i poprawki, zwykle prowadzimy online.</p>
                     </div>
                     <div class="bg-white border border-neutral-200 rounded-2xl p-6">
-                        <h3 class="text-sm font-semibold text-black mb-2">Ile trwa realizacja strony internetowej?
-                        </h3>
-                        <p class="text-sm text-neutral-600 leading-relaxed">
-                            Zależy od zakresu. Prosta strona wizytówka to zwykle kilka tygodni, sklep
-                            internetowy czy aplikacja dedykowana wymaga więcej czasu. Dokładny harmonogram
-                            ustalamy po briefie.
-                        </p>
+                        <h3 class="text-sm font-semibold text-black mb-2">Prowadzę obiekt noclegowy nad Jeziorem Powidzkim. Czy zrobicie dla mnie stronę?</h3>
+                        <p class="text-sm text-neutral-600 leading-relaxed">Tak. Dla obiektów turystycznych najważniejsze są zdjęcia, opis okolicy, cennik sezonowy i szybki kontakt. Formularz zapytania o termin albo połączenie z systemem rezerwacji, którego już używasz, ustalamy na etapie briefu.</p>
                     </div>
                     <div class="bg-white border border-neutral-200 rounded-2xl p-6">
-                        <h3 class="text-sm font-semibold text-black mb-2">Czy zajmujecie się też hostingiem
-                            i domeną?</h3>
-                        <p class="text-sm text-neutral-600 leading-relaxed">
-                            Tak. Pomagamy skonfigurować domenę, hosting i certyfikat SSL, a po wdrożeniu
-                            oferujemy opiekę powdrożeniową, żeby strona działała bez przestojów.
-                        </p>
+                        <h3 class="text-sm font-semibold text-black mb-2">Ile trwa realizacja strony internetowej?</h3>
+                        <p class="text-sm text-neutral-600 leading-relaxed">Zależy od zakresu. Prosta strona wizytówka to zwykle kilka tygodni, sklep internetowy czy aplikacja dedykowana wymaga więcej czasu. Dokładny harmonogram ustalamy po briefie.</p>
+                    </div>
+                    <div class="bg-white border border-neutral-200 rounded-2xl p-6">
+                        <h3 class="text-sm font-semibold text-black mb-2">Czy zajmujecie się też hostingiem i domeną?</h3>
+                        <p class="text-sm text-neutral-600 leading-relaxed">Tak. Pomagamy skonfigurować domenę, hosting i certyfikat SSL, a po wdrożeniu oferujemy opiekę powdrożeniową, żeby strona działała bez przestojów.</p>
                     </div>
                 </div>
             </div>
@@ -735,11 +583,11 @@
                     <div class="flex flex-col gap-4">
                         <p class="text-xs font-semibold text-black uppercase tracking-widest">Usługi</p>
                         <nav class="flex flex-col gap-3">
-                            <a href="/" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Strony internetowe</a>
-                            <a href="/" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Sklepy e-commerce</a>
-                            <a href="/" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Pozycjonowanie SEO</a>
-                            <a href="/" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Kampanie Google Ads</a>
-                            <a href="/" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Kampanie Meta Ads</a>
+                            <a href="tworzenie-stron-internetowych.html" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Strony internetowe</a>
+                            <a href="/#uslugi" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Sklepy e-commerce</a>
+                            <a href="pozycjonowanie-seo.html" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Pozycjonowanie SEO</a>
+                            <a href="kampanie-google-ads.html" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Kampanie Google Ads</a>
+                            <a href="kampanie-meta-ads.html" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Kampanie Meta Ads</a>
                         </nav>
                     </div>
                     <div class="flex flex-col gap-4">
@@ -755,64 +603,11 @@
             </div>
             <div class="border-t border-neutral-200">
                 <div class="w-full max-w-[1200px] mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-                    <p class="text-xs text-neutral-400">© 2026 WebCanvas. Wszelkie prawa zastrzeżone.</p>
-                    <a href="polityka-prywatnosci.html" class="text-xs text-neutral-400 hover:text-rose-600 transition-colors">Polityka prywatności</a>
+                    <div class="flex flex-col gap-1 text-center sm:text-left">
+                    <p class="text-xs text-neutral-400">&copy; 2026 WebCanvas. Wszelkie prawa zastrzeżone.</p>
+                    <address class="not-italic text-xs text-neutral-400">WebCanvas, Biele 126, 62-610 Sompolno &middot; <a href="tel:+48739043596" class="hover:text-rose-600 transition-colors">+48 739 043 596</a> &middot; <a href="mailto:kontakt@web-canvas.pl" class="hover:text-rose-600 transition-colors">kontakt@web-canvas.pl</a> &middot; pn&ndash;pt 9:00&ndash;17:00</address>
                 </div>
-            </div>
-        </footer>
-
-    </main>
-
-    <script>
-        const mobileMenu = document.getElementById('mobile-menu');
-        const hamburgerBtn = document.getElementById('hamburger-btn');
-        const iconOpen = document.getElementById('hamburger-icon-open');
-        const iconClose = document.getElementById('hamburger-icon-close');
-
-        function toggleMobileMenu() {
-            const isOpen = !mobileMenu.classList.contains('hidden');
-            if (isOpen) {
-                closeMobileMenu();
-            } else {
-                mobileMenu.classList.remove('hidden');
-                iconOpen.classList.add('hidden');
-                iconClose.classList.remove('hidden');
-                hamburgerBtn.setAttribute('aria-expanded', 'true');
-            }
-        }
-
-        function closeMobileMenu() {
-            mobileMenu.classList.add('hidden');
-            iconOpen.classList.remove('hidden');
-            iconClose.classList.add('hidden');
-            hamburgerBtn.setAttribute('aria-expanded', 'false');
-        }
-    </script>
-                <div class="flex items-center gap-5">
-                    <a href="https://www.facebook.com/webcanvaspl" target="_blank" rel="noopener noreferrer"
-                        aria-label="Facebook WebCanvas" class="transition-colors text-neutral-400 hover:text-rose-600">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
-                            <path fill="currentColor"
-                                d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.988h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12">
-                            </path>
-                        </svg>
-                    </a>
-                    <a href="https://www.instagram.com/_webcanvas/" target="_blank" rel="noopener noreferrer"
-                        aria-label="Instagram WebCanvas" class="transition-colors text-neutral-400 hover:text-rose-600">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
-                            <path fill="currentColor"
-                                d="M7.03.084c-1.277.06-2.149.264-2.91.563a5.9 5.9 0 0 0-2.124 1.388a5.9 5.9 0 0 0-1.38 2.127C.321 4.926.12 5.8.064 7.076s-.069 1.688-.063 4.947s.021 3.667.083 4.947c.061 1.277.264 2.149.563 2.911c.308.789.72 1.457 1.388 2.123a5.9 5.9 0 0 0 2.129 1.38c.763.295 1.636.496 2.913.552c1.278.056 1.689.069 4.947.063s3.668-.021 4.947-.082c1.28-.06 2.147-.265 2.91-.563a5.9 5.9 0 0 0 2.123-1.388a5.9 5.9 0 0 0 1.38-2.129c.295-.763.496-1.636.551-2.912c.056-1.28.07-1.69.063-4.948c-.006-3.258-.02-3.667-.081-4.947c-.06-1.28-.264-2.148-.564-2.911a5.9 5.9 0 0 0-1.387-2.123a5.9 5.9 0 0 0-2.128-1.38c-.764-.294-1.636-.496-2.914-.55C15.647.009 15.236-.006 11.977 0S8.31.021 7.03.084m.14 21.693c-1.17-.05-1.805-.245-2.228-.408a3.7 3.7 0 0 1-1.382-.895a3.7 3.7 0 0 1-.9-1.378c-.165-.423-.363-1.058-.417-2.228c-.06-1.264-.072-1.644-.08-4.848c-.006-3.204.006-3.583.061-4.848c.05-1.169.246-1.805.408-2.228c.216-.561.477-.96.895-1.382a3.7 3.7 0 0 1 1.379-.9c.423-.165 1.057-.361 2.227-.417c1.265-.06 1.644-.072 4.848-.08c3.203-.006 3.583.006 4.85.062c1.168.05 1.804.244 2.227.408c.56.216.96.475 1.382.895s.681.817.9 1.378c.165.422.362 1.056.417 2.227c.06 1.265.074 1.645.08 4.848c.005 3.203-.006 3.583-.061 4.848c-.051 1.17-.245 1.805-.408 2.23c-.216.56-.477.96-.896 1.38a3.7 3.7 0 0 1-1.378.9c-.422.165-1.058.362-2.226.418c-1.266.06-1.645.072-4.85.079s-3.582-.006-4.848-.06m9.783-16.192a1.44 1.44 0 1 0 1.437-1.442a1.44 1.44 0 0 0-1.437 1.442M5.839 12.012a6.161 6.161 0 1 0 12.323-.024a6.162 6.162 0 0 0-12.323.024M8 12.008A4 4 0 1 1 12.008 16A4 4 0 0 1 8 12.008">
-                            </path>
-                        </svg>
-                    </a>
-                    <a href="https://share.google/e6KXzabuprV7YYIPx" target="_blank" rel="noopener noreferrer"
-                        aria-label="Wizytówka Google WebCanvas" class="transition-colors text-neutral-400 hover:text-rose-600">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
-                            <circle cx="12" cy="10" r="3" />
-                        </svg>
-                    </a>
+                    <a href="polityka-prywatnosci.html" class="text-xs text-neutral-400 hover:text-rose-600 transition-colors">Polityka prywatności</a>
                 </div>
             </div>
         </footer>

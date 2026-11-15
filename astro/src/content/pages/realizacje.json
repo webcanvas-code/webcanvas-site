@@ -1,0 +1,72 @@
+{
+  "slug": "realizacje",
+  "kind": "realizacje",
+  "title": "Portfolio stron internetowych. Nasze realizacje | WebCanvas",
+  "description": "Poznaj nasze realizacje: strony internetowe, sklepy e-commerce i aplikacje webowe tworzone przez WebCanvas. Projekty dla ZKZL Poznań, Opti Group, Woodbud i innych.",
+  "path": "/realizacje.html",
+  "schema": [],
+  "hero": {
+    "crumbs": [],
+    "h1": "Nasze Realizacje",
+    "accent": "Realizacje",
+    "badge": "Portfolio",
+    "metaLine": "",
+    "lead": [
+      "\n Projekty tworzone z pasją i precyzją. Każda realizacja to indywidualne podejście,\n solidny kod i design, który działa długoterminowo.\n "
+    ],
+    "buttons": []
+  },
+  "sections": [
+    {
+      "before": "<div id=\"filters\" aria-label=\"Filtruj projekty według kategorii\">\n <button>Wszystkie</button>\n <button>Strony internetowe</button>\n <button>E-commerce</button>\n <button>Instytucje publiczne</button>\n </div>"
+    },
+    {
+      "h2": "Meritoros. Strona firmowa",
+      "intro": [
+        "Księgowość / BPO / Wielojęzyczna"
+      ]
+    },
+    {
+      "h2": "drgil.pl – Redesign cennika",
+      "intro": [
+        "UX / Interfejs / Medycyna estetyczna"
+      ]
+    },
+    {
+      "h2": "ZKZL Poznań – Dworzec Autobusowy",
+      "intro": [
+        "Projekt graficzny • Kodowanie • Wdrożenie\n "
+      ]
+    },
+    {
+      "h2": "Opti Group",
+      "intro": [
+        "Projekt graficzny • Kodowanie • Wdrożenie\n "
+      ]
+    },
+    {
+      "h2": "Woodbud",
+      "intro": [
+        "Projekt graficzny • Kodowanie • Wdrożenie\n "
+      ]
+    },
+    {
+      "h2": "Patrycja Górska – Psychoterapia",
+      "intro": [
+        "Projekt graficzny • Kodowanie • Wdrożenie\n "
+      ]
+    },
+    {
+      "h2": "Centrum Szkoleń Kierowców",
+      "intro": [
+        "Projekt graficzny • Kodowanie • Wdrożenie\n "
+      ]
+    },
+    {
+      "eyebrow": "Następny projekt",
+      "h2": "Twój projekt może być tutaj",
+      "intro": [],
+      "before": "<p>\n Każda strona, którą widzisz powyżej, zaczęła się od jednej rozmowy.\n Opowiedz mi o swoim pomyśle – bezpłatnie wycenimy projekt i zaproponujemy rozwiązanie szyte na\n miarę.\n </p>\n<a href=\"/#kontakt\">\n Omówmy Twój projekt\n </a>\n <a href=\"/#cennik\">\n Zobacz cennik\n </a>"
+    }
+  ]
+}

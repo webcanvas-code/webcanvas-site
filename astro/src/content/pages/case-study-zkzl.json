@@ -1,0 +1,163 @@
+{
+  "slug": "case-study-zkzl",
+  "kind": "case",
+  "title": "Strona internetowa ZKZL Poznań. Case study | WebCanvas",
+  "description": "Case Study ZKZL Poznań: jak zaprojektowaliśmy stronę Dworca Autobusowego z naciskiem na UX, WCAG i wydajność mobilną. Działa bez zarzutu od 2020 roku.",
+  "path": "/case-study-zkzl.html",
+  "schema": [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Strona główna",
+          "item": "https://web-canvas.pl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Realizacje",
+          "item": "https://web-canvas.pl/realizacje.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "ZKZL Poznań",
+          "item": "https://web-canvas.pl/case-study-zkzl.html"
+        }
+      ]
+    }
+  ],
+  "hero": {
+    "crumbs": [
+      {
+        "label": "Strona główna",
+        "href": "/"
+      },
+      {
+        "label": "Realizacje",
+        "href": "/realizacje.html"
+      },
+      {
+        "label": "ZKZL Poznań"
+      }
+    ],
+    "h1": "Czytelność, która wygrywa z czasem. Dworzec Autobusowy Poznań",
+    "accent": "Dworzec Autobusowy Poznań",
+    "badge": "Case Study",
+    "metaLine": "Klient publiczny • 2020",
+    "lead": [
+      "\n Projekt zrealizowany w 2020 roku, który każdego dnia obsługuje tysiące pasażerów w biegu.\n Dowód na to, że dobre fundamenty <strong>użyteczności UX</strong>\n nie starzeją się. Strona zaprojektowana jako narzędzie pracy, nie scenografia.\n "
+    ],
+    "buttons": [
+      {
+        "label": "Odwiedź stronę na żywo",
+        "href": "https://dworzecautobusowy.poznan.pl/",
+        "primary": true
+      }
+    ]
+  },
+  "sections": [
+    {
+      "type": "shot",
+      "images": [
+        {
+          "src": "/img/zkzl.webp",
+          "alt": "Pełny widok strony Dworzec Autobusowy Poznań"
+        }
+      ],
+      "url": "live & aktywny · dworzecautobusowy.poznan.pl"
+    },
+    {
+      "type": "facts",
+      "facts": [
+        {
+          "label": "Klient",
+          "value": "ZKZL Poznań"
+        },
+        {
+          "label": "Rok",
+          "value": "2020"
+        },
+        {
+          "label": "Zakres",
+          "value": "UX / UI / Dev"
+        },
+        {
+          "label": "Sektor",
+          "value": "Instytucja publiczna"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Wyzwanie",
+      "h2": "Strona dla tysięcy pasażerów dziennie",
+      "intro": [],
+      "before": "<p>\n Projektowanie stron internetowych dla instytucji publicznej rządzi się swoimi prawami:\n liczy się przede wszystkim niezawodność. Zarząd Komunalnych Zasobów Lokalowych w Poznaniu\n potrzebował strony informacyjnej dla\n Dworca Autobusowego, która każdego dnia będzie punktem odniesienia dla tysięcy podróżnych.\n Kluczowe wymaganie: <strong>użytkownik musi znaleźć swój odjazd w\n kilka sekund</strong>,\n na peronie, w biegu, często na wolnym połączeniu mobilnym.\n </p>\n <p>\n Strona musiała być jednocześnie ultraszybka na urządzeniach mobilnych, w pełni dostępna\n dla osób z niepełnosprawnościami (zgodnie ze <strong>standardami\n WCAG 2.1</strong>)\n oraz na tyle dobrze zaprojektowana architektonicznie, żeby nie wymagać przebudowy przez lata.\n </p>"
+    },
+    {
+      "eyebrow": "Rozwiązanie",
+      "h2": "Trzy filary, na których oparliśmy projekt",
+      "intro": [],
+      "items": [
+        {
+          "title": "Użyteczność UX",
+          "html": "<p>\n Architektura informacji prowadząca użytkownika za rękę. Priorytetem jest szybkie\n sprawdzenie odjazdu, nie zbędne animacje czy zbędne podstrony.\n Każdy klik ma swoje uzasadnienie.\n </p>"
+        },
+        {
+          "title": "Performance & Mobile First",
+          "html": "<p>\n Błyskawiczne działanie na urządzeniach mobilnych, kluczowe dla pasażerów\n na peronach i przy kasach. Zoptymalizowane obrazy, minimalne JS,\n progresywne ładowanie treści.\n </p>"
+        },
+        {
+          "title": "Inkluzywność: standardy WCAG",
+          "html": "<p>\n Pełna dostępność cyfrowa eliminująca bariery. Wystarczające kontrasty,\n semantyczny HTML, nawigacja klawiaturą, atrybuty ARIA,\n bo transport publiczny jest dla wszystkich.\n </p>"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Proces",
+      "h2": "Krok po kroku: od briefu do wdrożenia",
+      "intro": [],
+      "items": [
+        {
+          "title": "Analiza potrzeb i architektura informacji",
+          "html": "<p>\n Warsztaty z ZKZL: identyfikacja kluczowych scenariuszy użytkowników:\n sprawdzanie rozkładu, zakup biletu, dojazd na dworzec. Mapa sitemap\n zbudowana na podstawie realnych zachowań pasażerów.\n </p>"
+        },
+        {
+          "title": "Projektowanie UI / UX",
+          "html": "<p>\n Wireframy mobile-first, prototypy interaktywne i testy użyteczności.\n Priorytet: minimalna liczba kroków do celu. Kolorystyka i typografia\n zgodne z identyfikacją miejską Poznania.\n </p>"
+        },
+        {
+          "title": "Kodowanie i dostępność WCAG",
+          "html": "<p>\n Semantyczny HTML5, ARIA-landmarki, nawigacja klawiaturą, kontrast zgodny z WCAG 2.1 AA.\n Kod zoptymalizowany pod kątem Lighthouse score: Performance, Accessibility, SEO.\n </p>"
+        },
+        {
+          "title": "Wdrożenie i optymalizacja performance",
+          "html": "<p>\n Konfiguracja serwera, optymalizacja obrazów (WebP, lazy loading), minifikacja zasobów.\n Testy obciążeniowe dla ruchu na poziomie setek równoczesnych użytkowników.\n </p>"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Efekty",
+      "h2": "Projekt zaprojektowany jako narzędzie pracy",
+      "intro": [
+        "\n Strona działa nieprzerwanie od 2020 roku bez większych przebudów. To najlepszy test\n jakości fundamentów UX i technologicznych.\n "
+      ],
+      "before": "<p>5+</p>\n <p>Lat bez przebudowy</p>\n <p>Mobile First</p>\n <p>Filozofia projektowa</p>\n <p>WCAG 2.1</p>\n <p>Spełnione standardy</p>\n <p>24/7</p>\n <p>Dostępność serwisu</p>\n<p>\n „Projekt zaprojektowany jako narzędzie pracy, wytrzymujący próbę setek użytkowników\n jednocześnie. Prosta filozofia, trwałe efekty.\"\n </p>\n <p>\n Podsumowanie projektu, WebCanvas 2020\n </p>"
+    },
+    {
+      "eyebrow": "Stack technologiczny",
+      "h2": "Technologie użyte w projekcie",
+      "intro": [],
+      "before": "<ul data-chips=\"\"><li>Projektowanie stron internetowych</li><li>HTML5 / Semantyczny</li><li>CSS3 / RWD</li><li>JavaScript</li><li>WCAG 2.1 AA</li><li>ARIA Landmarks</li><li>WebP / Lazy Loading</li><li>Performance Optimized</li><li>SSL / HTTPS</li></ul>"
+    },
+    {
+      "eyebrow": "Kolejny krok",
+      "h2": "Zaprojektujmy rozwiązanie na lata",
+      "intro": [],
+      "before": "<p>\n Twój projekt też może przetrwać próbę czasu. Opowiedz mi o swoich potrzebach,\n bezpłatnie wycenię projekt i zaproponuję rozwiązanie szyte na miarę.\n </p>\n<a href=\"/#kontakt\">\n Omówmy Twój projekt\n </a>\n <a href=\"/realizacje.html\">\n ← Wróć do realizacji\n </a>"
+    }
+  ]
+}

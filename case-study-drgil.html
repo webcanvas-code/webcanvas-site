@@ -1,529 +1,62 @@
-<!DOCTYPE html>
-<html lang="pl">
-
-<head>
-    <!-- Google Consent Mode v2: domyślnie brak zgody (musi być przed GTM) -->
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('consent', 'default', {
-            ad_storage: 'denied',
-            ad_user_data: 'denied',
-            ad_personalization: 'denied',
-            analytics_storage: 'denied',
-            functionality_storage: 'granted',
-            security_storage: 'granted',
-            wait_for_update: 500
-        });
-        gtag('set', 'ads_data_redaction', true);
-        try {
-            if (localStorage.getItem('wc_consent') === 'granted') {
-                gtag('consent', 'update', {
-                    ad_storage: 'granted',
-                    ad_user_data: 'granted',
-                    ad_personalization: 'granted',
-                    analytics_storage: 'granted'
-                });
-            }
-        } catch (e) { }
-    </script>
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-K2QFBR7K');</script>
-    <!-- End Google Tag Manager -->
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redesign cennika drgil.pl | WebCanvas</title>
-    <meta name="description"
-        content="Case Study drgil.pl: jak przeprojektowanie cennika z listy na zwijane kategorie skróciło czas nawigacji i poprawiło UX na urządzeniach mobilnych.">
-    <link rel="canonical" href="https://web-canvas.pl/case-study-drgil.html">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Strona główna", "item": "https://web-canvas.pl/" },
-        { "@type": "ListItem", "position": 2, "name": "Realizacje", "item": "https://web-canvas.pl/realizacje.html" },
-        { "@type": "ListItem", "position": 3, "name": "Redesign cennika drgil.pl", "item": "https://web-canvas.pl/case-study-drgil.html" }
-      ]
-    }
-    </script>
-
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
-    <link rel="manifest" href="favicon_io/site.webmanifest">
-    <link rel="shortcut icon" href="favicon_io/favicon.ico">
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
-                    colors: { brand: { rose: '#E11D48', light: '#FAFAFA' } },
-                    animation: {
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'fade-in-up': 'fadeInUp 0.7s ease-out forwards',
-                    },
-                    keyframes: {
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(18px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        }
-                    }
-                }
-            }
+<!DOCTYPE html><html lang="pl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><!-- Google Consent Mode v2: domyślnie brak zgody, przed GTM --><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        functionality_storage: 'granted',
+        security_storage: 'granted',
+        wait_for_update: 500
+      });
+      gtag('set', 'ads_data_redaction', true);
+      try {
+        if (localStorage.getItem('wc_consent') === 'granted') {
+          gtag('consent', 'update', {
+            ad_storage: 'granted',
+            ad_user_data: 'granted',
+            ad_personalization: 'granted',
+            analytics_storage: 'granted'
+          });
         }
-    </script>
-
-    <style>
-        html { scroll-behavior: smooth; }
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #F5F5F5; }
-        ::-webkit-scrollbar-thumb { background: #D4D4D4; border-radius: 4px; border: 2px solid #F5F5F5; }
-        ::-webkit-scrollbar-thumb:hover { background: #A3A3A3; }
-        .bg-glow { background: radial-gradient(circle at 50% 0%, rgba(225, 29, 72, 0.07) 0%, rgba(255, 255, 255, 0) 60%); }
-        .fade-item { opacity: 0; animation: fadeInUp 0.7s ease-out forwards; }
-        @keyframes fadeInUp {
-            0% { opacity: 0; transform: translateY(18px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-        .counter-box { opacity: 0; animation: fadeInUp 0.6s ease-out forwards; }
-        .counter-box:nth-child(1) { animation-delay: 0.1s; }
-        .counter-box:nth-child(2) { animation-delay: 0.2s; }
-        .counter-box:nth-child(3) { animation-delay: 0.3s; }
-        .counter-box:nth-child(4) { animation-delay: 0.4s; }
-        .timeline-line { position: relative; }
-        .timeline-line::before {
-            content: '';
-            position: absolute;
-            left: 19px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, #fecdd3, #e5e5e5, transparent);
-        }
-    </style>
-</head>
-
-<body class="font-sans antialiased w-full flex flex-col relative selection:bg-rose-500/20 selection:text-rose-900 bg-white text-neutral-700">
-
-    <!-- Fixed Background -->
-    <div class="fixed top-0 w-full h-screen -z-10">
-        <div class="absolute inset-0 bg-gradient-to-br from-rose-50 via-white to-neutral-50"></div>
-        <div class="absolute top-0 left-1/4 w-96 h-96 bg-rose-200 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-pulse-slow"></div>
-        <div class="absolute top-1/3 right-1/4 w-96 h-96 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-pulse-slow" style="animation-delay:2s"></div>
-    </div>
-    <div class="fixed inset-0 z-0 pointer-events-none">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-glow opacity-60 blur-3xl rounded-full"></div>
-    </div>
-
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 px-6 pt-6 flex items-center justify-between max-w-[1400px] mx-auto left-0 right-0 h-20 pointer-events-none">
-        <a href="/" class="flex lg:hidden items-center pointer-events-auto">
-            <img src="img/logo.png" alt="WebCanvas" class="h-10 w-auto">
-        </a>
-        <div class="hidden lg:flex items-center gap-0.5 backdrop-blur-xl border rounded-full pl-3 pr-1.5 py-1.5 shadow-lg pointer-events-auto bg-white/90 border-neutral-200 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-            <a href="/" class="flex items-center mr-2">
-                <img src="img/logo.png" alt="WebCanvas" class="h-7 w-auto">
-            </a>
-            <a href="/#hero" class="transition-all text-sm font-medium border border-transparent rounded-full pt-2 pr-3 pb-2 pl-3 text-neutral-600 hover:text-black">Start</a>
-            <a href="/#uslugi" class="transition-all text-sm font-medium border border-transparent rounded-full pt-2 pr-3 pb-2 pl-3 text-neutral-600 hover:text-black">Usługi</a>
-            <a href="realizacje.html" class="transition-all text-sm font-medium border border-transparent rounded-full pt-2 pr-3 pb-2 pl-3 text-neutral-900 bg-neutral-100 border-neutral-200">Realizacje</a>
-            <a href="blog.html" class="transition-all text-sm font-medium border border-transparent rounded-full pt-2 pr-3 pb-2 pl-3 text-neutral-600 hover:text-black">Blog</a>
-            <a href="/#cennik" class="transition-all text-sm font-medium border border-transparent rounded-full pt-2 pr-3 pb-2 pl-3 text-neutral-600 hover:text-black">Cennik</a>
-            <a href="/#kontakt" class="transition-all text-sm font-medium border border-transparent rounded-full pt-2 pr-3 pb-2 pl-3 text-neutral-600 hover:text-black">Kontakt</a>
-        </div>
-        <div class="ml-auto flex items-center gap-3 pointer-events-auto">
-            <a href="/#kontakt" class="group inline-flex items-center gap-2 no-underline transition-all duration-300 hover:scale-[0.98] active:scale-95 rounded-full py-2 px-5 relative overflow-hidden hidden sm:inline-flex cursor-pointer bg-rose-600 text-white hover:bg-rose-700 shadow-[0_4px_14px_0_rgb(225,29,72,0.39)] hover:shadow-[0_6px_20px_rgba(225,29,72,0.23)]">
-                <span class="relative z-10 text-xs font-semibold tracking-wide">Wyceń Projekt</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" class="relative z-10 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M5 12h14m-7-7l7 7l-7 7"></path>
-                </svg>
-            </a>
-            <button onclick="toggleMobileMenu()" aria-label="Otwórz menu" aria-expanded="false" id="hamburger-btn"
-                class="lg:hidden w-10 h-10 rounded-full border border-neutral-200 bg-white/90 backdrop-blur-sm shadow-lg flex items-center justify-center text-neutral-700 hover:text-rose-600 hover:border-rose-200 transition-colors">
-                <svg id="hamburger-icon-open" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="18" x2="21" y2="18" />
-                </svg>
-                <svg id="hamburger-icon-close" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden" aria-hidden="true">
-                    <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
-                </svg>
-            </button>
-        </div>
-    </nav>
-
-    <!-- Mobile Menu Panel -->
-    <div id="mobile-menu" class="fixed top-24 left-0 right-0 z-40 px-6 lg:hidden hidden pointer-events-none">
-        <div class="max-w-[500px] mx-auto bg-white rounded-2xl border border-neutral-200 shadow-xl p-3 flex flex-col gap-1 pointer-events-auto">
-            <a href="/#hero" onclick="closeMobileMenu()" class="px-4 py-3 rounded-xl text-sm font-medium text-neutral-700 hover:bg-neutral-50 hover:text-rose-600 transition-colors">Start</a>
-            <a href="/#uslugi" onclick="closeMobileMenu()" class="px-4 py-3 rounded-xl text-sm font-medium text-neutral-700 hover:bg-neutral-50 hover:text-rose-600 transition-colors">Usługi</a>
-            <a href="realizacje.html" onclick="closeMobileMenu()" class="px-4 py-3 rounded-xl text-sm font-medium text-neutral-700 hover:bg-neutral-50 hover:text-rose-600 transition-colors">Realizacje</a>
-            <a href="blog.html" onclick="closeMobileMenu()" class="px-4 py-3 rounded-xl text-sm font-medium text-neutral-700 hover:bg-neutral-50 hover:text-rose-600 transition-colors">Blog</a>
-            <a href="/#cennik" onclick="closeMobileMenu()" class="px-4 py-3 rounded-xl text-sm font-medium text-neutral-700 hover:bg-neutral-50 hover:text-rose-600 transition-colors">Cennik</a>
-            <a href="/#kontakt" onclick="closeMobileMenu()" class="px-4 py-3 rounded-xl text-sm font-medium text-neutral-700 hover:bg-neutral-50 hover:text-rose-600 transition-colors">Kontakt</a>
-            <a href="/#kontakt" onclick="closeMobileMenu()" class="mt-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold bg-rose-600 text-white hover:bg-rose-700 transition-colors">
-                Wyceń Projekt
-            </a>
-        </div>
-    </div>
-
-    <!-- Main -->
-    <main class="w-full flex flex-col relative z-10">
-
-        <!-- HERO -->
-        <section class="pt-36 pb-20 px-6 relative overflow-hidden">
-            <div class="w-full max-w-[1000px] mx-auto">
-
-                <nav class="fade-item flex items-center gap-2 text-xs text-neutral-400 mb-8" style="animation-delay:0s" aria-label="Breadcrumb">
-                    <a href="/" class="hover:text-rose-600 transition-colors">Strona główna</a>
-                    <span>/</span>
-                    <a href="realizacje.html" class="hover:text-rose-600 transition-colors">Realizacje</a>
-                    <span>/</span>
-                    <span class="text-neutral-600">Redesign cennika drgil.pl</span>
-                </nav>
-
-                <div class="fade-item inline-flex items-center gap-2 mb-6" style="animation-delay:0.05s">
-                    <span class="text-[10px] font-bold uppercase tracking-widest bg-rose-600 text-white px-3 py-1 rounded-full">Case Study</span>
-                    <span class="text-xs text-neutral-500">Gabinet medycyny estetycznej • Poprawa UX</span>
-                </div>
-
-                <h1 class="fade-item text-4xl sm:text-5xl lg:text-[3.5rem] font-semibold text-black tracking-tight leading-[1.12] mb-6 max-w-3xl" style="animation-delay:0.15s">
-                    Cennik, który nie wymaga <span class="text-rose-600">kilkudziesięciu scrolli</span>
-                </h1>
-
-                <p class="fade-item text-base sm:text-lg text-neutral-600 leading-relaxed max-w-2xl mb-10" style="animation-delay:0.25s">
-                    Strona drgil.pl oferuje dziesiątki zabiegów medycyny estetycznej podzielonych na kilkanaście kategorii. Stary cennik wyświetlał wszystko naraz, tworząc jedną długą listę. Zmiana jednego elementu interfejsu wystarczyła, żeby nawigacja stała się intuicyjna.
-                </p>
-
-                <div class="fade-item flex flex-wrap items-center gap-4 text-xs" style="animation-delay:0.35s">
-                    <a href="https://drgil.pl/" target="_blank" rel="noopener noreferrer"
-                        class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-rose-600 text-white font-semibold tracking-wide transition-all duration-300 hover:bg-rose-700 hover:scale-[0.98] shadow-lg shadow-rose-500/25">
-                        Odwiedź stronę na żywo
-                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path d="M7 7h10v10M7 17L17 7" />
-                        </svg>
-                    </a>
-                    <div class="flex items-center gap-1.5 text-neutral-500">
-                        <span class="w-2 h-2 rounded-full bg-lime-500 animate-pulse-slow"></span>
-                        Projekt aktywny • drgil.pl
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- HERO IMAGE - zdjęcie "przed" -->
-        <section class="px-6 pb-20">
-            <div class="w-full max-w-[1200px] mx-auto">
-                <div class="fade-item relative rounded-2xl overflow-hidden border border-neutral-200 shadow-xl" style="animation-delay:0.4s">
-                    <div class="aspect-[16/9] bg-neutral-100 overflow-hidden">
-                        <img src="img/drgil-cennik-przed.png"
-                            alt="Stary cennik drgil.pl - wszystkie ceny widoczne naraz na jednej długiej stronie"
-                            class="w-full object-cover object-top" loading="eager" width="1200" height="675">
-                    </div>
-                    <div class="absolute top-5 left-5 flex items-center gap-2 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 border border-neutral-200 shadow-sm">
-                        <span class="text-xs font-medium text-neutral-700">Wersja przed redesignem</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- PROJECT INFO BAR -->
-        <section class="px-6 pb-20">
-            <div class="w-full max-w-[1200px] mx-auto">
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-5">
-                    <div class="counter-box bg-white rounded-2xl border border-neutral-200 p-6 text-center hover:shadow-md transition-shadow">
-                        <p class="text-xs text-neutral-500 uppercase tracking-wide mb-2">Klient</p>
-                        <p class="text-sm font-semibold text-black">drgil.pl</p>
-                    </div>
-                    <div class="counter-box bg-white rounded-2xl border border-neutral-200 p-6 text-center hover:shadow-md transition-shadow">
-                        <p class="text-xs text-neutral-500 uppercase tracking-wide mb-2">Sektor</p>
-                        <p class="text-sm font-semibold text-black">Medycyna estetyczna</p>
-                    </div>
-                    <div class="counter-box bg-white rounded-2xl border border-neutral-200 p-6 text-center hover:shadow-md transition-shadow">
-                        <p class="text-xs text-neutral-500 uppercase tracking-wide mb-2">Zakres</p>
-                        <p class="text-sm font-semibold text-black">UX / Redesign</p>
-                    </div>
-                    <div class="counter-box bg-white rounded-2xl border border-neutral-200 p-6 text-center hover:shadow-md transition-shadow">
-                        <p class="text-xs text-neutral-500 uppercase tracking-wide mb-2">Strona</p>
-                        <p class="text-sm font-semibold text-black">Cennik</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- PROBLEM -->
-        <section class="px-6 pb-24 border-t border-neutral-200 pt-24 bg-neutral-50">
-            <div class="w-full max-w-[800px] mx-auto">
-                <span class="inline-block text-xs font-semibold text-rose-600 tracking-widest uppercase mb-4">Problem</span>
-                <h2 class="text-2xl sm:text-3xl font-semibold text-black tracking-tight mb-6">
-                    24 000 pikseli w dół, żeby znaleźć jedną cenę
-                </h2>
-                <div class="text-neutral-600 leading-relaxed space-y-4 text-sm">
-                    <p>
-                        Cennik gabinetu medycyny estetycznej to nie prosta lista. W przypadku drgil.pl to kilkanaście kategorii zabiegów, każda z wieloma pozycjami i wariantami cenowymi. W starej wersji strony wszystkie te dane były widoczne od razu po wejściu: jedna ciągła tabela bez żadnego podziału na sekcje.
-                    </p>
-                    <p>
-                        Efekt był łatwy do zmierzenia. Strona cennika miała ponad 24 000 pikseli wysokości. Ktoś szukający konkretnego zabiegu musiał przewinąć całą stronę, żeby zorientować się co jest w środku, a potem wracać do góry w poszukiwaniu właściwej sekcji. Na telefonie, gdzie większość użytkowników przeglądała stronę, oznaczało to kilkadziesiąt ruchów palcem tylko po to, żeby znaleźć jedną pozycję w cenniku.
-                    </p>
-                    <p>
-                        Długa strona to też problem z pierwszym wrażeniem. Użytkownik, który nie widzi końca listy, ma mniej powodów, żeby zostać i szukać dalej.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- ROZWIĄZANIE -->
-        <section class="px-6 py-24 bg-white border-t border-neutral-200">
-            <div class="w-full max-w-[1200px] mx-auto">
-
-                <div class="text-center mb-16">
-                    <span class="inline-block text-xs font-semibold text-rose-600 tracking-widest uppercase mb-4">Rozwiązanie</span>
-                    <h2 class="text-2xl sm:text-3xl font-semibold text-black tracking-tight">
-                        Accordion zamiast jednej długiej listy
-                    </h2>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-                    <div class="group p-8 rounded-2xl border border-neutral-200 bg-white hover:border-neutral-300 hover:shadow-xl transition-all duration-500 text-center">
-                        <div class="w-14 h-14 rounded-2xl bg-rose-50 border border-rose-100 flex items-center justify-center text-rose-600 mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
-                            </svg>
-                        </div>
-                        <h3 class="text-base font-semibold text-black mb-3">Pełna lista kategorii na starcie</h3>
-                        <p class="text-sm text-neutral-600 leading-relaxed">
-                            Po wejściu na stronę użytkownik widzi wyłącznie nazwy kategorii zabiegów. Żadnego przewijania, żadnego zgadywania co jest na dole. Pełny przegląd oferty w jednym miejscu.
-                        </p>
-                    </div>
-
-                    <div class="group p-8 rounded-2xl border border-neutral-200 bg-white hover:border-neutral-300 hover:shadow-xl transition-all duration-500 text-center">
-                        <div class="w-14 h-14 rounded-2xl bg-rose-50 border border-rose-100 flex items-center justify-center text-rose-600 mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <polyline points="6 9 12 15 18 9"/>
-                            </svg>
-                        </div>
-                        <h3 class="text-base font-semibold text-black mb-3">Kliknięcie rozwija tylko wybraną sekcję</h3>
-                        <p class="text-sm text-neutral-600 leading-relaxed">
-                            Zainteresowany konkretnym zabiegiem klika w jego kategorię. Tabela z cenami rozwija się tylko dla tej jednej sekcji. Reszta pozostaje zwinięta i nie przeszkadza.
-                        </p>
-                    </div>
-
-                    <div class="group p-8 rounded-2xl border border-neutral-200 bg-white hover:border-neutral-300 hover:shadow-xl transition-all duration-500 text-center">
-                        <div class="w-14 h-14 rounded-2xl bg-rose-50 border border-rose-100 flex items-center justify-center text-rose-600 mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12" y2="18"/>
-                            </svg>
-                        </div>
-                        <h3 class="text-base font-semibold text-black mb-3">Naturalne na telefonie</h3>
-                        <p class="text-sm text-neutral-600 leading-relaxed">
-                            Na urządzeniach mobilnych zmiana robi największą różnicę. Zamiast kilkudziesięciu scrolli jedno dotknięcie kategorii pokazuje dokładnie to, czego szuka użytkownik.
-                        </p>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- EFEKT -->
-        <section class="px-6 py-24 bg-neutral-50 border-t border-neutral-200">
-            <div class="w-full max-w-[800px] mx-auto">
-                <span class="inline-block text-xs font-semibold text-rose-600 tracking-widest uppercase mb-4">Efekt</span>
-                <h2 class="text-2xl sm:text-3xl font-semibold text-black tracking-tight mb-6">
-                    Ta sama treść, zupełnie inne doświadczenie
-                </h2>
-                <div class="text-neutral-600 leading-relaxed space-y-4 text-sm">
-                    <p>
-                        Przy okazji przeprojektowania zaktualizowany został też sam cennik: odświeżone ceny i oferta zabiegów. Zmiana interfejsu i aktualizacja treści weszły w życie jednocześnie, dzięki czemu klienci trafiają na cennik aktualny i łatwy w obsłudze.
-                    </p>
-                    <p>
-                        Efekt jest szczególnie zauważalny na telefonie. Strona, która miała ponad 24 000 pikseli wysokości, po zwinięciu kategorii wyświetla pełną listę zabiegów na jednym ekranie. Użytkownik od razu widzi całą strukturę oferty i sam decyduje, co go interesuje.
-                    </p>
-                </div>
-
-                <!-- Porównanie przed / po -->
-                <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div>
-                        <p class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">Przed</p>
-                        <div class="rounded-2xl overflow-hidden border border-neutral-200 shadow-sm aspect-[4/3] bg-neutral-100">
-                            <img src="img/drgil-cennik-przed.png" alt="Cennik drgil.pl przed redesignem" class="w-full h-full object-cover object-top" loading="lazy">
-                        </div>
-                    </div>
-                    <div>
-                        <p class="text-xs font-semibold text-rose-600 uppercase tracking-widest mb-3">Po</p>
-                        <div class="rounded-2xl overflow-hidden border border-rose-100 shadow-sm aspect-[4/3] bg-neutral-100">
-                            <img src="img/drgil-cennik-po.png" alt="Cennik drgil.pl po redesignie ze zwijanymi kategoriami" class="w-full h-full object-cover object-top" loading="lazy">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-5">
-                    <div class="bg-white rounded-2xl border border-neutral-200 p-6 text-center">
-                        <p class="text-3xl font-semibold text-rose-600 mb-1">24k px</p>
-                        <p class="text-xs text-neutral-500">wysokość strony przed zmianą</p>
-                    </div>
-                    <div class="bg-white rounded-2xl border border-neutral-200 p-6 text-center">
-                        <p class="text-3xl font-semibold text-rose-600 mb-1">1 klik</p>
-                        <p class="text-xs text-neutral-500">żeby otworzyć dowolną kategorię</p>
-                    </div>
-                    <div class="bg-white rounded-2xl border border-neutral-200 p-6 text-center">
-                        <p class="text-3xl font-semibold text-rose-600 mb-1">Mobile</p>
-                        <p class="text-xs text-neutral-500">największy zysk na urządzeniach mobilnych</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA -->
-        <section class="py-24 px-6 bg-white border-t border-neutral-200">
-            <div class="w-full max-w-[740px] mx-auto text-center">
-                <span class="inline-block text-xs font-semibold text-rose-600 tracking-widest uppercase mb-4">Kolejny krok</span>
-                <h2 class="text-3xl lg:text-4xl font-semibold text-black tracking-tight mb-5">Masz podobny problem na swojej stronie?</h2>
-                <p class="text-neutral-600 leading-relaxed mb-8 max-w-lg mx-auto text-sm">
-                    Czasem jedna zmiana w interfejsie robi większą różnicę niż pełen redesign. Chętnie przyjrzę się Twojej stronie i zaproponuję konkretne usprawnienia.
-                </p>
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="/#kontakt" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-rose-600 text-white text-xs font-semibold tracking-wide transition-all duration-300 hover:bg-rose-700 hover:scale-[0.98] active:scale-95 shadow-lg shadow-rose-500/25">
-                        Omówmy Twój projekt
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-7-7l7 7-7 7" /></svg>
-                    </a>
-                    <a href="realizacje.html" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg border border-neutral-300 bg-white text-black text-xs font-medium transition-all duration-300 hover:border-rose-200 hover:text-rose-600">
-                        ← Wróć do realizacji
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- FOOTER -->
-        <footer class="border-t border-neutral-200 bg-white">
-        <div class="w-full max-w-[1200px] mx-auto px-6 py-16">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
-
-                <!-- Kolumna 1: Marka -->
-                <div class="flex flex-col gap-6">
-                    <a href="/" class="flex items-center">
-                        <img src="img/logo.png" alt="WebCanvas" class="h-8 w-auto">
-                    </a>
-                    <p class="text-sm text-neutral-500 leading-relaxed">
-                        Projektujemy i wdrażamy strony internetowe, sklepy e-commerce oraz kampanie reklamowe dla firm z całej Polski.
-                    </p>
-                    <div class="flex items-center gap-4">
-                        <a href="https://www.facebook.com/webcanvaspl" target="_blank" rel="noopener noreferrer" aria-label="Facebook WebCanvas" class="text-neutral-400 hover:text-rose-600 transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.988h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12"></path></svg>
-                        </a>
-                        <a href="https://www.instagram.com/_webcanvas/" target="_blank" rel="noopener noreferrer" aria-label="Instagram WebCanvas" class="text-neutral-400 hover:text-rose-600 transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M7.03.084c-1.277.06-2.149.264-2.91.563a5.9 5.9 0 0 0-2.124 1.388a5.9 5.9 0 0 0-1.38 2.127C.321 4.926.12 5.8.064 7.076s-.069 1.688-.063 4.947s.021 3.667.083 4.947c.061 1.277.264 2.149.563 2.911c.308.789.72 1.457 1.388 2.123a5.9 5.9 0 0 0 2.129 1.38c.763.295 1.636.496 2.913.552c1.278.056 1.689.069 4.947.063s3.668-.021 4.947-.082c1.28-.06 2.147-.265 2.91-.563a5.9 5.9 0 0 0 2.123-1.388a5.9 5.9 0 0 0 1.38-2.129c.295-.763.496-1.636.551-2.912c.056-1.28.07-1.69.063-4.948c-.006-3.258-.02-3.667-.081-4.947c-.06-1.28-.264-2.148-.564-2.911a5.9 5.9 0 0 0-1.387-2.123a5.9 5.9 0 0 0-2.128-1.38c-.764-.294-1.636-.496-2.914-.55C15.647.009 15.236-.006 11.977 0S8.31.021 7.03.084m.14 21.693c-1.17-.05-1.805-.245-2.228-.408a3.7 3.7 0 0 1-1.382-.895a3.7 3.7 0 0 1-.9-1.378c-.165-.423-.363-1.058-.417-2.228c-.06-1.264-.072-1.644-.08-4.848c-.006-3.204.006-3.583.061-4.848c.05-1.169.246-1.805.408-2.228c.216-.561.477-.96.895-1.382a3.7 3.7 0 0 1 1.379-.9c.423-.165 1.057-.361 2.227-.417c1.265-.06 1.644-.072 4.848-.08c3.203-.006 3.583.006 4.85.062c1.168.05 1.804.244 2.227.408c.56.216.96.475 1.382.895s.681.817.9 1.378c.165.422.362 1.056.417 2.227c.06 1.265.074 1.645.08 4.848c.005 3.203-.006 3.583-.061 4.848c-.051 1.17-.245 1.805-.408 2.23c-.216.56-.477.96-.896 1.38a3.7 3.7 0 0 1-1.378.9c-.422.165-1.058.362-2.226.418c-1.266.06-1.645.072-4.85.079s-3.582-.006-4.848-.06m9.783-16.192a1.44 1.44 0 1 0 1.437-1.442a1.44 1.44 0 0 0-1.437 1.442M5.839 12.012a6.161 6.161 0 1 0 12.323-.024a6.162 6.162 0 0 0-12.323.024M8 12.008A4 4 0 1 1 12.008 16A4 4 0 0 1 8 12.008"></path></svg>
-                        </a>
-                        <a href="https://share.google/e6KXzabuprV7YYIPx" target="_blank" rel="noopener noreferrer" aria-label="Wizytówka Google WebCanvas" class="text-neutral-400 hover:text-rose-600 transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Kolumna 2: Nawigacja -->
-                <div class="flex flex-col gap-4">
-                    <p class="text-xs font-semibold text-black uppercase tracking-widest">Nawigacja</p>
-                    <nav class="flex flex-col gap-3">
-                        <a href="/#hero" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Start</a>
-                        <a href="/#uslugi" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Usługi</a>
-                        <a href="realizacje.html" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Realizacje</a>
-                        <a href="blog.html" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Blog</a>
-                        <a href="/#cennik" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Cennik</a>
-                        <a href="/#kontakt" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Kontakt</a>
-                    </nav>
-                </div>
-
-                <!-- Kolumna 3: Usługi -->
-                <div class="flex flex-col gap-4">
-                    <p class="text-xs font-semibold text-black uppercase tracking-widest">Usługi</p>
-                    <nav class="flex flex-col gap-3">
-                        <a href="tworzenie-stron-internetowych.html" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Strony internetowe</a>
-                        <a href="/#uslugi" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Sklepy e-commerce</a>
-                        <a href="pozycjonowanie-seo.html" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Pozycjonowanie SEO</a>
-                        <a href="kampanie-google-ads.html" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Kampanie Google Ads</a>
-                        <a href="kampanie-meta-ads.html" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Kampanie Meta Ads</a>
-                    </nav>
-                </div>
-
-                <!-- Kolumna 4: Lokalizacje -->
-                <div class="flex flex-col gap-4">
-                    <p class="text-xs font-semibold text-black uppercase tracking-widest">Lokalizacje</p>
-                    <nav class="flex flex-col gap-3">
-                        <a href="strony-internetowe-konin.html" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Strony internetowe Konin</a>
-                        <a href="strony-internetowe-turek.html" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Strony internetowe Turek</a>
-                        <a href="strony-internetowe-kolo.html" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Strony internetowe Koło</a>
-                        <a href="strony-internetowe-slupca.html" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Strony internetowe Słupca</a>
-                        <a href="strony-internetowe-poznan.html" class="text-sm text-neutral-500 hover:text-rose-600 transition-colors">Strony internetowe Poznań</a>
-                    </nav>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- Dolny pasek -->
-        <div class="border-t border-neutral-200">
-            <div class="w-full max-w-[1200px] mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-                <div class="flex flex-col gap-1 text-center sm:text-left">
-                    <p class="text-xs text-neutral-400">&copy; 2026 WebCanvas. Wszelkie prawa zastrzeżone.</p>
-                    <address class="not-italic text-xs text-neutral-400">WebCanvas, Biele 126, 62-610 Sompolno &middot; <a href="tel:+48739043596" class="hover:text-rose-600 transition-colors">+48 739 043 596</a> &middot; <a href="mailto:kontakt@web-canvas.pl" class="hover:text-rose-600 transition-colors">kontakt@web-canvas.pl</a> &middot; pn&ndash;pt 9:00&ndash;17:00</address>
-                </div>
-                <a href="polityka-prywatnosci.html" class="text-xs text-neutral-400 hover:text-rose-600 transition-colors">Polityka prywatności</a>
-            </div>
-        </div>
-    </footer>
-
-    </main>
-
-    <script>
-        const mobileMenu = document.getElementById('mobile-menu');
-        const hamburgerBtn = document.getElementById('hamburger-btn');
-        const iconOpen = document.getElementById('hamburger-icon-open');
-        const iconClose = document.getElementById('hamburger-icon-close');
-
-        function toggleMobileMenu() {
-            const isOpen = !mobileMenu.classList.contains('hidden');
-            if (isOpen) { closeMobileMenu(); }
-            else {
-                mobileMenu.classList.remove('hidden');
-                iconOpen.classList.add('hidden');
-                iconClose.classList.remove('hidden');
-                hamburgerBtn.setAttribute('aria-expanded', 'true');
-            }
-        }
-
-        function closeMobileMenu() {
-            mobileMenu.classList.add('hidden');
-            iconOpen.classList.remove('hidden');
-            iconClose.classList.add('hidden');
-            hamburgerBtn.setAttribute('aria-expanded', 'false');
-        }
-
-        document.addEventListener('click', function (e) {
-            if (!mobileMenu.classList.contains('hidden') &&
-                !mobileMenu.contains(e.target) &&
-                !hamburgerBtn.contains(e.target)) {
-                closeMobileMenu();
-            }
-        });
-    </script>
-
-    <script src="js/cookies.js?v=1" defer></script>
-</body>
-</html>
+      } catch (e) { }
+    </script><script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-K2QFBR7K');
+    </script><title>Redesign cennika drgil.pl | WebCanvas</title><meta name="description" content="Case Study drgil.pl: jak przeprojektowanie cennika z listy na zwijane kategorie skróciło czas nawigacji i poprawiło UX na urządzeniach mobilnych."><link rel="canonical" href="https://web-canvas.pl/case-study-drgil.html"><meta name="theme-color" content="#141110"><meta property="og:type" content="website"><meta property="og:site_name" content="WebCanvas"><meta property="og:locale" content="pl_PL"><meta property="og:title" content="Redesign cennika drgil.pl | WebCanvas"><meta property="og:description" content="Case Study drgil.pl: jak przeprojektowanie cennika z listy na zwijane kategorie skróciło czas nawigacji i poprawiło UX na urządzeniach mobilnych."><meta property="og:url" content="https://web-canvas.pl/case-study-drgil.html"><meta property="og:image" content="https://web-canvas.pl/img/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png"><link rel="manifest" href="/favicon_io/site.webmanifest"><link rel="shortcut icon" href="/favicon_io/favicon.ico"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Strona główna","item":"https://web-canvas.pl/"},{"@type":"ListItem","position":2,"name":"Realizacje","item":"https://web-canvas.pl/realizacje.html"},{"@type":"ListItem","position":3,"name":"Redesign cennika drgil.pl","item":"https://web-canvas.pl/case-study-drgil.html"}]}</script><link rel="stylesheet" href="/_astro/ContactSection.aNlQZpGW.css"><link rel="stylesheet" href="/_astro/_slug_.CiwJJyRw.css"><style>.page-hero[data-astro-cid-75ysl5lo]{background:var(--night);min-height:calc(100vh - var(--nav-h));min-height:calc(100svh - var(--nav-h));align-items:center;padding:clamp(48px,6vw,96px) 0;display:flex;position:relative;overflow:hidden}.page-hero__inner[data-astro-cid-75ysl5lo]{width:min(100% - 2 * var(--gut), var(--wrap))}.page-hero[data-astro-cid-75ysl5lo]:before{content:"";pointer-events:none;filter:blur(20px);background:radial-gradient(closest-side,#e11d4829,#0000);height:90%;position:absolute;inset:-30% 30% auto -10%}.page-hero__inner[data-astro-cid-75ysl5lo]{position:relative}.page-hero[data-astro-cid-75ysl5lo] h1[data-astro-cid-75ysl5lo]{letter-spacing:-.04em;max-width:20ch;font-size:clamp(2.3rem,1.3rem + 3.6vw,4.5rem);font-weight:680;line-height:1.02}.page-hero--narrow[data-astro-cid-75ysl5lo] .page-hero__inner[data-astro-cid-75ysl5lo]{max-width:720px}.page-hero--narrow[data-astro-cid-75ysl5lo] h1[data-astro-cid-75ysl5lo]{max-width:none;font-size:clamp(2rem,1.3rem + 2.2vw,3.1rem);line-height:1.08}.page-hero[data-astro-cid-75ysl5lo] h1[data-astro-cid-75ysl5lo] .accent[data-astro-cid-75ysl5lo]{color:var(--rose)}.page-hero__lead[data-astro-cid-75ysl5lo]{font-size:var(--t-lead);color:var(--snow-muted);max-width:62ch;margin-top:24px;line-height:1.6}.page-hero__lead[data-astro-cid-75ysl5lo] strong{color:var(--snow);font-weight:560}.page-hero__lead[data-astro-cid-75ysl5lo] a{color:var(--rose-soft)}.page-hero__btns[data-astro-cid-75ysl5lo]{margin-top:36px}.crumbs[data-astro-cid-75ysl5lo]{margin-bottom:28px}.crumbs[data-astro-cid-75ysl5lo] ol[data-astro-cid-75ysl5lo]{font-size:var(--t-small);color:var(--snow-muted);flex-wrap:wrap;gap:4px 0;display:flex}.crumbs[data-astro-cid-75ysl5lo] li[data-astro-cid-75ysl5lo]{align-items:center;display:inline-flex}.crumbs[data-astro-cid-75ysl5lo] li[data-astro-cid-75ysl5lo]+li[data-astro-cid-75ysl5lo]:before{content:"/";opacity:.5;margin:0 10px}.crumbs[data-astro-cid-75ysl5lo] a[data-astro-cid-75ysl5lo]{align-items:center;min-height:32px;text-decoration:none;display:inline-flex}.crumbs[data-astro-cid-75ysl5lo] a[data-astro-cid-75ysl5lo]:hover,.crumbs[data-astro-cid-75ysl5lo] [data-astro-cid-75ysl5lo][aria-current]{color:var(--snow)}.page-hero__meta[data-astro-cid-75ysl5lo]{font-size:var(--t-small);color:var(--snow-muted);flex-wrap:wrap;align-items:center;gap:8px 16px;margin-bottom:20px;display:flex}.page-hero__tag[data-astro-cid-75ysl5lo]{color:var(--rose-soft);background:#e11d4829;border-radius:999px;padding:4px 12px;font-weight:580}
+</style></head><body><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K2QFBR7K" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><a class="skip-link" href="#tresc">Przejdź do treści</a><header class="nav" data-nav data-astro-cid-nen7h5rs><div class="wrap nav__bar" data-astro-cid-nen7h5rs><a class="nav__logo" href="/" aria-label="WebCanvas, strona główna" data-astro-cid-nen7h5rs><img src="/_astro/logo-light.D_JQcvJG_Zo513N.webp" alt loading="eager" data-astro-cid-nen7h5rs="true" decoding="async" width="160" height="35"></a><nav class="nav__links" aria-label="Główna nawigacja" data-astro-cid-nen7h5rs><ul data-astro-cid-nen7h5rs><li data-astro-cid-nen7h5rs><a href="/#uslugi" data-astro-cid-nen7h5rs>Usługi</a></li><li data-astro-cid-nen7h5rs><a href="/realizacje.html" data-astro-cid-nen7h5rs>Realizacje</a></li><li data-astro-cid-nen7h5rs><a href="/#proces" data-astro-cid-nen7h5rs>Proces</a></li><li data-astro-cid-nen7h5rs><a href="/#cennik" data-astro-cid-nen7h5rs>Cennik</a></li><li data-astro-cid-nen7h5rs><a href="/blog.html" data-astro-cid-nen7h5rs>Blog</a></li></ul></nav><div class="nav__actions" data-astro-cid-nen7h5rs><a class="btn btn--primary nav__cta" href="/#kontakt" data-astro-cid-nen7h5rs>Wyceń projekt</a><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu-mobilne" aria-label="Otwórz menu" data-nav-toggle data-astro-cid-nen7h5rs><svg class="i-open" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="i-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div></div><div class="nav__sheet" id="menu-mobilne" hidden data-nav-sheet data-astro-cid-nen7h5rs><ul class="wrap" data-astro-cid-nen7h5rs><li data-astro-cid-nen7h5rs><a href="/#uslugi" data-astro-cid-nen7h5rs>Usługi</a></li><li data-astro-cid-nen7h5rs><a href="/realizacje.html" data-astro-cid-nen7h5rs>Realizacje</a></li><li data-astro-cid-nen7h5rs><a href="/#proces" data-astro-cid-nen7h5rs>Proces</a></li><li data-astro-cid-nen7h5rs><a href="/#cennik" data-astro-cid-nen7h5rs>Cennik</a></li><li data-astro-cid-nen7h5rs><a href="/blog.html" data-astro-cid-nen7h5rs>Blog</a></li><li data-astro-cid-nen7h5rs><a href="/#kontakt" data-astro-cid-nen7h5rs>Kontakt</a></li></ul><div class="wrap nav__sheet-cta" data-astro-cid-nen7h5rs><a class="btn btn--primary" href="/#kontakt" data-astro-cid-nen7h5rs>Wyceń projekt <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div></header><script type="module">var e=document.querySelector(`[data-nav]`),t=document.querySelector(`[data-nav-toggle]`),n=document.querySelector(`[data-nav-sheet]`),r=r=>{t&&n&&e&&(t.setAttribute(`aria-expanded`,String(r)),t.setAttribute(`aria-label`,r?`Zamknij menu`:`Otwórz menu`),n.hidden=!r,e.classList.toggle(`is-open`,r),document.documentElement.style.overflow=r?`hidden`:``)};t?.addEventListener(`click`,()=>r(t.getAttribute(`aria-expanded`)!==`true`)),n?.addEventListener(`click`,e=>{e.target.closest(`a`)&&r(!1)}),document.addEventListener(`keydown`,e=>{e.key===`Escape`&&r(!1)}),window.matchMedia(`(min-width: 960px)`).addEventListener(`change`,e=>{e.matches&&r(!1)});var i=()=>e?.classList.toggle(`is-scrolled`,window.scrollY>8);i(),window.addEventListener(`scroll`,i,{passive:!0});</script><main id="tresc"><section class="page-hero" data-astro-cid-75ysl5lo><div class="wrap page-hero__inner" data-enter data-astro-cid-75ysl5lo><nav class="crumbs" aria-label="Okruszki" data-astro-cid-75ysl5lo><ol data-astro-cid-75ysl5lo><li data-astro-cid-75ysl5lo><a href="/" data-astro-cid-75ysl5lo>Strona główna</a></li><li data-astro-cid-75ysl5lo><a href="/realizacje.html" data-astro-cid-75ysl5lo>Realizacje</a></li><li data-astro-cid-75ysl5lo><span aria-current="page" data-astro-cid-75ysl5lo>Redesign cennika drgil.pl</span></li></ol></nav><p class="page-hero__meta" data-astro-cid-75ysl5lo><span class="page-hero__tag" data-astro-cid-75ysl5lo>Case Study</span><span data-astro-cid-75ysl5lo>Gabinet medycyny estetycznej • Poprawa UX</span></p><h1 data-astro-cid-75ysl5lo>Cennik, który nie wymaga <span class="accent" data-astro-cid-75ysl5lo>kilkudziesięciu scrolli</span></h1><p class="page-hero__lead" data-astro-cid-75ysl5lo>
+ Strona drgil.pl oferuje dziesiątki zabiegów medycyny estetycznej podzielonych na kilkanaście kategorii. Stary cennik wyświetlał wszystko naraz, tworząc jedną długą listę. Zmiana jednego elementu interfejsu wystarczyła, żeby nawigacja stała się intuicyjna.
+ </p><div class="btn-row page-hero__btns" data-astro-cid-75ysl5lo><a class="btn btn--primary" href="https://drgil.pl/" target="_blank" rel="noopener" data-astro-cid-75ysl5lo>Odwiedź stronę na żywo<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div></div></section><section class="sx-shot" data-astro-cid-s76agk4a><div class="wrap sx-shot__grid" data-astro-cid-s76agk4a><figure class="sx-shot__frame" data-astro-cid-s76agk4a><div class="sx-shot__bar" aria-hidden="true" data-astro-cid-s76agk4a><i data-astro-cid-s76agk4a></i><i data-astro-cid-s76agk4a></i><i data-astro-cid-s76agk4a></i></div><img src="/img/drgil-cennik-przed.png" alt="Stary cennik drgil.pl - wszystkie ceny widoczne naraz na jednej długiej stronie" loading="eager" data-astro-cid-s76agk4a></figure></div></section><section class="sx-facts" data-astro-cid-s76agk4a><dl class="wrap sx-facts__grid" data-astro-cid-s76agk4a><div data-astro-cid-s76agk4a><dt data-astro-cid-s76agk4a>Klient</dt><dd data-astro-cid-s76agk4a>drgil.pl</dd></div><div data-astro-cid-s76agk4a><dt data-astro-cid-s76agk4a>Sektor</dt><dd data-astro-cid-s76agk4a>Medycyna estetyczna</dd></div><div data-astro-cid-s76agk4a><dt data-astro-cid-s76agk4a>Zakres</dt><dd data-astro-cid-s76agk4a>UX / Redesign</dd></div><div data-astro-cid-s76agk4a><dt data-astro-cid-s76agk4a>Strona</dt><dd data-astro-cid-s76agk4a>Cennik</dd></div></dl></section><section class="section section--paper on-light sx-prose" data-astro-cid-s76agk4a><div class="wrap" data-astro-cid-s76agk4a><div class="sec-head sec-head--solo" data-astro-cid-s76agk4a><div data-astro-cid-s76agk4a><p class="eyebrow" data-astro-cid-s76agk4a>Problem</p><h2 class="h2" data-astro-cid-s76agk4a>24 000 pikseli w dół, żeby znaleźć jedną cenę</h2></div></div><div class="prose sx-before sx-before--wide" data-astro-cid-s76agk4a><p>
+ Cennik gabinetu medycyny estetycznej to nie prosta lista. W przypadku drgil.pl to kilkanaście kategorii zabiegów, każda z wieloma pozycjami i wariantami cenowymi. W starej wersji strony wszystkie te dane były widoczne od razu po wejściu: jedna ciągła tabela bez żadnego podziału na sekcje.
+ </p>
+ <p>
+ Efekt był łatwy do zmierzenia. Strona cennika miała ponad 24 000 pikseli wysokości. Ktoś szukający konkretnego zabiegu musiał przewinąć całą stronę, żeby zorientować się co jest w środku, a potem wracać do góry w poszukiwaniu właściwej sekcji. Na telefonie, gdzie większość użytkowników przeglądała stronę, oznaczało to kilkadziesiąt ruchów palcem tylko po to, żeby znaleźć jedną pozycję w cenniku.
+ </p>
+ <p>
+ Długa strona to też problem z pierwszym wrażeniem. Użytkownik, który nie widzi końca listy, ma mniej powodów, żeby zostać i szukać dalej.
+ </p></div></div></section><section class="section section--night-2 sx-cards" data-astro-cid-s76agk4a><div class="wrap" data-astro-cid-s76agk4a><div class="sec-head sec-head--solo" data-astro-cid-s76agk4a><div data-astro-cid-s76agk4a><p class="eyebrow" data-astro-cid-s76agk4a>Rozwiązanie</p><h2 class="h2" data-astro-cid-s76agk4a>Accordion zamiast jednej długiej listy</h2></div></div><ol class="sx-cards" data-astro-cid-s76agk4a><li class="sx-card" data-astro-cid-s76agk4a><h3 data-astro-cid-s76agk4a>Pełna lista kategorii na starcie</h3><div class="prose prose--dark sx-card__body" data-astro-cid-s76agk4a><p>
+ Po wejściu na stronę użytkownik widzi wyłącznie nazwy kategorii zabiegów. Żadnego przewijania, żadnego zgadywania co jest na dole. Pełny przegląd oferty w jednym miejscu.
+ </p></div></li><li class="sx-card" data-astro-cid-s76agk4a><h3 data-astro-cid-s76agk4a>Kliknięcie rozwija tylko wybraną sekcję</h3><div class="prose prose--dark sx-card__body" data-astro-cid-s76agk4a><p>
+ Zainteresowany konkretnym zabiegiem klika w jego kategorię. Tabela z cenami rozwija się tylko dla tej jednej sekcji. Reszta pozostaje zwinięta i nie przeszkadza.
+ </p></div></li><li class="sx-card" data-astro-cid-s76agk4a><h3 data-astro-cid-s76agk4a>Naturalne na telefonie</h3><div class="prose prose--dark sx-card__body" data-astro-cid-s76agk4a><p>
+ Na urządzeniach mobilnych zmiana robi największą różnicę. Zamiast kilkudziesięciu scrolli jedno dotknięcie kategorii pokazuje dokładnie to, czego szuka użytkownik.
+ </p></div></li></ol></div></section><section class="section section--paper on-light sx-prose" data-astro-cid-s76agk4a><div class="wrap" data-astro-cid-s76agk4a><div class="sec-head sec-head--solo" data-astro-cid-s76agk4a><div data-astro-cid-s76agk4a><p class="eyebrow" data-astro-cid-s76agk4a>Efekt</p><h2 class="h2" data-astro-cid-s76agk4a>Ta sama treść, zupełnie inne doświadczenie</h2></div></div><div class="prose sx-before sx-before--wide" data-astro-cid-s76agk4a><p>
+ Przy okazji przeprojektowania zaktualizowany został też sam cennik: odświeżone ceny i oferta zabiegów. Zmiana interfejsu i aktualizacja treści weszły w życie jednocześnie, dzięki czemu klienci trafiają na cennik aktualny i łatwy w obsłudze.
+ </p>
+ <p>
+ Efekt jest szczególnie zauważalny na telefonie. Strona, która miała ponad 24 000 pikseli wysokości, po zwinięciu kategorii wyświetla pełną listę zabiegów na jednym ekranie. Użytkownik od razu widzi całą strukturę oferty i sam decyduje, co go interesuje.
+ </p>
+<p>Przed</p>
+ <img src="/img/drgil-cennik-przed.png" alt="Cennik drgil.pl przed redesignem" loading="lazy">
+ <p>Po</p>
+ <img src="/img/drgil-cennik-po.png" alt="Cennik drgil.pl po redesignie ze zwijanymi kategoriami" loading="lazy">
+<p>24k px</p>
+ <p>wysokość strony przed zmianą</p>
+ <p>1 klik</p>
+ <p>żeby otworzyć dowolną kategorię</p>
+ <p>Mobile</p>
+ <p>największy zysk na urządzeniach mobilnych</p></div></div></section><section class="section contact" id="kontakt" aria-labelledby="kontakt-h" data-astro-cid-uukcahgk><div class="wrap contact__grid" data-astro-cid-uukcahgk><div class="contact__intro" data-astro-cid-uukcahgk><p class="eyebrow" data-astro-cid-uukcahgk>Kontakt</p><h2 class="h2" id="kontakt-h" data-astro-cid-uukcahgk>Masz podobny problem na swojej stronie?</h2><p class="lead" data-astro-cid-uukcahgk>Opisz krótko firmę i to, czego potrzebujesz. Bezpłatną wycenę odeślę w ciągu 24 godzin.</p><ul class="contact__list" data-astro-cid-uukcahgk><li data-astro-cid-uukcahgk><a href="mailto:kontakt@web-canvas.pl" data-astro-cid-uukcahgk><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg>kontakt@web-canvas.pl</a></li><li data-astro-cid-uukcahgk><a href="tel:+48739043596" data-astro-cid-uukcahgk><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>+48 739 043 596</a></li><li data-astro-cid-uukcahgk><span data-astro-cid-uukcahgk><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>pn–pt 9:00–17:00</span></li></ul></div><form class="form" action="/contact.php" method="post" novalidate data-contact-form data-astro-cid-uukcahgk><input type="hidden" name="form_type" value="contact" data-astro-cid-uukcahgk><div class="form__row" data-astro-cid-uukcahgk><div class="field" data-astro-cid-uukcahgk><label for="f-name" data-astro-cid-uukcahgk>Imię i nazwisko</label><input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="f-name-err" data-astro-cid-uukcahgk><p class="field__error" id="f-name-err" data-astro-cid-uukcahgk></p></div><div class="field" data-astro-cid-uukcahgk><label for="f-email" data-astro-cid-uukcahgk>Adres e-mail</label><input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="f-email-err" data-astro-cid-uukcahgk><p class="field__error" id="f-email-err" data-astro-cid-uukcahgk></p></div></div><div class="field" data-astro-cid-uukcahgk><label for="f-type" data-astro-cid-uukcahgk>Czego potrzebujesz?</label><select id="f-type" name="project_type" data-astro-cid-uukcahgk><option value="" data-astro-cid-uukcahgk>Wybierz (opcjonalnie)</option><option data-astro-cid-uukcahgk>Strona firmowa / wizytówka</option><option data-astro-cid-uukcahgk>Landing page</option><option data-astro-cid-uukcahgk>Sklep internetowy</option><option data-astro-cid-uukcahgk>Aplikacja webowa</option><option data-astro-cid-uukcahgk>Nowy wygląd obecnej strony</option><option data-astro-cid-uukcahgk>Pozycjonowanie SEO</option><option data-astro-cid-uukcahgk>Kampanie Google / Meta Ads</option><option data-astro-cid-uukcahgk>Inne</option></select></div><div class="field" data-astro-cid-uukcahgk><label for="f-msg" data-astro-cid-uukcahgk>Wiadomość</label><textarea id="f-msg" name="message" rows="5" required aria-describedby="f-msg-err" data-astro-cid-uukcahgk></textarea><p class="field__error" id="f-msg-err" data-astro-cid-uukcahgk></p></div><div class="field field--check" data-astro-cid-uukcahgk><input id="f-consent" name="consent" type="checkbox" required aria-describedby="f-consent-err" data-astro-cid-uukcahgk><label for="f-consent" data-astro-cid-uukcahgk>Wyrażam zgodę na przetwarzanie moich danych osobowych w celu obsługi zapytania. Administratorem danych jest WebCanvas. Szczegóły w <a href="/polityka-prywatnosci.html" data-astro-cid-uukcahgk>Polityce prywatności</a>.</label><p class="field__error" id="f-consent-err" data-astro-cid-uukcahgk></p></div><button class="btn btn--primary form__submit" type="submit" data-astro-cid-uukcahgk>Wyślij zapytanie <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button><p class="form__status" role="status" aria-live="polite" data-form-status data-astro-cid-uukcahgk></p></form></div></section><script type="module">var e=document.querySelector(`[data-contact-form]`);if(e){let t=e.querySelector(`[data-form-status]`),n=e.querySelector(`.form__submit`),r={name:e=>e.value.trim()?``:`Wpisz imię i nazwisko.`,email:e=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.value.trim())?``:`Wpisz adres e-mail z @, np. jan@firma.pl.`,message:e=>e.value.trim()?``:`Napisz kilka słów o projekcie.`,consent:e=>e.checked?``:`Zaznacz zgodę, żebym mógł odpowiedzieć.`};e.addEventListener(`submit`,async i=>{i.preventDefault();let a=null,o=0;for(let[t,n]of Object.entries(r)){let r=e.elements.namedItem(t),i=n(r),s=document.getElementById(r.getAttribute(`aria-describedby`));s.textContent=i,r.toggleAttribute(`aria-invalid`,!!i),i&&(o++,a??=r)}if(a){t.dataset.state=`error`,t.textContent=o===1?`Popraw 1 pole.`:o<5?`Popraw ${o} pola.`:`Popraw ${o} pól.`,a.focus();return}n.disabled=!0;let s=setTimeout(()=>{t.dataset.state=``,t.textContent=`Wysyłanie…`},300);try{let n=await fetch(e.action,{method:`POST`,body:new FormData(e)}),r=await n.json().catch(()=>({}));clearTimeout(s),n.ok&&r.success!==`false`?(t.dataset.state=`ok`,t.textContent=`Dziękuję, zapytanie dotarło. Odpowiem w ciągu 24 godzin.`,e.reset(),window.dataLayer?.push({event:`form_submit`,form_type:`contact`})):(t.dataset.state=`error`,t.textContent=r.message||`Nie udało się wysłać. Spróbuj ponownie albo napisz na kontakt@web-canvas.pl.`)}catch{clearTimeout(s),t.dataset.state=`error`,t.textContent=`Brak połączenia. Spróbuj ponownie albo napisz na kontakt@web-canvas.pl.`}finally{n.disabled=!1}})}</script></main><footer class="footer" data-astro-cid-jo6i4kqk><div class="wrap" data-astro-cid-jo6i4kqk><div class="footer__top" data-astro-cid-jo6i4kqk><div class="person" data-astro-cid-jo6i4kqk><p class="person__name" data-astro-cid-jo6i4kqk>Adam Kubiak</p><p class="person__role" data-astro-cid-jo6i4kqk>Projektuję i wdrażam strony w WebCanvas. Z każdym klientem rozmawiam osobiście, od wyceny po opiekę po starcie.</p><div class="person__contact" data-astro-cid-jo6i4kqk><a href="mailto:kontakt@web-canvas.pl" data-astro-cid-jo6i4kqk><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg>kontakt@web-canvas.pl</a><a href="tel:+48739043596" data-astro-cid-jo6i4kqk><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>+48 739 043 596</a></div></div><div class="footer__cols" data-astro-cid-jo6i4kqk><div data-astro-cid-jo6i4kqk><h3 data-astro-cid-jo6i4kqk>Nawigacja</h3><ul data-astro-cid-jo6i4kqk><li data-astro-cid-jo6i4kqk><a href="/" data-astro-cid-jo6i4kqk>Start</a></li><li data-astro-cid-jo6i4kqk><a href="/#uslugi" data-astro-cid-jo6i4kqk>Usługi</a></li><li data-astro-cid-jo6i4kqk><a href="/realizacje.html" data-astro-cid-jo6i4kqk>Realizacje</a></li><li data-astro-cid-jo6i4kqk><a href="/#proces" data-astro-cid-jo6i4kqk>Proces</a></li><li data-astro-cid-jo6i4kqk><a href="/#cennik" data-astro-cid-jo6i4kqk>Cennik</a></li><li data-astro-cid-jo6i4kqk><a href="/blog.html" data-astro-cid-jo6i4kqk>Blog</a></li><li data-astro-cid-jo6i4kqk><a href="/#kontakt" data-astro-cid-jo6i4kqk>Kontakt</a></li></ul></div><div data-astro-cid-jo6i4kqk><h3 data-astro-cid-jo6i4kqk>Usługi</h3><ul data-astro-cid-jo6i4kqk><li data-astro-cid-jo6i4kqk><a href="/tworzenie-stron-internetowych.html" data-astro-cid-jo6i4kqk>Strony internetowe</a></li><li data-astro-cid-jo6i4kqk><a href="/pozycjonowanie-seo.html" data-astro-cid-jo6i4kqk>Pozycjonowanie SEO</a></li><li data-astro-cid-jo6i4kqk><a href="/kampanie-google-ads.html" data-astro-cid-jo6i4kqk>Kampanie Google Ads</a></li><li data-astro-cid-jo6i4kqk><a href="/kampanie-meta-ads.html" data-astro-cid-jo6i4kqk>Kampanie Meta Ads</a></li><li data-astro-cid-jo6i4kqk><a href="/program-partnerski.html" data-astro-cid-jo6i4kqk>Dla biur rachunkowych</a></li></ul></div><div data-astro-cid-jo6i4kqk><h3 data-astro-cid-jo6i4kqk>Lokalizacje</h3><ul data-astro-cid-jo6i4kqk><li data-astro-cid-jo6i4kqk><a href="/strony-internetowe-konin.html" data-astro-cid-jo6i4kqk>Strony internetowe Konin</a></li><li data-astro-cid-jo6i4kqk><a href="/strony-internetowe-turek.html" data-astro-cid-jo6i4kqk>Strony internetowe Turek</a></li><li data-astro-cid-jo6i4kqk><a href="/strony-internetowe-kolo.html" data-astro-cid-jo6i4kqk>Strony internetowe Koło</a></li><li data-astro-cid-jo6i4kqk><a href="/strony-internetowe-slupca.html" data-astro-cid-jo6i4kqk>Strony internetowe Słupca</a></li><li data-astro-cid-jo6i4kqk><a href="/strony-internetowe-poznan.html" data-astro-cid-jo6i4kqk>Strony internetowe Poznań</a></li></ul></div></div></div><div class="footer__brand" data-astro-cid-jo6i4kqk><a href="/" aria-label="WebCanvas, strona główna" data-astro-cid-jo6i4kqk><img src="/_astro/logo-light.D_JQcvJG_Zo513N.webp" alt data-astro-cid-jo6i4kqk="true" loading="lazy" decoding="async" width="160" height="35"></a><div class="footer__socials" data-astro-cid-jo6i4kqk><a href="https://www.facebook.com/webcanvaspl" target="_blank" rel="noopener" aria-label="WebCanvas na Facebooku" data-astro-cid-jo6i4kqk><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v7h4v-7h3l1-4h-4V8.5a.5.5 0 0 1 .5-.5z"/></svg></a><a href="https://www.instagram.com/_webcanvas/" target="_blank" rel="noopener" aria-label="WebCanvas na Instagramie" data-astro-cid-jo6i4kqk><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".9" fill="currentColor" stroke="none"/></svg></a><a href="https://share.google/e6KXzabuprV7YYIPx" target="_blank" rel="noopener" class="footer__google" data-astro-cid-jo6i4kqk><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z" fill="currentColor" stroke="none"/></svg> 5,0 w Google</a></div></div><div class="footer__legal" data-astro-cid-jo6i4kqk><p data-astro-cid-jo6i4kqk>WebCanvas, Biele 126, 62-610 Sompolno· <a href="tel:+48739043596" data-astro-cid-jo6i4kqk>+48 739 043 596</a>· <a href="mailto:kontakt@web-canvas.pl" data-astro-cid-jo6i4kqk>kontakt@web-canvas.pl</a>· pn–pt 9:00–17:00</p><p data-astro-cid-jo6i4kqk>© 2026 WebCanvas· <a href="polityka-prywatnosci.html" data-astro-cid-jo6i4kqk>Polityka prywatności</a></p></div></div></footer><script src="/js/cookies.js?v=1" defer></script></body></html>

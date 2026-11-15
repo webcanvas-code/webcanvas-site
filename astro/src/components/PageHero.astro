@@ -1,0 +1,97 @@
+---
+import Icon from './Icon.astro';
+
+interface Crumb { label: string; href?: string }
+interface Button { label: string; href: string; primary?: boolean }
+interface Props {
+  crumbs?: Crumb[];
+  h1: string;
+  /** fragment nagłówka wyróżniony kolorem */
+  accent?: string;
+  lead?: string[];
+  buttons?: Button[];
+  meta?: string[];
+  narrow?: boolean;
+}
+const { crumbs = [], h1, accent, lead = [], buttons = [], meta = [], narrow = false } = Astro.props;
+
+// Rozbicie H1 na część zwykłą i wyróżnioną (gdy akcent jest w środku lub na końcu)
+let parts: { text: string; accent?: boolean }[] = [{ text: h1 }];
+if (accent && h1.includes(accent) && accent !== h1) {
+  const i = h1.indexOf(accent);
+  parts = [
+    { text: h1.slice(0, i) },
+    { text: accent, accent: true },
+    { text: h1.slice(i + accent.length) },
+  ].filter((p) => p.text);
+}
+---
+<section class:list={['page-hero', { 'page-hero--narrow': narrow }]}>
+  <div class="wrap page-hero__inner" data-enter>
+    {crumbs.length > 0 && (
+      <nav class="crumbs" aria-label="Okruszki">
+        <ol>
+          {crumbs.map((c, i) => (
+            <li>
+              {c.href && i < crumbs.length - 1 ? <a href={c.href}>{c.label}</a> : <span aria-current="page">{c.label}</span>}
+            </li>
+          ))}
+        </ol>
+      </nav>
+    )}
+    {meta.length > 0 && (
+      <p class="page-hero__meta">{meta.map((m, i) => i === 0 ? <span class="page-hero__tag">{m}</span> : <span>{m}</span>)}</p>
+    )}
+    <h1>{parts.map((p) => (p.accent ? <span class="accent">{p.text}</span> : p.text))}</h1>
+    {lead.map((l) => <p class="page-hero__lead" set:html={l} />)}
+    {buttons.length > 0 && (
+      <div class="btn-row page-hero__btns">
+        {buttons.map((b) => {
+          const external = /^https?:/.test(b.href);
+          return (
+            <a class:list={['btn', b.primary ? 'btn--primary' : 'btn--ghost']} href={b.href} target={external ? '_blank' : undefined} rel={external ? 'noopener' : undefined}>
+              {b.label}{b.primary && <Icon name={external ? 'arrow-up-right' : 'arrow'} />}
+            </a>
+          );
+        })}
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .page-hero {
+    position: relative; overflow: hidden; background: var(--night);
+    min-height: calc(100vh - var(--nav-h)); min-height: calc(100svh - var(--nav-h));
+    display: flex; align-items: center;
+    padding: clamp(48px, 6vw, 96px) 0;
+  }
+  .page-hero__inner { width: min(100% - 2 * var(--gut), var(--wrap)); }
+  .page-hero::before {
+    content: ''; position: absolute; inset: -30% 30% auto -10%; height: 90%; pointer-events: none;
+    background: radial-gradient(closest-side, rgb(225 29 72 / 0.16), transparent); filter: blur(20px);
+  }
+  .page-hero__inner { position: relative; }
+  .page-hero h1 {
+    font-size: clamp(2.3rem, 1.3rem + 3.6vw, 4.5rem); font-weight: 680; letter-spacing: -0.04em; line-height: 1.02;
+    max-width: 20ch;
+  }
+  .page-hero--narrow .page-hero__inner { max-width: 720px; }
+  .page-hero--narrow h1 { font-size: clamp(2rem, 1.3rem + 2.2vw, 3.1rem); max-width: none; line-height: 1.08; }
+  .page-hero h1 .accent { color: var(--rose); }
+  .page-hero__lead { margin-top: 24px; font-size: var(--t-lead); line-height: 1.6; color: var(--snow-muted); max-width: 62ch; }
+  .page-hero__lead :global(strong) { color: var(--snow); font-weight: 560; }
+  .page-hero__lead :global(a) { color: var(--rose-soft); }
+  .page-hero__btns { margin-top: 36px; }
+
+  .crumbs { margin-bottom: 28px; }
+  .crumbs ol { display: flex; flex-wrap: wrap; gap: 4px 0; font-size: var(--t-small); color: var(--snow-muted); }
+  .crumbs li { display: inline-flex; align-items: center; }
+  .crumbs li + li::before { content: '/'; margin: 0 10px; opacity: 0.5; }
+  .crumbs a { text-decoration: none; display: inline-flex; align-items: center; min-height: 32px; }
+  .crumbs a:hover { color: var(--snow); }
+  .crumbs [aria-current] { color: var(--snow); }
+
+  .page-hero__meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; margin-bottom: 20px; font-size: var(--t-small); color: var(--snow-muted); }
+  .page-hero__tag { padding: 4px 12px; border-radius: 999px; background: rgb(225 29 72 / 0.16); color: var(--rose-soft); font-weight: 580; }
+</style>

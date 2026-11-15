@@ -1,0 +1,108 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import PageHero from './PageHero.astro';
+import ContactSection from './ContactSection.astro';
+import Icon from './Icon.astro';
+
+const { entry } = Astro.props as any;
+const d = entry.data;
+const { Content } = await render(entry);
+
+// powiązane: najnowsze z tej samej kategorii, potem pozostałe
+const all = (await getCollection('blog')).filter((p) => p.id !== entry.id);
+all.sort((a, b) => (b.data.datePublished || '').localeCompare(a.data.datePublished || ''));
+const related = [
+  ...all.filter((p) => p.data.category === d.category),
+  ...all.filter((p) => p.data.category !== d.category),
+].slice(0, 3);
+---
+<Base
+  title={d.title}
+  description={d.description || d.excerpt || ''}
+  ogTitle={d.ogTitle}
+  ogImage={d.ogImage}
+  ogType="article"
+  path={`/${entry.id}.html`}
+  schema={d.schema}
+>
+  <PageHero
+    narrow
+    crumbs={[{ label: 'Strona główna', href: '/' }, { label: 'Blog', href: '/blog.html' }, { label: d.crumb ?? d.h1 }]}
+    h1={d.h1}
+    lead={d.lead}
+    meta={[d.category, d.dateText, d.readTime && `${d.readTime} czytania`].filter(Boolean)}
+  />
+
+  <section class="section section--paper on-light article">
+    <div class="wrap article__grid">
+      <article class="prose article__body">
+        <Content />
+      </article>
+      <aside class="article__cta" aria-label="Wycena strony">
+        <div>
+          <p class="article__cta-title">Potrzebujesz strony, która zdobywa klientów?</p>
+          <p>Opisz krótko firmę, a w ciągu 24 godzin dostaniesz bezpłatną wycenę. Autor artykułu: Adam Kubiak, WebCanvas.</p>
+        </div>
+        <a class="btn btn--primary" href="#kontakt">Wyceń projekt <Icon name="arrow" /></a>
+      </aside>
+    </div>
+  </section>
+
+  {related.length > 0 && (
+    <section class="section section--paper-2 on-light related">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <p class="eyebrow">Czytaj dalej</p>
+            <h2 class="h2">Więcej z bloga</h2>
+          </div>
+          <div><a class="link" href="/blog.html">Wszystkie artykuły <Icon name="arrow" /></a></div>
+        </div>
+        <ul class="related__list">
+          {related.map((p) => (
+            <li>
+              <a class="related__card" href={`/${p.id}.html`}>
+                <p class="related__meta"><span>{p.data.category}</span>{p.data.readTime}</p>
+                <h3>{p.data.h1}</h3>
+                <p class="related__text">{p.data.excerpt}</p>
+                <span class="related__more">Czytaj <Icon name="arrow" size={16} /></span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  <ContactSection heading={d.ctaHeading || 'Rozpocznijmy współpracę.'} />
+</Base>
+
+<style>
+  .article__grid { display: grid; gap: clamp(56px, 6vw, 88px); }
+  .article__body { width: 100%; max-width: 720px; margin-inline: auto; }
+  .article__cta {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px 48px;
+    padding: clamp(28px, 4vw, 56px); border-radius: var(--r-lg); background: var(--night); color: var(--snow);
+  }
+  .article__cta > div { display: grid; gap: 10px; max-width: 60ch; }
+  .article__cta-title { font-size: clamp(1.4rem, 1.1rem + 1vw, 2rem); font-weight: 640; letter-spacing: -0.03em; line-height: 1.15; }
+  .article__cta p:not(.article__cta-title) { color: var(--snow-muted); }
+  @media (max-width: 520px) { .article__cta .btn { width: 100%; } }
+
+  .related__list { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
+  .related__list > li { display: flex; }
+  .related__card {
+    flex: 1; display: flex; flex-direction: column; gap: 12px; padding: clamp(24px, 2.4vw, 32px); text-decoration: none;
+    border-radius: var(--r-lg); border: 1px solid var(--line-light); background: var(--paper);
+    transition: transform .3s var(--ease), background-color .3s var(--ease);
+  }
+  .related__card:hover { transform: translateY(-2px); background: var(--white); }
+  .related__meta { display: flex; gap: 12px; align-items: center; font-size: var(--t-label); color: var(--ink-muted); }
+  .related__meta span { padding: 4px 10px; border-radius: 999px; background: var(--rose-tint); color: #9f1239; font-weight: 580; }
+  .related__card h3 { font-size: var(--t-h3); }
+  .related__text { color: var(--ink-muted); }
+  .related__more { margin-top: auto; display: inline-flex; gap: 8px; align-items: center; font-weight: 580; color: var(--rose-strong); }
+  .related__more :global(svg) { transition: transform .25s var(--ease); }
+  .related__card:hover .related__more :global(svg) { transform: translateX(4px); }
+</style>

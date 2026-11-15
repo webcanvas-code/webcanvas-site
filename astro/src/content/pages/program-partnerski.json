@@ -1,0 +1,118 @@
+{
+  "slug": "program-partnerski",
+  "kind": "program-partnerski",
+  "title": "Program partnerski dla biur rachunkowych | WebCanvas",
+  "description": "Program poleceń WebCanvas dla biur rachunkowych: 300 zł za każdą stronę zamówioną przez poleconego klienta, 10% rabatu dla klienta biura. Bez opłat i zobowiązań.",
+  "ogTitle": "Program partnerski dla biur rachunkowych | WebCanvas",
+  "ogImage": "/img/og-image.png",
+  "robots": "noindex, follow",
+  "path": "/program-partnerski.html",
+  "schema": [],
+  "hero": {
+    "crumbs": [],
+    "h1": "Państwa klienci potrzebują strony. Państwo ich znają. Ja się tym zajmę.",
+    "accent": "Państwo ich znają.",
+    "badge": "Program partnerski",
+    "metaLine": "Dla biur rachunkowych",
+    "lead": [
+      "\n Nazywam się Adam Kubiak i prowadzę WebCanvas. Tworzę strony internetowe oraz kampanie Google&nbsp;Ads i Meta&nbsp;Ads dla firm usługowych.\n Zapraszam biura rachunkowe do prostej współpracy przy poleceniach, bez opłat i zobowiązań.\n "
+    ],
+    "buttons": [
+      {
+        "label": "Chcę dołączyć",
+        "href": "#dolacz",
+        "primary": true
+      },
+      {
+        "label": "Strona dla biura rachunkowego: meritoros.pl",
+        "href": "https://meritoros.pl",
+        "primary": false
+      }
+    ]
+  },
+  "sections": [
+    {
+      "eyebrow": "Jak to działa",
+      "h2": "Cztery kroki, z czego Państwa dotyczy jeden",
+      "intro": [],
+      "before": "<ol>\n <li>\n <p>Klient pyta Państwa o stronę albo reklamę lub właśnie zakłada działalność.</p>\n </li>\n <li>\n <p><strong>Przekazują mu Państwo mój kontakt</strong> i mówią, że polecają mnie Państwo.</p>\n </li>\n <li>\n <p>Kontaktuję się z klientem, w 24&nbsp;h przygotowuję bezpłatną wycenę i zajmuję się resztą.</p>\n </li>\n <li>\n <p>Gdy klient opłaci zlecenie, wypłacam Państwu prowizję.</p>\n </li>\n </ol>"
+    },
+    {
+      "eyebrow": "Korzyści",
+      "h2": "Zyskuje biuro i zyskuje klient",
+      "intro": [],
+      "items": [
+        {
+          "title": "Dla biura",
+          "html": "<p>300 zł</p>\n <p>za każdą stronę zamówioną przez poleconego klienta</p>\n <ul>\n <li><strong>10% miesięcznej opłaty przez 6 miesięcy</strong>, jeśli klient zleci prowadzenie kampanii Google Ads, Meta Ads lub SEO</li>\n <li>Bez limitu poleceń, bez opłat i zobowiązań</li>\n <li>Polecają Państwo tylko wtedy, gdy uznają to za stosowne</li>\n </ul>"
+        },
+        {
+          "title": "Dla Państwa klienta",
+          "html": "<p>10% rabatu</p>\n <p>na stronę internetową dzięki poleceniu biura</p>\n <ul>\n <li>Wizytówka Google przygotowana gratis</li>\n <li>Bezpłatna wycena w 24 godziny</li>\n <li>Jedna osoba do kontaktu, od projektu do publikacji</li>\n </ul>"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Zasady",
+      "h2": "Proste i przejrzyste zasady współpracy",
+      "intro": [],
+      "items": [
+        {
+          "title": "Kiedy polecenie jest przypisane do biura?",
+          "html": "<p>Gdy klient skontaktuje się ze mną w ciągu 90 dni od polecenia i powoła się na Państwa biuro. Przy pierwszym kontakcie zawsze pytam klienta, skąd o mnie wie.</p>"
+        },
+        {
+          "title": "Kiedy wypłacana jest prowizja?",
+          "html": "<p>W ciągu 14 dni od opłacenia faktury przez klienta, na podstawie faktury lub rachunku wystawionego przez biuro.</p>"
+        },
+        {
+          "title": "Skąd biuro wie, co dzieje się z poleceniami?",
+          "html": "<p>Raz w miesiącu wysyłam krótkie zestawienie: kogo Państwo polecili i na jakim etapie jest współpraca.</p>"
+        },
+        {
+          "title": "Co z danymi klientów biura?",
+          "html": "<p>Nie kontaktuję się z klientami biura bez ich zgody i nikomu nie przekazuję ich danych.</p>"
+        },
+        {
+          "title": "Czy współpraca do czegoś zobowiązuje?",
+          "html": "<p>Nie. Współpracę można zakończyć w każdej chwili. Prowizje za wcześniejsze polecenia zostaną wypłacone.</p>"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Materiały dla biura",
+      "h2": "Co przygotuję dla Państwa",
+      "intro": [],
+      "before": "<h3>Gotowa wiadomość dla klientów</h3>\n <p>Krótki tekst z moim kontaktem. Wystarczy go skopiować i wysłać klientowi mailem albo SMS-em.</p>"
+    },
+    {
+      "eyebrow": "Co robię dla firm",
+      "h2": "Co mogą Państwo polecać",
+      "intro": [],
+      "items": [
+        {
+          "title": "Strony internetowe",
+          "html": "<p>Od 3000 zł netto, dopasowane do telefonów, z formularzem zapytania.</p>",
+          "href": "/tworzenie-stron-internetowych.html"
+        },
+        {
+          "title": "Kampanie Google Ads i Meta Ads",
+          "html": "<p>Reklamy, które przyprowadzają zapytania od klientów.</p>",
+          "href": "/kampanie-google-ads.html"
+        },
+        {
+          "title": "Wizytówka Google i SEO lokalne",
+          "html": "<p>Żeby firma była widoczna w Mapach i wyszukiwarce w swojej okolicy.</p>",
+          "href": "/pozycjonowanie-seo.html"
+        }
+      ]
+    },
+    {
+      "id": "dolacz",
+      "eyebrow": "Dołącz",
+      "h2": "Chcą Państwo dołączyć do programu?",
+      "intro": [],
+      "before": "<p>\n Wystarczy napisać lub zadzwonić. Prześlę gotową wiadomość dla Państwa klientów.\n </p>\n<a href=\"mailto:kontakt@web-canvas.pl?subject=Program%20partnerski%20dla%20biura\">\n kontakt@web-canvas.pl\n </a>\n <a href=\"tel:+48739043596\">\n +48 739 043 596\n </a>\n<p>Adam Kubiak · WebCanvas</p>"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import ContactSection from '../components/ContactSection.astro';
+import Icon from '../components/Icon.astro';
+
+const page = (await getEntry('pages', 'blog'))!.data;
+const posts = (await getCollection('blog')).sort((a, b) =>
+  (b.data.datePublished || '').localeCompare(a.data.datePublished || '') || a.id.localeCompare(b.id),
+);
+const categories = [...new Set(posts.map((p) => p.data.category).filter(Boolean))];
+---
+<Base title={page.title} description={page.description} ogTitle={page.ogTitle} ogImage={page.ogImage} path="/blog.html" schema={page.schema}>
+  <PageHero
+    crumbs={page.hero.crumbs}
+    h1={page.hero.h1}
+    accent="o stronach internetowych"
+    lead={page.hero.lead}
+  />
+
+  <section class="section section--paper on-light">
+    <div class="wrap">
+      <div class="filters" role="group" aria-label="Filtruj artykuły według kategorii" data-filters>
+        <button type="button" aria-pressed="true" data-cat="">Wszystkie <span>{posts.length}</span></button>
+        {categories.map((c) => (
+          <button type="button" aria-pressed="false" data-cat={c}>{c} <span>{posts.filter((p) => p.data.category === c).length}</span></button>
+        ))}
+      </div>
+
+      <ul class="posts" data-posts>
+        {posts.map((p) => (
+          <li data-cat={p.data.category}>
+            <a class="post" href={`/${p.id}.html`}>
+              <p class="post__meta"><span class="post__tag">{p.data.category}</span>{p.data.dateText}</p>
+              <h2>{p.data.h1}</h2>
+              <p class="post__text">{p.data.excerpt}</p>
+              <span class="post__more">Czytaj{p.data.readTime && ` · ${p.data.readTime}`} <Icon name="arrow" size={16} /></span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <ContactSection heading="Nie znalazłeś odpowiedzi na swoje pytanie?" />
+</Base>
+
+<script>
+  const wrap = document.querySelector<HTMLElement>('[data-filters]');
+  const items = document.querySelectorAll<HTMLElement>('[data-posts] > li');
+  wrap?.addEventListener('click', (e) => {
+    const btn = (e.target as HTMLElement).closest('button');
+    if (!btn) return;
+    const cat = btn.dataset.cat ?? '';
+    wrap.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+    items.forEach((li) => { li.hidden = !!cat && li.dataset.cat !== cat; });
+  });
+</script>
+
+<style>
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
+  .filters button {
+    display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px; cursor: pointer;
+    border-radius: 999px; border: 1px solid var(--line-light); background: transparent; color: var(--ink);
+    font-weight: 540; font-size: 0.95rem; transition: border-color .2s var(--ease), background-color .2s var(--ease), color .2s;
+  }
+  .filters button span { font-size: var(--t-label); color: var(--ink-muted); }
+  .filters button:hover { border-color: var(--ink); }
+  .filters button[aria-pressed='true'] { background: var(--night); border-color: var(--night); color: var(--snow); }
+  .filters button[aria-pressed='true'] span { color: var(--snow-muted); }
+  .filters button:focus-visible { outline-color: var(--rose); }
+
+  .posts { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); }
+  .posts > li { display: flex; }
+  .posts > li[hidden] { display: none; }
+  .post {
+    flex: 1; display: flex; flex-direction: column; gap: 14px; text-decoration: none;
+    padding: clamp(24px, 2.4vw, 32px); border-radius: var(--r-lg);
+    background: var(--white); border: 1px solid var(--line-light);
+    transition: transform .3s var(--ease), border-color .3s var(--ease), box-shadow .3s var(--ease);
+  }
+  .post:hover { transform: translateY(-2px); border-color: rgb(26 21 19 / 0.25); box-shadow: 0 24px 48px -32px rgb(26 21 19 / 0.35); }
+  .post__meta { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; font-size: var(--t-label); color: var(--ink-muted); }
+  .post__tag { padding: 4px 10px; border-radius: 999px; background: var(--rose-tint); color: #9f1239; font-weight: 580; }
+  .post h2 { font-size: var(--t-h3); letter-spacing: -0.02em; line-height: 1.25; }
+  .post__text { color: var(--ink-muted); }
+  .post__more { margin-top: auto; padding-top: 8px; display: inline-flex; align-items: center; gap: 8px; font-weight: 580; color: var(--rose-strong); }
+  .post__more :global(svg) { transition: transform .25s var(--ease); }
+  .post:hover .post__more :global(svg) { transform: translateX(4px); }
+</style>

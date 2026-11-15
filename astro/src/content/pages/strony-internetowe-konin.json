@@ -1,0 +1,263 @@
+{
+  "slug": "strony-internetowe-konin",
+  "kind": "city",
+  "title": "Strony internetowe Konin | Projektowanie stron | WebCanvas",
+  "description": "Strony internetowe dla firm z Konina. Szybkie wdrożenia, pozycjonowanie SEO od pierwszego dnia i pełna opieka po starcie. Wyceń projekt bez zobowiązań.",
+  "ogTitle": "Strony internetowe Konin | Projektowanie stron | WebCanvas",
+  "ogImage": "/img/og-image.png",
+  "path": "/strony-internetowe-konin.html",
+  "schema": [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Strony internetowe Konin",
+      "description": "Projektujemy i wdrażamy strony internetowe dla firm z Konina i powiatu konińskiego. Biuro mamy w Sompolnie, około 40 minut od centrum Konina, więc na spotkanie przyjeżdżamy do Ciebie. Jeden zespół odpowiada za cały projekt, od pierwszej rozmowy po wdrożenie.",
+      "url": "https://web-canvas.pl/strony-internetowe-konin.html",
+      "about": {
+        "@type": "Service",
+        "name": "Projektowanie stron internetowych",
+        "serviceType": "Tworzenie stron internetowych",
+        "areaServed": {
+          "@type": "City",
+          "name": "Konin"
+        },
+        "provider": {
+          "@type": "ProfessionalService",
+          "@id": "https://web-canvas.pl/#business",
+          "name": "WebCanvas",
+          "url": "https://web-canvas.pl/",
+          "telephone": "+48739043596",
+          "email": "kontakt@web-canvas.pl",
+          "priceRange": "od 3000 PLN",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Biele 126",
+            "addressLocality": "Sompolno",
+            "postalCode": "62-610",
+            "addressCountry": "PL"
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+              ],
+              "opens": "09:00",
+              "closes": "17:00"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Strona główna",
+          "item": "https://web-canvas.pl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Strony internetowe Konin",
+          "item": "https://web-canvas.pl/strony-internetowe-konin.html"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Czy możemy spotkać się osobiście w Koninie?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak. Biuro mamy w Sompolnie, około 40 minut jazdy od Konina, więc na pierwsze spotkanie przyjeżdżamy do Twojej firmy. Kolejne etapy, czyli akceptację projektu i poprawki, zwykle prowadzimy online, żeby nie tracić Twojego czasu."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy strona będzie widoczna też w gminach wokół Konina?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak, jeśli tam działasz. Wpisujemy na stronie obszar, który faktycznie obsługujesz, np. Golinę, Kleczew czy Ślesin, i dopasowujemy do niego treści usług. Nie tworzymy jednak dziesiątek podstron różniących się tylko nazwą miejscowości, bo Google traktuje je jak spam."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ile trwa realizacja strony internetowej?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Zależy od zakresu. Prosta strona wizytówka to zwykle kilka tygodni, sklep internetowy czy aplikacja dedykowana wymaga więcej czasu. Dokładny harmonogram ustalamy po briefie."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy zajmujecie się też hostingiem i domeną?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak. Pomagamy skonfigurować domenę, hosting i certyfikat SSL, a po wdrożeniu oferujemy opiekę powdrożeniową, żeby strona działała bez przestojów."
+          }
+        }
+      ]
+    }
+  ],
+  "hero": {
+    "crumbs": [
+      {
+        "label": "Strona główna",
+        "href": "/"
+      },
+      {
+        "label": "Strony internetowe Konin"
+      }
+    ],
+    "h1": "Strony internetowe Konin",
+    "accent": "Konin",
+    "badge": "Konin",
+    "metaLine": "Projektowanie stron internetowych",
+    "lead": [
+      "\n Projektujemy i wdrażamy strony internetowe dla firm z Konina i powiatu konińskiego. Biuro mamy w Sompolnie, około 40 minut od centrum Konina, więc na spotkanie przyjeżdżamy do Ciebie. Jeden zespół odpowiada za cały projekt, od pierwszej rozmowy po wdrożenie.\n "
+    ],
+    "buttons": [
+      {
+        "label": "Bezpłatna wycena projektu",
+        "href": "/#kontakt",
+        "primary": true
+      },
+      {
+        "label": "Zobacz nasze realizacje",
+        "href": "/realizacje.html",
+        "primary": false
+      }
+    ]
+  },
+  "sections": [
+    {
+      "eyebrow": "Lokalnie",
+      "h2": "Strony internetowe dla firm z Konina i okolic",
+      "intro": [],
+      "items": [
+        {
+          "title": "Spotkanie na miejscu",
+          "html": "<p>Do Konina dojeżdżamy z Sompolna w około 40 minut. Pierwsze spotkanie możemy zrobić w Twojej firmie, kolejne etapy zwykle online.</p>"
+        },
+        {
+          "title": "Obszar, który obsługujemy",
+          "html": "<p>Konin i gminy powiatu konińskiego: Stare Miasto, Golina, Kazimierz Biskupi, Kleczew, Ślesin, Kramsk, Krzymów, Rychwał, Rzgów, Grodziec, Skulsk, Wilczyn, Wierzbinek, Sompolno.</p>"
+        },
+        {
+          "title": "SEO lokalne",
+          "html": "<p>Fraza „strony internetowe Konin” jest konkurencyjna, ale frazy usługowe z nazwą dzielnicy lub gminy są dużo łatwiejsze. Od nich zaczynamy.</p>"
+        }
+      ],
+      "before": "<p>Konin to dwa miasta w jednym: Stare Miasto po południowej stronie Warty i osiedla Nowego Konina po północnej. Dla firmy usługowej ma to praktyczne znaczenie. Klient z Chorenia czy Glinki szuka w Google „hydraulik Konin” albo „mechanik Konin”, ale wybiera tego, kto jest blisko i ma porządną stronę z opisem usług, cennikiem i numerem, w który można kliknąć z telefonu.</p>\n <p>Wschodnia Wielkopolska przechodzi transformację po zakończeniu wydobycia węgla. Powstaje dużo nowych firm, zwłaszcza w budownictwie, fotowoltaice, pompach ciepła i usługach dla domu, a istniejące przebranżawiają się. Każda z nich potrzebuje strony, która od razu jasno mówi, czym się zajmuje i dla kogo. Tego nie zrobi szablon z kreatora.</p>\n <p>Na stronie dla firmy z Konina od początku ustawiamy SEO lokalne: osobne sekcje lub podstrony dla usług, nazwy miejscowości tam, gdzie faktycznie pracujesz, dane NAP zgodne z <a href=\"/blog-google-moja-firma-wizytowka.html\">wizytówką Google</a> i dane strukturalne. Jeśli obsługujesz też Koło, Turek czy Słupcę, zobacz <a href=\"/blog-firma-w-kilku-miastach-konin-turek-kolo-slupca.html\">jak być widocznym w kilku miastach naraz</a>.</p>\n <p>Prowadzisz firmę budowlaną, fotowoltaiczną lub montujesz pompy ciepła? Przeczytaj, <a href=\"/blog-strona-internetowa-firma-budowlana-oze-konin.html\">co musi mieć strona firmy budowlanej i OZE z regionu konińskiego</a>.</p>"
+    },
+    {
+      "eyebrow": "Dlaczego my",
+      "h2": "Co dostajesz w WebCanvas",
+      "intro": [],
+      "before": "<ul>\n <li><strong>Projekt mobile-first:</strong> większość klientów ogląda stronę na telefonie.</li>\n <li><strong>SEO od pierwszego dnia:</strong> nagłówki, meta dane, dane strukturalne i szybkość ustawione przy wdrożeniu.</li>\n <li><strong>Lekki, szybki kod:</strong> bez zbędnych wtyczek i bibliotek.</li>\n <li><strong>Jeden zespół:</strong> projekt, kod i wdrożenie bez pośredników i podwykonawców.</li>\n <li><strong>Wsparcie po starcie:</strong> drobne zmiany, hosting i domena.</li>\n <li><strong>Jasna wycena:</strong> zakres i cena znane przed rozpoczęciem prac.</li>\n </ul>\n<p>\n Poza stronami zajmujemy się też <a href=\"/pozycjonowanie-seo.html\">pozycjonowaniem SEO</a>,\n <a href=\"/kampanie-google-ads.html\">kampaniami Google Ads</a> i <a href=\"/kampanie-meta-ads.html\">Meta Ads</a>.\n Przykłady naszej pracy, opisane jako case study, znajdziesz w <a href=\"/realizacje.html\">realizacjach</a>.\n </p>"
+    },
+    {
+      "eyebrow": "Inwestycja",
+      "h2": "Wybierz swój pakiet",
+      "intro": [
+        "Przejrzyste zasady współpracy. Wybierz rozwiązanie idealnie dopasowane do Twoich potrzeb biznesowych."
+      ],
+      "items": [
+        {
+          "price": {
+            "featured": false,
+            "note": "Dla firm potrzebujących solidnego startu w sieci.",
+            "amount": "od 3000",
+            "unit": "PLN netto",
+            "list": [
+              "Strona One-Page / Landing",
+              "Responsywny Design (RWD)",
+              "Podstawowa optymalizacja SEO",
+              "Konfiguracja domeny i hostingu"
+            ],
+            "cta": "Wybieram Pro"
+          },
+          "title": "Pakiet Pro",
+          "html": "<p>Dla firm potrzebujących solidnego startu w sieci.</p>\n od 3000\n PLN netto\n <ul>\n <li> Strona One-Page / Landing</li>\n <li> Responsywny Design (RWD)</li>\n <li> Podstawowa optymalizacja SEO</li>\n <li> Konfiguracja domeny i hostingu</li>\n </ul>\n Wybieram Pro",
+          "href": "/#kontakt"
+        },
+        {
+          "price": {
+            "featured": true,
+            "note": "Kompleksowe wdrożenie sklepu lub zaawansowanej strony.",
+            "amount": "od 4000",
+            "unit": "PLN netto",
+            "list": [
+              "Indywidualny projekt graficzny UI",
+              "System CMS / E-commerce",
+              "Zaawansowane animacje",
+              "Szkolenie z obsługi panelu"
+            ],
+            "cta": "Wybieram Unique"
+          },
+          "title": "Pakiet Unique",
+          "html": "Polecany\n <p>Kompleksowe wdrożenie sklepu lub zaawansowanej strony.</p>\n od 4000\n PLN netto\n <ul>\n <li> Indywidualny projekt graficzny UI</li>\n <li> System CMS / E-commerce</li>\n <li> Zaawansowane animacje</li>\n <li> Szkolenie z obsługi panelu</li>\n </ul>\n Wybieram Unique",
+          "href": "/#kontakt"
+        },
+        {
+          "price": {
+            "featured": false,
+            "note": "Prace programistyczne i rozwój istniejących projektów.",
+            "amount": "200",
+            "unit": "PLN / h",
+            "list": [
+              "Audyt i optymalizacja kodu",
+              "Wdrażanie nowych funkcji",
+              "Naprawa błędów",
+              "Konsultacje technologiczne"
+            ],
+            "cta": "Zapytaj o dostępność"
+          },
+          "title": "Pakiet Hourly",
+          "html": "<p>Prace programistyczne i rozwój istniejących projektów.</p>\n 200\n PLN / h\n <ul>\n <li> Audyt i optymalizacja kodu</li>\n <li> Wdrażanie nowych funkcji</li>\n <li> Naprawa błędów</li>\n <li> Konsultacje technologiczne</li>\n </ul>\n Zapytaj o dostępność",
+          "href": "/#kontakt"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Pytania",
+      "h2": "Najczęstsze pytania od firm z Konina",
+      "intro": [],
+      "items": [
+        {
+          "title": "Czy możemy spotkać się osobiście w Koninie?",
+          "html": "<p>Tak. Biuro mamy w Sompolnie, około 40 minut jazdy od Konina, więc na pierwsze spotkanie przyjeżdżamy do Twojej firmy. Kolejne etapy, czyli akceptację projektu i poprawki, zwykle prowadzimy online, żeby nie tracić Twojego czasu.</p>"
+        },
+        {
+          "title": "Czy strona będzie widoczna też w gminach wokół Konina?",
+          "html": "<p>Tak, jeśli tam działasz. Wpisujemy na stronie obszar, który faktycznie obsługujesz, np. Golinę, Kleczew czy Ślesin, i dopasowujemy do niego treści usług. Nie tworzymy jednak dziesiątek podstron różniących się tylko nazwą miejscowości, bo Google traktuje je jak spam.</p>"
+        },
+        {
+          "title": "Ile trwa realizacja strony internetowej?",
+          "html": "<p>Zależy od zakresu. Prosta strona wizytówka to zwykle kilka tygodni, sklep internetowy czy aplikacja dedykowana wymaga więcej czasu. Dokładny harmonogram ustalamy po briefie.</p>"
+        },
+        {
+          "title": "Czy zajmujecie się też hostingiem i domeną?",
+          "html": "<p>Tak. Pomagamy skonfigurować domenę, hosting i certyfikat SSL, a po wdrożeniu oferujemy opiekę powdrożeniową, żeby strona działała bez przestojów.</p>"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Kolejny krok",
+      "h2": "Porozmawiajmy o Twojej stronie",
+      "intro": [],
+      "before": "<p>\n Opowiedz nam o swojej firmie z Konina i okolic – bezpłatnie wycenimy projekt i zaproponujemy\n rozwiązanie dopasowane do Twojego budżetu i celów.\n </p>\n<a href=\"/#kontakt\">\n Omówmy Twój projekt\n </a>\n <a href=\"/realizacje.html\">\n Zobacz realizacje\n </a>"
+    }
+  ]
+}

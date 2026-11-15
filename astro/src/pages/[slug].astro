@@ -1,0 +1,40 @@
+---
+// Wszystkie podstrony z kolekcji `pages` (usługi, miasta, case study, polityka…)
+// oraz artykuły z kolekcji `blog`. Adresy jak w starym serwisie: /<slug>.html
+import { getCollection, render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Sections from '../components/Sections.astro';
+import ArticleBody from '../components/ArticleBody.astro';
+
+export async function getStaticPaths() {
+  // te podstrony mają własne pliki w src/pages
+  const CUSTOM = new Set(['blog', 'realizacje']);
+  const pages = (await getCollection('pages')).filter((p) => !CUSTOM.has(p.id));
+  const posts = await getCollection('blog');
+  return [
+    ...pages.map((entry) => ({ params: { slug: entry.id }, props: { type: 'page' as const, entry } })),
+    ...posts.map((entry) => ({ params: { slug: entry.id }, props: { type: 'post' as const, entry } })),
+  ];
+}
+
+const { type, entry } = Astro.props as any;
+const d = entry.data;
+const localContact = (href: string) => (href === '/#kontakt' ? '#kontakt' : href);
+---
+{type === 'page' ? (
+  <Base title={d.title} description={d.description} ogTitle={d.ogTitle} ogImage={d.ogImage} path={d.path} schema={d.schema} robots={d.robots}>
+    <PageHero
+      crumbs={d.hero.crumbs}
+      h1={d.hero.h1}
+      accent={d.hero.accent}
+      lead={d.hero.lead}
+      meta={d.kind === 'case' && d.hero.metaLine ? [d.hero.badge, d.hero.metaLine] : []}
+      buttons={(d.hero.buttons ?? []).map((b: any) => ({ ...b, href: localContact(b.href) }))}
+      narrow={d.kind === 'polityka-prywatnosci'}
+    />
+    <Sections sections={d.sections} ctaMode={d.kind === 'program-partnerski' ? 'buttons' : d.kind === 'polityka-prywatnosci' ? 'none' : 'form'} plain={d.kind === 'polityka-prywatnosci'} />
+  </Base>
+) : (
+  <ArticleBody entry={entry} />
+)}

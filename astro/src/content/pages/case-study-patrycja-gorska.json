@@ -1,0 +1,163 @@
+{
+  "slug": "case-study-patrycja-gorska",
+  "kind": "case",
+  "title": "Strona gabinetu psychoterapii Patrycja Górska | WebCanvas",
+  "description": "Case Study Patrycja Górska Psychoterapia: jak spokojny design i przejrzysta komunikacja ułatwiają pierwszy kontakt z gabinetem terapeutycznym w Gdańsku.",
+  "path": "/case-study-patrycja-gorska.html",
+  "schema": [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Strona główna",
+          "item": "https://web-canvas.pl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Realizacje",
+          "item": "https://web-canvas.pl/realizacje.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Patrycja Górska Psychoterapia",
+          "item": "https://web-canvas.pl/case-study-patrycja-gorska.html"
+        }
+      ]
+    }
+  ],
+  "hero": {
+    "crumbs": [
+      {
+        "label": "Strona główna",
+        "href": "/"
+      },
+      {
+        "label": "Realizacje",
+        "href": "/realizacje.html"
+      },
+      {
+        "label": "Patrycja Górska Psychoterapia"
+      }
+    ],
+    "h1": "Pierwszy krok bywa najtrudniejszy: Patrycja Górska",
+    "accent": "Patrycja Górska",
+    "badge": "Case Study",
+    "metaLine": "Gabinet terapeutyczny • Gdańsk",
+    "lead": [
+      "\n Decyzja o pierwszej wizycie u terapeuty rzadko bywa łatwa. Strona gabinetu Patrycji Górskiej\n miała jedno zadanie: <strong>zmniejszyć niepewność</strong> na\n tyle, żeby osoba szukająca pomocy faktycznie umówiła wizytę, zamiast zamknąć kartę.\n "
+    ],
+    "buttons": [
+      {
+        "label": "Odwiedź stronę na żywo",
+        "href": "https://patrycjagorska.pl/",
+        "primary": true
+      }
+    ]
+  },
+  "sections": [
+    {
+      "type": "shot",
+      "images": [
+        {
+          "src": "/img/patrycjagorska.pl.webp",
+          "alt": "Pełny widok strony internetowej Patrycja Górska Psychoterapia"
+        }
+      ],
+      "url": "patrycjagorska.pl"
+    },
+    {
+      "type": "facts",
+      "facts": [
+        {
+          "label": "Klient",
+          "value": "Patrycja Górska"
+        },
+        {
+          "label": "Sektor",
+          "value": "Psychoterapia"
+        },
+        {
+          "label": "Zakres",
+          "value": "UX / UI / Dev"
+        },
+        {
+          "label": "Lokalizacja",
+          "value": "Gdańsk"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Wyzwanie",
+      "h2": "Strona, która nie może przypominać poczekalni",
+      "intro": [],
+      "before": "<p>\n Projektowanie stron internetowych dla gabinetów terapeutycznych rządzi się innymi\n zasadami niż typowa strona firmowa. Osoba szukająca terapeuty często robi to w trudnym\n dla siebie momencie. Zimna, kliniczna\n strona internetowa, typowa dla wielu gabinetów, może dodatkowo zniechęcić do kontaktu.\n Zadaniem nie było zaprojektować \"ładną wizytówkę\", tylko\n <strong>miejsce, w którym łatwiej zrobić pierwszy krok</strong>.\n </p>\n <p>\n Drugim wyzwaniem były praktyczne wątpliwości, które pojawiają się przed pierwszą wizytą:\n ile to kosztuje, jak wygląda spotkanie, czy trzeba mieć konkretny powód. Bez odpowiedzi\n na te pytania na stronie, część odwiedzających po prostu nie napisałaby wiadomości.\n </p>"
+    },
+    {
+      "eyebrow": "Rozwiązanie",
+      "h2": "Trzy filary, na których oparliśmy projekt",
+      "intro": [],
+      "items": [
+        {
+          "title": "Spokojny, budzący zaufanie design",
+          "html": "<p>\n Miękka kolorystyka, dużo przestrzeni, naturalne zdjęcia zamiast korporacyjnej\n stockowej estetyki. Strona ma wyglądać jak zaproszenie do rozmowy, nie jak formularz.\n </p>"
+        },
+        {
+          "title": "Odpowiedzi na wątpliwości z góry",
+          "html": "<p>\n Sekcja z pytaniami przed pierwszą wizytą i jawnie podany cennik sesji, żeby\n niepewność co do kosztu czy przebiegu spotkania nie była powodem rezygnacji.\n </p>"
+        },
+        {
+          "title": "Jedna, prosta ścieżka rezerwacji",
+          "html": "<p>\n Zamiast wielu równorzędnych przycisków: jedno wyraźne wezwanie do działania\n powtórzone w kluczowych momentach strony. Mniej decyzji do podjęcia po drodze.\n </p>"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Proces",
+      "h2": "Krok po kroku: od briefu do wdrożenia",
+      "intro": [],
+      "items": [
+        {
+          "title": "Rozmowa o obawach klientów gabinetu",
+          "html": "<p>\n Zebranie najczęstszych pytań i wątpliwości pojawiających się przed pierwszą\n wizytą. To one wyznaczyły strukturę treści na stronie.\n </p>"
+        },
+        {
+          "title": "Projektowanie UI / UX",
+          "html": "<p>\n Paleta barw i typografia dobrane pod kątem spokoju, nie efektowności.\n Duże odstępy, czytelny tekst, brak elementów, które mogłyby rozpraszać lub stresować.\n </p>"
+        },
+        {
+          "title": "Kodowanie i dostępność",
+          "html": "<p>\n Semantyczny HTML i wysoki kontrast tekstu, bo strona musi być łatwa do przeczytania\n również w gorszym stanie skupienia, nie tylko dla osób bez trudności wzrokowych.\n </p>"
+        },
+        {
+          "title": "Wdrożenie i testy na urządzeniach mobilnych",
+          "html": "<p>\n Większość decyzji o kontakcie zapada na telefonie, często wieczorem. Strona\n testowana pod kątem wygody czytania i rezerwacji właśnie na małym ekranie.\n </p>"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Efekty",
+      "h2": "Mniej niepewności, łatwiejszy pierwszy kontakt",
+      "intro": [
+        "\n Strona odpowiada na najczęstsze obawy zanim ktokolwiek zdąży je napisać w wiadomości.\n "
+      ],
+      "before": "<p>3 ścieżki</p>\n <p>Indywidualnie, pary, rodziny</p>\n <p>Calm UX</p>\n <p>Filozofia projektowa</p>\n <p>Jawny cennik</p>\n <p>Bez ukrytych kroków</p>\n <p>Mobile First</p>\n <p>Projekt pod telefon</p>\n<p>\n „W tej branży strona nie sprzedaje. Ona uspokaja na tyle, żeby ktoś w ogóle\n zdecydował się napisać pierwszą wiadomość.\"\n </p>\n <p>\n Podsumowanie projektu, WebCanvas\n </p>"
+    },
+    {
+      "eyebrow": "Stack technologiczny",
+      "h2": "Technologie użyte w projekcie",
+      "intro": [],
+      "before": "<ul data-chips=\"\"><li>Projektowanie stron internetowych</li><li>HTML5 / Semantyczny</li><li>CSS3 / RWD</li><li>Sekcja FAQ</li><li>Wysoki kontrast</li><li>Formularz rezerwacji</li><li>Mobile First</li><li>SSL / HTTPS</li></ul>"
+    },
+    {
+      "eyebrow": "Kolejny krok",
+      "h2": "Zaprojektujmy rozwiązanie na lata",
+      "intro": [],
+      "before": "<p>\n Twój projekt też może przetrwać próbę czasu. Opowiedz mi o swoich potrzebach,\n bezpłatnie wycenię projekt i zaproponuję rozwiązanie szyte na miarę.\n </p>\n<a href=\"/#kontakt\">\n Omówmy Twój projekt\n </a>\n <a href=\"/realizacje.html\">\n ← Wróć do realizacji\n </a>"
+    }
+  ]
+}

@@ -1,0 +1,252 @@
+---
+// Renderuje sekcje podstron wyciągnięte ze starego serwisu (src/content/pages/*.json).
+import Icon from './Icon.astro';
+import Faq from './Faq.astro';
+import PlanCard from './PlanCard.astro';
+import ContactSection from './ContactSection.astro';
+
+interface Props { sections: any[]; ctaMode?: 'form' | 'buttons' | 'none'; plain?: boolean }
+const { sections, ctaMode = 'form', plain = false } = Astro.props;
+
+const strip = (h = '') => h.replace(/<[^>]+>/g, '').trim();
+
+// ostatnia sekcja z H2 to wezwanie do kontaktu -> wspólny formularz
+const lastIdx = ctaMode === 'none' ? -1 : sections.map((s) => !!s.h2).lastIndexOf(true);
+
+type Kind = 'shot' | 'facts' | 'faq' | 'pricing' | 'projects' | 'links' | 'steps' | 'cards' | 'prose' | 'cta';
+function kindOf(s: any, i: number): Kind {
+  if (s.type === 'shot') return 'shot';
+  if (s.type === 'facts') return 'facts';
+  if (i === lastIdx) return 'cta';
+  const items = s.items ?? [];
+  if (items.length && /pytani/i.test(s.h2 ?? '')) return 'faq';
+  if (items.some((it: any) => it.price)) return 'pricing';
+  if (items.some((it: any) => it.img)) return 'projects';
+  if (items.length && items.every((it: any) => it.href && !it.href.startsWith('/#'))) return 'links';
+  if (items.length && /krok|proces|etap|jak pracujemy|jak to działa/i.test((s.h2 ?? '') + (s.eyebrow ?? ''))) return 'steps';
+  if (items.length) return 'cards';
+  return 'prose';
+}
+
+// tła: jasne i ciemne na przemian (pomijając zrzut i fakty, które dzielą tło z sąsiadem)
+let dark = true;
+const rendered = sections.map((s, i) => {
+  const kind = kindOf(s, i);
+  if (kind !== 'facts') dark = kind === 'pricing' ? true : !dark;
+  if (kind === 'shot') dark = true;
+  if (plain) dark = false;
+  return { s, kind, dark };
+});
+---
+{rendered.map(({ s, kind, dark }) => {
+  if (kind === 'cta') {
+    if (ctaMode === 'form') return <ContactSection heading={s.h2} />;
+    return (
+      <section class="section section--night-2 sx-cta" id={s.id}>
+        <div class="wrap">
+          {s.eyebrow && <p class="eyebrow">{s.eyebrow}</p>}
+          <h2 class="h2">{s.h2}</h2>
+          {(s.intro ?? []).map((p: string) => <p class="lead sx-cta__lead" set:html={p} />)}
+          <div class="prose prose--dark sx-cta__body" set:html={s.before} />
+        </div>
+      </section>
+    );
+  }
+
+  if (kind === 'shot') {
+    return (
+      <section class="sx-shot">
+        <div class:list={['wrap', 'sx-shot__grid', { 'sx-shot__grid--two': s.images.length > 1 }]}>
+          {s.images.map((img: any, n: number) => (
+            <figure class="sx-shot__frame">
+              <div class="sx-shot__bar" aria-hidden="true"><i></i><i></i><i></i>{s.url && n === 0 && <span>{s.url}</span>}</div>
+              <img src={img.src} alt={img.alt} loading={n === 0 ? 'eager' : 'lazy'} />
+            </figure>
+          ))}
+        </div>
+      </section>
+    );
+  }
+
+  if (kind === 'facts') {
+    return (
+      <section class="sx-facts">
+        <dl class="wrap sx-facts__grid">
+          {s.facts.map((f: any) => <div><dt>{f.label}</dt><dd>{f.value}</dd></div>)}
+        </dl>
+      </section>
+    );
+  }
+
+  const tone = dark ? 'section--night-2' : 'section--paper on-light';
+  const proseCls = dark ? 'prose prose--dark' : 'prose';
+  const sideIntro = (s.intro ?? []).length > 0;
+
+  return (
+    <section class:list={['section', tone, `sx-${kind}`, { 'sx-plain': plain }]} id={s.id}>
+      <div class="wrap">
+        {(s.h2 || s.eyebrow) && <div class:list={['sec-head', { 'sec-head--solo': !sideIntro }]}>
+          <div>
+            {s.eyebrow && <p class="eyebrow">{s.eyebrow}</p>}
+            {s.h2 && <h2 class="h2">{s.h2}</h2>}
+          </div>
+          {sideIntro && <div class="lead sx-intro">{s.intro.map((p: string) => <p set:html={p} />)}</div>}
+        </div>}
+
+        {s.before && kind !== 'faq' && <div class:list={[proseCls, 'sx-before', { 'sx-before--wide': !s.items }]} set:html={s.before} />}
+
+        {kind === 'faq' && (
+          <div class="sx-faq">
+            <Faq dark={dark} items={s.items.map((it: any) => ({ q: it.title, a: it.html }))} />
+          </div>
+        )}
+
+        {kind === 'pricing' && (
+          <ul class="sx-plans">
+            {s.items.map((it: any) => (
+              <PlanCard name={it.title} note={it.price.note} amount={it.price.amount} unit={it.price.unit} items={it.price.list} cta={it.price.cta} href={it.href ?? '#kontakt'} featured={it.price.featured} />
+            ))}
+          </ul>
+        )}
+
+        {kind === 'projects' && (
+          <ul class="sx-projects">
+            {s.items.map((it: any) => (
+              <li>
+                <a class="sx-project" href={it.href}>
+                  <div class="sx-project__img"><img src={it.img.src} alt={it.img.alt} loading="lazy" /></div>
+                  <h3>{it.title} <Icon name="arrow-up-right" size={20} /></h3>
+                  <div class="sx-project__text" set:html={it.html} />
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
+
+        {kind === 'links' && (
+          <ul class="sx-links">
+            {s.items.map((it: any) => (
+              <li>
+                <a class="sx-link" href={it.href}>
+                  <h3>{it.title}</h3>
+                  <div class="sx-link__text" set:html={it.html} />
+                  <span class="sx-link__more">Czytaj <Icon name="arrow" size={16} /></span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
+
+        {(kind === 'cards' || kind === 'steps') && (
+          <ol class:list={['sx-cards', { 'sx-cards--steps': kind === 'steps', 'sx-cards--many': s.items.length > 4 && s.items.length % 3 === 0 }]}>
+            {s.items.map((it: any, n: number) => (
+              <li class="sx-card">
+                {kind === 'steps' ? <span class="sx-card__no" aria-hidden="true">{String(n + 1).padStart(2, '0')}</span> : null}
+                <h3>{it.title}</h3>
+                <div class:list={[proseCls, 'sx-card__body']} set:html={it.html} />
+                {it.href && !it.href.startsWith('/#') && <a class="link" href={it.href}>Szczegóły <Icon name="arrow" size={16} /></a>}
+              </li>
+            ))}
+          </ol>
+        )}
+
+        {s.after && <div class:list={[proseCls, 'sx-after']} set:html={s.after} />}
+      </div>
+    </section>
+  );
+})}
+
+<style>
+  .sec-head--solo { grid-template-columns: minmax(0, 1fr) !important; }
+  .sec-head--solo .h2 { max-width: 22ch; }
+  .sx-intro p + p { margin-top: 12px; }
+  .sx-intro :global(a) { color: inherit; }
+  .sx-before { max-width: 760px; }
+  .sx-plain .sx-before { max-width: 720px; margin-inline: auto; }
+  .sx-before + * { margin-top: 48px; }
+  .sx-after { margin-top: 40px; max-width: 760px; }
+
+  /* karty */
+  .sx-cards { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
+  @media (min-width: 1000px) { .sx-cards--many { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  .sx-card {
+    display: flex; flex-direction: column; gap: 12px; padding: clamp(24px, 2.4vw, 32px);
+    border-radius: var(--r-lg); border: 1px solid var(--line-light); background: var(--white);
+    transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
+  }
+  .sx-card:hover { transform: translateY(-2px); box-shadow: 0 24px 48px -32px rgb(26 21 19 / 0.35); }
+  .section--night-2 .sx-card { background: var(--night); border-color: var(--line-dark); }
+  .section--night-2 .sx-card:hover { border-color: rgb(255 255 255 / 0.2); box-shadow: none; }
+  .sx-card h3 { font-size: var(--t-h3); }
+  .sx-card__body { font-size: 1rem; line-height: 1.65; color: var(--ink-muted); }
+  .section--night-2 .sx-card__body { color: var(--snow-muted); }
+  .sx-card__body > :global(* + *) { margin-top: 0.7em; }
+  .sx-card .link { margin-top: auto; }
+
+  .sx-cards--steps { counter-reset: s; }
+  .sx-cards--steps .sx-card { border-radius: 0; border: 0; border-top: 1px solid var(--line-light); background: transparent; padding: 28px 0 0; position: relative; }
+  .section--night-2 .sx-cards--steps .sx-card { border-top-color: var(--line-dark); background: transparent; }
+  .sx-cards--steps .sx-card::before { content: ''; position: absolute; top: -1px; left: 0; width: 48px; height: 2px; background: var(--rose); transition: width .5s var(--ease); }
+  .sx-cards--steps .sx-card:hover { transform: none; box-shadow: none; }
+  .sx-cards--steps .sx-card:hover::before { width: 100%; }
+  .sx-card__no { font-size: clamp(2.3rem, 2rem + 1.2vw, 3.2rem); font-weight: 640; letter-spacing: -0.04em; line-height: 1; color: transparent; -webkit-text-stroke: 1px var(--rose); margin-bottom: 12px; }
+  .section--night-2 .sx-card__no { -webkit-text-stroke-color: rgb(253 164 175 / 0.6); }
+
+  /* cennik */
+  .sx-plans { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
+
+  /* faq */
+  .sx-faq { max-width: 900px; }
+
+  /* projekty */
+  .sx-projects { display: grid; gap: 40px 24px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); }
+  .sx-project { display: flex; flex-direction: column; gap: 10px; text-decoration: none; }
+  .sx-project__img { aspect-ratio: 4 / 3; overflow: hidden; border-radius: var(--r-md); border: 1px solid var(--line-light); margin-bottom: 10px; }
+  .sx-project__img img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform .6s var(--ease); }
+  .sx-project:hover .sx-project__img img { transform: scale(1.03); }
+  .sx-project h3 { font-size: var(--t-h3); display: flex; gap: 8px; align-items: center; }
+  .sx-project h3 :global(svg) { color: var(--rose-strong); transition: transform .25s var(--ease); }
+  .sx-project:hover h3 :global(svg) { transform: translate(3px, -3px); }
+  .sx-project__text { color: var(--ink-muted); }
+
+  /* linki do artykułów */
+  .sx-links { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
+  .sx-links > li { display: flex; }
+  .sx-link {
+    flex: 1; display: flex; flex-direction: column; gap: 12px; padding: clamp(24px, 2.4vw, 32px); text-decoration: none;
+    border-radius: var(--r-lg); border: 1px solid var(--line-light); background: var(--white);
+    transition: transform .3s var(--ease), border-color .3s var(--ease);
+  }
+  .section--night-2 .sx-link { background: var(--night); border-color: var(--line-dark); }
+  .sx-link:hover { transform: translateY(-2px); border-color: var(--rose); }
+  .sx-link h3 { font-size: var(--t-h3); }
+  .sx-link__text { color: var(--ink-muted); display: grid; gap: 8px; }
+  .section--night-2 .sx-link__text { color: var(--snow-muted); }
+  .sx-link__text :global(p:first-child:not(:only-child)) { order: -1; font-size: var(--t-label); font-weight: 580; color: var(--rose-strong); }
+  .section--night-2 .sx-link__text :global(p:first-child:not(:only-child)) { color: var(--rose-soft); }
+  .sx-link__more { margin-top: auto; padding-top: 8px; display: inline-flex; align-items: center; gap: 8px; font-weight: 580; color: var(--rose-strong); }
+  .section--night-2 .sx-link__more { color: var(--rose-soft); }
+  .sx-link__more :global(svg) { transition: transform .25s var(--ease); }
+  .sx-link:hover .sx-link__more :global(svg) { transform: translateX(4px); }
+
+  /* zrzut ekranu (case study) */
+  .sx-shot { background: var(--night); padding-bottom: clamp(48px, 5vw, 80px); }
+  .sx-shot__grid { display: grid; gap: 24px; }
+  @media (min-width: 900px) { .sx-shot__grid--two { grid-template-columns: 1fr 1fr; align-items: start; } }
+  .sx-shot__frame { margin: 0; border-radius: 14px; overflow: hidden; background: #231e1b; border: 1px solid rgb(255 255 255 / 0.12); box-shadow: 0 40px 80px -30px rgb(0 0 0 / 0.65); }
+  .sx-shot__bar { display: flex; align-items: center; gap: 6px; height: 34px; padding: 0 12px; }
+  .sx-shot__bar i { width: 9px; height: 9px; border-radius: 50%; background: rgb(255 255 255 / 0.18); }
+  .sx-shot__bar i:first-child { background: var(--rose); }
+  .sx-shot__bar span { margin-left: auto; margin-right: auto; padding: 0 12px; height: 20px; line-height: 20px; border-radius: 6px; background: rgb(255 255 255 / 0.07); color: rgb(255 255 255 / 0.6); font-size: 11px; }
+  .sx-shot__frame img { width: 100%; max-height: 760px; object-fit: cover; object-position: top; background: #fff; }
+
+  /* fakty (case study) */
+  .sx-facts { background: var(--night); padding-bottom: clamp(56px, 6vw, 96px); }
+  .sx-facts__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); border-top: 1px solid var(--line-dark); margin-block: 0; }
+  .sx-facts__grid > div { padding: 24px 24px 0 0; }
+  .sx-facts__grid dt { font-size: var(--t-label); color: var(--snow-muted); font-weight: 540; }
+  .sx-facts__grid dd { margin: 6px 0 0; font-size: 1.15rem; font-weight: 580; letter-spacing: -0.01em; }
+
+  .sx-cta__lead { margin-top: 20px; }
+  .sx-cta__body { margin-top: 28px; }
+</style>

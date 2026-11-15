@@ -1,0 +1,108 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/logo-light.png';
+import Icon from './Icon.astro';
+import { company, mainNav, serviceLinks, cityLinks } from '../data/site';
+
+const year = new Date().getFullYear();
+---
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="person">
+        <p class="person__name">{company.person}</p>
+        <p class="person__role">Projektuję i wdrażam strony w WebCanvas. Z każdym klientem rozmawiam osobiście, od wyceny po opiekę po starcie.</p>
+        <div class="person__contact">
+          <a href={`mailto:${company.email}`}><Icon name="mail" size={18} />{company.email}</a>
+          <a href={company.phoneHref}><Icon name="phone" size={18} />{company.phone}</a>
+        </div>
+      </div>
+
+      <div class="footer__cols">
+        <div>
+          <h3>Nawigacja</h3>
+          <ul>
+            <li><a href="/">Start</a></li>
+            {mainNav.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+            <li><a href="/#kontakt">Kontakt</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Usługi</h3>
+          <ul>{serviceLinks.map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
+        </div>
+        <div>
+          <h3>Lokalizacje</h3>
+          <ul>{cityLinks.map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__brand">
+      <a href="/" aria-label="WebCanvas, strona główna"><Image src={logo} alt="" width={160} height={35} /></a>
+      <div class="footer__socials">
+        <a href={company.socials.facebook} target="_blank" rel="noopener" aria-label="WebCanvas na Facebooku"><Icon name="facebook" /></a>
+        <a href={company.socials.instagram} target="_blank" rel="noopener" aria-label="WebCanvas na Instagramie"><Icon name="instagram" /></a>
+        <a href={company.googleReviews} target="_blank" rel="noopener" class="footer__google">
+          <Icon name="star" size={16} /> {company.rating} w Google
+        </a>
+      </div>
+    </div>
+
+    <div class="footer__legal">
+      <p>
+        {company.name}, {company.street}, {company.postalCode} {company.city}
+        · <a href={company.phoneHref}>{company.phone}</a>
+        · <a href={`mailto:${company.email}`}>{company.email}</a>
+        · {company.hours}
+      </p>
+      <p>
+        © {year} {company.name}
+        · <a href="polityka-prywatnosci.html">Polityka prywatności</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer { background: #0e0c0b; color: var(--snow); padding: clamp(72px, 8vw, 120px) 0 32px; }
+  .footer a { text-decoration: none; transition: color .2s var(--ease); }
+  .footer__top {
+    display: grid; gap: 56px;
+    grid-template-columns: minmax(0, 1fr);
+    padding-bottom: 56px; border-bottom: 1px solid var(--line-dark);
+  }
+  @media (min-width: 1000px) { .footer__top { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 80px; } }
+
+  .person { display: block; }
+  .person__name { font-size: 1.35rem; font-weight: 620; letter-spacing: -0.02em; }
+  .person__role { color: var(--snow-muted); margin-top: 6px; max-width: 42ch; }
+  .person__contact { display: flex; flex-direction: column; gap: 4px; margin-top: 16px; }
+  .person__contact a { display: inline-flex; align-items: center; gap: 10px; min-height: 36px; width: fit-content; font-weight: 520; }
+  .person__contact a:hover { color: var(--rose-soft); }
+  .person__contact :global(svg) { color: var(--rose-soft); }
+
+  .footer__cols { display: grid; gap: 32px; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); }
+  .footer__cols h3 { font-size: var(--t-label); font-weight: 560; letter-spacing: 0.02em; color: var(--snow-muted); margin-bottom: 14px; }
+  .footer__cols a { display: inline-block; padding: 6px 0; color: var(--snow); font-size: 0.95rem; }
+  .footer__cols a:hover { color: var(--rose-soft); }
+
+  .footer__brand { display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between; padding: 40px 0; }
+  .footer__brand img { width: 150px; height: auto; }
+  .footer__socials { display: flex; gap: 10px; align-items: center; }
+  .footer__socials a {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    min-width: 44px; height: 44px; padding: 0 12px; border-radius: 999px;
+    border: 1px solid var(--line-dark); font-size: var(--t-small); font-weight: 540;
+  }
+  .footer__socials a:hover { border-color: var(--snow); }
+  .footer__google :global(svg) { color: var(--amber); }
+
+  .footer__legal {
+    display: flex; flex-wrap: wrap; gap: 8px 32px; justify-content: space-between;
+    font-size: var(--t-small); color: var(--snow-muted);
+    padding-top: 24px; border-top: 1px solid var(--line-dark);
+  }
+  .footer__legal a, .footer__legal :global(button) { display: inline-flex; align-items: center; min-height: 44px; }
+  .footer__legal a:hover { color: var(--snow); }
+</style>

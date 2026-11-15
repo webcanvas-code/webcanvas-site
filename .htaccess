@@ -25,6 +25,9 @@ Options -Indexes
 
 RewriteEngine On
 
+# Security: źródła strony (Astro) i repozytorium nie są publiczne
+RewriteRule ^(astro|\.git|\.github|\.claude)(/|$) - [R=404,L]
+
 # Security: the only endpoint that accepts form data is contact.php
 RewriteCond %{REQUEST_METHOD} !^(GET|HEAD|OPTIONS)$
 RewriteCond %{REQUEST_URI} !^/contact\.php$

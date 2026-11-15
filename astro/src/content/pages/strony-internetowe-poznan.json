@@ -1,0 +1,263 @@
+{
+  "slug": "strony-internetowe-poznan",
+  "kind": "city",
+  "title": "Strony internetowe Poznań | Projektowanie stron www | WebCanvas",
+  "description": "Strony internetowe dla firm z Poznania i Wielkopolski. Projektujemy z myślą o konwersji i SEO. Szybkie wdrożenie, wsparcie po starcie, bezpłatna wycena.",
+  "ogTitle": "Strony internetowe Poznań | Projektowanie stron www | WebCanvas",
+  "ogImage": "/img/og-image.png",
+  "path": "/strony-internetowe-poznan.html",
+  "schema": [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Strony internetowe Poznań",
+      "description": "Projektujemy i wdrażamy strony internetowe dla firm z Poznania i powiatu poznańskiego. Dla ZKZL zaprojektowaliśmy stronę Dworca Autobusowego w Poznaniu, a dla stolarni Woodbud stronę, która zdobywa klientów w Poznaniu i Wrocławiu.",
+      "url": "https://web-canvas.pl/strony-internetowe-poznan.html",
+      "about": {
+        "@type": "Service",
+        "name": "Projektowanie stron internetowych",
+        "serviceType": "Tworzenie stron internetowych",
+        "areaServed": {
+          "@type": "City",
+          "name": "Poznań"
+        },
+        "provider": {
+          "@type": "ProfessionalService",
+          "@id": "https://web-canvas.pl/#business",
+          "name": "WebCanvas",
+          "url": "https://web-canvas.pl/",
+          "telephone": "+48739043596",
+          "email": "kontakt@web-canvas.pl",
+          "priceRange": "od 3000 PLN",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Biele 126",
+            "addressLocality": "Sompolno",
+            "postalCode": "62-610",
+            "addressCountry": "PL"
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+              ],
+              "opens": "09:00",
+              "closes": "17:00"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Strona główna",
+          "item": "https://web-canvas.pl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Strony internetowe Poznań",
+          "item": "https://web-canvas.pl/strony-internetowe-poznan.html"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Czy możemy spotkać się osobiście w Poznaniu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak, ale ustalamy to indywidualnie. Biuro mamy w Sompolnie, około 2 godzin od Poznania, więc większość projektów, od briefu po wdrożenie, prowadzimy online. Przy większych realizacjach przyjeżdżamy na spotkanie startowe."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy mała firma z Poznania ma szansę w Google?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak, jeśli nie celuje od razu w najbardziej ogólne frazy. Strona zbudowana wokół konkretnych usług i dzielnic lub gmin, np. Jeżyc czy Swarzędza, razem z dobrze prowadzoną wizytówką Google, potrafi wygrywać lokalnie z dużo większymi firmami."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ile trwa realizacja strony internetowej?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Zależy od zakresu. Prosta strona wizytówka to zwykle kilka tygodni, sklep internetowy czy aplikacja dedykowana wymaga więcej czasu. Dokładny harmonogram ustalamy po briefie."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy zajmujecie się też hostingiem i domeną?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak. Pomagamy skonfigurować domenę, hosting i certyfikat SSL, a po wdrożeniu oferujemy opiekę powdrożeniową, żeby strona działała bez przestojów."
+          }
+        }
+      ]
+    }
+  ],
+  "hero": {
+    "crumbs": [
+      {
+        "label": "Strona główna",
+        "href": "/"
+      },
+      {
+        "label": "Strony internetowe Poznań"
+      }
+    ],
+    "h1": "Strony internetowe Poznań",
+    "accent": "Poznań",
+    "badge": "Poznań",
+    "metaLine": "Projektowanie stron internetowych",
+    "lead": [
+      "\n Projektujemy i wdrażamy strony internetowe dla firm z Poznania i powiatu poznańskiego. Dla ZKZL zaprojektowaliśmy stronę Dworca Autobusowego w Poznaniu, a dla stolarni Woodbud stronę, która zdobywa klientów w Poznaniu i Wrocławiu.\n "
+    ],
+    "buttons": [
+      {
+        "label": "Bezpłatna wycena projektu",
+        "href": "/#kontakt",
+        "primary": true
+      },
+      {
+        "label": "Zobacz nasze realizacje",
+        "href": "/realizacje.html",
+        "primary": false
+      }
+    ]
+  },
+  "sections": [
+    {
+      "eyebrow": "Lokalnie",
+      "h2": "Strony internetowe dla firm z Poznania",
+      "intro": [],
+      "items": [
+        {
+          "title": "Spotkanie na miejscu",
+          "html": "<p>Biuro mamy w Sompolnie, około 2 godzin od Poznania. Większość projektów prowadzimy online, a spotkanie w Poznaniu ustalamy indywidualnie.</p>"
+        },
+        {
+          "title": "Obszar, który obsługujemy",
+          "html": "<p>Poznań i powiat poznański, m.in. Swarzędz, Luboń, Suchy Las, Komorniki, Tarnowo Podgórne, Kórnik, Czerwonak, Dopiewo, a także cała Wielkopolska.</p>"
+        },
+        {
+          "title": "SEO lokalne",
+          "html": "<p>W Poznaniu zamiast walczyć o najdroższe frazy, celujemy w usługę + dzielnicę lub gminę. To szybciej daje telefony i zapytania.</p>"
+        }
+      ],
+      "before": "<p>Poznań to jeden z najbardziej konkurencyjnych rynków w Polsce. Na frazę „strony internetowe Poznań” walczą dziesiątki agencji, a w każdej branży usługowej jest podobnie: dentysta, księgowa czy firma remontowa z Poznania konkuruje z setkami innych. Dlatego ogólna strona „o wszystkim” w Poznaniu po prostu nie działa.</p>\n <p>Dla firm z Poznania budujemy strony wokół konkretnych usług i konkretnego obszaru. Firma z Jeżyc, Wildy czy Rataj ma większą szansę na frazę z nazwą dzielnicy niż na samo „Poznań”. Podobnie firmy ze Swarzędza, Lubonia, Suchego Lasu czy Tarnowa Podgórnego mogą wygrywać lokalnie z dużymi graczami z centrum.</p>\n <p>Nasze realizacje z Poznania opisujemy jako case study: <a href=\"/case-study-zkzl.html\">strona ZKZL i Dworca Autobusowego w Poznaniu</a> z naciskiem na dostępność (WCAG) oraz <a href=\"/case-study-woodbud.html\">strona stolarni Woodbud</a>, która działa w Poznaniu i Wrocławiu. Jak podejść do kilku lokalizacji naraz, piszemy też w artykule o <a href=\"/blog-pozycjonowanie-lokalne-dla-malych-firm.html\">pozycjonowaniu lokalnym</a>.</p>\n <p>Jak mała firma może przebić się w Google w tak dużym mieście, opisujemy w artykule o <a href=\"/blog-pozycjonowanie-lokalne-poznan-dzielnice.html\">pozycjonowaniu lokalnym w Poznaniu</a>.</p>"
+    },
+    {
+      "eyebrow": "Dlaczego my",
+      "h2": "Co dostajesz w WebCanvas",
+      "intro": [],
+      "before": "<ul>\n <li><strong>Projekt mobile-first:</strong> większość klientów ogląda stronę na telefonie.</li>\n <li><strong>SEO od pierwszego dnia:</strong> nagłówki, meta dane, dane strukturalne i szybkość ustawione przy wdrożeniu.</li>\n <li><strong>Lekki, szybki kod:</strong> bez zbędnych wtyczek i bibliotek.</li>\n <li><strong>Jeden zespół:</strong> projekt, kod i wdrożenie bez pośredników i podwykonawców.</li>\n <li><strong>Wsparcie po starcie:</strong> drobne zmiany, hosting i domena.</li>\n <li><strong>Jasna wycena:</strong> zakres i cena znane przed rozpoczęciem prac.</li>\n </ul>\n<p>\n Poza stronami zajmujemy się też <a href=\"/pozycjonowanie-seo.html\">pozycjonowaniem SEO</a>,\n <a href=\"/kampanie-google-ads.html\">kampaniami Google Ads</a> i <a href=\"/kampanie-meta-ads.html\">Meta Ads</a>.\n Przykłady naszej pracy, opisane jako case study, znajdziesz w <a href=\"/realizacje.html\">realizacjach</a>.\n </p>"
+    },
+    {
+      "eyebrow": "Inwestycja",
+      "h2": "Wybierz swój pakiet",
+      "intro": [
+        "Przejrzyste zasady współpracy. Wybierz rozwiązanie idealnie dopasowane do Twoich potrzeb biznesowych."
+      ],
+      "items": [
+        {
+          "price": {
+            "featured": false,
+            "note": "Dla firm potrzebujących solidnego startu w sieci.",
+            "amount": "od 3000",
+            "unit": "PLN netto",
+            "list": [
+              "Strona One-Page / Landing",
+              "Responsywny Design (RWD)",
+              "Podstawowa optymalizacja SEO",
+              "Konfiguracja domeny i hostingu"
+            ],
+            "cta": "Wybieram Pro"
+          },
+          "title": "Pakiet Pro",
+          "html": "<p>Dla firm potrzebujących solidnego startu w sieci.</p>\n od 3000\n PLN netto\n <ul>\n <li> Strona One-Page / Landing</li>\n <li> Responsywny Design (RWD)</li>\n <li> Podstawowa optymalizacja SEO</li>\n <li> Konfiguracja domeny i hostingu</li>\n </ul>\n Wybieram Pro",
+          "href": "/#kontakt"
+        },
+        {
+          "price": {
+            "featured": true,
+            "note": "Kompleksowe wdrożenie sklepu lub zaawansowanej strony.",
+            "amount": "od 4000",
+            "unit": "PLN netto",
+            "list": [
+              "Indywidualny projekt graficzny UI",
+              "System CMS / E-commerce",
+              "Zaawansowane animacje",
+              "Szkolenie z obsługi panelu"
+            ],
+            "cta": "Wybieram Unique"
+          },
+          "title": "Pakiet Unique",
+          "html": "Polecany\n <p>Kompleksowe wdrożenie sklepu lub zaawansowanej strony.</p>\n od 4000\n PLN netto\n <ul>\n <li> Indywidualny projekt graficzny UI</li>\n <li> System CMS / E-commerce</li>\n <li> Zaawansowane animacje</li>\n <li> Szkolenie z obsługi panelu</li>\n </ul>\n Wybieram Unique",
+          "href": "/#kontakt"
+        },
+        {
+          "price": {
+            "featured": false,
+            "note": "Prace programistyczne i rozwój istniejących projektów.",
+            "amount": "200",
+            "unit": "PLN / h",
+            "list": [
+              "Audyt i optymalizacja kodu",
+              "Wdrażanie nowych funkcji",
+              "Naprawa błędów",
+              "Konsultacje technologiczne"
+            ],
+            "cta": "Zapytaj o dostępność"
+          },
+          "title": "Pakiet Hourly",
+          "html": "<p>Prace programistyczne i rozwój istniejących projektów.</p>\n 200\n PLN / h\n <ul>\n <li> Audyt i optymalizacja kodu</li>\n <li> Wdrażanie nowych funkcji</li>\n <li> Naprawa błędów</li>\n <li> Konsultacje technologiczne</li>\n </ul>\n Zapytaj o dostępność",
+          "href": "/#kontakt"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Pytania",
+      "h2": "Najczęstsze pytania od firm z Poznania",
+      "intro": [],
+      "items": [
+        {
+          "title": "Czy możemy spotkać się osobiście w Poznaniu?",
+          "html": "<p>Tak, ale ustalamy to indywidualnie. Biuro mamy w Sompolnie, około 2 godzin od Poznania, więc większość projektów, od briefu po wdrożenie, prowadzimy online. Przy większych realizacjach przyjeżdżamy na spotkanie startowe.</p>"
+        },
+        {
+          "title": "Czy mała firma z Poznania ma szansę w Google?",
+          "html": "<p>Tak, jeśli nie celuje od razu w najbardziej ogólne frazy. Strona zbudowana wokół konkretnych usług i dzielnic lub gmin, np. Jeżyc czy Swarzędza, razem z dobrze prowadzoną wizytówką Google, potrafi wygrywać lokalnie z dużo większymi firmami.</p>"
+        },
+        {
+          "title": "Ile trwa realizacja strony internetowej?",
+          "html": "<p>Zależy od zakresu. Prosta strona wizytówka to zwykle kilka tygodni, sklep internetowy czy aplikacja dedykowana wymaga więcej czasu. Dokładny harmonogram ustalamy po briefie.</p>"
+        },
+        {
+          "title": "Czy zajmujecie się też hostingiem i domeną?",
+          "html": "<p>Tak. Pomagamy skonfigurować domenę, hosting i certyfikat SSL, a po wdrożeniu oferujemy opiekę powdrożeniową, żeby strona działała bez przestojów.</p>"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Kolejny krok",
+      "h2": "Porozmawiajmy o Twojej stronie",
+      "intro": [],
+      "before": "<p>\n Opowiedz nam o swojej firmie z Poznania i okolic – bezpłatnie wycenimy projekt i zaproponujemy\n rozwiązanie dopasowane do Twojego budżetu i celów.\n </p>\n<a href=\"/#kontakt\">\n Omówmy Twój projekt\n </a>\n <a href=\"/realizacje.html\">\n Zobacz realizacje\n </a>"
+    }
+  ]
+}

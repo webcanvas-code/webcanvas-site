@@ -1,0 +1,167 @@
+---
+import Icon from './Icon.astro';
+import { company } from '../data/site';
+
+interface Props { heading?: string; }
+const { heading = 'Rozpocznijmy współpracę.' } = Astro.props;
+---
+<section class="section contact" id="kontakt" aria-labelledby="kontakt-h">
+  <div class="wrap contact__grid">
+    <div class="contact__intro">
+      <p class="eyebrow">Kontakt</p>
+      <h2 class="h2" id="kontakt-h">{heading}</h2>
+      <p class="lead">Opisz krótko firmę i to, czego potrzebujesz. Bezpłatną wycenę odeślę w ciągu 24 godzin.</p>
+
+      <ul class="contact__list">
+        <li><a href={`mailto:${company.email}`}><Icon name="mail" />{company.email}</a></li>
+        <li><a href={company.phoneHref}><Icon name="phone" />{company.phone}</a></li>
+        <li><span><Icon name="clock" />{company.hours}</span></li>
+      </ul>
+    </div>
+
+    <form class="form" action="/contact.php" method="post" novalidate data-contact-form>
+      <input type="hidden" name="form_type" value="contact" />
+      <div class="form__row">
+        <div class="field">
+          <label for="f-name">Imię i nazwisko</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="f-name-err" />
+          <p class="field__error" id="f-name-err"></p>
+        </div>
+        <div class="field">
+          <label for="f-email">Adres e-mail</label>
+          <input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="f-email-err" />
+          <p class="field__error" id="f-email-err"></p>
+        </div>
+      </div>
+      <div class="field">
+        <label for="f-type">Czego potrzebujesz?</label>
+        <select id="f-type" name="project_type">
+          <option value="">Wybierz (opcjonalnie)</option>
+          <option>Strona firmowa / wizytówka</option>
+          <option>Landing page</option>
+          <option>Sklep internetowy</option>
+          <option>Aplikacja webowa</option>
+          <option>Nowy wygląd obecnej strony</option>
+          <option>Pozycjonowanie SEO</option>
+          <option>Kampanie Google / Meta Ads</option>
+          <option>Inne</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-msg">Wiadomość</label>
+        <textarea id="f-msg" name="message" rows="5" required aria-describedby="f-msg-err"></textarea>
+        <p class="field__error" id="f-msg-err"></p>
+      </div>
+      <div class="field field--check">
+        <input id="f-consent" name="consent" type="checkbox" required aria-describedby="f-consent-err" />
+        <label for="f-consent">Wyrażam zgodę na przetwarzanie moich danych osobowych w celu obsługi zapytania. Administratorem danych jest WebCanvas. Szczegóły w <a href="/polityka-prywatnosci.html">Polityce prywatności</a>.</label>
+        <p class="field__error" id="f-consent-err"></p>
+      </div>
+      <button class="btn btn--primary form__submit" type="submit">Wyślij zapytanie <Icon name="arrow" /></button>
+      <p class="form__status" role="status" aria-live="polite" data-form-status></p>
+    </form>
+  </div>
+</section>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('[data-contact-form]');
+  if (form) {
+    const status = form.querySelector<HTMLElement>('[data-form-status]')!;
+    const submit = form.querySelector<HTMLButtonElement>('.form__submit')!;
+    const rules: Record<string, (el: HTMLInputElement) => string> = {
+      name: (el) => (el.value.trim() ? '' : 'Wpisz imię i nazwisko.'),
+      email: (el) => (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim()) ? '' : 'Wpisz adres e-mail z @, np. jan@firma.pl.'),
+      message: (el) => (el.value.trim() ? '' : 'Napisz kilka słów o projekcie.'),
+      consent: (el) => (el.checked ? '' : 'Zaznacz zgodę, żebym mógł odpowiedzieć.'),
+    };
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      let firstBad: HTMLElement | null = null;
+      let count = 0;
+      for (const [name, check] of Object.entries(rules)) {
+        const el = form.elements.namedItem(name) as HTMLInputElement;
+        const msg = check(el);
+        const err = document.getElementById(el.getAttribute('aria-describedby')!)!;
+        err.textContent = msg;
+        el.toggleAttribute('aria-invalid', !!msg);
+        if (msg) { count++; firstBad ??= el; }
+      }
+      if (firstBad) {
+        status.dataset.state = 'error';
+        status.textContent = count === 1 ? 'Popraw 1 pole.' : count < 5 ? `Popraw ${count} pola.` : `Popraw ${count} pól.`;
+        firstBad.focus();
+        return;
+      }
+
+      submit.disabled = true;
+      const t = setTimeout(() => { status.dataset.state = ''; status.textContent = 'Wysyłanie…'; }, 300);
+      try {
+        const res = await fetch(form.action, { method: 'POST', body: new FormData(form) });
+        const data = await res.json().catch(() => ({}));
+        clearTimeout(t);
+        if (res.ok && data.success !== 'false') {
+          status.dataset.state = 'ok';
+          status.textContent = 'Dziękuję, zapytanie dotarło. Odpowiem w ciągu 24 godzin.';
+          form.reset();
+          (window as any).dataLayer?.push({ event: 'form_submit', form_type: 'contact' });
+        } else {
+          status.dataset.state = 'error';
+          status.textContent = data.message || 'Nie udało się wysłać. Spróbuj ponownie albo napisz na kontakt@web-canvas.pl.';
+        }
+      } catch {
+        clearTimeout(t);
+        status.dataset.state = 'error';
+        status.textContent = 'Brak połączenia. Spróbuj ponownie albo napisz na kontakt@web-canvas.pl.';
+      } finally {
+        submit.disabled = false;
+      }
+    });
+  }
+</script>
+
+<style>
+  .contact { background: var(--night-2); }
+  .contact__grid { display: grid; gap: 56px; grid-template-columns: minmax(0, 1fr); }
+  @media (min-width: 1000px) { .contact__grid { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 96px; } }
+  .contact__intro .lead { margin-top: 24px; }
+  .contact__list { margin-top: 40px; display: grid; gap: 4px; }
+  .contact__list a, .contact__list span {
+    display: inline-flex; align-items: center; gap: 14px; min-height: 48px;
+    font-size: 1.15rem; font-weight: 540; text-decoration: none;
+  }
+  .contact__list :global(svg) { color: var(--rose-soft); }
+  .contact__list a:hover { color: var(--rose-soft); }
+
+  .form {
+    background: var(--paper); color: var(--ink);
+    border-radius: var(--r-lg); padding: clamp(24px, 4vw, 48px);
+    display: grid; gap: 20px; align-content: start;
+  }
+  .form__row { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .field { display: grid; gap: 8px; }
+  .field label { font-size: var(--t-small); font-weight: 560; }
+  .field input:not([type='checkbox']), .field select, .field textarea {
+    width: 100%; min-height: 50px; padding: 12px 16px;
+    font: inherit; font-size: 16px; color: var(--ink);
+    background: var(--white); border: 1px solid var(--line-light); border-radius: var(--r-sm);
+    transition: border-color .2s var(--ease), box-shadow .2s var(--ease);
+  }
+  .field textarea { resize: vertical; min-height: 140px; }
+  .field input:hover, .field select:hover, .field textarea:hover { border-color: rgb(26 21 19 / 0.3); }
+  .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--rose); box-shadow: 0 0 0 3px rgb(225 29 72 / 0.18); }
+  .field [aria-invalid] { border-color: var(--rose-strong) !important; }
+  .field__error { color: var(--rose-strong); font-size: var(--t-small); font-weight: 520; }
+  .field__error:empty { display: none; }
+  .field--check { grid-template-columns: auto 1fr; align-items: start; column-gap: 12px; }
+  .field--check input { width: 22px; height: 22px; margin: 2px 0 0; accent-color: var(--rose); }
+  .field--check label { font-weight: 400; color: var(--ink-muted); line-height: 1.5; }
+  .field--check label a { color: var(--rose-strong); }
+  .field--check .field__error { grid-column: 2; }
+  .form__submit { justify-self: start; }
+  .form__submit:focus-visible { outline-color: var(--rose); }
+  @media (max-width: 520px) { .form__submit { justify-self: stretch; } }
+  .form__status { font-weight: 540; min-height: 1.5em; }
+  .form__status[data-state='ok'] { color: #15803d; }
+  .form__status[data-state='error'] { color: var(--rose-strong); }
+</style>

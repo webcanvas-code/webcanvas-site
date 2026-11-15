@@ -1,0 +1,131 @@
+{
+  "slug": "case-study-drgil",
+  "kind": "case",
+  "title": "Redesign cennika drgil.pl | WebCanvas",
+  "description": "Case Study drgil.pl: jak przeprojektowanie cennika z listy na zwijane kategorie skróciło czas nawigacji i poprawiło UX na urządzeniach mobilnych.",
+  "path": "/case-study-drgil.html",
+  "schema": [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Strona główna",
+          "item": "https://web-canvas.pl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Realizacje",
+          "item": "https://web-canvas.pl/realizacje.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Redesign cennika drgil.pl",
+          "item": "https://web-canvas.pl/case-study-drgil.html"
+        }
+      ]
+    }
+  ],
+  "hero": {
+    "crumbs": [
+      {
+        "label": "Strona główna",
+        "href": "/"
+      },
+      {
+        "label": "Realizacje",
+        "href": "/realizacje.html"
+      },
+      {
+        "label": "Redesign cennika drgil.pl"
+      }
+    ],
+    "h1": "Cennik, który nie wymaga kilkudziesięciu scrolli",
+    "accent": "kilkudziesięciu scrolli",
+    "badge": "Case Study",
+    "metaLine": "Gabinet medycyny estetycznej • Poprawa UX",
+    "lead": [
+      "\n Strona drgil.pl oferuje dziesiątki zabiegów medycyny estetycznej podzielonych na kilkanaście kategorii. Stary cennik wyświetlał wszystko naraz, tworząc jedną długą listę. Zmiana jednego elementu interfejsu wystarczyła, żeby nawigacja stała się intuicyjna.\n "
+    ],
+    "buttons": [
+      {
+        "label": "Odwiedź stronę na żywo",
+        "href": "https://drgil.pl/",
+        "primary": true
+      }
+    ]
+  },
+  "sections": [
+    {
+      "type": "shot",
+      "images": [
+        {
+          "src": "/img/drgil-cennik-przed.png",
+          "alt": "Stary cennik drgil.pl - wszystkie ceny widoczne naraz na jednej długiej stronie"
+        }
+      ]
+    },
+    {
+      "type": "facts",
+      "facts": [
+        {
+          "label": "Klient",
+          "value": "drgil.pl"
+        },
+        {
+          "label": "Sektor",
+          "value": "Medycyna estetyczna"
+        },
+        {
+          "label": "Zakres",
+          "value": "UX / Redesign"
+        },
+        {
+          "label": "Strona",
+          "value": "Cennik"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Problem",
+      "h2": "24 000 pikseli w dół, żeby znaleźć jedną cenę",
+      "intro": [],
+      "before": "<p>\n Cennik gabinetu medycyny estetycznej to nie prosta lista. W przypadku drgil.pl to kilkanaście kategorii zabiegów, każda z wieloma pozycjami i wariantami cenowymi. W starej wersji strony wszystkie te dane były widoczne od razu po wejściu: jedna ciągła tabela bez żadnego podziału na sekcje.\n </p>\n <p>\n Efekt był łatwy do zmierzenia. Strona cennika miała ponad 24 000 pikseli wysokości. Ktoś szukający konkretnego zabiegu musiał przewinąć całą stronę, żeby zorientować się co jest w środku, a potem wracać do góry w poszukiwaniu właściwej sekcji. Na telefonie, gdzie większość użytkowników przeglądała stronę, oznaczało to kilkadziesiąt ruchów palcem tylko po to, żeby znaleźć jedną pozycję w cenniku.\n </p>\n <p>\n Długa strona to też problem z pierwszym wrażeniem. Użytkownik, który nie widzi końca listy, ma mniej powodów, żeby zostać i szukać dalej.\n </p>"
+    },
+    {
+      "eyebrow": "Rozwiązanie",
+      "h2": "Accordion zamiast jednej długiej listy",
+      "intro": [],
+      "items": [
+        {
+          "title": "Pełna lista kategorii na starcie",
+          "html": "<p>\n Po wejściu na stronę użytkownik widzi wyłącznie nazwy kategorii zabiegów. Żadnego przewijania, żadnego zgadywania co jest na dole. Pełny przegląd oferty w jednym miejscu.\n </p>"
+        },
+        {
+          "title": "Kliknięcie rozwija tylko wybraną sekcję",
+          "html": "<p>\n Zainteresowany konkretnym zabiegiem klika w jego kategorię. Tabela z cenami rozwija się tylko dla tej jednej sekcji. Reszta pozostaje zwinięta i nie przeszkadza.\n </p>"
+        },
+        {
+          "title": "Naturalne na telefonie",
+          "html": "<p>\n Na urządzeniach mobilnych zmiana robi największą różnicę. Zamiast kilkudziesięciu scrolli jedno dotknięcie kategorii pokazuje dokładnie to, czego szuka użytkownik.\n </p>"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Efekt",
+      "h2": "Ta sama treść, zupełnie inne doświadczenie",
+      "intro": [],
+      "before": "<p>\n Przy okazji przeprojektowania zaktualizowany został też sam cennik: odświeżone ceny i oferta zabiegów. Zmiana interfejsu i aktualizacja treści weszły w życie jednocześnie, dzięki czemu klienci trafiają na cennik aktualny i łatwy w obsłudze.\n </p>\n <p>\n Efekt jest szczególnie zauważalny na telefonie. Strona, która miała ponad 24 000 pikseli wysokości, po zwinięciu kategorii wyświetla pełną listę zabiegów na jednym ekranie. Użytkownik od razu widzi całą strukturę oferty i sam decyduje, co go interesuje.\n </p>\n<p>Przed</p>\n <img src=\"/img/drgil-cennik-przed.png\" alt=\"Cennik drgil.pl przed redesignem\" loading=\"lazy\">\n <p>Po</p>\n <img src=\"/img/drgil-cennik-po.png\" alt=\"Cennik drgil.pl po redesignie ze zwijanymi kategoriami\" loading=\"lazy\">\n<p>24k px</p>\n <p>wysokość strony przed zmianą</p>\n <p>1 klik</p>\n <p>żeby otworzyć dowolną kategorię</p>\n <p>Mobile</p>\n <p>największy zysk na urządzeniach mobilnych</p>"
+    },
+    {
+      "eyebrow": "Kolejny krok",
+      "h2": "Masz podobny problem na swojej stronie?",
+      "intro": [],
+      "before": "<p>\n Czasem jedna zmiana w interfejsie robi większą różnicę niż pełen redesign. Chętnie przyjrzę się Twojej stronie i zaproponuję konkretne usprawnienia.\n </p>\n<a href=\"/#kontakt\">\n Omówmy Twój projekt\n </a>\n <a href=\"/realizacje.html\">\n ← Wróć do realizacji\n </a>"
+    }
+  ]
+}

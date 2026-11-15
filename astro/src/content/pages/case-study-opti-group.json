@@ -1,0 +1,163 @@
+{
+  "slug": "case-study-opti-group",
+  "kind": "case",
+  "title": "Strona dla doradztwa finansowego Opti Group | WebCanvas",
+  "description": "Case Study Opti Group: jak uporządkowaliśmy szeroką ofertę doradztwa finansowego dla MŚP w czytelną, budzącą zaufanie stronę internetową.",
+  "path": "/case-study-opti-group.html",
+  "schema": [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Strona główna",
+          "item": "https://web-canvas.pl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Realizacje",
+          "item": "https://web-canvas.pl/realizacje.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Opti Group",
+          "item": "https://web-canvas.pl/case-study-opti-group.html"
+        }
+      ]
+    }
+  ],
+  "hero": {
+    "crumbs": [
+      {
+        "label": "Strona główna",
+        "href": "/"
+      },
+      {
+        "label": "Realizacje",
+        "href": "/realizacje.html"
+      },
+      {
+        "label": "Opti Group"
+      }
+    ],
+    "h1": "Zaufanie od pierwszego ekranu: Opti Group",
+    "accent": "Opti Group",
+    "badge": "Case Study",
+    "metaLine": "Klient biznesowy • Doradztwo finansowe",
+    "lead": [
+      "\n Doradztwo finansowe dla firm to branża, w której klient musi zaufać zanim jeszcze zadzwoni.\n Zadaniem strony było uporządkować kilkanaście usług, od pożyczek unijnych po restrukturyzacje,\n w sposób, który <strong>nie przytłacza, tylko prowadzi do\n kontaktu</strong>.\n "
+    ],
+    "buttons": [
+      {
+        "label": "Odwiedź stronę na żywo",
+        "href": "https://optigroup.pl/",
+        "primary": true
+      }
+    ]
+  },
+  "sections": [
+    {
+      "type": "shot",
+      "images": [
+        {
+          "src": "/img/opti_group.webp",
+          "alt": "Pełny widok strony internetowej Opti Group"
+        }
+      ],
+      "url": "optigroup.pl"
+    },
+    {
+      "type": "facts",
+      "facts": [
+        {
+          "label": "Klient",
+          "value": "Opti Group"
+        },
+        {
+          "label": "Sektor",
+          "value": "Doradztwo finansowe"
+        },
+        {
+          "label": "Zakres",
+          "value": "UX / UI / Dev"
+        },
+        {
+          "label": "Odbiorca",
+          "value": "MŚP i kadra zarządzająca"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Wyzwanie",
+      "h2": "Szeroka oferta, wąskie okno uwagi",
+      "intro": [],
+      "before": "<p>\n Przy projektowaniu stron internetowych dla branży finansowej stawka jest wyższa niż\n zwykle, bo w grę wchodzi zaufanie do pieniędzy klienta. Opti Group oferuje kilkanaście\n usług naraz: pośrednictwo kredytowe, pożyczki unijne,\n doradztwo restrukturyzacyjne, finansowanie startupów. Każda z nich trafia do innego odbiorcy:\n firmy szukającej finansowania na rozwój i firmy w kryzysie szukającej ratunku\n <strong>to dwa zupełnie różne stany emocjonalne</strong>,\n które strona musiała rozpoznać i obsłużyć osobno.\n </p>\n <p>\n Ryzykiem było zbudowanie strony, która wygląda na \"wszystko dla wszystkich\" i przez to nie\n przekonuje nikogo. Musieliśmy znaleźć układ, w którym odwiedzający w kilka sekund\n rozpoznaje: \"to jest usługa dla mnie\", bez czytania całego cennika usług finansowych.\n </p>"
+    },
+    {
+      "eyebrow": "Rozwiązanie",
+      "h2": "Trzy filary, na których oparliśmy projekt",
+      "intro": [],
+      "items": [
+        {
+          "title": "Segmentacja oferty",
+          "html": "<p>\n Kilkanaście usług pogrupowane w jasne kategorie: finansowanie, doradztwo,\n restrukturyzacja. Odwiedzający wybiera swoją ścieżkę zamiast przeglądać\n pełną listę produktów finansowych.\n </p>"
+        },
+        {
+          "title": "Wizerunek wiarygodności",
+          "html": "<p>\n Stonowana, \"bankowa\" estetyka zamiast agresywnego marketingu finansowego.\n W branży, gdzie stawką są pieniądze klienta, spokojny design buduje więcej\n zaufania niż duże obietnice.\n </p>"
+        },
+        {
+          "title": "Ścieżki kontaktu dopasowane do sytuacji",
+          "html": "<p>\n Firma szukająca finansowania na rozwój i firma w restrukturyzacji potrzebują\n innego tempa kontaktu. Rozdzieliliśmy te ścieżki zamiast prowadzić wszystkich\n do jednego, ogólnego formularza.\n </p>"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Proces",
+      "h2": "Krok po kroku: od briefu do wdrożenia",
+      "intro": [],
+      "items": [
+        {
+          "title": "Audyt oferty i grupowanie usług",
+          "html": "<p>\n Wspólnie z Opti Group przeszliśmy przez pełną listę usług finansowych i\n pogrupowaliśmy je według realnej potrzeby klienta, a nie wewnętrznej struktury firmy.\n </p>"
+        },
+        {
+          "title": "Projektowanie UI / UX",
+          "html": "<p>\n Stonowana kolorystyka i typografia budująca skojarzenia z instytucją finansową,\n nie startupem. Czytelna hierarchia informacji dla odbiorcy pod presją decyzji.\n </p>"
+        },
+        {
+          "title": "Kodowanie i responsywność",
+          "html": "<p>\n Strona w pełni responsywna, bo znaczna część decydentów w MŚP przegląda ofertę\n finansową na telefonie, między spotkaniami.\n </p>"
+        },
+        {
+          "title": "Wdrożenie i optymalizacja SEO",
+          "html": "<p>\n Struktura nagłówków i treści dopasowana pod frazy branżowe (pożyczki unijne,\n doradztwo gospodarcze), tak by strona pracowała też na ruch organiczny.\n </p>"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Efekty",
+      "h2": "Oferta, którą można zrozumieć w minutę",
+      "intro": [
+        "\n Zamiast listy kilkunastu usług finansowych, odwiedzający dostaje jasną mapę: która\n usługa jest dla niego i jak wygląda pierwszy krok.\n "
+      ],
+      "before": "<p>6+</p>\n <p>Kategorii usług uporządkowanych</p>\n <p>Trust First</p>\n <p>Filozofia projektowa</p>\n <p>RWD</p>\n <p>Pełna responsywność</p>\n <p>2 ścieżki</p>\n <p>Kontaktu wg sytuacji klienta</p>\n<p>\n „W doradztwie finansowym pierwsze wrażenie decyduje o telefonie albo jego braku.\n Naszym zadaniem było uprościć bez spłycania.\"\n </p>\n <p>\n Podsumowanie projektu, WebCanvas\n </p>"
+    },
+    {
+      "eyebrow": "Stack technologiczny",
+      "h2": "Technologie użyte w projekcie",
+      "intro": [],
+      "before": "<ul data-chips=\"\"><li>Projektowanie stron internetowych</li><li>HTML5</li><li>CSS3 / RWD</li><li>JavaScript</li><li>Formularz kontaktowy</li><li>SEO On-Page</li><li>Performance Optimized</li><li>SSL / HTTPS</li></ul>"
+    },
+    {
+      "eyebrow": "Kolejny krok",
+      "h2": "Zaprojektujmy rozwiązanie na lata",
+      "intro": [],
+      "before": "<p>\n Twój projekt też może przetrwać próbę czasu. Opowiedz mi o swoich potrzebach,\n bezpłatnie wycenię projekt i zaproponuję rozwiązanie szyte na miarę.\n </p>\n<a href=\"/#kontakt\">\n Omówmy Twój projekt\n </a>\n <a href=\"/realizacje.html\">\n ← Wróć do realizacji\n </a>"
+    }
+  ]
+}

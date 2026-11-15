@@ -1,0 +1,616 @@
+---
+import { Image } from 'astro:assets';
+import portrait from '../assets/adam-kubiak.png';
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import BrowserFrame from '../components/BrowserFrame.astro';
+import ContactSection from '../components/ContactSection.astro';
+import { company, reviews, faq } from '../data/site';
+import { projects } from '../data/projects';
+
+const [featured, ...rest] = projects.filter((p) => p.home !== false);
+const byName = Object.fromEntries(projects.map((p) => [p.name, p]));
+
+const services = [
+  { icon: 'browser', title: 'Strony internetowe', text: 'Strony firmowe, wizytówki i landing page, które jasno pokazują ofertę i prowadzą klienta do kontaktu.', tags: ['WordPress', 'Landing page', 'SEO'], href: '/tworzenie-stron-internetowych.html' },
+  { icon: 'cart', title: 'Sklepy internetowe', text: 'Sklepy na WooCommerce z płatnościami online, wygodnym koszykiem i panelem, który obsłużysz bez programisty.', tags: ['WooCommerce', 'Płatności online'] },
+  { icon: 'app', title: 'Aplikacje webowe', text: 'Panele klienta, dashboardy i systemy B2B / B2C, które porządkują procesy w firmie.', tags: ['B2B / B2C', 'Dashboard'] },
+  { icon: 'pen', title: 'Projekt graficzny', text: 'Układ i wygląd zaprojektowane pod Twoją markę i klientów, bez gotowych szablonów.', tags: ['UI / UX', 'Identyfikacja'] },
+  { icon: 'search', title: 'Pozycjonowanie SEO', text: 'Audyt techniczny, treści, linki i lokalne SEO, żeby klienci z okolicy znajdowali Cię w Google.', tags: ['Audyt SEO', 'Local SEO'], href: '/pozycjonowanie-seo.html' },
+  { icon: 'target', title: 'Kampanie Google Ads', text: 'Reklamy w wyszukiwarce, sieci reklamowej i Zakupach, widoczne w chwili, gdy klient szuka usługi.', tags: ['Search', 'Remarketing'], href: '/kampanie-google-ads.html' },
+  { icon: 'megaphone', title: 'Kampanie Meta Ads', text: 'Reklamy na Facebooku i Instagramie z precyzyjnym targetowaniem, kreacjami i formularzami leadowymi.', tags: ['Facebook', 'Instagram'], href: '/kampanie-meta-ads.html' },
+  { icon: 'server', title: 'Hosting i domena', text: 'Szybki serwer, certyfikat SSL, domena i firmowa poczta e-mail skonfigurowane za Ciebie.', tags: ['SSL', 'E-mail firmowy'] },
+  { icon: 'support', title: 'Szkolenie i opieka', text: 'Szkolenie z panelu CMS, instrukcje i opieka techniczna po starcie strony.', tags: ['CMS', 'Opieka'] },
+];
+
+const principles = [
+  { title: 'Rozmawiasz ze mną', text: 'Od wyceny po publikację masz jedną osobę do kontaktu, która zna cały projekt i za niego odpowiada.' },
+  { title: 'Projekt pod Twoją firmę', text: 'Nie składam strony z gotowego szablonu. Układ i grafika powstają pod Twoją ofertę i Twoich klientów.' },
+  { title: 'SEO od pierwszego dnia', text: 'Szybkie ładowanie, poprawna struktura nagłówków i lokalne SEO są w każdym projekcie, nie jako dopłata.' },
+  { title: 'Opieka po starcie', text: 'Uczę obsługi panelu, dbam o hosting i zostaję pod telefonem, kiedy trzeba coś zmienić albo dodać.' },
+];
+
+const steps = [
+  { title: 'Rozmowa i wycena', text: 'Mówisz, co robi Twoja firma i czego oczekujesz od strony. W ciągu 24 godzin dostajesz wycenę i plan prac.' },
+  { title: 'Projekt graficzny', text: 'Przygotowuję układ i wygląd. Oglądasz go na żywo i zgłaszasz uwagi, zanim zacznę kodować.' },
+  { title: 'Wdrożenie', text: 'Koduję stronę, wgrywam treści, ustawiam SEO, analitykę i formularze. Sprawdzam ją na telefonach i komputerach.' },
+  { title: 'Start i opieka', text: 'Publikuję stronę, pokazuję, jak ją edytować, i pomagam, kiedy firma rośnie.' },
+];
+
+const plans = [
+  {
+    name: 'Pakiet Pro', note: 'Dla firm, które potrzebują solidnego startu w sieci.',
+    price: 'od 3000', unit: 'PLN netto',
+    items: ['Strona one-page lub landing page', 'Wygląd dopasowany do telefonów', 'Podstawowa optymalizacja SEO', 'Konfiguracja domeny i hostingu'],
+    cta: 'Wybieram Pro',
+  },
+  {
+    name: 'Pakiet Unique', note: 'Rozbudowana strona firmowa albo sklep internetowy.',
+    price: 'od 4000', unit: 'PLN netto', featured: true,
+    items: ['Indywidualny projekt graficzny', 'System CMS albo sklep e-commerce', 'Dopracowane animacje', 'Szkolenie z obsługi panelu'],
+    cta: 'Wybieram Unique',
+  },
+  {
+    name: 'Pakiet godzinowy', note: 'Rozwój i poprawki istniejących stron.',
+    price: '200', unit: 'PLN / h netto',
+    items: ['Audyt i optymalizacja kodu', 'Nowe funkcje', 'Naprawa błędów', 'Konsultacje technologiczne'],
+    cta: 'Zapytaj o termin',
+  },
+];
+
+const posts = [
+  { tag: 'Wycena', title: 'Ile kosztuje strona internetowa dla małej firmy?', text: 'Realne ceny stron www w 2026 roku, od wizytówki po sklep, i to, co na nie wpływa.', time: '5 min', href: '/blog-ile-kosztuje-strona-internetowa.html' },
+  { tag: 'UX', title: '5 sygnałów, że Twoja stara strona odstrasza klientów', text: 'Po czym poznać, że strona traci zapytania i co poprawić w pierwszej kolejności.', time: '6 min', href: '/blog-stara-strona-internetowa-sygnaly.html' },
+  { tag: 'Proces', title: 'Jak wygląda proces zamawiania strony krok po kroku', text: 'Od pierwszej rozmowy do wdrożenia: co dzieje się na każdym etapie współpracy.', time: '5 min', href: '/blog-proces-tworzenia-strony-internetowej.html' },
+];
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    '@id': 'https://web-canvas.pl/#business',
+    name: 'WebCanvas',
+    url: 'https://web-canvas.pl/',
+    logo: 'https://web-canvas.pl/img/logo.png',
+    hasMap: company.googleReviews,
+    openingHoursSpecification: [
+      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '09:00', closes: '17:00' },
+    ],
+    description: 'WebCanvas projektuje i wdraża nowoczesne strony internetowe oraz sklepy e-commerce dla firm z całej Polski. Pracujemy zdalnie, obsługując klientów z całego kraju.',
+    email: company.email,
+    telephone: '+48739043596',
+    image: 'https://web-canvas.pl/img/og-image.png',
+    areaServed: [
+      { '@type': 'City', name: 'Konin' },
+      { '@type': 'City', name: 'Turek' },
+      { '@type': 'City', name: 'Koło' },
+      { '@type': 'City', name: 'Słupca' },
+      { '@type': 'City', name: 'Poznań' },
+      { '@type': 'City', name: 'Sompolno' },
+      { '@type': 'AdministrativeArea', name: 'Wielkopolska' },
+    ],
+    sameAs: [company.socials.facebook, company.socials.instagram, company.googleReviews],
+    priceRange: 'od 3000 PLN',
+    address: { '@type': 'PostalAddress', streetAddress: company.street, addressLocality: company.city, postalCode: company.postalCode, addressCountry: 'PL' },
+    aggregateRating: { '@type': 'AggregateRating', ratingValue: '5.0', reviewCount: String(company.reviewCount) },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  },
+];
+---
+<Base
+  title="Tworzenie stron internetowych dla firm | WebCanvas"
+  description="Projektujemy i wdrażamy nowoczesne strony internetowe oraz sklepy e-commerce dla firm z całej Polski. Szybkie wdrożenia, SEO od pierwszego dnia i wsparcie po starcie."
+  ogTitle="WebCanvas | Projektowanie i tworzenie stron internetowych"
+  path="/"
+  schema={schema}
+>
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="wrap hero__text" data-enter>
+      <h1 id="hero-h">Strony internetowe dla firm, <span>które zdobywają klientów.</span></h1>
+      <p class="hero__lead">Tworzę strony, sklepy i kampanie dla małych i średnich firm. Jasna oferta, szybkie ładowanie i SEO od pierwszego dnia.</p>
+      <div class="btn-row hero__btns">
+        <a class="btn btn--primary" href="#kontakt">Wyceń projekt <Icon name="arrow" /></a>
+        <a class="btn btn--ghost" href="#realizacje">Zobacz realizacje</a>
+      </div>
+      <ul class="hero__facts">
+        <li><a href={company.googleReviews} target="_blank" rel="noopener"><span class="stars" aria-hidden="true">{[1,2,3,4,5].map(() => <Icon name="star" size={15} />)}</span><strong>{company.rating}</strong> w Google · {company.reviewCount} opinii</a></li>
+        <li><Icon name="clock" size={17} />Wycena w 24 godziny</li>
+        <li><Icon name="check" size={17} />Strony od 3000 zł netto</li>
+      </ul>
+    </div>
+
+    <div class="hero__stage">
+      <div class="wrap hero__shots" aria-label="Przykładowe strony zaprojektowane przez WebCanvas">
+        <BrowserFrame class="shot shot--left" src={byName['Dworzec Autobusowy Poznań'].image} alt={byName['Dworzec Autobusowy Poznań'].alt} url="dworzecautobusowy.poznan.pl" widths={[400, 640]} sizes="(min-width: 1000px) 34vw, 0px" />
+        <BrowserFrame class="shot shot--main" src={byName['Meritoros'].image} alt={byName['Meritoros'].alt} url="meritoros.pl" widths={[480, 800, 1100, 1400]} sizes="(min-width: 1000px) 56vw, 92vw" eager />
+        <BrowserFrame class="shot shot--right" src={byName['Woodbud'].image} alt={byName['Woodbud'].alt} url="woodbud.pl" widths={[400, 640]} sizes="(min-width: 1000px) 34vw, 0px" />
+      </div>
+    </div>
+  </section>
+
+  <!-- USŁUGI -->
+  <section class="section section--night-2" id="uslugi" aria-labelledby="uslugi-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">Usługi</p>
+          <h2 class="h2" id="uslugi-h">Od strony po reklamę. <span class="accent">W jednym miejscu.</span></h2>
+        </div>
+        <p class="lead">Od projektu po kampanie reklamowe. Za całość odpowiada jedna osoba, więc nic nie gubi się po drodze.</p>
+      </div>
+
+      <ul class="services">
+        {services.map((s, i) => {
+          const Tag = s.href ? 'a' : 'div';
+          return (
+            <li>
+              <Tag class:list={['service', { 'service--link': s.href }]} href={s.href}>
+                <div class="service__top">
+                  <span class="service__icon"><Icon name={s.icon} size={24} /></span>
+                  <span class="service__no" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+                </div>
+                <h3>{s.title}</h3>
+                <p>{s.text}</p>
+                <ul class="tags">{s.tags.map((t) => <li>{t}</li>)}</ul>
+                {s.href && <span class="service__more">Szczegóły usługi <Icon name="arrow" size={16} /></span>}
+              </Tag>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  </section>
+
+  <!-- REALIZACJE -->
+  <section class="section section--paper on-light" id="realizacje" aria-labelledby="realizacje-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">Realizacje</p>
+          <h2 class="h2" id="realizacje-h">Strony, które pracują <span class="accent">na co dzień.</span></h2>
+        </div>
+        <div class="sec-head__side">
+          <p class="lead">Dworzec, kancelaria, stolarnia, gabinet. Każda strona powstała pod konkretny biznes i jego klientów.</p>
+          <a class="link" href="/realizacje.html">Wszystkie realizacje <Icon name="arrow" /></a>
+        </div>
+      </div>
+
+      <a class="feature" href={featured.href}>
+        <div class="feature__img">
+          <Image src={featured.image} alt={featured.alt} widths={[640, 960, 1400]} sizes="(min-width: 1000px) 60vw, 100vw" />
+        </div>
+        <div class="feature__body">
+          <p class="feature__trade">{featured.trade}</p>
+          <h3>{featured.name}</h3>
+          <p>{featured.summary}</p>
+          <ul class="tags tags--light">{featured.tags.map((t) => <li>{t}</li>)}</ul>
+          <span class="link">Przeczytaj case study <Icon name="arrow" /></span>
+        </div>
+      </a>
+
+      <ul class="work">
+        {rest.map((p, i) => (
+          <li>
+            <a class="work__card" href={p.href}>
+              <div class="work__img">
+                <Image src={p.image} alt={p.alt} widths={[480, 720, 960, 1280]} sizes={i < 2 ? '(min-width: 1000px) 46vw, (min-width: 640px) 50vw, 100vw' : '(min-width: 1000px) 30vw, (min-width: 640px) 50vw, 100vw'} />
+              </div>
+              <p class="work__trade">{p.trade}</p>
+              <h3>{p.name} <Icon name="arrow-up-right" size={20} /></h3>
+              <p class="work__text">{p.summary}</p>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- PODEJŚCIE -->
+  <section class="section section--night" id="studio" aria-labelledby="studio-h">
+    <div class="wrap approach">
+      <div>
+        <p class="eyebrow">Jak pracuję</p>
+        <h2 class="h2" id="studio-h">Jeden kontakt. <span class="accent">Cała odpowiedzialność.</span></h2>
+        <p class="lead approach__lead">Pracuję z firmami z Konina, Turku, Koła, Słupcy, Poznania i z całej Polski, zdalnie albo na spotkaniu.</p>
+        <div class="portrait">
+          <Image src={portrait} alt="Adam Kubiak, WebCanvas" widths={[400, 640, 960]} sizes="(min-width: 1000px) 42vw, 100vw" />
+          <div class="portrait__bar">
+            <div>
+              <p class="portrait__name">{company.person}</p>
+              <p class="portrait__role">Projekt i wdrożenie</p>
+            </div>
+            <a class="portrait__rating" href={company.googleReviews} target="_blank" rel="noopener">
+              <span class="stars" aria-hidden="true">{[1,2,3,4,5].map(() => <Icon name="star" size={14} />)}</span>
+              <strong>{company.rating}</strong> w Google
+            </a>
+          </div>
+        </div>
+      </div>
+      <ol class="principles">
+        {principles.map((p) => (
+          <li>
+            <h3>{p.title}</h3>
+            <p>{p.text}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- PROCES -->
+  <section class="section section--night-2" id="proces" aria-labelledby="proces-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">Proces</p>
+          <h2 class="h2" id="proces-h">Cztery kroki <span class="accent">do nowej strony.</span></h2>
+        </div>
+        <p class="lead">Prosta strona powstaje w 7–14 dni roboczych. Sklep albo aplikacja zajmuje zwykle od 3 do 8 tygodni.</p>
+      </div>
+      <ol class="steps">
+        {steps.map((s, i) => (
+          <li>
+            <span class="steps__no" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{s.title}</h3>
+            <p>{s.text}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- OPINIE -->
+  <section class="section section--paper on-light" id="opinie" aria-labelledby="opinie-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">Opinie z Google</p>
+          <h2 class="h2" id="opinie-h">Co mówią <span class="accent">klienci.</span></h2>
+        </div>
+        <div class="sec-head__side">
+          <p class="lead"><strong class="rating-inline">{company.rating} / 5</strong> ze wszystkich {company.reviewCount} opinii w profilu firmy w Google.</p>
+          <a class="link" href={company.googleReviews} target="_blank" rel="noopener">Zobacz opinie w Google <Icon name="arrow-up-right" /></a>
+        </div>
+      </div>
+      <ul class="reviews">
+        {reviews.map((r) => (
+          <li class="review">
+            <span class="stars" aria-label="Ocena 5 na 5">{[1,2,3,4,5].map(() => <Icon name="star" size={16} />)}</span>
+            <blockquote><p>{r.text}</p></blockquote>
+            <p class="review__who">
+              <span class="review__avatar" aria-hidden="true">{r.name.split(' ').map((w) => w[0]).join('').slice(0, 2)}</span>
+              <a href={r.url} target="_blank" rel="noopener">{r.name}</a>
+            </p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- CENNIK -->
+  <section class="section section--night" id="cennik" aria-labelledby="cennik-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">Cennik</p>
+          <h2 class="h2" id="cennik-h">Przejrzyste ceny <span class="accent">na start.</span></h2>
+        </div>
+        <p class="lead">Dokładną kwotę podaję po rozmowie, w ciągu 24 godzin. Wszystkie ceny są netto, doliczam VAT 23%.</p>
+      </div>
+      <ul class="plans">
+        {plans.map((p) => (
+          <li class:list={['plan', { 'plan--featured': p.featured }]}>
+            {p.featured && <span class="plan__badge">Najczęściej wybierany</span>}
+            <h3>{p.name}</h3>
+            <p class="plan__note">{p.note}</p>
+            <p class="plan__price"><strong>{p.price}</strong> <span>{p.unit}</span></p>
+            <ul class="plan__items">
+              {p.items.map((it) => <li><Icon name="check" size={18} />{it}</li>)}
+            </ul>
+            <a class:list={['btn', p.featured ? 'btn--primary' : 'btn--ghost']} href="#kontakt">{p.cta}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section class="section section--paper-2 on-light" id="blog" aria-labelledby="blog-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">Blog</p>
+          <h2 class="h2" id="blog-h">Praktycznie o stronach <span class="accent">dla firm.</span></h2>
+        </div>
+        <div class="sec-head__side">
+          <p class="lead">Krótkie poradniki o kosztach, SEO i tym, jak przygotować się do nowej strony.</p>
+          <a class="link" href="/blog.html">Wszystkie artykuły <Icon name="arrow" /></a>
+        </div>
+      </div>
+      <ul class="posts">
+        {posts.map((p) => (
+          <li>
+            <a class="post" href={p.href}>
+              <p class="post__meta"><span class="post__tag">{p.tag}</span>{p.time} czytania</p>
+              <h3>{p.title}</h3>
+              <p>{p.text}</p>
+              <span class="post__more">Czytaj <Icon name="arrow" size={16} /></span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--paper on-light" id="faq" aria-labelledby="faq-h">
+    <div class="wrap faq">
+      <div>
+        <p class="eyebrow">FAQ</p>
+        <h2 class="h2" id="faq-h">Zanim <span class="accent">napiszesz.</span></h2>
+        <p class="lead faq__lead">Nie ma tu Twojego pytania? Zadzwoń: <a class="link" href={company.phoneHref}>{company.phone}</a></p>
+      </div>
+      <div class="faq__list">
+        {faq.map((f, i) => (
+          <details open={i === 0}>
+            <summary><h3>{f.q}</h3><span class="faq__icon" aria-hidden="true"><Icon name="plus" size={20} /></span></summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <ContactSection />
+</Base>
+
+<style>
+  /* ---------- hero ---------- */
+  .hero { position: relative; overflow: hidden; background: var(--night); --peek: clamp(110px, 16vh, 200px); }
+  /* tekst wypełnia pierwszy ekran, z dołu wystaje górna część zrzutów realizacji */
+  .hero__text {
+    min-height: calc(100vh - var(--nav-h) - var(--peek)); min-height: calc(100svh - var(--nav-h) - var(--peek));
+    justify-content: center; padding-block: 48px;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: -20% 10% auto; height: 70%; pointer-events: none;
+    background: radial-gradient(closest-side, rgb(225 29 72 / 0.18), transparent);
+    filter: blur(20px);
+  }
+  .hero__text { position: relative; text-align: center; display: flex; flex-direction: column; align-items: center; }
+  .hero h1 {
+    margin-top: 0; font-size: clamp(2.5rem, 1.1rem + 4.4vw, 4.9rem); font-weight: 680; letter-spacing: -0.045em; line-height: 1;
+    max-width: 20ch;
+  }
+  .hero h1 span { color: var(--rose); display: block; }
+  .hero__lead { margin-top: 28px; font-size: var(--t-lead); color: var(--snow-muted); max-width: 58ch; line-height: 1.55; }
+  .hero__btns { margin-top: 36px; justify-content: center; }
+  .hero__facts {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 28px; margin-top: 32px;
+    font-size: var(--t-small); color: var(--snow-muted);
+  }
+  .hero__facts li, .hero__facts a { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; }
+  .hero__facts a:hover { color: var(--snow); }
+  .hero__facts strong { color: var(--snow); font-weight: 620; }
+  .hero__facts :global(svg) { color: var(--rose-soft); }
+  .stars { display: inline-flex; gap: 2px; color: var(--amber); }
+  .hero__facts .stars :global(svg) { color: var(--amber); }
+
+  .hero__stage { position: relative; }
+  .hero__stage::after {
+    content: ''; position: absolute; inset: 42% 0 0; background: var(--night-2); z-index: 0;
+  }
+  .hero__shots { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr; }
+  .hero__shots :global(.shot--left), .hero__shots :global(.shot--right) { display: none; }
+  @media (min-width: 1000px) {
+    .hero__shots { grid-template-columns: 1fr 2.2fr 1fr; align-items: end; }
+    .hero__shots :global(.shot--main) { grid-column: 2; grid-row: 1; position: relative; z-index: 2; }
+    .hero__shots :global(.shot--left), .hero__shots :global(.shot--right) {
+      display: block; grid-row: 1; margin-bottom: 48px; opacity: 0.9;
+      transition: transform .5s var(--ease), opacity .3s var(--ease);
+    }
+    .hero__shots :global(.shot--left) { grid-column: 1 / 2; width: 150%; justify-self: start; }
+    .hero__shots :global(.shot--left .browser__url) { margin-left: 0; max-width: 220px; }
+    .hero__shots :global(.shot--right) { grid-column: 3 / 4; width: 150%; justify-self: end; }
+    .hero__shots:hover :global(.shot--left) { transform: translateX(-12px); }
+    .hero__shots:hover :global(.shot--right) { transform: translateX(12px); }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .hero__stage { animation: rise 1.1s .25s var(--ease) both; }
+    @keyframes rise { from { opacity: 0; transform: translateY(40px); } }
+  }
+
+  /* ---------- wspólne ---------- */
+  .sec-head__side { display: grid; gap: 20px; justify-items: start; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tags li {
+    font-size: var(--t-label); font-weight: 520; padding: 4px 10px; border-radius: 999px;
+    border: 1px solid var(--line-dark); color: var(--snow-muted);
+  }
+  .tags--light li { border-color: var(--line-light); color: var(--ink-muted); }
+
+  /* ---------- usługi ---------- */
+  .services {
+    display: grid; grid-template-columns: minmax(0, 1fr);
+    border-top: 1px solid var(--line-dark); border-left: 1px solid var(--line-dark);
+  }
+  @media (min-width: 640px) { .services { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (min-width: 1000px) { .services { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  .services > li { display: flex; border-right: 1px solid var(--line-dark); border-bottom: 1px solid var(--line-dark); }
+  .service {
+    flex: 1; display: flex; flex-direction: column; gap: 14px;
+    padding: clamp(24px, 2.6vw, 36px); text-decoration: none;
+    transition: background-color .3s var(--ease);
+  }
+  .service:focus-visible { outline-offset: -4px; border-radius: 0; }
+  .service__top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+  .service__icon {
+    width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center;
+    background: rgb(225 29 72 / 0.12); color: var(--rose-soft);
+    transition: background-color .3s var(--ease), color .3s var(--ease), transform .3s var(--ease);
+  }
+  .service__no { font-size: var(--t-label); color: var(--snow-muted); font-variant-numeric: tabular-nums; }
+  .service h3 { font-size: var(--t-h3); }
+  .service p { color: var(--snow-muted); }
+  .service .tags { margin-top: auto; padding-top: 8px; }
+  .service__more { display: inline-flex; align-items: center; gap: 8px; font-weight: 580; color: var(--rose-soft); }
+  .service__more :global(svg) { transition: transform .25s var(--ease); }
+  .service--link:hover { background: var(--night-3); }
+  .service--link:hover .service__icon { background: var(--rose); color: #fff; transform: rotate(-6deg); }
+  .service--link:hover .service__more :global(svg) { transform: translateX(4px); }
+
+  /* ---------- realizacje ---------- */
+  .feature {
+    display: grid; grid-template-columns: minmax(0, 1fr); text-decoration: none;
+    background: var(--white); border: 1px solid var(--line-light); border-radius: var(--r-lg); overflow: hidden;
+    transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+  }
+  @media (min-width: 1000px) { .feature { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); } }
+  .feature:hover { transform: translateY(-3px); box-shadow: 0 30px 60px -30px rgb(26 21 19 / 0.35); }
+  .feature__img { overflow: hidden; background: var(--paper-2); aspect-ratio: 16 / 10; }
+  .feature__img img, .work__img img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform .6s var(--ease); }
+  .feature:hover .feature__img img, .work__card:hover .work__img img { transform: scale(1.03); }
+  .feature__body { padding: clamp(28px, 3.5vw, 56px); display: flex; flex-direction: column; gap: 18px; justify-content: center; align-items: flex-start; }
+  .feature__trade, .work__trade { font-size: var(--t-label); font-weight: 560; color: var(--rose-strong); }
+  .feature h3 { font-size: clamp(1.75rem, 1.3rem + 1.4vw, 2.5rem); letter-spacing: -0.035em; line-height: 1.05; }
+  .feature__body > p:not(.feature__trade) { color: var(--ink-muted); font-size: 1.05rem; }
+  .feature .link { margin-top: 8px; }
+
+  .work { margin-top: 56px; display: grid; gap: 48px 24px; grid-template-columns: minmax(0, 1fr); }
+  @media (min-width: 640px) { .work { grid-template-columns: repeat(2, minmax(0, 1fr)); } .work > li:last-child { display: none; } }
+  @media (min-width: 1000px) {
+    .work { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+    .work > li { grid-column: span 2; }
+    .work > li:nth-child(-n+2) { grid-column: span 3; }
+    .work > li:last-child { display: block; }
+    .work > li:nth-child(-n+2) .work__img { aspect-ratio: 16 / 10; }
+  }
+  .work__card { display: flex; flex-direction: column; gap: 10px; text-decoration: none; }
+  .work__img {
+    aspect-ratio: 4 / 3; overflow: hidden; border-radius: var(--r-md); margin-bottom: 10px;
+    border: 1px solid var(--line-light); background: var(--paper-2);
+    transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+  }
+  .work__card:hover .work__img { transform: translateY(-2px); box-shadow: 0 24px 48px -28px rgb(26 21 19 / 0.4); }
+  .work__card h3 { font-size: var(--t-h3); display: flex; align-items: center; gap: 8px; }
+  .work__card h3 :global(svg) { color: var(--rose); transition: transform .25s var(--ease); }
+  .work__card:hover h3 :global(svg) { transform: translate(3px, -3px); }
+  .work__text { color: var(--ink-muted); }
+
+  /* ---------- podejście ---------- */
+  .approach { display: grid; gap: 56px; grid-template-columns: minmax(0, 1fr); }
+  @media (min-width: 1000px) { .approach { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 80px; } }
+  .approach__lead { margin-top: 28px; }
+  .portrait {
+    position: relative; margin-top: 40px; border-radius: var(--r-lg); overflow: hidden;
+    aspect-ratio: 4 / 3; background: #3a3a3a; border: 1px solid var(--line-dark);
+  }
+  @media (max-width: 999px) { .portrait { aspect-ratio: 1; } .portrait img { object-position: 50% 20%; } }
+  .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 28%; transition: transform .6s var(--ease); }
+  .portrait:hover img { transform: scale(1.02); }
+  .portrait__bar {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+    padding: 72px 24px 20px;
+    background: linear-gradient(to top, rgb(14 12 11 / 0.92), rgb(14 12 11 / 0));
+  }
+  .portrait__name { font-size: 1.2rem; font-weight: 620; letter-spacing: -0.02em; }
+  .portrait__role { color: var(--snow-muted); font-size: var(--t-small); }
+  .portrait__rating {
+    display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 14px;
+    border-radius: 999px; background: rgb(255 255 255 / 0.1); backdrop-filter: blur(8px);
+    font-size: var(--t-small); text-decoration: none; transition: background-color .2s var(--ease);
+  }
+  .portrait__rating:hover { background: rgb(255 255 255 / 0.18); }
+  .principles { counter-reset: p; display: grid; }
+  .principles li { align-content: center; }
+  .principles li { counter-increment: p; display: grid; grid-template-columns: 56px 1fr; gap: 4px 0; padding: 28px 0; border-top: 1px solid var(--line-dark); }
+  .principles li:last-child { border-bottom: 1px solid var(--line-dark); }
+  .principles li::before { content: counter(p, decimal-leading-zero); grid-row: span 2; font-size: var(--t-label); color: var(--rose-soft); padding-top: 6px; }
+  .principles h3 { font-size: var(--t-h3); }
+  .principles p { color: var(--snow-muted); margin-top: 6px; }
+
+  /* ---------- proces ---------- */
+  .steps { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); }
+  .steps li { position: relative; padding-top: 28px; border-top: 1px solid var(--line-dark); }
+  .steps li::before { content: ''; position: absolute; top: -1px; left: 0; width: 48px; height: 2px; background: var(--rose); transition: width .5s var(--ease); }
+  .steps li:hover::before { width: 100%; }
+  .steps__no { display: block; font-size: clamp(2.5rem, 2rem + 1.5vw, 3.5rem); font-weight: 640; letter-spacing: -0.04em; line-height: 1; color: var(--night-3); -webkit-text-stroke: 1px rgb(253 164 175 / 0.55); margin-bottom: 24px; }
+  .steps h3 { font-size: var(--t-h3); }
+  .steps p { color: var(--snow-muted); margin-top: 10px; }
+
+  /* ---------- opinie ---------- */
+  .rating-inline { color: var(--ink); font-weight: 640; }
+  .reviews { columns: 3 320px; column-gap: 24px; }
+  .review {
+    break-inside: avoid; margin-bottom: 24px; padding: 28px;
+    background: var(--white); border: 1px solid var(--line-light); border-radius: var(--r-lg);
+    display: grid; gap: 18px;
+  }
+  .review blockquote { margin: 0; font-size: 1.05rem; line-height: 1.6; }
+  .review__who { display: flex; align-items: center; gap: 12px; font-weight: 580; }
+  .review__who a { text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; }
+  .review__who a:hover { color: var(--rose); }
+  .review__avatar { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: var(--rose-tint); color: var(--rose-strong); font-size: var(--t-small); font-weight: 640; }
+
+  /* ---------- cennik ---------- */
+  .plans { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); align-items: stretch; }
+  .plan {
+    position: relative; display: flex; flex-direction: column; gap: 14px;
+    padding: clamp(28px, 3vw, 40px); border-radius: var(--r-lg);
+    background: var(--night-2); border: 1px solid var(--line-dark);
+    transition: transform .3s var(--ease), border-color .3s var(--ease);
+  }
+  .plan:hover { transform: translateY(-2px); border-color: rgb(255 255 255 / 0.22); }
+  .plan--featured { background: linear-gradient(180deg, rgb(225 29 72 / 0.13), var(--night-2) 42%); border-color: rgb(225 29 72 / 0.55); }
+  .plan--featured:hover { border-color: var(--rose); }
+  .plan__badge { position: absolute; top: -13px; left: clamp(28px, 3vw, 40px); background: var(--rose); color: #fff; font-size: var(--t-label); font-weight: 580; padding: 4px 12px; border-radius: 999px; }
+  .plan h3 { font-size: var(--t-h3); }
+  .plan__note { color: var(--snow-muted); }
+  .plan__price { margin: 12px 0 8px; display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px; }
+  .plan__price strong { font-size: clamp(2.5rem, 2rem + 1.5vw, 3.25rem); font-weight: 680; letter-spacing: -0.04em; line-height: 1; }
+  .plan__price span { color: var(--snow-muted); }
+  .plan__items { display: grid; gap: 12px; padding: 20px 0 28px; border-top: 1px solid var(--line-dark); margin-bottom: auto; }
+  .plan__items li { display: flex; gap: 12px; align-items: flex-start; }
+  .plan__items :global(svg) { flex: none; margin-top: 3px; color: var(--rose-soft); }
+
+  /* ---------- blog ---------- */
+  .posts { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
+  .posts > li { display: flex; }
+  .post {
+    flex: 1; display: flex; flex-direction: column; gap: 14px; text-decoration: none;
+    padding: clamp(24px, 2.6vw, 36px); border-radius: var(--r-lg);
+    background: var(--paper); border: 1px solid var(--line-light);
+    transition: transform .3s var(--ease), background-color .3s var(--ease);
+  }
+  .post:hover { transform: translateY(-2px); background: var(--white); }
+  .post__meta { display: flex; align-items: center; gap: 12px; font-size: var(--t-label); color: var(--ink-muted); }
+  .post__tag { padding: 4px 10px; border-radius: 999px; background: var(--rose-tint); color: #9f1239; font-weight: 580; }
+  .post h3 { font-size: var(--t-h3); margin-top: 12px; }
+  .post p:not(.post__meta) { color: var(--ink-muted); }
+  .post__more { margin-top: auto; padding-top: 12px; display: inline-flex; align-items: center; gap: 8px; font-weight: 580; color: var(--rose-strong); }
+  .post__more :global(svg) { transition: transform .25s var(--ease); }
+  .post:hover .post__more :global(svg) { transform: translateX(4px); }
+
+  /* ---------- faq ---------- */
+  .faq { display: grid; gap: 48px; grid-template-columns: minmax(0, 1fr); }
+  @media (min-width: 1000px) { .faq { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 96px; } }
+  .faq__lead { margin-top: 24px; }
+  .faq__list details { border-bottom: 1px solid var(--line-light); }
+  .faq__list details:first-child { border-top: 1px solid var(--line-light); }
+  .faq__list summary {
+    display: flex; justify-content: space-between; align-items: center; gap: 24px;
+    padding: 26px 0; cursor: pointer; list-style: none;
+  }
+  .faq__list summary::-webkit-details-marker { display: none; }
+  .faq__list summary h3 { font-size: clamp(1.1rem, 1rem + 0.4vw, 1.3rem); transition: color .2s var(--ease); }
+  .faq__list summary:hover h3 { color: var(--rose); }
+  .faq__icon { flex: none; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line-light); display: grid; place-items: center; transition: transform .3s var(--ease), background-color .3s var(--ease), color .3s; }
+  .faq__list details[open] .faq__icon { transform: rotate(45deg); background: var(--rose); color: #fff; border-color: var(--rose); }
+  .faq__list details p { padding: 0 64px 28px 0; color: var(--ink-muted); font-size: 1.05rem; }
+</style>

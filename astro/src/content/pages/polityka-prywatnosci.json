@@ -1,0 +1,27 @@
+{
+  "slug": "polityka-prywatnosci",
+  "kind": "polityka-prywatnosci",
+  "title": "Polityka Prywatności - WebCanvas",
+  "description": "Polityka prywatności WebCanvas – dowiedz się, jak przetwarzamy i chronimy dane osobowe użytkowników strony web-canvas.pl.",
+  "path": "/polityka-prywatnosci.html",
+  "schema": [],
+  "hero": {
+    "crumbs": [
+      {
+        "label": "Strona główna",
+        "href": "/"
+      },
+      {
+        "label": "Polityka Prywatności"
+      }
+    ],
+    "h1": "Polityka Prywatności",
+    "lead": [],
+    "buttons": []
+  },
+  "sections": [
+    {
+      "before": "<main>\n <h2>1. Informacje ogólne</h2>\n <p>Niniejsza Polityka Prywatności określa zasady przetwarzania i ochrony danych osobowych\n przekazanych przez Użytkowników w związku z korzystaniem z usług poprzez serwis WebCanvas.</p>\n <h2>2. Administrator Danych</h2>\n <p>Administratorem danych osobowych jest Adam Kubiak, prowadzący serwis WebCanvas\n (web-canvas.pl). Kontakt: kontakt@web-canvas.pl.</p>\n <h2>3. Cel przetwarzania danych</h2>\n <p>Dane osobowe przetwarzane są w celu:</p>\n <ul>\n <li>Realizacji usług świadczonych drogą elektroniczną,</li>\n <li>Obsługi zapytań i zgłoszeń,</li>\n <li>Przygotowania ofert i wycen,</li>\n <li>Kontaktu z klientem.</li>\n </ul>\n <h2>4. Źródła i odbiorcy danych</h2>\n <p>Dane osobowe pozyskujemy bezpośrednio od Użytkowników:</p>\n <ul>\n <li>z formularzy kontaktowych w serwisie web-canvas.pl,</li>\n <li>z formularzy kontaktowych w reklamach wyświetlanych na Facebooku i Instagramie (dostawca:\n Meta Platforms Ireland Ltd.) – w zakresie podanym w formularzu, np. imię, nazwisko, adres\n e-mail, numer telefonu oraz odpowiedzi na pytania dotyczące zapytania,</li>\n <li>z korespondencji e-mailowej i rozmów telefonicznych.</li>\n </ul>\n <p>W przypadku zawarcia umowy dane niezbędne do jej realizacji i rozliczenia (np. imię,\n nazwisko, nazwa firmy, adres e-mail, dane do faktury) przekazujemy serwisowi Useme (useme.com),\n za pośrednictwem którego zawierane są umowy i wystawiane faktury. Useme przetwarza te dane\n zgodnie z własną polityką prywatności.</p>\n <section id=\"cookies\">\n <h2>5. Pliki Cookies</h2>\n <p>Serwis korzysta z plików cookies – niewielkich plików tekstowych zapisywanych w przeglądarce\n użytkownika. Stosujemy je w następujących celach:</p>\n <ul>\n <li><strong>Niezbędne</strong> – zapamiętanie Twojej decyzji dotyczącej cookies. Nie wymagają\n zgody.</li>\n <li><strong>Analityczne</strong> – Google Analytics 4 (dostawca: Google Ireland Ltd.) uruchamiany\n przez Google Tag Manager. Pozwala nam zrozumieć, jak użytkownicy korzystają ze strony\n (np. odwiedzane podstrony, czas wizyty). Zapisywane wyłącznie po wyrażeniu zgody.</li>\n <li><strong>Marketingowe</strong> – pomiar skuteczności kampanii reklamowych Google. Zapisywane\n wyłącznie po wyrażeniu zgody.</li>\n </ul>\n <p>Przy pierwszej wizycie wyświetlamy baner, w którym możesz zaakceptować lub odrzucić\n cookies analityczne i marketingowe. Do czasu wyrażenia zgody korzystamy z trybu zgody Google\n (Consent Mode v2) – w tym trybie Google nie zapisuje cookies analitycznych ani reklamowych na\n Twoim urządzeniu. Zgodę możesz w każdej chwili wycofać lub zmienić, klikając\n <button>Ustawienia cookies</button>\n (link dostępny także w stopce każdej podstrony). Cookies możesz również usunąć lub zablokować\n w ustawieniach przeglądarki.</p>\n </section>\n <h2>6. Prawa Użytkownika</h2>\n <p>Każdemu Użytkownikowi przysługuje prawo do:</p>\n <ul>\n <li>Dostępu do swoich danych,</li>\n <li>Sprostowania swoich danych,</li>\n <li>Usunięcia danych,</li>\n <li>Ograniczenia przetwarzania,</li>\n <li>Wniesienia sprzeciwu wobec przetwarzania.</li>\n </ul>\n </main>"
+    }
+  ]
+}

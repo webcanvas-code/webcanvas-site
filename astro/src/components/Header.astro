@@ -1,0 +1,127 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/logo-light.png';
+import Icon from './Icon.astro';
+import { mainNav } from '../data/site';
+
+const current = Astro.url.pathname;
+---
+<header class="nav" data-nav>
+  <div class="wrap nav__bar">
+    <a class="nav__logo" href="/" aria-label="WebCanvas, strona główna">
+      <Image src={logo} alt="" width={160} height={35} loading="eager" />
+    </a>
+
+    <nav class="nav__links" aria-label="Główna nawigacja">
+      <ul>
+        {mainNav.map((item) => (
+          <li>
+            <a href={item.href} aria-current={current === item.href ? 'page' : undefined}>{item.label}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="nav__actions">
+      <a class="btn btn--primary nav__cta" href="/#kontakt">Wyceń projekt</a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu-mobilne" aria-label="Otwórz menu" data-nav-toggle>
+        <Icon name="menu" size={22} class="i-open" />
+        <Icon name="close" size={22} class="i-close" />
+      </button>
+    </div>
+  </div>
+
+  <div class="nav__sheet" id="menu-mobilne" hidden data-nav-sheet>
+    <ul class="wrap">
+      {mainNav.map((item) => (
+        <li><a href={item.href}>{item.label}</a></li>
+      ))}
+      <li><a href="/#kontakt">Kontakt</a></li>
+    </ul>
+    <div class="wrap nav__sheet-cta">
+      <a class="btn btn--primary" href="/#kontakt">Wyceń projekt <Icon name="arrow" /></a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const nav = document.querySelector<HTMLElement>('[data-nav]');
+  const toggle = document.querySelector<HTMLButtonElement>('[data-nav-toggle]');
+  const sheet = document.querySelector<HTMLElement>('[data-nav-sheet]');
+
+  const setOpen = (open: boolean) => {
+    if (!toggle || !sheet || !nav) return;
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Zamknij menu' : 'Otwórz menu');
+    sheet.hidden = !open;
+    nav.classList.toggle('is-open', open);
+    document.documentElement.style.overflow = open ? 'hidden' : '';
+  };
+
+  toggle?.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+  sheet?.addEventListener('click', (e) => {
+    if ((e.target as HTMLElement).closest('a')) setOpen(false);
+  });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
+  window.matchMedia('(min-width: 960px)').addEventListener('change', (m) => { if (m.matches) setOpen(false); });
+
+  const onScroll = () => nav?.classList.toggle('is-scrolled', window.scrollY > 8);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+</script>
+
+<style>
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgb(20 17 16 / 0.92);
+    backdrop-filter: saturate(1.4) blur(14px);
+    -webkit-backdrop-filter: saturate(1.4) blur(14px);
+    border-bottom: 1px solid transparent;
+    transition: border-color .25s var(--ease);
+  }
+  .nav.is-scrolled, .nav.is-open { border-bottom-color: var(--line-dark); }
+  .nav__bar { height: var(--nav-h); display: flex; align-items: center; gap: 24px; }
+  .nav__logo { display: block; flex: none; margin-right: auto; padding: 6px 0; }
+  .nav__logo img { width: 150px; height: auto; }
+
+  .nav__links ul { display: flex; gap: 4px; }
+  .nav__links a {
+    display: block; padding: 10px 14px; border-radius: 999px;
+    font-size: 0.95rem; font-weight: 500; color: var(--snow-muted); text-decoration: none;
+    transition: color .2s var(--ease), background-color .2s var(--ease);
+  }
+  .nav__links a:hover { color: var(--snow); background: rgb(255 255 255 / 0.06); }
+  .nav__links a[aria-current='page'] { color: var(--snow); }
+
+  .nav__actions { display: flex; align-items: center; gap: 10px; }
+  .nav__cta { --bh: 46px; padding-inline: 22px; }
+  .nav__toggle {
+    display: none; width: 46px; height: 46px; border-radius: 999px;
+    border: 1px solid rgb(255 255 255 / 0.22); background: transparent; cursor: pointer;
+    align-items: center; justify-content: center;
+  }
+  .nav__toggle :global(.i-close) { display: none; }
+  .nav.is-open .nav__toggle :global(.i-open) { display: none; }
+  .nav.is-open .nav__toggle :global(.i-close) { display: block; }
+
+  .nav__sheet {
+    position: fixed; inset: var(--nav-h) 0 0; background: var(--night);
+    overflow-y: auto; padding: 16px 0 32px;
+  }
+  .nav__sheet ul a {
+    display: flex; align-items: center; min-height: 60px;
+    border-bottom: 1px solid var(--line-dark);
+    font-size: 1.5rem; font-weight: 600; letter-spacing: -0.02em; text-decoration: none;
+  }
+  .nav__sheet-cta { margin-top: 28px; }
+  .nav__sheet-cta .btn { width: 100%; }
+
+  @media (max-width: 959px) {
+    .nav__links { display: none; }
+    .nav__toggle { display: inline-flex; }
+  }
+  @media (max-width: 480px) {
+    .nav__cta { display: none; }
+    .nav__logo img { width: 136px; }
+  }
+</style>

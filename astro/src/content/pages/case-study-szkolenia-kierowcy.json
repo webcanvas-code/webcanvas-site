@@ -1,0 +1,163 @@
+{
+  "slug": "case-study-szkolenia-kierowcy",
+  "kind": "case",
+  "title": "Strona centrum szkoleń kierowców. Case study | WebCanvas",
+  "description": "Case Study Centrum Szkoleń Kierowców: jak strona z dwoma oddziałami i szkoleniami Kod 95 prowadzi kierowców zawodowych do właściwego terminu bez pomyłek.",
+  "path": "/case-study-szkolenia-kierowcy.html",
+  "schema": [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Strona główna",
+          "item": "https://web-canvas.pl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Realizacje",
+          "item": "https://web-canvas.pl/realizacje.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Centrum Szkoleń Kierowców",
+          "item": "https://web-canvas.pl/case-study-szkolenia-kierowcy.html"
+        }
+      ]
+    }
+  ],
+  "hero": {
+    "crumbs": [
+      {
+        "label": "Strona główna",
+        "href": "/"
+      },
+      {
+        "label": "Realizacje",
+        "href": "/realizacje.html"
+      },
+      {
+        "label": "Centrum Szkoleń Kierowców"
+      }
+    ],
+    "h1": "Właściwy oddział, właściwy termin: Centrum Szkoleń Kierowców",
+    "accent": "Centrum Szkoleń Kierowców",
+    "badge": "Case Study",
+    "metaLine": "Szkolenia zawodowe • Kod 95",
+    "lead": [
+      "\n Kierowca zawodowy pod presją terminu ważności uprawnień nie ma czasu na zgadywanie.\n Strona z dwoma oddziałami (Gdańsk i Dębno) musiała\n <strong>wykluczyć pomyłkę lokalizacji</strong> i pokazać\n najbliższy dostępny termin szkolenia Kod 95 bez zbędnego przewijania.\n "
+    ],
+    "buttons": [
+      {
+        "label": "Odwiedź stronę na żywo",
+        "href": "https://szkoleniakierowcy.pl/",
+        "primary": true
+      }
+    ]
+  },
+  "sections": [
+    {
+      "type": "shot",
+      "images": [
+        {
+          "src": "/img/szkoleniakierowcy.pl.webp",
+          "alt": "Pełny widok strony internetowej Centrum Szkoleń Kierowców"
+        }
+      ],
+      "url": "szkoleniakierowcy.pl"
+    },
+    {
+      "type": "facts",
+      "facts": [
+        {
+          "label": "Klient",
+          "value": "Centrum Szkoleń Kierowców"
+        },
+        {
+          "label": "Sektor",
+          "value": "Szkolenia zawodowe"
+        },
+        {
+          "label": "Zakres",
+          "value": "UX / UI / Dev"
+        },
+        {
+          "label": "Oddziały",
+          "value": "Gdańsk, Dębno"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Wyzwanie",
+      "h2": "Dwa oddziały, jeden formularz nie wystarczy",
+      "intro": [],
+      "before": "<p>\n Projektowanie stron internetowych dla branży szkoleniowej to przede wszystkim praca nad\n szybkością znalezienia informacji. Kod 95 to obowiązkowe szkolenie okresowe, kierowcy zawodowi wracają na nie regularnie,\n często pod presją zbliżającego się terminu ważności uprawnień. Centrum prowadzi zajęcia\n w dwóch lokalizacjach, woj. pomorskim i zachodniopomorskim, więc\n <strong>wybór złego oddziału oznacza dla kierowcy stracony\n czas</strong>, a właśnie tego jego branża najbardziej nie cierpi.\n </p>\n <p>\n Osobnym wątkiem były zgłoszenia grupowe. Firmy transportowe zapisujące na szkolenie\n kilku kierowców naraz mają inne potrzeby niż pojedynczy kierowca szukający najbliższego\n wolnego terminu. Strona musiała obsłużyć oba scenariusze bez komplikowania żadnego z nich.\n </p>"
+    },
+    {
+      "eyebrow": "Rozwiązanie",
+      "h2": "Trzy filary, na których oparliśmy projekt",
+      "intro": [],
+      "items": [
+        {
+          "title": "Oddział widoczny od pierwszego ekranu",
+          "html": "<p>\n Gdańsk i Dębno rozdzielone już na stronie głównej, jako dwie osobne, równorzędne\n ścieżki, a nie jedna wspólna oferta z drobnym druczkiem o lokalizacji.\n </p>"
+        },
+        {
+          "title": "Najbliższe terminy bez przewijania",
+          "html": "<p>\n Informacja o nadchodzących terminach szkolenia widoczna od razu po wejściu na\n stronę. Dla kierowcy z ograniczonym czasem to pierwsza rzecz, jakiej szuka.\n </p>"
+        },
+        {
+          "title": "Osobna ścieżka dla firm",
+          "html": "<p>\n Rezerwacje grupowe dla firm transportowych wydzielone jako osobna opcja, zamiast\n zmuszania floty kierowców do przechodzenia przez formularz pojedynczego zapisu.\n </p>"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Proces",
+      "h2": "Krok po kroku: od briefu do wdrożenia",
+      "intro": [],
+      "items": [
+        {
+          "title": "Mapowanie ścieżek: kierowca i firma",
+          "html": "<p>\n Rozpisanie dwóch odrębnych scenariuszy: pojedynczy zapis i rezerwacja grupowa.\n Wszystko przed powstaniem jakiegokolwiek wireframe.\n </p>"
+        },
+        {
+          "title": "Projektowanie UI / UX",
+          "html": "<p>\n Wyraźne bloki oddziałów na stronie głównej, sekcja terminów jako jeden\n z pierwszych elementów pod nagłówkiem. Zero domysłów przy nawigacji.\n </p>"
+        },
+        {
+          "title": "Kodowanie i responsywność",
+          "html": "<p>\n Duża część ruchu to kierowcy sprawdzający terminy z telefonu w przerwie\n między kursami, strona zoptymalizowana pod ten kontekst użycia.\n </p>"
+        },
+        {
+          "title": "Wdrożenie i sekcja FAQ",
+          "html": "<p>\n Dodanie sekcji z odpowiedziami na powtarzające się pytania formalne\n (badania, profil PKZ), żeby zmniejszyć liczbę telefonów o to samo.\n </p>"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Efekty",
+      "h2": "Zero zgadywania, zanim padnie pytanie",
+      "intro": [
+        "\n Kierowca trafia od razu do właściwego oddziału i widzi najbliższy termin, bez\n przeszukiwania strony ani telefonu z pytaniem \"a gdzie wy w ogóle jesteście\".\n "
+      ],
+      "before": "<p>2 oddziały</p>\n <p>Rozdzielone od startu</p>\n <p>Terminy First</p>\n <p>Filozofia projektowa</p>\n <p>B2B + B2C</p>\n <p>Dwie osobne ścieżki</p>\n <p>Mobile First</p>\n <p>Projekt pod telefon</p>\n<p>\n „Czas kierowcy zawodowego to jego pieniądze. Strona, która zmusza go do zgadywania\n oddziału, kosztuje go realny kurs.\"\n </p>\n <p>\n Podsumowanie projektu, WebCanvas\n </p>"
+    },
+    {
+      "eyebrow": "Stack technologiczny",
+      "h2": "Technologie użyte w projekcie",
+      "intro": [],
+      "before": "<ul data-chips=\"\"><li>Projektowanie stron internetowych</li><li>HTML5</li><li>CSS3 / RWD</li><li>Sekcja FAQ</li><li>Formularz zapisów</li><li>Rezerwacje grupowe</li><li>Mobile First</li><li>SSL / HTTPS</li></ul>"
+    },
+    {
+      "eyebrow": "Kolejny krok",
+      "h2": "Zaprojektujmy rozwiązanie na lata",
+      "intro": [],
+      "before": "<p>\n Twój projekt też może przetrwać próbę czasu. Opowiedz mi o swoich potrzebach,\n bezpłatnie wycenię projekt i zaproponuję rozwiązanie szyte na miarę.\n </p>\n<a href=\"/#kontakt\">\n Omówmy Twój projekt\n </a>\n <a href=\"/realizacje.html\">\n ← Wróć do realizacji\n </a>"
+    }
+  ]
+}

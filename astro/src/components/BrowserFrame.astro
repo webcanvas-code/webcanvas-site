@@ -1,0 +1,53 @@
+---
+// Okno przeglądarki z prawdziwym zrzutem strony klienta.
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  url: string;
+  widths?: number[];
+  sizes?: string;
+  eager?: boolean;
+  class?: string;
+}
+const { src, alt, url, widths = [480, 800, 1200], sizes = '(min-width: 1000px) 50vw, 100vw', eager = false, class: cls } = Astro.props;
+---
+<figure class:list={['browser', cls]}>
+  <div class="browser__bar" aria-hidden="true">
+    <span class="browser__dots"><i></i><i></i><i></i></span>
+    <span class="browser__url">{url}</span>
+  </div>
+  <div class="browser__view">
+    <Image
+      src={src}
+      alt={alt}
+      widths={widths}
+      sizes={sizes}
+      loading={eager ? 'eager' : 'lazy'}
+      fetchpriority={eager ? 'high' : undefined}
+    />
+  </div>
+</figure>
+
+<style>
+  .browser {
+    margin: 0; border-radius: 14px; overflow: hidden;
+    background: #231e1b;
+    border: 1px solid rgb(255 255 255 / 0.12);
+    box-shadow: 0 40px 80px -30px rgb(0 0 0 / 0.65), 0 2px 0 rgb(255 255 255 / 0.04) inset;
+  }
+  .browser__bar { display: flex; align-items: center; gap: 12px; height: 34px; padding: 0 12px; }
+  .browser__dots { display: flex; gap: 6px; }
+  .browser__dots i { width: 9px; height: 9px; border-radius: 50%; background: rgb(255 255 255 / 0.18); }
+  .browser__dots i:first-child { background: var(--rose); }
+  .browser__url {
+    flex: 1; max-width: 280px; margin-inline: auto; height: 20px; border-radius: 6px;
+    background: rgb(255 255 255 / 0.07); color: rgb(255 255 255 / 0.55);
+    font-size: 11px; line-height: 20px; text-align: center; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+    padding-inline: 8px;
+  }
+  .browser__view { aspect-ratio: 16 / 10; overflow: hidden; background: #fff; }
+  .browser__view img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+</style>

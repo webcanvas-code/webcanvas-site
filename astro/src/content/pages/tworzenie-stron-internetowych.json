@@ -1,0 +1,346 @@
+{
+  "slug": "tworzenie-stron-internetowych",
+  "kind": "tworzenie-stron-internetowych",
+  "title": "Tworzenie stron internetowych dla firm | WebCanvas",
+  "description": "Profesjonalne tworzenie stron internetowych dla firm z całej Polski. Nowoczesny design, SEO od pierwszego dnia, szybkie wdrożenie i opieka po starcie. Bezpłatna wycena.",
+  "ogTitle": "Tworzenie stron internetowych dla firm | WebCanvas",
+  "ogImage": "/img/og-image.png",
+  "path": "/tworzenie-stron-internetowych.html",
+  "schema": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Tworzenie stron internetowych",
+      "description": "Profesjonalne projektowanie i wdrażanie stron internetowych dla firm z całej Polski. Nowoczesny design, optymalizacja SEO i opieka po wdrożeniu.",
+      "url": "https://web-canvas.pl/tworzenie-stron-internetowych.html",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "WebCanvas",
+        "url": "https://web-canvas.pl/",
+        "priceRange": "od 3000 PLN",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Biele 126",
+          "addressLocality": "Sompolno",
+          "postalCode": "62-610",
+          "addressCountry": "PL"
+        }
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Polska"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Strona główna",
+          "item": "https://web-canvas.pl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tworzenie stron internetowych",
+          "item": "https://web-canvas.pl/tworzenie-stron-internetowych.html"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Ile kosztuje tworzenie strony internetowej?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Koszt tworzenia strony internetowej zależy od zakresu projektu. Prosta strona wizytówkowa lub landing page zaczyna się od 3000 zł netto. Rozbudowana strona firmowa z CMS to wydatek rzędu 4000 zł netto wzwyż. Każdy projekt wyceniamy indywidualnie po rozmowie o potrzebach."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ile trwa tworzenie strony internetowej?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Prosta strona wizytówkowa lub landing page to zwykle 2 do 4 tygodni od zatwierdzenia briefu. Rozbudowana strona firmowa lub sklep internetowy wymaga 4 do 8 tygodni. Dokładny harmonogram ustalamy przed startem projektu."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy mogę samodzielnie edytować stronę po wdrożeniu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak. W zależności od projektu dostarczamy panel CMS lub szkolimy z obsługi systemu, dzięki czemu możesz samodzielnie aktualizować treści, dodawać wpisy blogowe i zarządzać zdjęciami bez wiedzy technicznej."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy zajmujecie się też hostingiem i domeną?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak. Pomagamy dobrać hosting, skonfigurować domenę i certyfikat SSL. Po wdrożeniu oferujemy opiekę powdrożeniową, żeby strona działała bez przerw i była na bieżąco aktualizowana."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy tworzycie strony dla firm spoza Konina?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak, obsługujemy firmy z całej Polski. Cały proces prowadzimy zdalnie: brief, projekt, poprawki i wdrożenie. Lokalizacja klienta nie wpływa na jakość ani czas realizacji."
+          }
+        }
+      ]
+    }
+  ],
+  "hero": {
+    "crumbs": [
+      {
+        "label": "Strona główna",
+        "href": "/"
+      },
+      {
+        "label": "Tworzenie stron internetowych"
+      }
+    ],
+    "h1": "Tworzenie stron internetowych dla firm",
+    "accent": "internetowych",
+    "badge": "Usługa",
+    "metaLine": "Dla firm z całej Polski",
+    "lead": [
+      "\n Projektujemy i wdrażamy strony internetowe, które przyciągają klientów i budują wiarygodność firmy w sieci.\n Bez szablonów z półki, bez podwykonawców. Jeden zespół odpowiedzialny za cały projekt od briefu po wdrożenie.\n "
+    ],
+    "buttons": [
+      {
+        "label": "Bezpłatna wycena projektu",
+        "href": "/#kontakt",
+        "primary": true
+      },
+      {
+        "label": "Zobacz nasze realizacje",
+        "href": "/realizacje.html",
+        "primary": false
+      }
+    ]
+  },
+  "sections": [
+    {
+      "eyebrow": "Zakres usługi",
+      "h2": "Jakie strony internetowe tworzymy",
+      "intro": [
+        "Od prostej wizytówki po rozbudowany portal. Każdy projekt dopasowujemy do celów biznesowych i budżetu klienta."
+      ],
+      "items": [
+        {
+          "title": "Strona wizytówkowa",
+          "html": "<p>Kompaktowa strona dla firm, które chcą zaznaczyć swoją obecność w sieci i ułatwić klientom kontakt. Zawiera informacje o firmie, ofercie, realizacjach i formularz kontaktowy.</p>\n <p>Dla kogo: zakłady usługowe, salony, gabinety, freelancerzy</p>"
+        },
+        {
+          "title": "Landing page",
+          "html": "<p>Jednostronicowa strona nastawiona na jeden cel: pozyskanie zapytania, zapisu lub sprzedaży. Skuteczna jako strona kampanii reklamowej Google Ads lub Meta Ads.</p>\n <p>Dla kogo: kampanie reklamowe, promocje, nowe produkty i usługi</p>"
+        },
+        {
+          "title": "Strona firmowa z CMS",
+          "html": "<p>Rozbudowana strona z systemem zarządzania treścią, blogiem i wieloma podstronami. Możesz samodzielnie dodawać treści i aktualizować ofertę bez wiedzy technicznej.</p>\n <p>Dla kogo: firmy budujące widoczność w Google, agencje, marki z blogiem</p>"
+        },
+        {
+          "title": "Sklep internetowy",
+          "html": "<p>Kompletne rozwiązanie e-commerce z obsługą płatności, zarządzaniem zamówieniami i magazynem. Projektujemy pod konwersję, nie tylko pod wygląd.</p>\n <p>Dla kogo: firmy sprzedające produkty online, producenci, dystrybutorzy</p>"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Dlaczego my",
+      "h2": "Co dostajesz zamawiając stronę w WebCanvas",
+      "intro": [],
+      "items": [
+        {
+          "title": "Projekt mobile-first",
+          "html": "<p>Większość ruchu na stronach naszych klientów pochodzi z telefonu. Projektujemy od makiety mobilnej w górę, dzięki czemu strona działa dobrze tam, gdzie realnie jest oglądana.</p>"
+        },
+        {
+          "title": "SEO od pierwszego dnia",
+          "html": "<p>Struktura nagłówków, meta dane, szybkość ładowania i dane strukturalne ustawiamy już na etapie wdrożenia, nie jako dodatek po zakończeniu projektu.</p>"
+        },
+        {
+          "title": "Szybki, lekki kod",
+          "html": "<p>Bez zbędnych wtyczek i bibliotek na wszelki wypadek. Mniej kodu oznacza szybsze ładowanie, a to przekłada się zarówno na wygodę użytkownika, jak i na pozycje w Google.</p>"
+        },
+        {
+          "title": "Jeden kontakt, cała odpowiedzialność",
+          "html": "<p>Projekt, kod i wdrożenie robi ten sam zespół. Nie musisz koordynować grafika, programisty i firmy hostingowej osobno.</p>"
+        },
+        {
+          "title": "Wsparcie po wdrożeniu",
+          "html": "<p>Strona nie znika z naszego radaru w dniu uruchomienia. Pomagamy z drobnymi zmianami, hostingiem i domeną bez konieczności szukania nowego wykonawcy.</p>"
+        },
+        {
+          "title": "Wycena bez niedomówień",
+          "html": "<p>Przed startem dostajesz jasny zakres i wycenę. Bez dopłat za coś, co okazało się potrzebne w połowie projektu. Jeśli zakres się zmienia, wiesz o tym zanim wpłynie to na cenę.</p>"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Jak pracujemy",
+      "h2": "Proces tworzenia strony internetowej krok po kroku",
+      "intro": [
+        "Przejrzysty harmonogram od pierwszej rozmowy po wdrożenie. Wiesz co się dzieje na każdym etapie."
+      ],
+      "items": [
+        {
+          "title": "Brief i wycena",
+          "html": "<p>Rozmawiamy o Twojej firmie, celach i oczekiwaniach. Na tej podstawie przygotowujemy szczegółową wycenę i harmonogram bez żadnych ukrytych pozycji.</p>"
+        },
+        {
+          "title": "Projekt graficzny",
+          "html": "<p>Projektujemy makiety i wygląd strony zgodnie z Twoją identyfikacją wizualną. Wprowadzamy poprawki aż do pełnej akceptacji projektu.</p>"
+        },
+        {
+          "title": "Wdrożenie i testy",
+          "html": "<p>Kodujemy i wdrażamy stronę. Testujemy działanie na różnych urządzeniach i przeglądarkach. Konfigurujemy SEO, analitykę i certyfikat SSL.</p>"
+        },
+        {
+          "title": "Start i opieka",
+          "html": "<p>Uruchamiamy stronę i przekazujemy dostępy. Zostajemy do dyspozycji w razie pytań i pomagamy z pierwszymi krokami w Google Search Console.</p>"
+        }
+      ],
+      "after": "<a href=\"/blog-proces-tworzenia-strony-internetowej.html\">\n Przeczytaj więcej o procesie tworzenia strony internetowej\n </a>"
+    },
+    {
+      "eyebrow": "Realizacje",
+      "h2": "Zobacz strony internetowe, które zaprojektowaliśmy",
+      "intro": [],
+      "before": "<p>\n Od strony gabinetu terapeutycznego po portal instytucji publicznej obsługujący tysiące użytkowników dziennie.\n Każdy projekt opisujemy jako case study z konkretnym problemem i efektem.\n </p>\n<a href=\"/realizacje.html\">\n Przejdź do realizacji\n </a>"
+    },
+    {
+      "eyebrow": "Inwestycja",
+      "h2": "Ile kosztuje tworzenie strony internetowej?",
+      "intro": [
+        "Przejrzyste pakiety bez ukrytych kosztów. Każdy projekt wyceniamy indywidualnie po rozmowie o zakresie."
+      ],
+      "items": [
+        {
+          "price": {
+            "featured": false,
+            "note": "Dla firm potrzebujących solidnego startu w sieci.",
+            "amount": "od 3000",
+            "unit": "PLN netto",
+            "list": [
+              "Strona One-Page lub Landing",
+              "Responsywny design RWD",
+              "Podstawowa optymalizacja SEO",
+              "Konfiguracja domeny i hostingu"
+            ],
+            "cta": "Wybieram Pro"
+          },
+          "title": "Pakiet Pro",
+          "html": "<p>Dla firm potrzebujących solidnego startu w sieci.</p>\n od 3000\n PLN netto\n <ul>\n <li> Strona One-Page lub Landing</li>\n <li> Responsywny design RWD</li>\n <li> Podstawowa optymalizacja SEO</li>\n <li> Konfiguracja domeny i hostingu</li>\n </ul>\n Wybieram Pro",
+          "href": "/#kontakt"
+        },
+        {
+          "price": {
+            "featured": true,
+            "note": "Kompleksowe wdrożenie strony firmowej lub sklepu.",
+            "amount": "od 4000",
+            "unit": "PLN netto",
+            "list": [
+              "Indywidualny projekt graficzny UI",
+              "System CMS lub e-commerce",
+              "Zaawansowane animacje",
+              "Szkolenie z obsługi panelu"
+            ],
+            "cta": "Wybieram Unique"
+          },
+          "title": "Pakiet Unique",
+          "html": "Polecany\n <p>Kompleksowe wdrożenie strony firmowej lub sklepu.</p>\n od 4000\n PLN netto\n <ul>\n <li> Indywidualny projekt graficzny UI</li>\n <li> System CMS lub e-commerce</li>\n <li> Zaawansowane animacje</li>\n <li> Szkolenie z obsługi panelu</li>\n </ul>\n Wybieram Unique",
+          "href": "/#kontakt"
+        },
+        {
+          "price": {
+            "featured": false,
+            "note": "Prace programistyczne i rozwój istniejących projektów.",
+            "amount": "200",
+            "unit": "PLN / h",
+            "list": [
+              "Audyt i optymalizacja kodu",
+              "Wdrażanie nowych funkcji",
+              "Naprawa błędów",
+              "Konsultacje technologiczne"
+            ],
+            "cta": "Zapytaj o dostępność"
+          },
+          "title": "Pakiet Hourly",
+          "html": "<p>Prace programistyczne i rozwój istniejących projektów.</p>\n 200\n PLN / h\n <ul>\n <li> Audyt i optymalizacja kodu</li>\n <li> Wdrażanie nowych funkcji</li>\n <li> Naprawa błędów</li>\n <li> Konsultacje technologiczne</li>\n </ul>\n Zapytaj o dostępność",
+          "href": "/#kontakt"
+        }
+      ],
+      "after": "<p>Nie wiesz który pakiet wybrać? <a href=\"/#kontakt\">Napisz do nas</a> i doradzimy po rozmowie o projekcie.</p>"
+    },
+    {
+      "eyebrow": "Wiedza",
+      "h2": "Przeczytaj przed podjęciem decyzji",
+      "intro": [],
+      "items": [
+        {
+          "title": "Ile kosztuje strona internetowa? Szczery przegląd cen",
+          "html": "<p>Cennik</p>\n <p>Dlaczego wyceny tak bardzo się różnią i co sprawia, że jedna strona kosztuje 500 zł, a inna 15 000 zł.</p>",
+          "href": "/blog-ile-kosztuje-strona-internetowa.html"
+        },
+        {
+          "title": "Strona samemu czy przez agencję? Kiedy Wix wystarczy",
+          "html": "<p>Poradnik</p>\n <p>Praktyczne kryteria wyboru i ukryte koszty samodzielnego tworzenia strony, o których mało kto mówi.</p>",
+          "href": "/blog-strona-samemu-czy-agencja.html"
+        },
+        {
+          "title": "Co powinna zawierać strona internetowa firmy?",
+          "html": "<p>Poradnik</p>\n <p>Lista elementów, bez których strona nie będzie skutecznie zamieniać odwiedzających w klientów.</p>",
+          "href": "/blog-co-powinna-zawierac-strona-internetowa.html"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Pytania",
+      "h2": "Najczęstsze pytania o tworzenie stron internetowych",
+      "intro": [],
+      "items": [
+        {
+          "title": "Ile kosztuje tworzenie strony internetowej?",
+          "html": "<p>Koszt zależy od zakresu projektu. Prosta strona wizytówkowa lub landing page zaczyna się od 3000 zł netto. Rozbudowana strona firmowa z CMS to wydatek rzędu 4000 zł netto wzwyż. Każdy projekt wyceniamy indywidualnie po rozmowie o potrzebach.</p>"
+        },
+        {
+          "title": "Ile trwa tworzenie strony internetowej?",
+          "html": "<p>Prosta strona wizytówkowa lub landing page to zwykle 2 do 4 tygodni od zatwierdzenia briefu. Rozbudowana strona firmowa lub sklep internetowy wymaga 4 do 8 tygodni. Dokładny harmonogram ustalamy przed startem projektu.</p>"
+        },
+        {
+          "title": "Czy mogę samodzielnie edytować stronę po wdrożeniu?",
+          "html": "<p>Tak. W zależności od projektu dostarczamy panel CMS lub szkolimy z obsługi systemu, dzięki czemu możesz samodzielnie aktualizować treści, dodawać wpisy blogowe i zarządzać zdjęciami bez wiedzy technicznej.</p>"
+        },
+        {
+          "title": "Czy zajmujecie się też hostingiem i domeną?",
+          "html": "<p>Tak. Pomagamy dobrać hosting, skonfigurować domenę i certyfikat SSL. Po wdrożeniu oferujemy opiekę powdrożeniową, żeby strona działała bez przerw.</p>"
+        },
+        {
+          "title": "Czy tworzycie strony dla firm spoza Konina?",
+          "html": "<p>Tak, obsługujemy firmy z całej Polski. Cały proces prowadzimy zdalnie. Brief, projekt, poprawki i wdrożenie odbywają się online. Lokalizacja klienta nie wpływa na jakość ani czas realizacji.</p>"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Obsługiwane miasta",
+      "h2": "Tworzymy strony internetowe dla firm z całej Polski",
+      "intro": [
+        "Pracujemy zdalnie z klientami w całym kraju. Poniżej znajdziesz strony dedykowane firmom z wybranych miast."
+      ],
+      "before": "<a href=\"/strony-internetowe-konin.html\">\n Strony internetowe Konin\n </a>\n <a href=\"/strony-internetowe-poznan.html\">\n Strony internetowe Poznań\n </a>\n <a href=\"/strony-internetowe-turek.html\">\n Strony internetowe Turek\n </a>\n <a href=\"/strony-internetowe-kolo.html\">\n Strony internetowe Koło\n </a>\n <a href=\"/strony-internetowe-slupca.html\">\n Strony internetowe Słupca\n </a>"
+    },
+    {
+      "eyebrow": "Kolejny krok",
+      "h2": "Porozmawiajmy o Twojej stronie internetowej",
+      "intro": [],
+      "before": "<p>\n Opowiedz nam o swojej firmie. Bezpłatnie wycenimy projekt i zaproponujemy rozwiązanie dopasowane do Twoich celów i budżetu.\n </p>\n<a href=\"/#kontakt\">\n Wyceń projekt bezpłatnie\n </a>\n <a href=\"/realizacje.html\">\n Zobacz realizacje\n </a>"
+    }
+  ]
+}

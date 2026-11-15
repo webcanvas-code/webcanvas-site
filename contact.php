@@ -37,8 +37,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $subject = $subject_prefix . $name;
         $email_content = "Otrzymałeś nową wiadomość z formularza kontaktowego:\n\n";
         $email_content .= "Imię i Nazwisko: $name\n";
-        $email_content .= "Email: $from\n\n";
-        $email_content .= "Wiadomość:\n$message\n\n";
+        $email_content .= "Email: $from\n";
+        $project_type = mb_substr(strip_tags(trim($_POST['project_type'] ?? '')), 0, 100);
+        if ($project_type !== '') $email_content .= "Rodzaj projektu: $project_type\n";
+        $email_content .= "\nWiadomość:\n$message\n\n";
 
     } elseif ($form_type === 'quote') {
         // --- LOGIKA FORMULARZA WYCENY ---

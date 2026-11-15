@@ -1,0 +1,163 @@
+{
+  "slug": "case-study-woodbud",
+  "kind": "case",
+  "title": "Strona internetowa dla stolarni Woodbud. Case study | WebCanvas",
+  "description": "Case Study Woodbud: jak galeria realizacji i przejrzysta wycena zamieniły stronę zakładu stolarskiego w narzędzie sprzedaży.",
+  "path": "/case-study-woodbud.html",
+  "schema": [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Strona główna",
+          "item": "https://web-canvas.pl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Realizacje",
+          "item": "https://web-canvas.pl/realizacje.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Woodbud",
+          "item": "https://web-canvas.pl/case-study-woodbud.html"
+        }
+      ]
+    }
+  ],
+  "hero": {
+    "crumbs": [
+      {
+        "label": "Strona główna",
+        "href": "/"
+      },
+      {
+        "label": "Realizacje",
+        "href": "/realizacje.html"
+      },
+      {
+        "label": "Woodbud"
+      }
+    ],
+    "h1": "Galeria, która sprzedaje za Ciebie: Woodbud",
+    "accent": "Woodbud",
+    "badge": "Case Study",
+    "metaLine": "Klient lokalny • Stolarstwo",
+    "lead": [
+      "\n Zadaszenie tarasu czy wiata garażowa to wydatek, którego nikt nie zamawia bez obejrzenia\n realizacji. Strona dla Woodbud musiała <strong>zastąpić wizytę\n w pokazowym ogrodzie</strong> i przekonać samym zdjęciem, zanim padnie pytanie o cenę.\n "
+    ],
+    "buttons": [
+      {
+        "label": "Odwiedź stronę na żywo",
+        "href": "https://woodbud.pl/",
+        "primary": true
+      }
+    ]
+  },
+  "sections": [
+    {
+      "type": "shot",
+      "images": [
+        {
+          "src": "/img/woodbud.webp",
+          "alt": "Pełny widok strony internetowej Woodbud"
+        }
+      ],
+      "url": "woodbud.pl"
+    },
+    {
+      "type": "facts",
+      "facts": [
+        {
+          "label": "Klient",
+          "value": "Woodbud"
+        },
+        {
+          "label": "Sektor",
+          "value": "Stolarstwo / mała architektura"
+        },
+        {
+          "label": "Zakres",
+          "value": "UX / UI / Dev"
+        },
+        {
+          "label": "Obszar działania",
+          "value": "Poznań, Wrocław"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Wyzwanie",
+      "h2": "Sprzedaż produktu, którego nie da się przymierzyć",
+      "intro": [],
+      "before": "<p>\n Projektowanie stron internetowych dla firm rzemieślniczych ma jedną specyfikę: to zdjęcie,\n nie tekst, robi tu największą robotę. Zadaszenie tarasu, wiata czy pergola to inwestycja rzędu kilku do kilkunastu tysięcy złotych,\n realizowana na miejscu u klienta. Zanim ktokolwiek zadzwoni, chce zobaczyć\n <strong>jak to wygląda naprawdę</strong>: materiał,\n wykończenie, skalę. Nie rendery czy stockowe zdjęcia.\n </p>\n <p>\n Drugim problemem była szerokość oferty: dziesięć różnych kategorii produktów, od altan\n po balustrady. Strona musiała pozwolić klientowi szybko znaleźć dokładnie to, po co\n przyszedł, zamiast przewijać wszystko po kolei.\n </p>"
+    },
+    {
+      "eyebrow": "Rozwiązanie",
+      "h2": "Trzy filary, na których oparliśmy projekt",
+      "intro": [],
+      "items": [
+        {
+          "title": "Galeria jako centrum sprzedaży",
+          "html": "<p>\n Realizacje pogrupowane kategoriami (zadaszenia, tarasy, wiaty, pergole), tak żeby\n klient od razu zobaczył dokładnie to, co go interesuje, nie przypadkowy przegląd zdjęć.\n </p>"
+        },
+        {
+          "title": "Lokalne SEO dla firmy usługowej",
+          "html": "<p>\n Woodbud działa w konkretnym promieniu: Poznań i Wrocław. Treść i nagłówki strony\n wprost nazywają obszar działania, żeby trafiać na klientów z tych okolic, a nie\n z całej Polski.\n </p>"
+        },
+        {
+          "title": "Cena widoczna od razu",
+          "html": "<p>\n Punkt startowy cenowy (\"już od 690 zł/m²\") i informacja o systemie ratalnym\n wyeksponowane już na pierwszym ekranie. Zdejmuje to z klienta największą barierę\n przed pierwszym kontaktem.\n </p>"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Proces",
+      "h2": "Krok po kroku: od briefu do wdrożenia",
+      "intro": [],
+      "items": [
+        {
+          "title": "Selekcja i porządkowanie materiału zdjęciowego",
+          "html": "<p>\n Przegląd dostępnych realizacji Woodbud i podział na kategorie produktowe.\n To fundament, na którym oparta jest cała nawigacja strony.\n </p>"
+        },
+        {
+          "title": "Projektowanie galerii i nawigacji kategoriami",
+          "html": "<p>\n Układ, w którym zdjęcie jest głównym bohaterem strony, a tekst pełni rolę\n uzupełnienia, zgodnie z tym, jak faktycznie podejmowana jest decyzja zakupowa.\n </p>"
+        },
+        {
+          "title": "Kodowanie i optymalizacja obrazów",
+          "html": "<p>\n Strona zdjęciowa z natury waży dużo, kompresja i lazy loading utrzymują\n szybkość ładowania mimo dużej liczby fotografii realizacji.\n </p>"
+        },
+        {
+          "title": "Wdrożenie i lokalne SEO",
+          "html": "<p>\n Nagłówki i opisy usług z nazwami miast obsługiwanych przez Woodbud, tak by\n strona trafiała na lokalne zapytania, a nie ginęła w ogólnokrajowej konkurencji.\n </p>"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Efekty",
+      "h2": "Strona, która robi pierwszą część rozmowy handlowej",
+      "intro": [
+        "\n Klient trafiający na stronę widzi realizacje, cenę wyjściową i sposób płatności,\n zanim jeszcze napisze wiadomość.\n "
+      ],
+      "before": "<p>10</p>\n <p>Kategorii produktowych</p>\n <p>Galeria First</p>\n <p>Filozofia projektowa</p>\n <p>2 miasta</p>\n <p>Obszar lokalnego SEO</p>\n <p>Cena od</p>\n <p>Widoczna bez przewijania</p>\n<p>\n „Przy tego typu produktach zdjęcie sprzedaje więcej niż opis. Naszą robotą było\n zejść z drogi realizacjom i dać im zabłysnąć.\"\n </p>\n <p>\n Podsumowanie projektu, WebCanvas\n </p>"
+    },
+    {
+      "eyebrow": "Stack technologiczny",
+      "h2": "Technologie użyte w projekcie",
+      "intro": [],
+      "before": "<ul data-chips=\"\"><li>Projektowanie stron internetowych</li><li>WordPress</li><li>CSS3 / RWD</li><li>Galeria zdjęć</li><li>Kompresja obrazów</li><li>Lokalne SEO</li><li>Formularz kontaktowy</li><li>SSL / HTTPS</li></ul>"
+    },
+    {
+      "eyebrow": "Kolejny krok",
+      "h2": "Zaprojektujmy rozwiązanie na lata",
+      "intro": [],
+      "before": "<p>\n Twój projekt też może przetrwać próbę czasu. Opowiedz mi o swoich potrzebach,\n bezpłatnie wycenię projekt i zaproponuję rozwiązanie szyte na miarę.\n </p>\n<a href=\"/#kontakt\">\n Omówmy Twój projekt\n </a>\n <a href=\"/realizacje.html\">\n ← Wróć do realizacji\n </a>"
+    }
+  ]
+}

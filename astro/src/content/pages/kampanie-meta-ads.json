@@ -1,0 +1,306 @@
+{
+  "slug": "kampanie-meta-ads",
+  "kind": "kampanie-meta-ads",
+  "title": "Kampanie Meta Ads Facebook Instagram dla firm | WebCanvas",
+  "description": "Kampanie reklamowe na Facebooku i Instagramie dla firm z całej Polski. Konfiguracja, optymalizacja i miesięczne raportowanie. Płatności bezpośrednio do Meta. Bezpłatna analiza konta.",
+  "ogTitle": "Kampanie Meta Ads Facebook Instagram dla firm | WebCanvas",
+  "ogImage": "/img/og-image.png",
+  "path": "/kampanie-meta-ads.html",
+  "schema": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Kampanie Meta Ads",
+      "description": "Kompleksowa obsługa kampanii reklamowych na Facebooku i Instagramie: konfiguracja, targetowanie grup odbiorców, tworzenie kreacji, zarządzanie budżetem i miesięczne raportowanie wyników.",
+      "url": "https://web-canvas.pl/kampanie-meta-ads.html",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "WebCanvas",
+        "url": "https://web-canvas.pl/",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Biele 126",
+          "addressLocality": "Sompolno",
+          "postalCode": "62-610",
+          "addressCountry": "PL"
+        }
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Polska"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Strona główna",
+          "item": "https://web-canvas.pl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Kampanie Meta Ads",
+          "item": "https://web-canvas.pl/kampanie-meta-ads.html"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Ile kosztuje reklama na Facebooku i Instagramie?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Koszty składają się z dwóch części: budżetu reklamowego płatnego bezpośrednio do Meta i miesięcznej opłaty za obsługę. Obsługa kampanii Meta Ads w WebCanvas zaczyna się od 600 zł netto miesięcznie. Minimalny rekomendowany budżet reklamowy to 800 zł miesięcznie."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kiedy pojawią się pierwsze wyniki kampanii Meta Ads?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Reklamy na Facebooku i Instagramie są aktywne niemal od razu po akceptacji przez Meta. Algorytm Meta potrzebuje zazwyczaj 7 do 14 dni na wyjście z fazy uczenia się i stabilizację wyników. Pełna ocena efektywności kampanii jest możliwa po 4 do 6 tygodniach zbierania danych."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy muszę mieć konto reklamowe Meta?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Możemy założyć konto reklamowe w Meta Business Suite lub pracować na istniejącym. Konto zawsze pozostaje Twoje i masz do niego pełny dostęp przez cały czas trwania współpracy i po jej zakończeniu."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy tworzycie kreacje graficzne do reklam?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak. W ramach obsługi przygotowujemy grafiki i teksty reklamowe dopasowane do formatu i grupy docelowej. W planie Rozwój i Zaawansowany tworzymy kilka wariantów kreacji i testujemy, które przynoszą najlepsze wyniki."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czym różnią się kampanie Meta Ads od Google Ads?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Google Ads trafia do osób, które aktywnie szukają danego produktu lub usługi. Meta Ads (Facebook, Instagram) dociera do osób na podstawie zainteresowań, demografii i zachowań, zanim zaczną szukać. Meta jest szczególnie skuteczne w budowaniu świadomości marki, remarkietingu i kampaniach sprzedażowych dla firm B2C."
+          }
+        }
+      ]
+    }
+  ],
+  "hero": {
+    "crumbs": [
+      {
+        "label": "Strona główna",
+        "href": "/"
+      },
+      {
+        "label": "Kampanie Meta Ads"
+      }
+    ],
+    "h1": "Kampanie Meta Ads dla firm",
+    "accent": "Meta Ads",
+    "badge": "Usługa",
+    "metaLine": "Dla firm z całej Polski",
+    "lead": [
+      "\n Reklamy na Facebooku i Instagramie docierają do Twoich potencjalnych klientów, zanim zaczną szukać.\n Budujemy kampanie oparte na precyzyjnym targetowaniu grup odbiorców i skutecznych kreacjach.\n Budżet trafia bezpośrednio do Meta, bez prowizji z naszej strony.\n "
+    ],
+    "buttons": [
+      {
+        "label": "Bezpłatna analiza konta",
+        "href": "/#kontakt",
+        "primary": true
+      },
+      {
+        "label": "Zobacz nasze realizacje",
+        "href": "/realizacje.html",
+        "primary": false
+      }
+    ]
+  },
+  "sections": [
+    {
+      "eyebrow": "Zakres usługi",
+      "h2": "Rodzaje kampanii Meta Ads, które prowadzimy",
+      "intro": [
+        "Dobieramy format i cel kampanii do branży i etapu lejka sprzedażowego klienta."
+      ],
+      "items": [
+        {
+          "title": "Reklamy graficzne i wideo (Feed i Stories)",
+          "html": "<p>Reklamy obrazkowe i wideo w feedzie Facebooka i Instagrama oraz w relacjach Stories. Najczęściej stosowany format do budowania zasięgu, pozyskiwania leadów i ruchu na stronę.</p>\n <p>Dla kogo: firmy usługowe, sklepy, marki lokalne i ogólnopolskie</p>"
+        },
+        {
+          "title": "Kampanie karuzelowe (Carousel Ads)",
+          "html": "<p>Format z kilkoma slajdami w jednej reklamie. Idealny do prezentacji portfolio, usług lub kilku produktów w jednym miejscu. Wyższe zaangażowanie niż standardowe reklamy graficzne.</p>\n <p>Dla kogo: sklepy, agencje, firmy z szeroką ofertą produktów lub usług</p>"
+        },
+        {
+          "title": "Kampanie generowania leadów (Lead Ads)",
+          "html": "<p>Reklamy z wbudowanym formularzem kontaktowym, który wypełnia się danymi z profilu Facebooka bez opuszczania aplikacji. Obniżają koszt pozyskania kontaktu w porównaniu do przekierowania na stronę.</p>\n <p>Dla kogo: firmy usługowe nastawione na pozyskiwanie zapytań i baz kontaktów</p>"
+        },
+        {
+          "title": "Kampanie katalogowe i remarketingowe",
+          "html": "<p>Dynamiczne reklamy produktowe dla sklepów internetowych oraz remarketing do osób, które odwiedziły stronę lub profil, ale nie dokonały zakupu. Wysoka skuteczność przy stosunkowo niskich kosztach.</p>\n <p>Dla kogo: sklepy e-commerce, firmy z długim procesem decyzyjnym klienta</p>"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Zakres obsługi",
+      "h2": "Co wchodzi w miesięczną obsługę Meta Ads",
+      "intro": [],
+      "items": [
+        {
+          "title": "Konfiguracja Meta Business Suite",
+          "html": "<p>Ustawiamy konto reklamowe, Meta Piksel i śledzenie zdarzeń na stronie. Właściwe śledzenie konwersji jest podstawą skutecznej optymalizacji kampanii.</p>"
+        },
+        {
+          "title": "Targetowanie grup odbiorców",
+          "html": "<p>Budujemy grupy docelowe oparte na zainteresowaniach, demografii, podobnych odbiorcach (Lookalike) i odwiedzających stronę. Trafne targetowanie decyduje o koszcie wyświetlenia i kliknięcia.</p>"
+        },
+        {
+          "title": "Tworzenie kreacji reklamowych",
+          "html": "<p>Przygotowujemy grafiki i teksty do reklam w różnych formatach: feed, Stories, Reels. Testujemy kilka wariantów kreacji i zostawiamy te, które przynoszą najniższy koszt wymaganego działania.</p>"
+        },
+        {
+          "title": "Zarządzanie budżetem",
+          "html": "<p>Monitorujemy wydatki i efektywność zestawów reklam. Przesuwamy budżet na zestawy z najlepszymi wynikami i wstrzymujemy te, które nie przynoszą zwrotu.</p>"
+        },
+        {
+          "title": "Optymalizacja i testy A/B",
+          "html": "<p>Regularnie testujemy nowe grupy odbiorców, kreacje i teksty reklamowe. Algorytm Meta uczy się na podstawie danych, a my pomagamy mu w tym przez właściwie zbudowaną strukturę kampanii.</p>"
+        },
+        {
+          "title": "Miesięczne raportowanie",
+          "html": "<p>Co miesiąc dostajesz raport z kluczowymi metrykami: zasięg, wyświetlenia, kliknięcia, leady, koszt pozyskania kontaktu i plan działań na kolejny miesiąc.</p>"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Jak pracujemy",
+      "h2": "Proces współpracy Meta Ads krok po kroku",
+      "intro": [],
+      "items": [
+        {
+          "title": "Analiza i strategia",
+          "html": "<p>Analizujemy Twoją branżę, konkurencję i dotychczasowe działania na Facebooku lub Instagramie. Ustalamy cel kampanii, grupy docelowe i strukturę zestawów reklam.</p>"
+        },
+        {
+          "title": "Konfiguracja i kreacje",
+          "html": "<p>Konfigurujemy konto, Meta Piksel i śledzenie zdarzeń. Tworzymy kreacje graficzne i teksty reklamowe, po czym uruchamiamy kampanie i obserwujemy fazę uczenia algorytmu.</p>"
+        },
+        {
+          "title": "Optymalizacja",
+          "html": "<p>Po zebraniu pierwszych danych optymalizujemy grupy odbiorców, stawki i kreacje. Wstrzymujemy zestawy bez wyników i skalujemy te, które przynoszą konwersje.</p>"
+        },
+        {
+          "title": "Raport i planowanie",
+          "html": "<p>Co miesiąc omawiamy wyniki i ustalamy plan działań na kolejny miesiąc. Testujemy nowe formaty, grupy odbiorców i komunikaty reklamowe.</p>"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Inwestycja",
+      "h2": "Ile kosztuje obsługa kampanii Meta Ads?",
+      "intro": [
+        "Opłata za obsługę to koszt naszej pracy. Budżet reklamowy płacisz osobno, bezpośrednio do Meta. Konto zawsze pozostaje Twoje."
+      ],
+      "items": [
+        {
+          "price": {
+            "featured": false,
+            "note": "Dla firm stawiających pierwsze kroki w reklamach Meta.",
+            "amount": "od 600",
+            "unit": "PLN / mies. netto",
+            "list": [
+              "1 kampania (Facebook lub Instagram)",
+              "Konfiguracja Meta Piksela",
+              "Kreacje graficzne (2 warianty)",
+              "Miesięczny raport"
+            ],
+            "cta": "Zapytaj o wycenę"
+          },
+          "title": "Start",
+          "html": "<p>Dla firm stawiających pierwsze kroki w reklamach Meta.</p>\n od 600\n PLN / mies. netto\n <p>+ budżet reklamowy min. 800 PLN / mies.</p>\n <ul>\n <li> 1 kampania (Facebook lub Instagram)</li>\n <li> Konfiguracja Meta Piksela</li>\n <li> Kreacje graficzne (2 warianty)</li>\n <li> Miesięczny raport</li>\n </ul>\n Zapytaj o wycenę",
+          "href": "/#kontakt"
+        },
+        {
+          "price": {
+            "featured": true,
+            "note": "Dla firm chcących skalować wyniki na Facebooku i Instagramie.",
+            "amount": "od 1200",
+            "unit": "PLN / mies. netto",
+            "list": [
+              "Do 3 kampanii (Feed, Stories, Remarketing)",
+              "Testy A/B kreacji i grup odbiorców",
+              "Grupy Lookalike i zaawansowany remarketing",
+              "Raport z omówieniem wyników"
+            ],
+            "cta": "Zapytaj o wycenę"
+          },
+          "title": "Rozwój",
+          "html": "Polecany\n <p>Dla firm chcących skalować wyniki na Facebooku i Instagramie.</p>\n od 1200\n PLN / mies. netto\n <p>+ budżet reklamowy min. 2000 PLN / mies.</p>\n <ul>\n <li> Do 3 kampanii (Feed, Stories, Remarketing)</li>\n <li> Testy A/B kreacji i grup odbiorców</li>\n <li> Grupy Lookalike i zaawansowany remarketing</li>\n <li> Raport z omówieniem wyników</li>\n </ul>\n Zapytaj o wycenę",
+          "href": "/#kontakt"
+        },
+        {
+          "price": {
+            "featured": false,
+            "note": "Dla firm z dużym budżetem, wieloma kampaniami i katalogiem produktów.",
+            "amount": "od 2000",
+            "unit": "PLN / mies. netto",
+            "list": [
+              "Nieograniczona liczba kampanii",
+              "Kampanie katalogowe (sklepy e-commerce)",
+              "Dedykowany opiekun konta",
+              "Raport + call strategiczny co miesiąc"
+            ],
+            "cta": "Zapytaj o wycenę"
+          },
+          "title": "Zaawansowany",
+          "html": "<p>Dla firm z dużym budżetem, wieloma kampaniami i katalogiem produktów.</p>\n od 2000\n PLN / mies. netto\n <p>+ budżet reklamowy min. 5000 PLN / mies.</p>\n <ul>\n <li> Nieograniczona liczba kampanii</li>\n <li> Kampanie katalogowe (sklepy e-commerce)</li>\n <li> Dedykowany opiekun konta</li>\n <li> Raport + call strategiczny co miesiąc</li>\n </ul>\n Zapytaj o wycenę",
+          "href": "/#kontakt"
+        }
+      ],
+      "after": "<p><strong>Ważne:</strong> Budżet reklamowy trafia bezpośrednio na Twoje konto Meta Ads. Nie pobieramy prowizji od wydanego budżetu. Konto Meta Business Suite jest zawsze Twoje i masz do niego pełny dostęp przez cały czas.</p>"
+    },
+    {
+      "eyebrow": "Pytania",
+      "h2": "Najczęstsze pytania o kampanie Meta Ads",
+      "intro": [],
+      "items": [
+        {
+          "title": "Ile kosztuje reklama na Facebooku i Instagramie?",
+          "html": "<p>Koszty składają się z dwóch części: budżetu reklamowego płatnego bezpośrednio do Meta i miesięcznej opłaty za obsługę od 600 zł netto. Minimalny rekomendowany budżet reklamowy to 800 zł miesięcznie. Całkowity koszt ustalamy po analizie celów i branży.</p>"
+        },
+        {
+          "title": "Kiedy pojawią się pierwsze wyniki kampanii?",
+          "html": "<p>Reklamy są aktywne niemal od razu po akceptacji przez Meta. Algorytm potrzebuje zazwyczaj 7 do 14 dni na wyjście z fazy uczenia. Pełną ocenę efektywności kampanii można przeprowadzić po 4 do 6 tygodniach zbierania danych.</p>"
+        },
+        {
+          "title": "Czy tworzycie grafiki do reklam?",
+          "html": "<p>Tak. W ramach obsługi przygotowujemy grafiki i teksty reklamowe. W planach Rozwój i Zaawansowany tworzymy kilka wariantów kreacji i testujemy, które przynoszą najlepsze wyniki przy najniższym koszcie.</p>"
+        },
+        {
+          "title": "Czym różni się Meta Ads od Google Ads?",
+          "html": "<p>Google Ads dociera do osób, które aktywnie szukają danego produktu. Meta Ads trafia do odbiorców na podstawie zainteresowań, demografii i zachowań, zanim zaczną szukać. Oba kanały uzupełniają się i wiele firm prowadzi kampanie równolegle w obu systemach.</p>"
+        },
+        {
+          "title": "Czy prowadzicie kampanie dla firm spoza Konina?",
+          "html": "<p>Tak, obsługujemy firmy z całej Polski. Całą współpracę prowadzimy zdalnie. Lokalizacja klienta nie ma znaczenia dla jakości i zakresu działań.</p>"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Kolejny krok",
+      "h2": "Zacznijmy od bezpłatnej analizy konta",
+      "intro": [],
+      "before": "<p>\n Masz już konto reklamowe w Meta i chcesz sprawdzić, czy jest dobrze skonfigurowane? Przeprowadzimy bezpłatną analizę i wskażemy co można poprawić. Dopiero zaczynasz? Opowiemy jak zacząć.\n </p>\n<a href=\"/#kontakt\">\n Zamów bezpłatną analizę\n </a>\n <a href=\"/kampanie-google-ads.html\">\n Zobacz też ofertę Google Ads\n </a>"
+    }
+  ]
+}

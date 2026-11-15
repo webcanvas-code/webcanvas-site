@@ -1,0 +1,77 @@
+---
+import { Image } from 'astro:assets';
+import { getEntry } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import ContactSection from '../components/ContactSection.astro';
+import Icon from '../components/Icon.astro';
+import { projects } from '../data/projects';
+
+const page = (await getEntry('pages', 'realizacje'))!.data;
+const schema = [
+  ...page.schema,
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Strona główna', item: 'https://web-canvas.pl/' },
+      { '@type': 'ListItem', position: 2, name: 'Realizacje', item: 'https://web-canvas.pl/realizacje.html' },
+    ],
+  },
+];
+---
+<Base title={page.title} description={page.description} ogTitle={page.ogTitle} ogImage={page.ogImage} path="/realizacje.html" schema={schema}>
+  <PageHero
+    crumbs={[{ label: 'Strona główna', href: '/' }, { label: 'Realizacje' }]}
+    h1="Realizacje, które pracują na co dzień"
+    accent="pracują na co dzień"
+    lead={['Każdy projekt opisuję jako case study: z jakim problemem przyszedł klient, co zaprojektowałem i jak strona działa dziś.']}
+  />
+
+  <section class="section section--paper on-light">
+    <div class="wrap">
+      <ul class="cases">
+        {projects.map((p, i) => (
+          <li class:list={{ 'cases__wide': i === 0 }}>
+            <a class="case" href={p.href}>
+              <div class="case__img">
+                <Image src={p.image} alt={p.alt} widths={[480, 800, 1200]} sizes={i === 0 ? '(min-width: 1000px) 60vw, 100vw' : '(min-width: 1000px) 46vw, 100vw'} loading={i < 2 ? 'eager' : 'lazy'} />
+              </div>
+              <div class="case__body">
+                <p class="case__trade">{p.trade}</p>
+                <h2>{p.name} <Icon name="arrow-up-right" size={22} /></h2>
+                <p class="case__text">{p.summary}</p>
+                <ul class="case__tags">{p.tags.map((t) => <li>{t}</li>)}</ul>
+              </div>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <ContactSection heading="Twój projekt może być tutaj." />
+</Base>
+
+<style>
+  .cases { display: grid; gap: 56px 24px; grid-template-columns: minmax(0, 1fr); }
+  @media (min-width: 760px) { .cases { grid-template-columns: repeat(2, minmax(0, 1fr)); } .cases__wide { grid-column: 1 / -1; } }
+  .case { display: flex; flex-direction: column; gap: 20px; text-decoration: none; }
+  @media (min-width: 1000px) {
+    .cases__wide .case { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 48px; align-items: center; }
+    .cases__wide .case__img { aspect-ratio: 16 / 10; }
+    .cases__wide h2 { font-size: clamp(1.8rem, 1.3rem + 1.4vw, 2.6rem); }
+  }
+  .case__img { aspect-ratio: 16 / 11; overflow: hidden; border-radius: var(--r-lg); border: 1px solid var(--line-light); background: var(--paper-2); transition: transform .3s var(--ease), box-shadow .3s var(--ease); }
+  .case__img img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform .6s var(--ease); }
+  .case:hover .case__img { transform: translateY(-2px); box-shadow: 0 30px 60px -36px rgb(26 21 19 / 0.45); }
+  .case:hover .case__img img { transform: scale(1.03); }
+  .case__body { display: grid; gap: 10px; justify-items: start; }
+  .case__trade { font-size: var(--t-label); font-weight: 560; color: var(--rose-strong); }
+  .case h2 { font-size: clamp(1.4rem, 1.2rem + 0.6vw, 1.75rem); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; }
+  .case h2 :global(svg) { color: var(--rose-strong); transition: transform .25s var(--ease); }
+  .case:hover h2 :global(svg) { transform: translate(3px, -3px); }
+  .case__text { color: var(--ink-muted); font-size: 1.05rem; max-width: 56ch; }
+  .case__tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+  .case__tags li { font-size: var(--t-label); font-weight: 520; padding: 4px 10px; border-radius: 999px; border: 1px solid var(--line-light); color: var(--ink-muted); }
+</style>

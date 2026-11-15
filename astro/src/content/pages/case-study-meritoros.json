@@ -1,0 +1,198 @@
+{
+  "slug": "case-study-meritoros",
+  "kind": "case",
+  "title": "Strona internetowa dla Meritoros | WebCanvas",
+  "description": "Case Study Meritoros: wielojęzyczna strona internetowa dla firmy księgowej i BPO, z kalkulatorami wyceny, sekcją dla inwestorów i treściami, które zespół klienta zmienia samodzielnie.",
+  "path": "/case-study-meritoros.html",
+  "schema": [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Strona główna",
+          "item": "https://web-canvas.pl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Realizacje",
+          "item": "https://web-canvas.pl/realizacje.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Meritoros",
+          "item": "https://web-canvas.pl/case-study-meritoros.html"
+        }
+      ]
+    }
+  ],
+  "hero": {
+    "crumbs": [
+      {
+        "label": "Strona główna",
+        "href": "/"
+      },
+      {
+        "label": "Realizacje",
+        "href": "/realizacje.html"
+      },
+      {
+        "label": "Meritoros"
+      }
+    ],
+    "h1": "Strona szyta na miarę dla Meritoros",
+    "accent": "Meritoros",
+    "badge": "Case Study",
+    "metaLine": "Klient korporacyjny • Księgowość i outsourcing BPO",
+    "lead": [
+      "\n Meritoros obsługuje ponad 1200 firm w księgowości, kadrach i płacach oraz outsourcingu BPO,\n a do tego przejmuje biura rachunkowe i prowadzi relacje inwestorskie. Zaprojektowaliśmy\n i zbudowaliśmy od podstaw stronę, na której\n <strong>zespół klienta sam edytuje każdy tekst, zdjęcie\n i tłumaczenie</strong>, bez pisania kodu.\n "
+    ],
+    "buttons": [
+      {
+        "label": "Odwiedź stronę na żywo",
+        "href": "https://meritoros.pl/",
+        "primary": true
+      }
+    ]
+  },
+  "sections": [
+    {
+      "type": "shot",
+      "images": [
+        {
+          "src": "/img/meritoros.webp",
+          "alt": "Pełny widok strony internetowej Meritoros"
+        }
+      ],
+      "url": "meritoros.pl"
+    },
+    {
+      "type": "facts",
+      "facts": [
+        {
+          "label": "Klient",
+          "value": "Meritoros"
+        },
+        {
+          "label": "Sektor",
+          "value": "Księgowość, kadry, BPO"
+        },
+        {
+          "label": "Zakres",
+          "value": "Projekt, wdrożenie, SEO"
+        },
+        {
+          "label": "Odbiorca",
+          "value": "Firmy, kandydaci, inwestorzy"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Wyzwanie",
+      "h2": "Jedna strona, pięć zupełnie różnych odbiorców",
+      "intro": [],
+      "before": "<p>\n Meritoros to nie jest typowe biuro rachunkowe z jedną usługą. Na tej samej stronie\n spotykają się: przedsiębiorca szukający księgowości, dyrektor finansowy rozważający\n outsourcing BPO, właściciel biura rachunkowego, który chce je sprzedać, kandydat do pracy\n i inwestor sprawdzający raporty spółki. <strong>Każdy z nich\n przychodzi z innym pytaniem</strong> i każdy musi szybko trafić na swoją odpowiedź.\n </p>\n <p>\n Drugie wyzwanie było organizacyjne. Treści zmieniają się często: oferty pracy, artykuły\n prasowe, historie klientów, raporty bieżące, wersje językowe. Strona nie mogła wymagać\n programisty przy każdej poprawce, a jednocześnie musiała pozostać spójna wizualnie\n na kilkunastu podstronach i w kilku językach.\n </p>"
+    },
+    {
+      "eyebrow": "Rozwiązanie",
+      "h2": "Trzy filary, na których oparliśmy projekt",
+      "intro": [],
+      "items": [
+        {
+          "title": "Spójna strona z gotowych bloków",
+          "html": "<p>\n Każda podstrona składa się z dopracowanych bloków: nagłówków, galerii, kalkulatorów,\n pytań i odpowiedzi czy opinii klientów. Wyglądają i działają wszędzie tak samo,\n a nowe podstrony powstają szybko, bez projektowania wszystkiego od nowa.\n </p>"
+        },
+        {
+          "title": "Zmiany bez programisty",
+          "html": "<p>\n Teksty, zdjęcia, menu i stopkę zespół Meritoros zmienia sam, w prostym panelu\n administracyjnym. Może też ukryć sekcję czy dodać kolejny kafelek, bez ryzyka,\n że układ strony się rozsypie.\n </p>"
+        },
+        {
+          "title": "Kilka wersji językowych",
+          "html": "<p>\n Wersje językowe zaplanowaliśmy od pierwszego dnia, a nie dokleiliśmy na końcu.\n Tłumaczenie strony jest proste i uporządkowane, a zagraniczny klient widzi\n tę samą, dopracowaną stronę co polski.\n </p>"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Kluczowe funkcje",
+      "h2": "Osobna ścieżka dla każdego odbiorcy",
+      "intro": [],
+      "items": [
+        {
+          "title": "Kalkulatory wyceny usług",
+          "html": "<p>Dla firm</p>\n <p>\n Kalkulatory dla kadr i płac oraz usług księgowych. Klient wpisuje kilka liczb i od razu\n widzi orientacyjny koszt obsługi, a Meritoros sam aktualizuje stawki.\n </p>"
+        },
+        {
+          "title": "Kupimy biuro rachunkowe",
+          "html": "<p>Dla właścicieli biur</p>\n <p>\n Osobna podstrona dla właścicieli biur, którzy myślą o sprzedaży: kryteria, modele\n współpracy, kalkulator wyceny biura, wideo i formularz kontaktowy.\n </p>"
+        },
+        {
+          "title": "Relacje inwestorskie",
+          "html": "<p>Dla inwestorów</p>\n <p>\n Kompletna sekcja dla inwestorów: zarząd, rada nadzorcza, akcjonariat, raporty,\n sprawozdania, uchwały i ogłoszenia, z wygodnym spisem treści.\n </p>"
+        },
+        {
+          "title": "Kariera i oferty pracy",
+          "html": "<p>Dla kandydatów</p>\n <p>\n Podstrona budująca wizerunek pracodawcy: benefity, wideo, opinie pracowników i najczęstsze\n pytania. Przy ofertach pracy kandydat aplikuje jednym kliknięciem i może pobrać culturebook firmy.\n </p>"
+        },
+        {
+          "title": "Historie klientów i media",
+          "html": "<p>Budowanie zaufania</p>\n <p>\n Osobne miejsca na historie klientów i artykuły prasowe, opinie w formie przewijanych\n kart, logotypy klientów i podpowiedzi kolejnych artykułów do przeczytania.\n </p>"
+        },
+        {
+          "title": "Formularze, e-book, newsletter",
+          "html": "<p>Generowanie leadów</p>\n <p>\n Formularze kontaktowe z czytelnym potwierdzeniem wysłania, darmowy e-book w zamian\n za adres e-mail i szybki zapis do newslettera.\n </p>"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Proces",
+      "h2": "Krok po kroku: od briefu do wdrożenia",
+      "intro": [],
+      "items": [
+        {
+          "title": "Poznanie firmy i plan treści",
+          "html": "<p>\n Zaczęliśmy od tego, kto odwiedza stronę i czego szuka. Na tej podstawie rozpisaliśmy\n każdą podstronę, tak by każdy odbiorca szybko trafiał do swojej odpowiedzi.\n </p>"
+        },
+        {
+          "title": "Projekt graficzny",
+          "html": "<p>\n Spokojna estetyka budząca zaufanie, z wyrazistym zielonym akcentem marki. Przyciski,\n karty i galerie wyglądają tak samo na wszystkich podstronach, więc strona jest spójna i łatwa w obsłudze.\n </p>"
+        },
+        {
+          "title": "Strona szyta na miarę",
+          "html": "<p>\n Zamiast gotowego szablonu zbudowaliśmy stronę od podstaw, dokładnie pod potrzeby Meritoros.\n Dzięki temu szybko się ładuje, świetnie wygląda na telefonie i nie jest obciążona zbędnymi dodatkami.\n </p>"
+        },
+        {
+          "title": "Optymalizacja SEO",
+          "html": "<p>\n Zajęliśmy się optymalizacją SEO: uporządkowaliśmy treści i nagłówki, zadbaliśmy o szybkość\n ładowania i przenieśliśmy adresy ze starej strony tak, by nie stracić pozycji w Google.\n </p>"
+        },
+        {
+          "title": "Opieka i dalszy rozwój",
+          "html": "<p>\n Po starcie strona nie zostaje sama. Na bieżąco wprowadzamy poprawki i nowe sekcje,\n o które prosi klient, dzięki czemu strona rośnie razem z firmą.\n </p>"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Efekty",
+      "h2": "Strona, którą klient rozwija samodzielnie",
+      "intro": [
+        "\n Zespół Meritoros publikuje oferty pracy, raporty, artykuły i tłumaczenia sam, a my\n skupiamy się na rozwijaniu nowych funkcji zamiast na podmienianiu tekstów.\n "
+      ],
+      "before": "<p>5</p>\n <p>Grup odbiorców z własną ścieżką</p>\n <p>100%</p>\n <p>Treści edytowanych samodzielnie</p>\n <p>3</p>\n <p>Kalkulatory wyceny online</p>\n <p>RWD</p>\n <p>Wygoda na każdym urządzeniu</p>\n<p>\n „Przy tak dużej stronie najważniejsze nie było pierwsze wdrożenie, tylko to, żeby\n setna zmiana była równie łatwa jak pierwsza.”\n </p>\n <p>\n Podsumowanie projektu, WebCanvas\n </p>"
+    },
+    {
+      "eyebrow": "Stack technologiczny",
+      "h2": "Technologie użyte w projekcie",
+      "intro": [],
+      "before": "<ul data-chips=\"\"><li>WordPress</li><li>CSS3 / RWD</li><li>Panel edycji treści</li><li>Wersje językowe</li><li>Projekt UI / UX</li><li>JavaScript</li><li>Formularze kontaktowe</li><li>Newsletter Mailchimp</li><li>Integracja z Traffit</li><li>SEO On-Page</li><li>Bezpieczeństwo</li><li>Performance Optimized</li></ul>"
+    },
+    {
+      "eyebrow": "Kolejny krok",
+      "h2": "Potrzebujesz strony, którą zespół edytuje sam?",
+      "intro": [],
+      "before": "<p>\n Projektuję strony szyte na miarę dla firm z rozbudowaną ofertą, wieloma językami\n i wieloma grupami odbiorców. Opowiedz mi o swoim projekcie, bezpłatnie go wycenię.\n </p>\n<a href=\"/#kontakt\">\n Omówmy Twój projekt\n </a>\n <a href=\"/realizacje.html\">\n ← Wróć do realizacji\n </a>"
+    }
+  ]
+}

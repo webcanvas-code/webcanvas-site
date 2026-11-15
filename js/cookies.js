@@ -48,26 +48,30 @@
     }
 
     var css =
-        '#wc-cookie-banner{position:fixed;left:16px;right:16px;bottom:16px;z-index:2147483000;max-width:960px;margin:0 auto;' +
-        'background:#fff;color:#404040;border:1px solid #e5e5e5;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.12);' +
-        'padding:20px;font:14px/1.55 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;display:flex;flex-direction:column;gap:16px;' +
-        'transform:translateY(calc(100% + 32px));transition:transform .3s ease}' +
-        '#wc-cookie-banner.wc-show{transform:none}' +
+        '#wc-cookie-banner{position:fixed;left:16px;right:16px;bottom:16px;z-index:2147483000;max-width:520px;' +
+        'background:#2a2421;color:#c2b8b0;border:1px solid rgba(255,255,255,.16);border-radius:20px;' +
+        'box-shadow:0 30px 60px -20px rgba(0,0,0,.6);padding:24px;' +
+        'font:15px/1.6 "Onest Variable",Onest,system-ui,-apple-system,"Segoe UI",sans-serif;display:flex;flex-direction:column;gap:20px;' +
+        'transform:translateY(calc(100% + 32px));opacity:0;transition:transform .45s cubic-bezier(.2,.7,.2,1),opacity .3s}' +
+        '#wc-cookie-banner.wc-show{transform:none;opacity:1}' +
         '#wc-cookie-banner p{margin:0}' +
-        '#wc-cookie-banner strong{color:#000;display:block;margin-bottom:4px;font-size:15px}' +
-        '#wc-cookie-banner a{color:#e11d48;font-weight:500;text-decoration:underline}' +
-        '#wc-cookie-banner .wc-btns{display:flex;gap:12px;flex-wrap:wrap}' +
-        '#wc-cookie-banner button{flex:1 1 140px;padding:10px 20px;border-radius:10px;font:500 14px/1.2 inherit;cursor:pointer;' +
-        'border:1px solid #e11d48;transition:background-color .2s,color .2s}' +
-        '#wc-cookie-banner .wc-reject{background:#fff;color:#e11d48}' +
-        '#wc-cookie-banner .wc-reject:hover{background:#fff1f2}' +
-        '#wc-cookie-banner .wc-accept{background:#e11d48;color:#fff}' +
+        '#wc-cookie-banner strong{color:#f6f1ea;display:flex;align-items:center;gap:10px;margin-bottom:8px;font-size:17px;font-weight:620;letter-spacing:-.01em}' +
+        '#wc-cookie-banner strong:before{content:"";width:8px;height:8px;border-radius:2px;background:#e11d48;transform:rotate(45deg)}' +
+        '#wc-cookie-banner a{color:#fda4af;font-weight:500;text-underline-offset:3px}' +
+        '#wc-cookie-banner .wc-btns{display:flex;gap:10px;flex-wrap:wrap}' +
+        '#wc-cookie-banner button{flex:1 1 140px;min-height:48px;padding:0 22px;border-radius:999px;font:580 15px/1.2 inherit;cursor:pointer;' +
+        'border:1px solid rgba(255,255,255,.22);transition:background-color .2s,color .2s,border-color .2s,transform .2s}' +
+        '#wc-cookie-banner button:active{transform:translateY(1px) scale(.985)}' +
+        '#wc-cookie-banner .wc-reject{background:transparent;color:#f6f1ea}' +
+        '#wc-cookie-banner .wc-reject:hover{border-color:#f6f1ea;background:rgba(255,255,255,.06)}' +
+        '#wc-cookie-banner .wc-accept{background:#e11d48;border-color:#e11d48;color:#fff}' +
         '#wc-cookie-banner .wc-accept:hover{background:#be123c;border-color:#be123c}' +
-        '#wc-cookie-banner button:focus-visible{outline:2px solid #000;outline-offset:2px}' +
-        '@media (min-width:768px){#wc-cookie-banner{flex-direction:row;align-items:center;padding:20px 24px}' +
-        '#wc-cookie-banner .wc-btns{flex-shrink:0;flex-wrap:nowrap}}' +
-        '.wc-footer-links{display:inline-flex;gap:16px;align-items:center;flex-wrap:wrap;justify-content:center}' +
-        '.wc-cookie-settings{background:none;border:0;padding:0;font-family:inherit;cursor:pointer}';
+        '#wc-cookie-banner button:focus-visible,#wc-cookie-banner a:focus-visible{outline:2px solid #fda4af;outline-offset:3px}' +
+        '@media (min-width:640px){#wc-cookie-banner{left:24px;right:auto;bottom:24px}}' +
+        '@media (prefers-reduced-motion:reduce){#wc-cookie-banner{transition:none}}' +
+        '.wc-footer-links{display:inline-flex;gap:16px;align-items:center;flex-wrap:wrap}' +
+        '.wc-cookie-settings{background:none;border:0;padding:0;font:inherit;color:inherit;cursor:pointer}' +
+        '.wc-cookie-settings:hover{color:#f6f1ea}';
 
     var banner;
 
@@ -88,7 +92,7 @@
             '<p>Używamy cookies analitycznych (Google Analytics), żeby wiedzieć, jak korzystasz ze strony, ' +
             'oraz marketingowych do mierzenia skuteczności reklam. Włączymy je tylko za Twoją zgodą. ' +
             'Decyzję możesz zmienić w każdej chwili w stopce („Ustawienia cookies”). ' +
-            '<a href="polityka-prywatnosci.html#cookies">Polityka prywatności</a></p></div>' +
+            '<a href="/polityka-prywatnosci.html#cookies">Polityka prywatności</a></p></div>' +
             '<div class="wc-btns">' +
             '<button type="button" class="wc-reject">Odrzuć</button>' +
             '<button type="button" class="wc-accept">Akceptuję</button>' +

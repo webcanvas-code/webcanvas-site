@@ -1,0 +1,257 @@
+{
+  "slug": "blog",
+  "kind": "blog",
+  "title": "Blog o stronach internetowych i marketingu | WebCanvas",
+  "description": "Praktyczne artykuły o stronach internetowych, SEO i marketingu dla właścicieli lokalnych firm. Bez żargonu, konkretne odpowiedzi na realne pytania.",
+  "ogTitle": "Blog | WebCanvas | Strony internetowe Konin",
+  "ogImage": "/img/og-image.png",
+  "path": "/blog.html",
+  "schema": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Blog WebCanvas",
+      "description": "Praktyczne artykuły o stronach internetowych dla lokalnych firm z Konina i okolic.",
+      "url": "https://web-canvas.pl/blog.html",
+      "publisher": {
+        "@type": "ProfessionalService",
+        "name": "WebCanvas",
+        "url": "https://web-canvas.pl/"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Strona główna",
+          "item": "https://web-canvas.pl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://web-canvas.pl/blog.html"
+        }
+      ]
+    }
+  ],
+  "hero": {
+    "crumbs": [
+      {
+        "label": "Strona główna",
+        "href": "/"
+      },
+      {
+        "label": "Blog"
+      }
+    ],
+    "h1": "Praktyczne teksty o stronach internetowych",
+    "accent": "",
+    "badge": "Blog",
+    "metaLine": "",
+    "lead": [
+      "\n Bez lania wody i bez sprzedażowego żargonu. Konkretne odpowiedzi na pytania, które\n najczęściej słyszymy od właścicieli lokalnych firm z Konina i okolic.\n "
+    ],
+    "buttons": []
+  },
+  "sections": [
+    {
+      "eyebrow": "15 listopada 2026 • 5 min",
+      "h2": "Strona internetowa dla firmy budowlanej i OZE z Konina, Turku i Koła",
+      "intro": [
+        "Wschodnia Wielkopolska się przebranżawia. Co musi mieć strona firmy budowlanej, fotowoltaicznej lub od pomp ciepła, żeby klienci z okolicy dzwonili właśnie do niej."
+      ]
+    },
+    {
+      "eyebrow": "15 listopada 2026 • 4 min",
+      "h2": "Strona internetowa dla obiektu noclegowego nad Jeziorem Powidzkim",
+      "intro": [
+        "Domki, agroturystyka i pensjonaty w okolicach Powidza i Słupcy. Jak zdobywać rezerwacje bezpośrednie zamiast oddawać prowizję portalom."
+      ]
+    },
+    {
+      "eyebrow": "15 listopada 2026 • 4 min",
+      "h2": "Pozycjonowanie lokalne w Poznaniu: jak mała firma może wygrać z dużymi",
+      "intro": [
+        "W Poznaniu na każdą ogólną frazę walczą setki firm. Jak celować w dzielnice i gminy powiatu, żeby szybciej zdobywać klientów z okolicy."
+      ]
+    },
+    {
+      "eyebrow": "24 października 2026 • 8 min",
+      "h2": "Firma działająca w kilku miastach: jak zdobywać klientów z Konina, Turku, Koła i Słupcy",
+      "intro": [
+        "Obszar obsługi w wizytówce Google, podstrony dla miast i lokalne opinie. Jak być widocznym tam, gdzie naprawdę pracujesz, bez ryzyka kar od Google."
+      ]
+    },
+    {
+      "eyebrow": "18 października 2026 • 9 min",
+      "h2": "Jak promować firmę w internecie w Koninie i okolicach",
+      "intro": [
+        "Wizytówka Google, strona, social media, opinie, reklamy. Praktyczny plan działania dla lokalnych firm z Konina, Turku, Koła i Słupcy."
+      ]
+    },
+    {
+      "eyebrow": "18 października 2026 • 8 min",
+      "h2": "Ile kosztuje strona internetowa? Realne ceny stron www w 2026 roku",
+      "intro": [
+        "Od wizytówki za 3 000 zł po rozbudowany sklep internetowy. Sprawdź, co wpływa na cenę strony i ile realnie kosztuje profesjonalne wykonanie."
+      ]
+    },
+    {
+      "eyebrow": "20 września 2026 • 8 min",
+      "h2": "Treści na stronę internetową: jak pisać teksty, które przyciągają klientów",
+      "intro": [
+        "Piękny design to połowa sukcesu. Dowiedz się, jak pisać treści na stronę firmową, żeby były zrozumiałe, wiarygodne i widoczne w Google."
+      ]
+    },
+    {
+      "eyebrow": "16 września 2026 • 8 min",
+      "h2": "Utrzymanie strony internetowej: jak dbać o stronę po jej uruchomieniu",
+      "intro": [
+        "Aktualizacje, backupy, certyfikat SSL, monitoring. Dowiedz się, co powinno być standardem w opiece nad stroną, żeby działała bezpiecznie przez lata."
+      ]
+    },
+    {
+      "eyebrow": "13 września 2026 • 8 min",
+      "h2": "Najczęstsze błędy przy tworzeniu strony internetowej i jak ich uniknąć",
+      "intro": [
+        "Brak celu, słabe treści, zły wykonawca. Poznaj błędy, które firmy popełniają najczęściej i dowiedz się, jak ich uniknąć od samego początku."
+      ]
+    },
+    {
+      "eyebrow": "5 września 2026 • 7 min",
+      "h2": "Responsywna strona internetowa: co to jest i dlaczego każda firma jej potrzebuje",
+      "intro": [
+        "Ponad połowa ruchu pochodzi ze smartfonów. Sprawdź, jak responsywność wpływa na SEO, konwersję i wizerunek firmy."
+      ]
+    },
+    {
+      "eyebrow": "23 sierpnia 2026 • 7 min",
+      "h2": "Ile trwa stworzenie strony internetowej? Realny harmonogram projektu",
+      "intro": [
+        "Od briefu po wdrożenie. Sprawdź, ile czasu zajmuje każdy etap i co najczęściej opóźnia projekty stron internetowych."
+      ]
+    },
+    {
+      "eyebrow": "21 sierpnia 2026 • 8 min",
+      "h2": "Rodzaje stron internetowych — która sprawdzi się dla Twojej firmy?",
+      "intro": [
+        "Wizytówka, landing page, sklep internetowy, rozbudowana strona firmowa. Każdy typ strony służy czemuś innemu. Sprawdź, który wybrać."
+      ]
+    },
+    {
+      "eyebrow": "16 sierpnia 2026 • 7 min",
+      "h2": "Dlaczego szybkość strony internetowej ma znaczenie? Wpływ na SEO i pozyskiwanie klientów",
+      "intro": [
+        "\n Wolna strona traci klientów i pozycje w Google. Dowiedz się, jak czas ładowania wpływa na konwersje i co możesz zrobić, żeby przyspieszyć swoją stronę.\n "
+      ]
+    },
+    {
+      "eyebrow": "11 sierpnia 2026 • 7 min",
+      "h2": "Jak przygotować się do tworzenia strony? Co zebrać przed rozmową z agencją",
+      "intro": [
+        "\n Brief, logo, zdjęcia, treści, dostępy. Praktyczna lista kontrolna dla firm, które chcą zlecić stronę internetową sprawnie i bez zbędnych opóźnień.\n "
+      ]
+    },
+    {
+      "eyebrow": "9 sierpnia 2026 • 8 min",
+      "h2": "Jak mierzyć skuteczność strony internetowej? Google Analytics i konwersje",
+      "intro": [
+        "\n Co śledzić w GA4 i Google Search Console, jak ustawić konwersje i wyciągać wnioski z danych. Praktyczny przewodnik dla właścicieli firm.\n "
+      ]
+    },
+    {
+      "eyebrow": "7 sierpnia 2026 • 7 min",
+      "h2": "Strona samemu czy przez agencję? Kiedy Wix wystarczy, a kiedy nie",
+      "intro": [
+        "\n Wix, WordPress czy agencja? Praktyczne kryteria wyboru, ukryte koszty samodzielnego tworzenia strony i sygnały, że czas zlecić projekt profesjonalistom.\n "
+      ]
+    },
+    {
+      "eyebrow": "1 sierpnia 2026 • 7 min",
+      "h2": "Strona internetowa dla małej firmy. Od czego zacząć?",
+      "intro": [
+        "\n Ile kosztuje, co powinna zawierać i jak wybrać wykonawcę. Praktyczny przewodnik dla właścicieli małych firm, którzy chcą mieć stronę, która naprawdę działa.\n "
+      ]
+    },
+    {
+      "eyebrow": "26 lipca 2026 • 6 min",
+      "h2": "Google Moja Firma: jak uzupełnić wizytówkę krok po kroku",
+      "intro": [
+        "\n Wizytówka Google to pierwszy kontakt klienta z Twoją firmą. Jak ją uzupełnić, żeby pojawiać się wyżej w lokalnych wynikach wyszukiwania.\n "
+      ]
+    },
+    {
+      "eyebrow": "24 lipca 2026 • 7 min",
+      "h2": "Pozycjonowanie lokalne dla małych firm. Co to jest i kiedy widać efekty?",
+      "intro": [
+        "\n Kiedy klient szuka Twojej usługi w Google, kto pojawia się na górze? Jak działa lokalne SEO i od czego zacząć, żeby Twoja firma wyprzedzała konkurencję w Twoim mieście.\n "
+      ]
+    },
+    {
+      "eyebrow": "18 lipca 2026 • 6 min",
+      "h2": "Strona www czy Facebook? Czego potrzebuje lokalna firma w internecie",
+      "intro": [
+        "\n Profil na Facebooku a własna strona — dwa różne narzędzia do dwóch różnych zadań.\n "
+      ]
+    },
+    {
+      "eyebrow": "15 lipca 2026 • 6 min",
+      "h2": "Jak wybrać agencję do tworzenia stron internetowych?",
+      "intro": [
+        "\n Kryteria, czerwone flagi i pytania, które warto zadać zanim podpiszesz umowę.\n "
+      ]
+    },
+    {
+      "eyebrow": "15 lipca 2026 • 6 min",
+      "h2": "Co powinna zawierać strona internetowa firmy?",
+      "intro": [
+        "\n Kompletna lista elementów skutecznej strony, od hero po techniczne podstawy.\n "
+      ]
+    },
+    {
+      "eyebrow": "15 lipca 2026 • 7 min",
+      "h2": "Czy warto mieć stronę internetową? Zwrot z inwestycji w praktyce",
+      "intro": [
+        "\n Jak strona www zwraca się dla małej firmy — konkretne przykłady ROI i realne liczby.\n "
+      ]
+    },
+    {
+      "eyebrow": "15 lipca 2026 • 7 min",
+      "h2": "Landing page vs strona firmowa: czym się różnią i kiedy używać każdej z nich",
+      "intro": [
+        "\n Dwa różne narzędzia do dwóch różnych zadań. Dowiedz się, które wybrać i kiedy połączyć oba.\n "
+      ]
+    },
+    {
+      "eyebrow": "12 lipca 2026 • 5 min",
+      "h2": "Ile kosztuje strona internetowa dla małej firmy?",
+      "intro": [
+        "\n Co realnie wpływa na cenę i dlaczego nie da się podać jednej kwoty bez rozmowy o zakresie projektu.\n "
+      ]
+    },
+    {
+      "eyebrow": "12 lipca 2026 • 6 min",
+      "h2": "5 sygnałów, że Twoja stara strona odstrasza klientów",
+      "intro": [
+        "\n Strona, która „technicznie działa\", wcale nie znaczy, że dobrze pracuje na Twoją firmę.\n "
+      ]
+    },
+    {
+      "eyebrow": "12 lipca 2026 • 5 min",
+      "h2": "Jak wygląda proces zamawiania strony krok po kroku",
+      "intro": [
+        "\n Od pierwszej rozmowy do wdrożenia. Co dzieje się na każdym etapie współpracy.\n "
+      ]
+    },
+    {
+      "eyebrow": "Kolejny krok",
+      "h2": "Nie znalazłeś odpowiedzi na swoje pytanie?",
+      "intro": [],
+      "before": "<p>\n Napisz do nas bezpośrednio – odpowiemy szczerze, nawet jeśli okaże się, że akurat\n teraz strona internetowa to nie Twój priorytet.\n </p>\n<a href=\"/#kontakt\">\n Napisz do nas\n </a>\n <a href=\"/realizacje.html\">\n Zobacz realizacje\n </a>"
+    }
+  ]
+}

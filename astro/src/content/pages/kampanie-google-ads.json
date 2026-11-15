@@ -1,0 +1,298 @@
+{
+  "slug": "kampanie-google-ads",
+  "kind": "kampanie-google-ads",
+  "title": "Kampanie Google Ads dla firm | Reklama w Google | WebCanvas",
+  "description": "Kampanie Google Ads dla firm z całej Polski. Konfiguracja, optymalizacja i miesięczne raportowanie. Płacisz za efekty, nie za obecność. Bezpłatna analiza konta.",
+  "ogTitle": "Kampanie Google Ads dla firm | Reklama w Google | WebCanvas",
+  "ogImage": "/img/og-image.png",
+  "path": "/kampanie-google-ads.html",
+  "schema": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Kampanie Google Ads",
+      "description": "Kompleksowa obsługa kampanii Google Ads dla firm: konfiguracja, optymalizacja słów kluczowych, zarządzanie budżetem i miesięczne raportowanie wyników.",
+      "url": "https://web-canvas.pl/kampanie-google-ads.html",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "WebCanvas",
+        "url": "https://web-canvas.pl/",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Biele 126",
+          "addressLocality": "Sompolno",
+          "postalCode": "62-610",
+          "addressCountry": "PL"
+        }
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Polska"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Strona główna",
+          "item": "https://web-canvas.pl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Kampanie Google Ads",
+          "item": "https://web-canvas.pl/kampanie-google-ads.html"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Ile kosztuje reklama w Google Ads?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Koszty składają się z dwóch części: budżetu reklamowego (płatnego bezpośrednio do Google) i miesięcznej opłaty za obsługę. Budżet reklamowy ustalasz samodzielnie. Obsługa kampanii w WebCanvas zaczyna się od 600 zł netto miesięcznie. Minimalny rekomendowany budżet reklamowy to 1000 zł miesięcznie."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kiedy pojawią się pierwsze wyniki kampanii Google Ads?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Reklamy w Google Ads są widoczne niemal od razu po uruchomieniu kampanii. Pierwsze kliknięcia i zapytania pojawiają się zazwyczaj w ciągu pierwszych dni. Optymalizacja kampanii i stabilne wyniki wymagają zazwyczaj 4 do 8 tygodni zbierania danych i dostosowywania ustawień."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy muszę mieć konto Google Ads?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Możemy założyć konto dla Ciebie lub pracować na istniejącym. Konto zawsze pozostaje Twoje, masz do niego pełny dostęp przez cały czas trwania współpracy i po jej zakończeniu."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Jaki budżet reklamowy jest potrzebny na start?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Minimalny rekomendowany budżet to 1000 zł miesięcznie. Przy niższych budżetach kampanie mają zbyt mało danych do skutecznej optymalizacji. Optymalny budżet zależy od branży, konkurencyjności słów kluczowych i celów kampanii."
+          }
+        }
+      ]
+    }
+  ],
+  "hero": {
+    "crumbs": [
+      {
+        "label": "Strona główna",
+        "href": "/"
+      },
+      {
+        "label": "Kampanie Google Ads"
+      }
+    ],
+    "h1": "Kampanie Google Ads dla firm",
+    "accent": "Google Ads",
+    "badge": "Usługa",
+    "metaLine": "Dla firm z całej Polski",
+    "lead": [
+      "\n Konfiguracja, optymalizacja i miesięczna obsługa kampanii reklamowych w Google.\n Twoje reklamy trafiają do osób, które w tej chwili szukają tego, co oferujesz.\n Każda złotówka budżetu jest rozliczana i widoczna w raporcie.\n "
+    ],
+    "buttons": [
+      {
+        "label": "Bezpłatna analiza konta",
+        "href": "/#kontakt",
+        "primary": true
+      },
+      {
+        "label": "Zobacz nasze realizacje",
+        "href": "/realizacje.html",
+        "primary": false
+      }
+    ]
+  },
+  "sections": [
+    {
+      "eyebrow": "Zakres usługi",
+      "h2": "Rodzaje kampanii Google Ads, które prowadzimy",
+      "intro": [
+        "Dobieramy typ kampanii do celu i branży klienta, nie odwrotnie."
+      ],
+      "items": [
+        {
+          "title": "Kampanie w sieci wyszukiwania (Search)",
+          "html": "<p>Reklamy tekstowe wyświetlane w wynikach Google osobom, które w tej chwili wpisują frazy związane z Twoją ofertą. Najskuteczniejszy format dla firm nastawionych na pozyskiwanie zapytań i sprzedaż.</p>\n <p>Dla kogo: usługi, sklepy, firmy B2B i B2C szukające nowych klientów</p>"
+        },
+        {
+          "title": "Kampanie w sieci reklamowej (Display)",
+          "html": "<p>Banery graficzne wyświetlane na milionach stron partnerskich Google. Skuteczne w budowaniu świadomości marki oraz remarketingu do osób, które odwiedziły Twoją stronę, ale nie podjęły działania.</p>\n <p>Dla kogo: remarketing, kampanie wizerunkowe, branże z długim procesem decyzyjnym</p>"
+        },
+        {
+          "title": "Kampanie produktowe (Google Shopping)",
+          "html": "<p>Reklamy produktowe z zdjęciem, ceną i nazwą sklepu wyświetlane bezpośrednio w wynikach wyszukiwania. Najwyższa konwersja dla sklepów internetowych, bo klient widzi produkt zanim kliknie.</p>\n <p>Dla kogo: sklepy internetowe z katalogiem produktów</p>"
+        },
+        {
+          "title": "Reklamy wideo (YouTube Ads)",
+          "html": "<p>Reklamy wideo wyświetlane przed i w trakcie filmów na YouTube. Skuteczne w budowaniu zasięgu i świadomości marki przy relatywnie niskim koszcie dotarcia do szerokiej grupy odbiorców.</p>\n <p>Dla kogo: marki stawiające na wizerunek i budowanie zasięgu</p>"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Zakres obsługi",
+      "h2": "Co wchodzi w miesięczną obsługę Google Ads",
+      "intro": [],
+      "items": [
+        {
+          "title": "Konfiguracja i struktura konta",
+          "html": "<p>Budujemy kampanie z przemyślaną strukturą grup reklam i słów kluczowych. Dobrze zorganizowane konto obniża koszty kliknięć i ułatwia późniejszą optymalizację.</p>"
+        },
+        {
+          "title": "Dobór słów kluczowych",
+          "html": "<p>Analizujemy frazy z realnym potencjałem zakupowym i wykluczamy te, które generują niepotrzebny ruch. Regularnie rozbudowujemy listę słów kluczowych i fraz wykluczających.</p>"
+        },
+        {
+          "title": "Tworzenie i testowanie reklam",
+          "html": "<p>Piszemy teksty reklam i testujemy różne warianty nagłówków i opisów. Wygrywające wersje zostają, słabsze są zastępowane nowymi. Dzięki temu skuteczność kampanii rośnie z miesiąca na miesiąc.</p>"
+        },
+        {
+          "title": "Zarządzanie stawkami i budżetem",
+          "html": "<p>Monitorujemy stawki za kliknięcia i dostosowujemy je do wyników. Pilnujemy, żeby budżet był wydawany na frazy, które przynoszą konwersje, a nie tylko kliknięcia bez efektu.</p>"
+        },
+        {
+          "title": "Optymalizacja strony docelowej",
+          "html": "<p>Kampania jest tak skuteczna jak strona, na którą trafia ruch. Doradzamy w zakresie poprawek landing page i formularza kontaktowego, żeby więcej kliknięć zamieniało się w zapytania.</p>"
+        },
+        {
+          "title": "Miesięczne raportowanie",
+          "html": "<p>Co miesiąc dostajesz raport z wynikami kampanii: wydatki, kliknięcia, konwersje, koszt pozyskania zapytania i plan działań na kolejny miesiąc. Wiesz dokładnie na co idzie każda złotówka budżetu.</p>"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Jak pracujemy",
+      "h2": "Proces współpracy Google Ads krok po kroku",
+      "intro": [],
+      "items": [
+        {
+          "title": "Analiza i strategia",
+          "html": "<p>Analizujemy Twoją branżę, konkurencję i istniejące konto (jeśli masz). Ustalamy cele kampanii, grupę docelową i strukturę konta przed wydaniem pierwszej złotówki.</p>"
+        },
+        {
+          "title": "Konfiguracja kampanii",
+          "html": "<p>Budujemy kampanie, grupy reklam, tworzymy teksty i konfigurujemy śledzenie konwersji. Bez mierzenia konwersji nie ma możliwości skutecznej optymalizacji.</p>"
+        },
+        {
+          "title": "Optymalizacja",
+          "html": "<p>Po zebraniu pierwszych danych optymalizujemy stawki, wykluczamy nieefektywne frazy, testujemy nowe reklamy i dostosowujemy kampanie do rzeczywistych wyników.</p>"
+        },
+        {
+          "title": "Raport i planowanie",
+          "html": "<p>Co miesiąc omawiamy wyniki i planujemy kolejne kroki. Strategia kampanii ewoluuje razem z danymi, a nie pozostaje zamrożona na poziomie z dnia startu.</p>"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Inwestycja",
+      "h2": "Ile kosztuje obsługa kampanii Google Ads?",
+      "intro": [
+        "Opłata za obsługę to koszt naszej pracy. Budżet reklamowy płacisz osobno, bezpośrednio do Google. Konto zawsze pozostaje Twoje."
+      ],
+      "items": [
+        {
+          "price": {
+            "featured": false,
+            "note": "Dla firm stawiających pierwsze kroki w Google Ads.",
+            "amount": "od 600",
+            "unit": "PLN / mies. netto",
+            "list": [
+              "1 kampania Search",
+              "Konfiguracja i śledzenie konwersji",
+              "Miesięczna optymalizacja",
+              "Miesięczny raport"
+            ],
+            "cta": "Zapytaj o wycenę"
+          },
+          "title": "Start",
+          "html": "<p>Dla firm stawiających pierwsze kroki w Google Ads.</p>\n od 600\n PLN / mies. netto\n <p>+ budżet reklamowy min. 1000 PLN / mies.</p>\n <ul>\n <li> 1 kampania Search</li>\n <li> Konfiguracja i śledzenie konwersji</li>\n <li> Miesięczna optymalizacja</li>\n <li> Miesięczny raport</li>\n </ul>\n Zapytaj o wycenę",
+          "href": "/#kontakt"
+        },
+        {
+          "price": {
+            "featured": true,
+            "note": "Dla firm chcących maksymalizować wyniki kampanii.",
+            "amount": "od 1200",
+            "unit": "PLN / mies. netto",
+            "list": [
+              "Do 3 kampanii (Search, Display, Remarketing)",
+              "Testy A/B reklam",
+              "Optymalizacja strony docelowej",
+              "Raport z omówieniem wyników"
+            ],
+            "cta": "Zapytaj o wycenę"
+          },
+          "title": "Rozwój",
+          "html": "Polecany\n <p>Dla firm chcących maksymalizować wyniki kampanii.</p>\n od 1200\n PLN / mies. netto\n <p>+ budżet reklamowy min. 2000 PLN / mies.</p>\n <ul>\n <li> Do 3 kampanii (Search, Display, Remarketing)</li>\n <li> Testy A/B reklam</li>\n <li> Optymalizacja strony docelowej</li>\n <li> Raport z omówieniem wyników</li>\n </ul>\n Zapytaj o wycenę",
+          "href": "/#kontakt"
+        },
+        {
+          "price": {
+            "featured": false,
+            "note": "Dla firm z dużym budżetem reklamowym i wieloma kampaniami.",
+            "amount": "od 2000",
+            "unit": "PLN / mies. netto",
+            "list": [
+              "Nieograniczona liczba kampanii",
+              "Google Shopping i YouTube Ads",
+              "Dedykowany opiekun konta",
+              "Raport + call strategiczny co miesiąc"
+            ],
+            "cta": "Zapytaj o wycenę"
+          },
+          "title": "Zaawansowany",
+          "html": "<p>Dla firm z dużym budżetem reklamowym i wieloma kampaniami.</p>\n od 2000\n PLN / mies. netto\n <p>+ budżet reklamowy min. 5000 PLN / mies.</p>\n <ul>\n <li> Nieograniczona liczba kampanii</li>\n <li> Google Shopping i YouTube Ads</li>\n <li> Dedykowany opiekun konta</li>\n <li> Raport + call strategiczny co miesiąc</li>\n </ul>\n Zapytaj o wycenę",
+          "href": "/#kontakt"
+        }
+      ],
+      "after": "<p><strong>Ważne:</strong> Budżet reklamowy trafia bezpośrednio na Twoje konto Google Ads. Nie pobieramy prowizji od wydanego budżetu. Konto Google Ads jest zawsze Twoje i masz do niego pełny dostęp przez cały czas.</p>"
+    },
+    {
+      "eyebrow": "Pytania",
+      "h2": "Najczęstsze pytania o kampanie Google Ads",
+      "intro": [],
+      "items": [
+        {
+          "title": "Ile kosztuje reklama w Google Ads?",
+          "html": "<p>Koszty składają się z dwóch części: budżetu reklamowego płatnego bezpośrednio do Google i miesięcznej opłaty za obsługę od 600 zł netto. Minimalny rekomendowany budżet reklamowy to 1000 zł miesięcznie. Całkowity koszt ustalamy po analizie branży i celów kampanii.</p>"
+        },
+        {
+          "title": "Kiedy pojawią się pierwsze wyniki kampanii?",
+          "html": "<p>Reklamy są widoczne niemal od razu po uruchomieniu. Pierwsze kliknięcia i zapytania pojawiają się zazwyczaj w ciągu pierwszych dni. Skuteczna optymalizacja i stabilne wyniki wymagają 4 do 8 tygodni zbierania danych.</p>"
+        },
+        {
+          "title": "Czy muszę mieć konto Google Ads?",
+          "html": "<p>Możemy założyć konto dla Ciebie lub pracować na istniejącym. Konto zawsze pozostaje Twoje i masz do niego pełny dostęp przez cały czas trwania współpracy i po jej zakończeniu.</p>"
+        },
+        {
+          "title": "Czy pobieracie prowizję od wydanego budżetu?",
+          "html": "<p>Nie. Rozliczamy się stałą miesięczną kwotą za obsługę. Budżet reklamowy trafia w całości na Twoje konto Google Ads i jest wydawany na reklamy.</p>"
+        },
+        {
+          "title": "Czy prowadzicie kampanie dla firm spoza Konina?",
+          "html": "<p>Tak, obsługujemy firmy z całej Polski. Całą współpracę prowadzimy zdalnie. Lokalizacja klienta nie ma znaczenia dla jakości i zakresu działań.</p>"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Kolejny krok",
+      "h2": "Zacznijmy od bezpłatnej analizy konta",
+      "intro": [],
+      "before": "<p>\n Masz już konto Google Ads i chcesz sprawdzić, czy jest dobrze skonfigurowane? Przeprowadzimy bezpłatną analizę i wskażemy co można poprawić. Nie masz jeszcze konta? Opowiemy jak zacząć.\n </p>\n<a href=\"/#kontakt\">\n Zamów bezpłatną analizę\n </a>\n <a href=\"/pozycjonowanie-seo.html\">\n Zobacz też ofertę SEO\n </a>"
+    }
+  ]
+}

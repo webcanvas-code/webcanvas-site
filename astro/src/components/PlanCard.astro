@@ -1,0 +1,48 @@
+---
+import Icon from './Icon.astro';
+
+interface Props {
+  name: string;
+  note?: string;
+  amount: string;
+  unit?: string;
+  items: string[];
+  cta: string;
+  href?: string;
+  featured?: boolean;
+}
+const { name, note, amount, unit, items, cta, href = '#kontakt', featured = false } = Astro.props;
+---
+<li class:list={['plan', { 'plan--featured': featured }]}>
+  {featured && <span class="plan__badge">Najczęściej wybierany</span>}
+  <h3>{name}</h3>
+  {note && <p class="plan__note">{note}</p>}
+  <p class="plan__price"><strong>{amount}</strong> {unit && <span>{unit}</span>}</p>
+  <ul class="plan__items">
+    {items.map((it) => <li><Icon name="check" size={18} />{it}</li>)}
+  </ul>
+  <a class:list={['btn', featured ? 'btn--primary' : 'btn--ghost']} href={href}>{cta}</a>
+</li>
+
+<style>
+  .plan {
+    position: relative; display: flex; flex-direction: column; gap: 14px;
+    padding: clamp(28px, 3vw, 40px); border-radius: var(--r-lg);
+    background: var(--night-2); border: 1px solid var(--line-dark); color: var(--snow);
+    transition: transform .3s var(--ease), border-color .3s var(--ease);
+  }
+  .plan:hover { transform: translateY(-2px); border-color: rgb(255 255 255 / 0.22); }
+  .plan--featured { background: linear-gradient(180deg, rgb(225 29 72 / 0.13), var(--night-2) 42%); border-color: rgb(225 29 72 / 0.55); }
+  .plan--featured:hover { border-color: var(--rose); }
+  .plan__badge { position: absolute; top: -13px; left: clamp(28px, 3vw, 40px); background: var(--rose); color: #fff; font-size: var(--t-label); font-weight: 580; padding: 4px 12px; border-radius: 999px; }
+  h3 { font-size: var(--t-h3); }
+  .plan__note { color: var(--snow-muted); }
+  .plan__price { margin: 12px 0 8px; display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px; }
+  .plan__price strong { font-size: clamp(2.3rem, 2rem + 1.2vw, 3rem); font-weight: 680; letter-spacing: -0.04em; line-height: 1; }
+  .plan__price span { color: var(--snow-muted); }
+  .plan__items { display: grid; gap: 12px; padding: 20px 0 28px; border-top: 1px solid var(--line-dark); margin-bottom: auto; }
+  .plan__items li { display: flex; gap: 12px; align-items: flex-start; }
+  .plan__items :global(svg) { flex: none; margin-top: 3px; color: var(--rose-soft); }
+  .btn--ghost { border-color: rgb(255 255 255 / 0.22); color: var(--snow); }
+  .btn--ghost:hover { border-color: var(--snow); background: rgb(255 255 255 / 0.06); }
+</style>

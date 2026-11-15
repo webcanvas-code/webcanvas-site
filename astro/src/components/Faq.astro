@@ -1,0 +1,36 @@
+---
+import Icon from './Icon.astro';
+
+interface Item { q: string; a: string }
+interface Props { items: Item[]; dark?: boolean }
+const { items, dark = false } = Astro.props;
+---
+<div class:list={['faq-list', { 'faq-list--dark': dark }]}>
+  {items.map((f, i) => (
+    <details open={i === 0}>
+      <summary><h3>{f.q}</h3><span class="faq-list__icon" aria-hidden="true"><Icon name="plus" size={20} /></span></summary>
+      <div class="faq-list__a" set:html={f.a} />
+    </details>
+  ))}
+</div>
+
+<style>
+  .faq-list details { border-bottom: 1px solid var(--line-light); }
+  .faq-list details:first-child { border-top: 1px solid var(--line-light); }
+  .faq-list summary { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 24px 0; cursor: pointer; list-style: none; }
+  .faq-list summary::-webkit-details-marker { display: none; }
+  .faq-list summary h3 { font-size: clamp(1.1rem, 1rem + 0.4vw, 1.3rem); transition: color .2s var(--ease); }
+  .faq-list summary:hover h3 { color: var(--rose-strong); }
+  .faq-list__icon { flex: none; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line-light); display: grid; place-items: center; transition: transform .3s var(--ease), background-color .3s var(--ease), color .3s; }
+  .faq-list details[open] .faq-list__icon { transform: rotate(45deg); background: var(--rose); color: #fff; border-color: var(--rose); }
+  .faq-list__a { padding: 0 64px 26px 0; color: var(--ink-muted); font-size: 1.05rem; line-height: 1.65; }
+  .faq-list__a :global(p + p) { margin-top: 12px; }
+  .faq-list__a :global(a) { color: var(--rose-strong); }
+  @media (max-width: 640px) { .faq-list__a { padding-right: 0; } }
+
+  .faq-list--dark details, .faq-list--dark details:first-child { border-color: var(--line-dark); }
+  .faq-list--dark .faq-list__icon { border-color: var(--line-dark); }
+  .faq-list--dark summary:hover h3 { color: var(--rose-soft); }
+  .faq-list--dark .faq-list__a { color: var(--snow-muted); }
+  .faq-list--dark .faq-list__a :global(a) { color: var(--rose-soft); }
+</style>

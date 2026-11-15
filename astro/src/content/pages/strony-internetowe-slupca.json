@@ -1,0 +1,263 @@
+{
+  "slug": "strony-internetowe-slupca",
+  "kind": "city",
+  "title": "Strony internetowe Słupca | Tworzenie stron www | WebCanvas",
+  "description": "Strony internetowe dla firm ze Słupcy. Szybkie wdrożenia, lokalne SEO i opieka po starcie. Sprawdź cennik i wyceń swój projekt bez zobowiązań.",
+  "ogTitle": "Strony internetowe Słupca | Tworzenie stron www | WebCanvas",
+  "ogImage": "/img/og-image.png",
+  "path": "/strony-internetowe-slupca.html",
+  "schema": [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Strony internetowe Słupca",
+      "description": "Projektujemy i wdrażamy strony internetowe dla firm ze Słupcy i powiatu słupeckiego, od warsztatów i firm budowlanych po obiekty noclegowe nad Jeziorem Powidzkim. Na pierwsze spotkanie przyjeżdżamy do Ciebie.",
+      "url": "https://web-canvas.pl/strony-internetowe-slupca.html",
+      "about": {
+        "@type": "Service",
+        "name": "Projektowanie stron internetowych",
+        "serviceType": "Tworzenie stron internetowych",
+        "areaServed": {
+          "@type": "City",
+          "name": "Słupca"
+        },
+        "provider": {
+          "@type": "ProfessionalService",
+          "@id": "https://web-canvas.pl/#business",
+          "name": "WebCanvas",
+          "url": "https://web-canvas.pl/",
+          "telephone": "+48739043596",
+          "email": "kontakt@web-canvas.pl",
+          "priceRange": "od 3000 PLN",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Biele 126",
+            "addressLocality": "Sompolno",
+            "postalCode": "62-610",
+            "addressCountry": "PL"
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+              ],
+              "opens": "09:00",
+              "closes": "17:00"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Strona główna",
+          "item": "https://web-canvas.pl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Strony internetowe Słupca",
+          "item": "https://web-canvas.pl/strony-internetowe-slupca.html"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Czy możemy spotkać się osobiście w Słupcy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak. Do Słupcy dojeżdżamy z Sompolna w około godzinę, więc pierwsze spotkanie możemy zrobić w Twojej firmie lub obiekcie. Kolejne etapy, czyli akceptację projektu i poprawki, zwykle prowadzimy online."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Prowadzę obiekt noclegowy nad Jeziorem Powidzkim. Czy zrobicie dla mnie stronę?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak. Dla obiektów turystycznych najważniejsze są zdjęcia, opis okolicy, cennik sezonowy i szybki kontakt. Formularz zapytania o termin albo połączenie z systemem rezerwacji, którego już używasz, ustalamy na etapie briefu."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ile trwa realizacja strony internetowej?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Zależy od zakresu. Prosta strona wizytówka to zwykle kilka tygodni, sklep internetowy czy aplikacja dedykowana wymaga więcej czasu. Dokładny harmonogram ustalamy po briefie."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy zajmujecie się też hostingiem i domeną?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak. Pomagamy skonfigurować domenę, hosting i certyfikat SSL, a po wdrożeniu oferujemy opiekę powdrożeniową, żeby strona działała bez przestojów."
+          }
+        }
+      ]
+    }
+  ],
+  "hero": {
+    "crumbs": [
+      {
+        "label": "Strona główna",
+        "href": "/"
+      },
+      {
+        "label": "Strony internetowe Słupca"
+      }
+    ],
+    "h1": "Strony internetowe Słupca",
+    "accent": "Słupca",
+    "badge": "SŁUPCA",
+    "metaLine": "Projektowanie stron internetowych",
+    "lead": [
+      "\n Projektujemy i wdrażamy strony internetowe dla firm ze Słupcy i powiatu słupeckiego, od warsztatów i firm budowlanych po obiekty noclegowe nad Jeziorem Powidzkim. Na pierwsze spotkanie przyjeżdżamy do Ciebie.\n "
+    ],
+    "buttons": [
+      {
+        "label": "Bezpłatna wycena projektu",
+        "href": "/#kontakt",
+        "primary": true
+      },
+      {
+        "label": "Zobacz nasze realizacje",
+        "href": "/realizacje.html",
+        "primary": false
+      }
+    ]
+  },
+  "sections": [
+    {
+      "eyebrow": "Lokalnie",
+      "h2": "Strony internetowe dla firm ze Słupcy i okolic",
+      "intro": [],
+      "items": [
+        {
+          "title": "Spotkanie na miejscu",
+          "html": "<p>Z Sompolna do Słupcy jedziemy około godziny. Pierwsze spotkanie robimy u Ciebie, dalszą część projektu zwykle online.</p>"
+        },
+        {
+          "title": "Obszar, który obsługujemy",
+          "html": "<p>Słupca i gminy powiatu słupeckiego: Lądek, Orchowo, Ostrowite, Powidz, Strzałkowo, Zagórów oraz gmina wiejska Słupca.</p>"
+        },
+        {
+          "title": "SEO lokalne",
+          "html": "<p>Turysta szuka „noclegi Powidz”, a nie „noclegi Słupca”. Dlatego treści dopasowujemy do tego, jak faktycznie szukają Twoi klienci, nie do nazwy powiatu.</p>"
+        }
+      ],
+      "before": "<p>Powiat słupecki to dwa różne rynki. W samej Słupcy, Strzałkowie i Zagórowie działają głównie firmy usługowe, handlowe i transportowe, korzystające z bliskości autostrady A2. Nad Jeziorem Powidzkim i w Powidzkim Parku Krajobrazowym liczy się turystyka: noclegi, agroturystyka, wypożyczalnie sprzętu i gastronomia.</p>\n <p>Te dwa rynki potrzebują innych stron. Firma usługowa ze Słupcy potrzebuje jasnej oferty, obszaru działania i szybkiego kontaktu. Obiekt nad jeziorem potrzebuje dobrych zdjęć, informacji o dostępnych terminach i prostego formularza zapytania, bo turysta z Poznania czy Łodzi porównuje kilka miejsc naraz i wybiera to, które najszybciej odpowie na jego pytania.</p>\n <p>Jeśli prowadzisz firmę w Słupcy, a klientów masz też w Koninie czy Kole, przeczytaj, <a href=\"/blog-firma-w-kilku-miastach-konin-turek-kolo-slupca.html\">jak być widocznym w kilku miastach jednocześnie</a>. Podstawy lokalnej widoczności opisujemy w artykule o <a href=\"/blog-pozycjonowanie-lokalne-dla-malych-firm.html\">pozycjonowaniu lokalnym dla małych firm</a>.</p>\n <p>Prowadzisz domki, pensjonat lub agroturystykę? Przeczytaj, <a href=\"/blog-strona-internetowa-obiekt-noclegowy-jezioro-powidzkie.html\">jak zrobić stronę obiektu noclegowego nad Jeziorem Powidzkim</a>, która zbiera rezerwacje bez prowizji.</p>"
+    },
+    {
+      "eyebrow": "Dlaczego my",
+      "h2": "Co dostajesz w WebCanvas",
+      "intro": [],
+      "before": "<ul>\n <li><strong>Projekt mobile-first:</strong> większość klientów ogląda stronę na telefonie.</li>\n <li><strong>SEO od pierwszego dnia:</strong> nagłówki, meta dane, dane strukturalne i szybkość ustawione przy wdrożeniu.</li>\n <li><strong>Lekki, szybki kod:</strong> bez zbędnych wtyczek i bibliotek.</li>\n <li><strong>Jeden zespół:</strong> projekt, kod i wdrożenie bez pośredników i podwykonawców.</li>\n <li><strong>Wsparcie po starcie:</strong> drobne zmiany, hosting i domena.</li>\n <li><strong>Jasna wycena:</strong> zakres i cena znane przed rozpoczęciem prac.</li>\n </ul>\n<p>\n Poza stronami zajmujemy się też <a href=\"/pozycjonowanie-seo.html\">pozycjonowaniem SEO</a>,\n <a href=\"/kampanie-google-ads.html\">kampaniami Google Ads</a> i <a href=\"/kampanie-meta-ads.html\">Meta Ads</a>.\n Przykłady naszej pracy, opisane jako case study, znajdziesz w <a href=\"/realizacje.html\">realizacjach</a>.\n </p>"
+    },
+    {
+      "eyebrow": "Inwestycja",
+      "h2": "Wybierz swój pakiet",
+      "intro": [
+        "Przejrzyste zasady współpracy. Wybierz rozwiązanie idealnie dopasowane do Twoich potrzeb biznesowych."
+      ],
+      "items": [
+        {
+          "price": {
+            "featured": false,
+            "note": "Dla firm potrzebujących solidnego startu w sieci.",
+            "amount": "od 3000",
+            "unit": "PLN netto",
+            "list": [
+              "Strona One-Page / Landing",
+              "Responsywny Design (RWD)",
+              "Podstawowa optymalizacja SEO",
+              "Konfiguracja domeny i hostingu"
+            ],
+            "cta": "Wybieram Pro"
+          },
+          "title": "Pakiet Pro",
+          "html": "<p>Dla firm potrzebujących solidnego startu w sieci.</p>\n od 3000\n PLN netto\n <ul>\n <li> Strona One-Page / Landing</li>\n <li> Responsywny Design (RWD)</li>\n <li> Podstawowa optymalizacja SEO</li>\n <li> Konfiguracja domeny i hostingu</li>\n </ul>\n Wybieram Pro",
+          "href": "/#kontakt"
+        },
+        {
+          "price": {
+            "featured": true,
+            "note": "Kompleksowe wdrożenie sklepu lub zaawansowanej strony.",
+            "amount": "od 4000",
+            "unit": "PLN netto",
+            "list": [
+              "Indywidualny projekt graficzny UI",
+              "System CMS / E-commerce",
+              "Zaawansowane animacje",
+              "Szkolenie z obsługi panelu"
+            ],
+            "cta": "Wybieram Unique"
+          },
+          "title": "Pakiet Unique",
+          "html": "Polecany\n <p>Kompleksowe wdrożenie sklepu lub zaawansowanej strony.</p>\n od 4000\n PLN netto\n <ul>\n <li> Indywidualny projekt graficzny UI</li>\n <li> System CMS / E-commerce</li>\n <li> Zaawansowane animacje</li>\n <li> Szkolenie z obsługi panelu</li>\n </ul>\n Wybieram Unique",
+          "href": "/#kontakt"
+        },
+        {
+          "price": {
+            "featured": false,
+            "note": "Prace programistyczne i rozwój istniejących projektów.",
+            "amount": "200",
+            "unit": "PLN / h",
+            "list": [
+              "Audyt i optymalizacja kodu",
+              "Wdrażanie nowych funkcji",
+              "Naprawa błędów",
+              "Konsultacje technologiczne"
+            ],
+            "cta": "Zapytaj o dostępność"
+          },
+          "title": "Pakiet Hourly",
+          "html": "<p>Prace programistyczne i rozwój istniejących projektów.</p>\n 200\n PLN / h\n <ul>\n <li> Audyt i optymalizacja kodu</li>\n <li> Wdrażanie nowych funkcji</li>\n <li> Naprawa błędów</li>\n <li> Konsultacje technologiczne</li>\n </ul>\n Zapytaj o dostępność",
+          "href": "/#kontakt"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Pytania",
+      "h2": "Najczęstsze pytania od firm ze Słupcy",
+      "intro": [],
+      "items": [
+        {
+          "title": "Czy możemy spotkać się osobiście w Słupcy?",
+          "html": "<p>Tak. Do Słupcy dojeżdżamy z Sompolna w około godzinę, więc pierwsze spotkanie możemy zrobić w Twojej firmie lub obiekcie. Kolejne etapy, czyli akceptację projektu i poprawki, zwykle prowadzimy online.</p>"
+        },
+        {
+          "title": "Prowadzę obiekt noclegowy nad Jeziorem Powidzkim. Czy zrobicie dla mnie stronę?",
+          "html": "<p>Tak. Dla obiektów turystycznych najważniejsze są zdjęcia, opis okolicy, cennik sezonowy i szybki kontakt. Formularz zapytania o termin albo połączenie z systemem rezerwacji, którego już używasz, ustalamy na etapie briefu.</p>"
+        },
+        {
+          "title": "Ile trwa realizacja strony internetowej?",
+          "html": "<p>Zależy od zakresu. Prosta strona wizytówka to zwykle kilka tygodni, sklep internetowy czy aplikacja dedykowana wymaga więcej czasu. Dokładny harmonogram ustalamy po briefie.</p>"
+        },
+        {
+          "title": "Czy zajmujecie się też hostingiem i domeną?",
+          "html": "<p>Tak. Pomagamy skonfigurować domenę, hosting i certyfikat SSL, a po wdrożeniu oferujemy opiekę powdrożeniową, żeby strona działała bez przestojów.</p>"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Kolejny krok",
+      "h2": "Porozmawiajmy o Twojej stronie",
+      "intro": [],
+      "before": "<p>\n Opowiedz nam o swojej firmie ze Słupcy i okolic. Bezpłatnie wycenimy projekt i zaproponujemy\n rozwiązanie dopasowane do Twojego budżetu i celów.\n </p>\n<a href=\"/#kontakt\">\n Omówmy Twój projekt\n </a>\n <a href=\"/realizacje.html\">\n Zobacz realizacje\n </a>"
+    }
+  ]
+}

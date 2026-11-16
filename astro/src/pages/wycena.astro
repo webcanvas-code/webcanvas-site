@@ -309,10 +309,26 @@ const opt = (name: string, values: string[], type: 'radio' | 'checkbox' = 'radio
       const s = service();
       const val = (n: string) => form.querySelector<HTMLInputElement>(`input[name="${n}"]:checked:not(:disabled)`)?.value ?? '';
       if (s === 'marketing') return { price: 'Wycena indywidualna', note: 'Koszt zależy od zakresu i budżetu reklamowego. Zaproponuję plan dopasowany do Twojej firmy.' };
-      if (s === 'aplikacja') return { price: `od ${fmt(PRICES.unique)} zł netto`, note: 'Aplikacje wyceniam po krótkiej rozmowie o funkcjach. Podana kwota to dolna granica.' };
+      // budżet nie zmienia ceny; gdy jego górna granica jest niższa niż cena, dopisujemy wyjaśnienie
+      const budget = val('budget');
+      const budgetMax = Number((budget.match(/[\d\s]+(?= zł)/)?.[0] ?? '').replace(/\s/g, '')) || Infinity;
+      const tooLow = (min: number) => /^\d/.test(budget) && !budget.startsWith('Powyżej') && budgetMax < min;
+      const budgetLabel = budget;
+
+      if (s === 'aplikacja') return {
+        price: `od ${fmt(PRICES.unique)} zł netto`,
+        note: tooLow(PRICES.unique)
+          ? `Aplikacje wyceniam po krótkiej rozmowie o funkcjach. Przy budżecie ${budgetLabel} zaproponuję prostszą pierwszą wersję, która się w nim zmieści.`
+          : 'Aplikacje wyceniam po krótkiej rozmowie o funkcjach. Podana kwota to dolna granica.',
+      };
       const onePage = s === 'landing' || (s === 'strona' && val('pages') === 'Jedna (one-page)');
       if (onePage) return { price: `od ${fmt(PRICES.pro)} zł netto`, note: 'Pakiet Pro: strona one-page lub landing page, wersja na telefony, podstawowe SEO.' };
-      return { price: `od ${fmt(PRICES.unique)} zł netto`, note: 'Pakiet Unique: indywidualny projekt, panel do edycji treści, szkolenie z obsługi.' };
+      return {
+        price: `od ${fmt(PRICES.unique)} zł netto`,
+        note: tooLow(PRICES.unique)
+          ? `Pełny zakres to Pakiet Unique. Przy budżecie ${budgetLabel} zaproponuję prostszą wersję, która się w nim zmieści.`
+          : 'Pakiet Unique: indywidualny projekt, panel do edycji treści, szkolenie z obsługi.',
+      };
     };
     const fmt = (n: number) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '\u00a0');
 

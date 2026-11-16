@@ -161,21 +161,15 @@ const opt = (name: string, values: string[], type: 'radio' | 'checkbox' = 'radio
               ))}
             </div>
           </div>
-          {[
-            { for: 'marketing', id: 'wz-budget-m', name: 'budget_monthly', q: 'Jaki budżet miesięczny bierzesz pod uwagę?', hint: 'Łącznie z budżetem na reklamy. Opcjonalnie.', suffix: 'zł / mies.' },
-          ].map((b) => (
-            <div class="wz__group" data-for={b.for}>
-              <label class="wz__label" for={b.id}>{b.q}</label>
-              <p class="wz__hint">{b.hint}</p>
-              <div class="budget">
-                <div class="budget__field">
-                  <input class="input budget__input" id={b.id} name={b.name} type="text" inputmode="numeric" placeholder="np. 5000" maxlength="20" data-budget />
-                  <span class="budget__suffix" aria-hidden="true">{b.suffix}</span>
-                </div>
-                <label class="chip"><input type="checkbox" name={`${b.name}_unknown`} value="Nie wiem, proszę o propozycję" data-budget-unknown /><span>Nie wiem, doradź</span></label>
-              </div>
+          <div class="wz__group" data-for="marketing">
+            <p class="wz__label">Jaki budżet miesięczny bierzesz pod uwagę?</p>
+            <p class="wz__hint">Łącznie z budżetem na reklamy. Opcjonalnie.</p>
+            <div class="chips" role="radiogroup" aria-label="Jaki budżet miesięczny bierzesz pod uwagę?">
+              {['Do 1 000 zł', '1 000–2 000 zł', '2 000–4 000 zł', 'Powyżej 4 000 zł', 'Nie wiem, doradź'].map((v) => (
+                <label class="chip"><input type="radio" name="budget_monthly" value={v} /><span>{v}</span></label>
+              ))}
             </div>
-          ))}
+          </div>
           <div class="wz__group">
             <p class="wz__label">Kiedy chcesz zacząć?<span class="wz__req" aria-hidden="true"> *</span></p>
             <div class="chips" role="radiogroup" aria-label="Kiedy chcesz zacząć?">
@@ -266,7 +260,7 @@ const opt = (name: string, values: string[], type: 'radio' | 'checkbox' = 'radio
   // Orientacyjne ceny (PLN netto) spójne z cennikiem na stronie głównej.
   // Zmień tutaj, jeśli zmieni się cennik. null = wycena indywidualna.
   const PRICES = {
-    pro: 3000,     // Pakiet Pro
+    pro: 2000,     // strona one-page / landing page
     unique: 4000,  // Pakiet Unique
   };
 
@@ -320,7 +314,7 @@ const opt = (name: string, values: string[], type: 'radio' | 'checkbox' = 'radio
       if (onePage) return { price: `od ${fmt(PRICES.pro)} zł netto`, note: 'Pakiet Pro: strona one-page lub landing page, wersja na telefony, podstawowe SEO.' };
       return { price: `od ${fmt(PRICES.unique)} zł netto`, note: 'Pakiet Unique: indywidualny projekt, panel do edycji treści, szkolenie z obsługi.' };
     };
-    const fmt = (n: number) => n.toLocaleString('pl-PL');
+    const fmt = (n: number) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '\u00a0');
 
     const show = (i: number) => {
       current = i;
@@ -424,15 +418,6 @@ const opt = (name: string, values: string[], type: 'radio' | 'checkbox' = 'radio
     form.addEventListener('pointerdown', () => (pointer = true));
     form.addEventListener('keydown', () => (pointer = false));
 
-    form.addEventListener('input', (e) => {
-      const t = e.target as HTMLInputElement;
-      if (!t.matches('[data-budget]')) return;
-      // tylko cyfry, z odstępem co trzy (5 000)
-      const digits = t.value.replace(/\D/g, '').slice(0, 9);
-      t.value = digits ? Number(digits).toLocaleString('pl-PL') : '';
-      if (digits) t.closest('.budget')!.querySelector<HTMLInputElement>('[data-budget-unknown]')!.checked = false;
-    });
-
     form.addEventListener('change', (e) => {
       const t = e.target as HTMLInputElement;
       if (!started) { started = true; push({ event: 'wizard_start' }); }
@@ -441,10 +426,6 @@ const opt = (name: string, values: string[], type: 'radio' | 'checkbox' = 'radio
         steps[0].querySelector<HTMLElement>('[data-error]')!.textContent = '';
         // wybór usługi od razu przenosi dalej (tylko myszą/dotykiem, nie przy nawigacji strzałkami)
         if (pointer) go(1);
-      }
-      if (t.matches('[data-budget-unknown]') && t.checked) {
-        const inp = t.closest('.budget')!.querySelector<HTMLInputElement>('[data-budget]')!;
-        inp.value = '';
       }
       if (t.closest('.chips')) steps[current].querySelector<HTMLElement>('[data-error]')!.textContent = '';
       // "Nic z tych rzeczy" wyklucza pozostałe materiały
@@ -670,9 +651,4 @@ const opt = (name: string, values: string[], type: 'radio' | 'checkbox' = 'radio
   .wz__done h2 { font-size: clamp(1.6rem, 1.3rem + 1vw, 2.2rem); }
   .wz__done p { color: var(--ink-muted); max-width: 52ch; }
   .wz__done .btn { border-color: var(--line-light); color: var(--ink); }
-  .budget { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
-  .budget__field { position: relative; flex: 0 1 240px; }
-  .budget__input { padding-right: 92px; font-weight: 560; }
-  .budget__suffix { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); color: var(--ink-muted); pointer-events: none; font-size: var(--t-small); }
-  @media (max-width: 520px) { .budget__field { flex: 1 1 100%; } }
 </style>

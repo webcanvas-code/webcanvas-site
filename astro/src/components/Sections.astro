@@ -28,8 +28,8 @@ function kindOf(s: any, i: number): Kind {
   return 'prose';
 }
 
-// tła: jasne i ciemne na przemian (pomijając zrzut i fakty, które dzielą tło z sąsiadem)
-let dark = true;
+// tła: krem i biel na przemian (zrzut i fakty dzielą kremowe tło z bohaterem); cennik ciemny jako akcent
+let dark = true; // true = to samo tło co bohater (krem)
 const rendered = sections.map((s, i) => {
   const kind = kindOf(s, i);
   if (kind !== 'facts') dark = kind === 'pricing' ? true : !dark;
@@ -42,12 +42,12 @@ const rendered = sections.map((s, i) => {
   if (kind === 'cta') {
     if (ctaMode === 'form') return <ContactSection heading={s.h2} />;
     return (
-      <section class="section section--night-2 sx-cta" id={s.id}>
+      <section class="section section--paper sx-cta" id={s.id}>
         <div class="wrap">
           {s.eyebrow && <p class="eyebrow">{s.eyebrow}</p>}
           <h2 class="h2">{s.h2}</h2>
           {(s.intro ?? []).map((p: string) => <p class="lead sx-cta__lead" set:html={p} />)}
-          <div class="prose prose--dark sx-cta__body" set:html={s.before} />
+          <div class="prose sx-cta__body" set:html={s.before} />
         </div>
       </section>
     );
@@ -78,8 +78,8 @@ const rendered = sections.map((s, i) => {
     );
   }
 
-  const tone = dark ? 'section--night-2' : 'section--paper on-light';
-  const proseCls = dark ? 'prose prose--dark' : 'prose';
+  const tone = kind === 'pricing' ? 'section--dark' : dark ? 'section--paper' : 'section--white';
+  const proseCls = 'prose';
   const sideIntro = (s.intro ?? []).length > 0;
 
   return (
@@ -97,7 +97,7 @@ const rendered = sections.map((s, i) => {
 
         {kind === 'faq' && (
           <div class="sx-faq">
-            <Faq dark={dark} items={s.items.map((it: any) => ({ q: it.title, a: it.html }))} />
+            <Faq items={s.items.map((it: any) => ({ q: it.title, a: it.html }))} />
           </div>
         )}
 
@@ -171,26 +171,26 @@ const rendered = sections.map((s, i) => {
   @media (min-width: 1000px) { .sx-cards--many { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
   .sx-card {
     display: flex; flex-direction: column; gap: 12px; padding: clamp(24px, 2.4vw, 32px);
-    border-radius: var(--r-lg); border: 1px solid var(--line-light); background: var(--white);
+    border-radius: var(--r-lg); border: 1px solid var(--line); background: var(--card);
     transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
   }
   .sx-card:hover { transform: translateY(-2px); box-shadow: 0 24px 48px -32px rgb(26 21 19 / 0.35); }
-  .section--night-2 .sx-card { background: var(--night); border-color: var(--line-dark); }
-  .section--night-2 .sx-card:hover { border-color: rgb(255 255 255 / 0.2); box-shadow: none; }
+  .section--dark .sx-card { background: var(--bg); border-color: var(--line); }
+  .section--dark .sx-card:hover { border-color: var(--line-strong); box-shadow: none; }
   .sx-card h3 { font-size: var(--t-h3); }
   .sx-card__body { font-size: 1rem; line-height: 1.65; color: var(--ink-muted); }
-  .section--night-2 .sx-card__body { color: var(--snow-muted); }
+  .section--dark .sx-card__body { color: var(--fg-muted); }
   .sx-card__body > :global(* + *) { margin-top: 0.7em; }
   .sx-card .link { margin-top: auto; }
 
   .sx-cards--steps { counter-reset: s; }
   .sx-cards--steps .sx-card { border-radius: 0; border: 0; border-top: 1px solid var(--line-light); background: transparent; padding: 28px 0 0; position: relative; }
-  .section--night-2 .sx-cards--steps .sx-card { border-top-color: var(--line-dark); background: transparent; }
+  .section--dark .sx-cards--steps .sx-card { border-top-color: var(--line); background: transparent; }
   .sx-cards--steps .sx-card::before { content: ''; position: absolute; top: -1px; left: 0; width: 48px; height: 2px; background: var(--rose); transition: width .5s var(--ease); }
   .sx-cards--steps .sx-card:hover { transform: none; box-shadow: none; }
   .sx-cards--steps .sx-card:hover::before { width: 100%; }
   .sx-card__no { font-size: clamp(2.3rem, 2rem + 1.2vw, 3.2rem); font-weight: 640; letter-spacing: -0.04em; line-height: 1; color: transparent; -webkit-text-stroke: 1px var(--rose); margin-bottom: 12px; }
-  .section--night-2 .sx-card__no { -webkit-text-stroke-color: rgb(253 164 175 / 0.6); }
+  .section--dark .sx-card__no { -webkit-text-stroke-color: rgb(253 164 175 / 0.6); }
 
   /* cennik */
   .sx-plans { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
@@ -214,26 +214,26 @@ const rendered = sections.map((s, i) => {
   .sx-links > li { display: flex; }
   .sx-link {
     flex: 1; display: flex; flex-direction: column; gap: 12px; padding: clamp(24px, 2.4vw, 32px); text-decoration: none;
-    border-radius: var(--r-lg); border: 1px solid var(--line-light); background: var(--white);
+    border-radius: var(--r-lg); border: 1px solid var(--line); background: var(--card);
     transition: transform .3s var(--ease), border-color .3s var(--ease);
   }
-  .section--night-2 .sx-link { background: var(--night); border-color: var(--line-dark); }
+  .section--dark .sx-link { background: var(--bg); border-color: var(--line); }
   .sx-link:hover { transform: translateY(-2px); border-color: var(--rose); }
   .sx-link h3 { font-size: var(--t-h3); }
   .sx-link__text { color: var(--ink-muted); display: grid; gap: 8px; }
-  .section--night-2 .sx-link__text { color: var(--snow-muted); }
+  .section--dark .sx-link__text { color: var(--fg-muted); }
   .sx-link__text :global(p:first-child:not(:only-child)) { order: -1; font-size: var(--t-label); font-weight: 580; color: var(--rose-strong); }
-  .section--night-2 .sx-link__text :global(p:first-child:not(:only-child)) { color: var(--rose-soft); }
+  .section--dark .sx-link__text :global(p:first-child:not(:only-child)) { color: var(--accent-fg); }
   .sx-link__more { margin-top: auto; padding-top: 8px; display: inline-flex; align-items: center; gap: 8px; font-weight: 580; color: var(--rose-strong); }
-  .section--night-2 .sx-link__more { color: var(--rose-soft); }
+  .section--dark .sx-link__more { color: var(--accent-fg); }
   .sx-link__more :global(svg) { transition: transform .25s var(--ease); }
   .sx-link:hover .sx-link__more :global(svg) { transform: translateX(4px); }
 
   /* zrzut ekranu (case study) */
-  .sx-shot { background: var(--night); padding-bottom: clamp(48px, 5vw, 80px); }
+  .sx-shot { background: var(--paper); padding-bottom: clamp(48px, 5vw, 80px); }
   .sx-shot__grid { display: grid; gap: 24px; }
   @media (min-width: 900px) { .sx-shot__grid--two { grid-template-columns: 1fr 1fr; align-items: start; } }
-  .sx-shot__frame { margin: 0; border-radius: 14px; overflow: hidden; background: #231e1b; border: 1px solid rgb(255 255 255 / 0.12); box-shadow: 0 40px 80px -30px rgb(0 0 0 / 0.65); }
+  .sx-shot__frame { margin: 0; border-radius: 14px; overflow: hidden; background: #231e1b; border: 1px solid rgb(255 255 255 / 0.12); box-shadow: 0 40px 80px -36px rgb(26 21 19 / 0.4); }
   .sx-shot__bar { display: flex; align-items: center; gap: 6px; height: 34px; padding: 0 12px; }
   .sx-shot__bar i { width: 9px; height: 9px; border-radius: 50%; background: rgb(255 255 255 / 0.18); }
   .sx-shot__bar i:first-child { background: var(--rose); }
@@ -241,10 +241,10 @@ const rendered = sections.map((s, i) => {
   .sx-shot__frame img { width: 100%; max-height: 760px; object-fit: cover; object-position: top; background: #fff; }
 
   /* fakty (case study) */
-  .sx-facts { background: var(--night); padding-bottom: clamp(56px, 6vw, 96px); }
-  .sx-facts__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); border-top: 1px solid var(--line-dark); margin-block: 0; }
+  .sx-facts { background: var(--paper); padding-bottom: clamp(56px, 6vw, 96px); }
+  .sx-facts__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); border-top: 1px solid var(--line); margin-block: 0; }
   .sx-facts__grid > div { padding: 24px 24px 0 0; }
-  .sx-facts__grid dt { font-size: var(--t-label); color: var(--snow-muted); font-weight: 540; }
+  .sx-facts__grid dt { font-size: var(--t-label); color: var(--fg-muted); font-weight: 540; }
   .sx-facts__grid dd { margin: 6px 0 0; font-size: 1.15rem; font-weight: 580; letter-spacing: -0.01em; }
 
   .sx-cta__lead { margin-top: 20px; }

@@ -2,10 +2,10 @@
 import Icon from './Icon.astro';
 
 interface Item { q: string; a: string }
-interface Props { items: Item[]; dark?: boolean }
-const { items, dark = false } = Astro.props;
+interface Props { items: Item[] }
+const { items } = Astro.props;
 ---
-<div class:list={['faq-list', { 'faq-list--dark': dark }]}>
+<div class="faq-list">
   {items.map((f, i) => (
     <details open={i === 0}>
       <summary><h3>{f.q}</h3><span class="faq-list__icon" aria-hidden="true"><Icon name="plus" size={20} /></span></summary>
@@ -28,9 +28,4 @@ const { items, dark = false } = Astro.props;
   .faq-list__a :global(a) { color: var(--rose-strong); }
   @media (max-width: 640px) { .faq-list__a { padding-right: 0; } }
 
-  .faq-list--dark details, .faq-list--dark details:first-child { border-color: var(--line-dark); }
-  .faq-list--dark .faq-list__icon { border-color: var(--line-dark); }
-  .faq-list--dark summary:hover h3 { color: var(--rose-soft); }
-  .faq-list--dark .faq-list__a { color: var(--snow-muted); }
-  .faq-list--dark .faq-list__a :global(a) { color: var(--rose-soft); }
 </style>

@@ -121,7 +121,7 @@ const { heading = 'Rozpocznijmy współpracę.' } = Astro.props;
 </script>
 
 <style>
-  .contact { background: var(--night-2); }
+  .contact { background: var(--paper); }
   .contact__grid { display: grid; gap: 56px; grid-template-columns: minmax(0, 1fr); }
   @media (min-width: 1000px) { .contact__grid { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 96px; } }
   .contact__intro .lead { margin-top: 24px; }
@@ -130,11 +130,11 @@ const { heading = 'Rozpocznijmy współpracę.' } = Astro.props;
     display: inline-flex; align-items: center; gap: 14px; min-height: 48px;
     font-size: 1.15rem; font-weight: 540; text-decoration: none;
   }
-  .contact__list :global(svg) { color: var(--rose-soft); }
-  .contact__list a:hover { color: var(--rose-soft); }
+  .contact__list :global(svg) { color: var(--accent-fg); }
+  .contact__list a:hover { color: var(--accent-fg); }
 
   .form {
-    background: var(--paper); color: var(--ink);
+    background: var(--white); color: var(--ink); border: 1px solid var(--line-light);
     border-radius: var(--r-lg); padding: clamp(24px, 4vw, 48px);
     display: grid; gap: 20px; align-content: start;
   }

@@ -6,7 +6,7 @@ import { company, mainNav, serviceLinks, cityLinks } from '../data/site';
 
 const year = new Date().getFullYear();
 ---
-<footer class="footer">
+<footer class="footer theme-dark">
   <div class="wrap">
     <div class="footer__top">
       <div class="person">
@@ -65,27 +65,27 @@ const year = new Date().getFullYear();
 </footer>
 
 <style>
-  .footer { background: #0e0c0b; color: var(--snow); padding: clamp(72px, 8vw, 120px) 0 32px; }
+  .footer { background: #0e0c0b; color: var(--fg); padding: clamp(72px, 8vw, 120px) 0 32px; }
   .footer a { text-decoration: none; transition: color .2s var(--ease); }
   .footer__top {
     display: grid; gap: 56px;
     grid-template-columns: minmax(0, 1fr);
-    padding-bottom: 56px; border-bottom: 1px solid var(--line-dark);
+    padding-bottom: 56px; border-bottom: 1px solid var(--line);
   }
   @media (min-width: 1000px) { .footer__top { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 80px; } }
 
   .person { display: block; }
   .person__name { font-size: 1.35rem; font-weight: 620; letter-spacing: -0.02em; }
-  .person__role { color: var(--snow-muted); margin-top: 6px; max-width: 42ch; }
+  .person__role { color: var(--fg-muted); margin-top: 6px; max-width: 42ch; }
   .person__contact { display: flex; flex-direction: column; gap: 4px; margin-top: 16px; }
   .person__contact a { display: inline-flex; align-items: center; gap: 10px; min-height: 36px; width: fit-content; font-weight: 520; }
-  .person__contact a:hover { color: var(--rose-soft); }
-  .person__contact :global(svg) { color: var(--rose-soft); }
+  .person__contact a:hover { color: var(--accent-fg); }
+  .person__contact :global(svg) { color: var(--accent-fg); }
 
   .footer__cols { display: grid; gap: 32px; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); }
-  .footer__cols h3 { font-size: var(--t-label); font-weight: 560; letter-spacing: 0.02em; color: var(--snow-muted); margin-bottom: 14px; }
-  .footer__cols a { display: inline-block; padding: 6px 0; color: var(--snow); font-size: 0.95rem; }
-  .footer__cols a:hover { color: var(--rose-soft); }
+  .footer__cols h3 { font-size: var(--t-label); font-weight: 560; letter-spacing: 0.02em; color: var(--fg-muted); margin-bottom: 14px; }
+  .footer__cols a { display: inline-block; padding: 6px 0; color: var(--fg); font-size: 0.95rem; }
+  .footer__cols a:hover { color: var(--accent-fg); }
 
   .footer__brand { display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between; padding: 40px 0; }
   .footer__brand img { width: 150px; height: auto; }
@@ -93,16 +93,16 @@ const year = new Date().getFullYear();
   .footer__socials a {
     display: inline-flex; align-items: center; justify-content: center; gap: 8px;
     min-width: 44px; height: 44px; padding: 0 12px; border-radius: 999px;
-    border: 1px solid var(--line-dark); font-size: var(--t-small); font-weight: 540;
+    border: 1px solid var(--line); font-size: var(--t-small); font-weight: 540;
   }
-  .footer__socials a:hover { border-color: var(--snow); }
+  .footer__socials a:hover { border-color: var(--fg); }
   .footer__google :global(svg) { color: var(--amber); }
 
   .footer__legal {
     display: flex; flex-wrap: wrap; gap: 8px 32px; justify-content: space-between;
-    font-size: var(--t-small); color: var(--snow-muted);
-    padding-top: 24px; border-top: 1px solid var(--line-dark);
+    font-size: var(--t-small); color: var(--fg-muted);
+    padding-top: 24px; border-top: 1px solid var(--line);
   }
   .footer__legal a, .footer__legal :global(button) { display: inline-flex; align-items: center; min-height: 44px; }
-  .footer__legal a:hover { color: var(--snow); }
+  .footer__legal a:hover { color: var(--fg); }
 </style>

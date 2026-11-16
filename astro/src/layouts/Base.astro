@@ -65,7 +65,7 @@ const schemas = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     {robots && <meta name="robots" content={robots} />}
-    <meta name="theme-color" content="#141110" />
+    <meta name="theme-color" content="#fffdfa" />
 
     <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content={company.name} />
@@ -94,6 +94,6 @@ const schemas = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
       <slot />
     </main>
     <Footer />
-    <script is:inline src="/js/cookies.js?v=1" defer></script>
+    <script is:inline src="/js/cookies.js?v=2" defer></script>
   </body>
 </html>

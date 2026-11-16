@@ -49,24 +49,24 @@
 
     var css =
         '#wc-cookie-banner{position:fixed;left:16px;right:16px;bottom:16px;z-index:2147483000;max-width:520px;' +
-        'background:#2a2421;color:#c2b8b0;border:1px solid rgba(255,255,255,.16);border-radius:20px;' +
-        'box-shadow:0 30px 60px -20px rgba(0,0,0,.6);padding:24px;' +
+        'background:#fffdfa;color:#4d443e;border:1px solid rgba(26,21,19,.12);border-radius:20px;' +
+        'box-shadow:0 30px 60px -24px rgba(26,21,19,.35);padding:24px;' +
         'font:15px/1.6 "Onest Variable",Onest,system-ui,-apple-system,"Segoe UI",sans-serif;display:flex;flex-direction:column;gap:20px;' +
         'transform:translateY(calc(100% + 32px));opacity:0;transition:transform .45s cubic-bezier(.2,.7,.2,1),opacity .3s}' +
         '#wc-cookie-banner.wc-show{transform:none;opacity:1}' +
         '#wc-cookie-banner p{margin:0}' +
-        '#wc-cookie-banner strong{color:#f6f1ea;display:flex;align-items:center;gap:10px;margin-bottom:8px;font-size:17px;font-weight:620;letter-spacing:-.01em}' +
+        '#wc-cookie-banner strong{color:#1a1513;display:flex;align-items:center;gap:10px;margin-bottom:8px;font-size:17px;font-weight:620;letter-spacing:-.01em}' +
         '#wc-cookie-banner strong:before{content:"";width:8px;height:8px;border-radius:2px;background:#e11d48;transform:rotate(45deg)}' +
-        '#wc-cookie-banner a{color:#fda4af;font-weight:500;text-underline-offset:3px}' +
+        '#wc-cookie-banner a{color:#be123c;font-weight:500;text-underline-offset:3px}' +
         '#wc-cookie-banner .wc-btns{display:flex;gap:10px;flex-wrap:wrap}' +
         '#wc-cookie-banner button{flex:1 1 140px;min-height:48px;padding:0 22px;border-radius:999px;font:580 15px/1.2 inherit;cursor:pointer;' +
-        'border:1px solid rgba(255,255,255,.22);transition:background-color .2s,color .2s,border-color .2s,transform .2s}' +
+        'border:1px solid rgba(26,21,19,.22);transition:background-color .2s,color .2s,border-color .2s,transform .2s}' +
         '#wc-cookie-banner button:active{transform:translateY(1px) scale(.985)}' +
-        '#wc-cookie-banner .wc-reject{background:transparent;color:#f6f1ea}' +
-        '#wc-cookie-banner .wc-reject:hover{border-color:#f6f1ea;background:rgba(255,255,255,.06)}' +
+        '#wc-cookie-banner .wc-reject{background:transparent;color:#1a1513}' +
+        '#wc-cookie-banner .wc-reject:hover{border-color:#1a1513;background:rgba(26,21,19,.04)}' +
         '#wc-cookie-banner .wc-accept{background:#e11d48;border-color:#e11d48;color:#fff}' +
         '#wc-cookie-banner .wc-accept:hover{background:#be123c;border-color:#be123c}' +
-        '#wc-cookie-banner button:focus-visible,#wc-cookie-banner a:focus-visible{outline:2px solid #fda4af;outline-offset:3px}' +
+        '#wc-cookie-banner button:focus-visible,#wc-cookie-banner a:focus-visible{outline:2px solid #e11d48;outline-offset:3px}' +
         '@media (min-width:640px){#wc-cookie-banner{left:24px;right:auto;bottom:24px}}' +
         '@media (prefers-reduced-motion:reduce){#wc-cookie-banner{transition:none}}' +
         '.wc-footer-links{display:inline-flex;gap:16px;align-items:center;flex-wrap:wrap}' +

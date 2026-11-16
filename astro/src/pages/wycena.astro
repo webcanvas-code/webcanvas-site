@@ -190,7 +190,7 @@ const opt = (name: string, values: string[], type: 'radio' | 'checkbox' = 'radio
         <fieldset class="wz__step" data-step="4" hidden>
           <legend class="wz__q">Gdzie wysłać wycenę?</legend>
 
-          <div class="estimate" data-estimate>
+          <div class="estimate theme-dark" data-estimate>
             <p class="estimate__label">Orientacyjnie</p>
             <p class="estimate__price" data-estimate-price></p>
             <p class="estimate__note" data-estimate-note></p>
@@ -488,7 +488,7 @@ const opt = (name: string, values: string[], type: 'radio' | 'checkbox' = 'radio
 
 <style>
   .wz {
-    position: relative; overflow: hidden;
+    position: relative; overflow: hidden; background: var(--paper);
     padding: clamp(40px, 6vw, 96px) 0 var(--sec-y);
     min-height: calc(100svh - var(--nav-h));
   }
@@ -501,18 +501,19 @@ const opt = (name: string, values: string[], type: 'radio' | 'checkbox' = 'radio
 
   .wz__intro h1 { font-size: clamp(2.2rem, 1.3rem + 3vw, 4rem); font-weight: 680; letter-spacing: -0.04em; line-height: 1.03; }
   .wz__intro h1 .accent { color: var(--rose); }
-  .wz__lead { font-size: var(--t-lead); line-height: 1.55; color: var(--snow-muted); max-width: 42ch; }
-  .wz__facts { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 10px 22px; color: var(--snow); font-weight: 540; }
+  .wz__lead { font-size: var(--t-lead); line-height: 1.55; color: var(--fg-muted); max-width: 42ch; }
+  .wz__facts { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 10px 22px; color: var(--fg); font-weight: 540; }
   .wz__facts li { display: inline-flex; align-items: center; gap: 8px; }
-  .wz__facts :global(svg) { color: var(--rose-soft); }
+  .wz__facts :global(svg) { color: var(--accent-fg); }
 
   /* ---------- kreator: lewa kolumna = kroki z odpowiedziami, prawa = pytanie ---------- */
   .wizard {
     --pad: clamp(22px, 4vw, 52px);
     position: relative; margin-top: clamp(36px, 4vw, 56px);
     display: grid; grid-template-columns: minmax(0, 1fr);
-    background: var(--paper); color: var(--ink); border-radius: var(--r-lg);
-    box-shadow: 0 30px 80px -40px rgb(0 0 0 / 0.6);
+    background: var(--white); color: var(--ink); border-radius: var(--r-lg);
+    border: 1px solid var(--line-light);
+    box-shadow: 0 30px 80px -48px rgb(26 21 19 / 0.35);
   }
   .wizard__left { display: none; }
   .wizard__right { display: flex; flex-direction: column; }
@@ -522,7 +523,7 @@ const opt = (name: string, values: string[], type: 'radio' | 'checkbox' = 'radio
     .wizard { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
     .wizard__left {
       display: flex; flex-direction: column;
-      padding: var(--pad); background: var(--paper-2); border-radius: var(--r-lg) 0 0 var(--r-lg);
+      padding: var(--pad); background: var(--paper); border-radius: var(--r-lg) 0 0 var(--r-lg);
     }
     .wizard__right { min-height: 640px; }
     .wz__bar { display: none; }
@@ -543,7 +544,7 @@ const opt = (name: string, values: string[], type: 'radio' | 'checkbox' = 'radio
   .toc__title { display: block; font-weight: 620; color: var(--ink); }
   .toc__sum { display: block; margin-top: 2px; font-size: var(--t-small); line-height: 1.45; overflow-wrap: anywhere; }
   .toc__edit { display: none; font-size: var(--t-small); font-weight: 580; color: var(--rose-strong); line-height: 1.5; }
-  .is-current .toc__btn { background: var(--paper); box-shadow: 0 1px 2px rgb(26 21 19 / 0.08); }
+  .is-current .toc__btn { background: var(--white); box-shadow: 0 1px 2px rgb(26 21 19 / 0.08); }
   .is-current .toc__num { color: var(--rose); }
   .is-done .toc__num { color: var(--rose-strong); }
   .is-done .toc__sum { color: var(--ink); }
@@ -626,12 +627,12 @@ const opt = (name: string, values: string[], type: 'radio' | 'checkbox' = 'radio
 
   .estimate {
     padding: 20px 22px; border-radius: var(--r-md);
-    background: var(--night); color: var(--snow);
+    background: var(--bg); color: var(--fg);
     display: grid; gap: 4px;
   }
-  .estimate__label { font-size: var(--t-label); font-weight: 560; color: var(--rose-soft); }
+  .estimate__label { font-size: var(--t-label); font-weight: 560; color: var(--accent-fg); }
   .estimate__price { font-size: clamp(1.6rem, 1.3rem + 1vw, 2.1rem); font-weight: 680; letter-spacing: -0.03em; }
-  .estimate__note { font-size: var(--t-small); color: var(--snow-muted); line-height: 1.5; }
+  .estimate__note { font-size: var(--t-small); color: var(--fg-muted); line-height: 1.5; }
 
   .wz__nav { display: flex; justify-content: space-between; gap: 12px; margin-top: auto; padding-top: 24px; border-top: 1px solid var(--line-light); }
   .wz__nav[hidden] { display: none; }

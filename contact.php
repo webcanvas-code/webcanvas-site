@@ -42,28 +42,68 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($project_type !== '') $email_content .= "Rodzaj projektu: $project_type\n";
         $email_content .= "\nWiadomość:\n$message\n\n";
 
-    } elseif ($form_type === 'quote') {
-        // --- LOGIKA FORMULARZA WYCENY ---
-        $project_type = $_POST['project_type'] ?? 'Nie wybrano';
-        $budget = $_POST['budget'] ?? 'Nie wybrano';
-        $feature_list = $_POST['features'] ?? [];
-        $features = is_array($feature_list) ? implode(", ", $feature_list) : 'Brak';
-        
-        // Mapowanie wartości budżetu na czytelne etykiety
-        $budget_labels = [
-            'low' => '2,000 - 4,000 PLN',
-            'mid' => '4,000 - 9,000 PLN',
-            'custom' => 'Pakiet godzinowy'
-        ];
-        $budget_display = $budget_labels[$budget] ?? $budget;
+    } elseif ($form_type === 'wizard') {
+        // --- KREATOR WYCENY (/wycena.html) ---
+        // Pułapka na boty: ukryte pole musi zostać puste. Udajemy sukces, żeby bot nie próbował dalej.
+        if (!empty($_POST['website'])) {
+            http_response_code(200);
+            echo json_encode(["success" => "true", "message" => "Wiadomość została wysłana."]);
+            exit;
+        }
 
-        $subject = "Zapytanie o wycenę ze strony WebCanvas";
-        
-        $email_content = "Otrzymałeś nowe zapytanie o wycenę:\n\n";
-        $email_content .= "Rodzaj projektu: $project_type\n";
-        $email_content .= "Budżet: $budget_display\n";
-        $email_content .= "Dodatkowe funkcje: $features\n";
-        $email_content .= "Email klienta: $from\n\n";
+        $clean = function ($v, $max = 200) {
+            if (is_array($v)) $v = implode(', ', $v);
+            return mb_substr(trim(strip_tags((string)$v)), 0, $max);
+        };
+        $line = function ($v) use ($clean) { return str_replace(["\r", "\n"], ' ', $clean($v)); };
+
+        $name = $line($_POST['name'] ?? '');
+        $service = $line($_POST['service'] ?? '');
+        if (empty($name)) $errors[] = "Pole Imię jest wymagane.";
+        if (empty($service)) $errors[] = "Wybierz usługę.";
+
+        $fields = [
+            'Usługa' => 'service',
+            'Liczba podstron' => 'pages',
+            'Cel strony' => 'goal',
+            'Liczba produktów' => 'products',
+            'Funkcje' => 'features',
+            'Problemy obecnej strony' => 'problems',
+            'Kanały marketingu' => 'channels',
+            'Budżet na projekt (netto)' => 'budget',
+            'Budżet miesięczny (zł)' => 'budget_monthly',
+            'Budżet miesięczny' => 'budget_monthly_unknown',
+            'Obecna strona' => 'url',
+            'Materiały klienta' => 'materials',
+            'Termin' => 'timeline',
+            'Szacunek pokazany klientowi' => 'estimate',
+        ];
+
+        $subject = "Kreator wyceny: $service, $name";
+        $email_content = "Nowe zapytanie z kreatora wyceny (web-canvas.pl/wycena.html)\n\n";
+        $email_content .= "KONTAKT\n";
+        $email_content .= "Imię: $name\n";
+        $company_name = $line($_POST['company'] ?? '');
+        if ($company_name !== '') $email_content .= "Firma: $company_name\n";
+        $email_content .= "Email: $from\n";
+        $phone = $line($_POST['phone'] ?? '');
+        if ($phone !== '') $email_content .= "Telefon: $phone\n";
+        $pref = $line($_POST['contact_pref'] ?? '');
+        if ($pref !== '') $email_content .= "Preferowany kontakt: $pref\n";
+
+        $email_content .= "\nPROJEKT\n";
+        foreach ($fields as $label => $key) {
+            if (!isset($_POST[$key])) continue;
+            $val = $line($_POST[$key], 500);
+            if ($val !== '') $email_content .= "$label: $val\n";
+        }
+        $app = $clean($_POST['app_description'] ?? '', 3000);
+        if ($app !== '') $email_content .= "\nOpis aplikacji:\n$app\n";
+        $message = $clean($_POST['message'] ?? '', 3000);
+        if ($message !== '') $email_content .= "\nDodatkowe informacje:\n$message\n";
+
+        $tracking = $clean($_POST['tracking'] ?? '', 1500);
+        if ($tracking !== '') $email_content .= "\nŹRÓDŁO (UTM)\n$tracking\n";
     }
 
     // Jeśli są błędy, zwróć je

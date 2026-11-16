@@ -1,0 +1,678 @@
+---
+// Kreator wyceny: /wycena.html
+// Strona docelowa dla kampanii (Meta / Google). Parametry UTM i identyfikatory kliknięć
+// są zapisywane i wysyłane razem z zapytaniem (contact.php, form_type=wizard).
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { company } from '../data/site';
+
+// Pytania kroku 2 zależą od wybranej usługi.
+const services = [
+  { id: 'strona', icon: 'browser', label: 'Strona firmowa', text: 'Wizytówka albo kilka podstron o firmie i usługach.' },
+  { id: 'landing', icon: 'target', label: 'Landing page', text: 'Jedna strona pod kampanię, ofertę lub zapisy.' },
+  { id: 'sklep', icon: 'cart', label: 'Sklep internetowy', text: 'Sprzedaż online z płatnościami i wysyłką.' },
+  { id: 'redesign', icon: 'pen', label: 'Odświeżenie strony', text: 'Masz stronę, ale wygląda staro albo nie działa.' },
+  { id: 'aplikacja', icon: 'app', label: 'Aplikacja / system', text: 'Panel, rezerwacje, kalkulator, narzędzie dla firmy.' },
+  { id: 'marketing', icon: 'megaphone', label: 'SEO i reklamy', text: 'Więcej klientów z Google i Facebooka.' },
+];
+
+const chapters = [
+  { title: 'Usługa', hint: 'Co mam dla Ciebie zrobić' },
+  { title: 'Zakres', hint: 'Szczegóły projektu' },
+  { title: 'Materiały i termin', hint: 'Co już masz i kiedy startujemy' },
+  { title: 'Kontakt', hint: 'Gdzie wysłać wycenę' },
+];
+
+const opt = (name: string, values: string[], type: 'radio' | 'checkbox' = 'radio') => ({ name, values, type });
+---
+<Base
+  title="Darmowa wycena strony internetowej | WebCanvas"
+  description="Odpowiedz na kilka pytań o stronę, sklep albo kampanię. Dostaniesz orientacyjną cenę od razu, a dokładną wycenę w ciągu 24 godzin. Bez zobowiązań."
+  path="/wycena.html"
+>
+  <section class="wz" aria-labelledby="wz-h">
+    <div class="wrap">
+      <div class="wz__intro" data-enter>
+        <div>
+          <p class="eyebrow">Bezpłatna wycena</p>
+          <h1 id="wz-h">Ile będzie kosztować <span class="accent">Twoja strona?</span></h1>
+        </div>
+        <div>
+          <p class="wz__lead">Zaznacz, czego potrzebujesz. Orientacyjną cenę zobaczysz od razu, a dokładną wycenę wyślę w ciągu 24 godzin.</p>
+          <ul class="wz__facts">
+            <li><Icon name="clock" size={18} />Około 2 minuty</li>
+            <li><Icon name="check" size={18} />Bez zobowiązań</li>
+            <li><Icon name="star" size={18} />{company.rating} w opiniach Google</li>
+          </ul>
+        </div>
+      </div>
+
+      <form class="wizard on-light" action="/contact.php" method="post" novalidate data-wizard>
+        <input type="hidden" name="form_type" value="wizard" />
+        <input type="hidden" name="estimate" value="" />
+        <input type="hidden" name="tracking" value="" />
+        <div class="wz__hp" aria-hidden="true">
+          <label for="wz-website">Nie wypełniaj tego pola</label>
+          <input id="wz-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <!-- LEWA KOLUMNA: kroki z odpowiedziami -->
+        <aside class="wizard__left" aria-label="Kroki wyceny">
+          <p class="wizard__kicker">Twoja wycena</p>
+          <ol class="toc">
+            {chapters.map((c, i) => (
+              <li class="toc__item" data-toc={i}>
+                <button class="toc__btn" type="button" data-goto={i} disabled>
+                  <span class="toc__num">{String(i + 1).padStart(2, '0')}</span>
+                  <span class="toc__body">
+                    <span class="toc__title">{c.title}</span>
+                    <span class="toc__sum" data-sum={i} data-hint={c.hint}>{c.hint}</span>
+                  </span>
+                  <span class="toc__edit">Zmień</span>
+                </button>
+              </li>
+            ))}
+          </ol>
+          <p class="wizard__alt">Wolisz porozmawiać?<br /><a class="link" href={company.phoneHref}>{company.phone}</a></p>
+        </aside>
+
+        <!-- PRAWA KOLUMNA: bieżące pytanie -->
+        <div class="wizard__right">
+        <div class="wizard__content" data-content>
+        <div class="wz__progress">
+          <p class="wz__count" aria-live="polite"><span data-step-num>1</span> / 4 · <span data-step-title>Usługa</span></p>
+          <div class="wz__bar" aria-hidden="true"><span data-bar></span></div>
+        </div>
+
+        <!-- KROK 1 -->
+        <fieldset class="wz__step" data-step="1">
+          <legend class="wz__q">Czego potrzebujesz?</legend>
+          <div class="wz__tiles">
+            {services.map((s) => (
+              <label class="tile">
+                <input type="radio" name="service" value={s.label} data-service={s.id} required />
+                <span class="tile__icon"><Icon name={s.icon} size={22} /></span>
+                <span class="tile__label">{s.label}</span>
+                <span class="tile__text">{s.text}</span>
+              </label>
+            ))}
+          </div>
+          <p class="wz__error" data-error></p>
+        </fieldset>
+
+        <!-- KROK 2: zakres, osobno dla każdej usługi -->
+        <fieldset class="wz__step" data-step="2" hidden>
+          <legend class="wz__q">Zakres projektu</legend>
+
+          {[
+            { for: 'strona redesign', q: 'Ile mniej więcej podstron?', ...opt('pages', ['Jedna (one-page)', 'Do 5', '6–15', 'Więcej niż 15', 'Nie wiem']) },
+            { for: 'strona redesign landing', q: 'Co ma się znaleźć na stronie?', hint: 'Możesz zaznaczyć kilka.', ...opt('features', ['Formularz kontaktowy', 'Galeria / realizacje', 'Blog lub aktualności', 'Rezerwacje online', 'Kilka wersji językowych', 'Mapa i dojazd', 'Opinie klientów', 'Integracja z innym systemem'], 'checkbox') },
+            { for: 'landing', q: 'Jaki jest cel strony?', ...opt('goal', ['Zapytania i telefony', 'Zapisy (np. na szkolenie)', 'Sprzedaż produktu', 'Pobranie materiału / e-booka', 'Inny']) },
+            { for: 'sklep', q: 'Ile produktów na start?', ...opt('products', ['Do 50', '50–500', 'Ponad 500', 'Nie wiem']) },
+            { for: 'sklep', q: 'Czego potrzebuje sklep?', hint: 'Możesz zaznaczyć kilka.', ...opt('features', ['Płatności online (BLIK, karty)', 'Integracja z kurierami / InPost', 'Faktury i księgowość', 'Import z hurtowni', 'Allegro', 'Kilka wersji językowych'], 'checkbox') },
+            { for: 'redesign', q: 'Co jest nie tak z obecną stroną?', hint: 'Możesz zaznaczyć kilka.', ...opt('problems', ['Wygląda przestarzale', 'Źle działa na telefonie', 'Wolno się ładuje', 'Nie przynosi zapytań', 'Trudno ją edytować', 'Nie ma jej w Google'], 'checkbox') },
+            { for: 'marketing', q: 'Co Cię interesuje?', hint: 'Możesz zaznaczyć kilka.', ...opt('channels', ['Pozycjonowanie w Google (SEO)', 'Wizytówka Google', 'Reklamy Google Ads', 'Reklamy na Facebooku i Instagramie', 'Jeszcze nie wiem, doradź'], 'checkbox') },
+          ].map((g) => (
+            <div class="wz__group" data-for={g.for}>
+              <p class="wz__label">{g.q}{g.type === 'radio' && <span class="wz__req" aria-hidden="true"> *</span>}</p>
+              {g.hint && <p class="wz__hint">{g.hint}</p>}
+              <div class="chips" role={g.type === 'radio' ? 'radiogroup' : 'group'} aria-label={g.q}>
+                {g.values.map((v) => (
+                  <label class="chip">
+                    <input type={g.type} name={g.type === 'checkbox' ? `${g.name}[]` : g.name} value={v} data-required={g.type === 'radio' ? '' : undefined} />
+                    <span>{v}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+          ))}
+
+          <div class="wz__group" data-for="redesign marketing">
+            <label class="wz__label" for="wz-url">Adres obecnej strony</label>
+            <input class="input" id="wz-url" name="url" type="text" inputmode="url" placeholder="np. mojafirma.pl" />
+          </div>
+
+          <div class="wz__group" data-for="aplikacja">
+            <label class="wz__label" for="wz-app">Opisz krótko, co ma robić aplikacja<span class="wz__req" aria-hidden="true"> *</span></label>
+            <p class="wz__hint">Kto będzie z niej korzystać i jaki problem ma rozwiązać.</p>
+            <textarea class="input" id="wz-app" name="app_description" rows="5" data-required-for="aplikacja"></textarea>
+          </div>
+          <p class="wz__error" data-error></p>
+        </fieldset>
+
+        <!-- KROK 3 -->
+        <fieldset class="wz__step" data-step="3" hidden>
+          <legend class="wz__q">Materiały i termin</legend>
+          <div class="wz__group" data-for="strona landing sklep redesign aplikacja">
+            <p class="wz__label">Co już masz?</p>
+            <p class="wz__hint">Brak materiałów to nie problem, pomogę je przygotować.</p>
+            <div class="chips" role="group" aria-label="Co już masz?">
+              {['Logo', 'Teksty', 'Zdjęcia', 'Domenę', 'Hosting', 'Nic z tych rzeczy'].map((v) => (
+                <label class="chip"><input type="checkbox" name="materials[]" value={v} /><span>{v}</span></label>
+              ))}
+            </div>
+          </div>
+          <div class="wz__group" data-for="strona landing sklep redesign aplikacja">
+            <p class="wz__label">Jaki budżet bierzesz pod uwagę?</p>
+            <p class="wz__hint">Kwoty netto. Pomoże dobrać zakres do Twoich możliwości. Opcjonalnie.</p>
+            <div class="chips" role="radiogroup" aria-label="Jaki budżet bierzesz pod uwagę?">
+              {['2 000–3 000 zł', '3 000–5 000 zł', '5 000–8 000 zł', '8 000–12 000 zł', 'Powyżej 12 000 zł', 'Nie wiem, doradź'].map((v) => (
+                <label class="chip"><input type="radio" name="budget" value={v} /><span>{v}</span></label>
+              ))}
+            </div>
+          </div>
+          {[
+            { for: 'marketing', id: 'wz-budget-m', name: 'budget_monthly', q: 'Jaki budżet miesięczny bierzesz pod uwagę?', hint: 'Łącznie z budżetem na reklamy. Opcjonalnie.', suffix: 'zł / mies.' },
+          ].map((b) => (
+            <div class="wz__group" data-for={b.for}>
+              <label class="wz__label" for={b.id}>{b.q}</label>
+              <p class="wz__hint">{b.hint}</p>
+              <div class="budget">
+                <div class="budget__field">
+                  <input class="input budget__input" id={b.id} name={b.name} type="text" inputmode="numeric" placeholder="np. 5000" maxlength="20" data-budget />
+                  <span class="budget__suffix" aria-hidden="true">{b.suffix}</span>
+                </div>
+                <label class="chip"><input type="checkbox" name={`${b.name}_unknown`} value="Nie wiem, proszę o propozycję" data-budget-unknown /><span>Nie wiem, doradź</span></label>
+              </div>
+            </div>
+          ))}
+          <div class="wz__group">
+            <p class="wz__label">Kiedy chcesz zacząć?<span class="wz__req" aria-hidden="true"> *</span></p>
+            <div class="chips" role="radiogroup" aria-label="Kiedy chcesz zacząć?">
+              {['Jak najszybciej', 'W ciągu miesiąca', 'Za 1–3 miesiące', 'Dopiero zbieram informacje'].map((v) => (
+                <label class="chip"><input type="radio" name="timeline" value={v} data-required /><span>{v}</span></label>
+              ))}
+            </div>
+          </div>
+          <div class="wz__group">
+            <label class="wz__label" for="wz-msg">Coś jeszcze, co warto wiedzieć?</label>
+            <p class="wz__hint">Branża, strony, które Ci się podobają, konkurencja. Opcjonalnie.</p>
+            <textarea class="input" id="wz-msg" name="message" rows="4"></textarea>
+          </div>
+          <p class="wz__error" data-error></p>
+        </fieldset>
+
+        <!-- KROK 4 -->
+        <fieldset class="wz__step" data-step="4" hidden>
+          <legend class="wz__q">Gdzie wysłać wycenę?</legend>
+
+          <div class="estimate" data-estimate>
+            <p class="estimate__label">Orientacyjnie</p>
+            <p class="estimate__price" data-estimate-price></p>
+            <p class="estimate__note" data-estimate-note></p>
+          </div>
+
+          <div class="wz__row">
+            <div class="field">
+              <label for="wz-name">Imię<span class="wz__req" aria-hidden="true"> *</span></label>
+              <input class="input" id="wz-name" name="name" type="text" autocomplete="name" data-rule="name" />
+              <p class="field__error" data-field-error></p>
+            </div>
+            <div class="field">
+              <label for="wz-company">Firma</label>
+              <input class="input" id="wz-company" name="company" type="text" autocomplete="organization" />
+            </div>
+          </div>
+          <div class="wz__row">
+            <div class="field">
+              <label for="wz-email">E-mail<span class="wz__req" aria-hidden="true"> *</span></label>
+              <input class="input" id="wz-email" name="email" type="email" autocomplete="email" data-rule="email" />
+              <p class="field__error" data-field-error></p>
+            </div>
+            <div class="field">
+              <label for="wz-phone">Telefon</label>
+              <input class="input" id="wz-phone" name="phone" type="tel" autocomplete="tel" data-rule="phone" />
+              <p class="field__error" data-field-error></p>
+            </div>
+          </div>
+          <div class="wz__group">
+            <p class="wz__label">Jak wolisz kontakt?</p>
+            <div class="chips" role="radiogroup" aria-label="Jak wolisz kontakt?">
+              {['E-mail', 'Telefon', 'Obojętnie'].map((v, i) => (
+                <label class="chip"><input type="radio" name="contact_pref" value={v} checked={i === 2} /><span>{v}</span></label>
+              ))}
+            </div>
+          </div>
+          <div class="field field--check">
+            <input id="wz-consent" name="consent" type="checkbox" data-rule="consent" />
+            <label for="wz-consent">Wyrażam zgodę na przetwarzanie moich danych osobowych w celu przygotowania wyceny. Administratorem danych jest WebCanvas. Szczegóły w <a href="/polityka-prywatnosci.html">Polityce prywatności</a>.</label>
+            <p class="field__error" data-field-error></p>
+          </div>
+          <p class="wz__error" data-error></p>
+        </fieldset>
+
+        <!-- PODZIĘKOWANIE -->
+        <div class="wz__done" data-done hidden tabindex="-1">
+          <span class="wz__done-icon"><Icon name="check" size={28} /></span>
+          <h2>Dziękuję, zapytanie dotarło.</h2>
+          <p>Przejrzę odpowiedzi i w ciągu 24 godzin (w dni robocze) wyślę wycenę. Jeśli coś będzie niejasne, zadzwonię albo dopytam mailowo.</p>
+          <a class="btn btn--ghost" href="/realizacje.html">Zobacz realizacje <Icon name="arrow" /></a>
+        </div>
+
+        <div class="wz__nav" data-nav>
+          <button class="btn btn--ghost wz__back" type="button" data-back hidden>Wstecz</button>
+          <button class="btn btn--primary wz__next" type="button" data-next>Dalej <Icon name="arrow" /></button>
+          <button class="btn btn--primary wz__next" type="submit" data-submit hidden>Wyślij i odbierz wycenę <Icon name="arrow" /></button>
+        </div>
+        <p class="wz__status" role="status" aria-live="polite" data-status></p>
+        </div>
+        </div>
+      </form>
+    </div>
+  </section>
+</Base>
+
+<script>
+  // Orientacyjne ceny (PLN netto) spójne z cennikiem na stronie głównej.
+  // Zmień tutaj, jeśli zmieni się cennik. null = wycena indywidualna.
+  const PRICES = {
+    pro: 3000,     // Pakiet Pro
+    unique: 4000,  // Pakiet Unique
+  };
+
+  const STEP_TITLES = ['Usługa', 'Zakres', 'Materiały i termin', 'Kontakt'];
+  const TRACK_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'utm_id', 'gclid', 'fbclid'];
+
+  const form = document.querySelector<HTMLFormElement>('[data-wizard]');
+  if (form) {
+    const steps = [...form.querySelectorAll<HTMLFieldSetElement>('[data-step]')];
+    const back = form.querySelector<HTMLButtonElement>('[data-back]')!;
+    const next = form.querySelector<HTMLButtonElement>('[data-next]')!;
+    const submit = form.querySelector<HTMLButtonElement>('[data-submit]')!;
+    const status = form.querySelector<HTMLElement>('[data-status]')!;
+    const bar = form.querySelector<HTMLElement>('[data-bar]')!;
+    let current = 0;
+    let started = false;
+
+    const push = (data: Record<string, unknown>) => (window as any).dataLayer?.push(data);
+
+    // --- śledzenie źródła (UTM, gclid, fbclid), zapamiętane na czas sesji ---
+    const tracking: Record<string, string> = {};
+    try { Object.assign(tracking, JSON.parse(sessionStorage.getItem('wc_utm') || '{}')); } catch {}
+    const params = new URLSearchParams(location.search);
+    TRACK_KEYS.forEach((k) => { const v = params.get(k); if (v) tracking[k] = v.slice(0, 200); });
+    if (!tracking.landing) tracking.landing = location.pathname;
+    if (!tracking.referrer && document.referrer && !document.referrer.includes(location.host)) tracking.referrer = document.referrer.slice(0, 200);
+    try { sessionStorage.setItem('wc_utm', JSON.stringify(tracking)); } catch {}
+    (form.elements.namedItem('tracking') as HTMLInputElement).value = Object.entries(tracking).map(([k, v]) => `${k}=${v}`).join('\n');
+
+    const service = () => (form.querySelector<HTMLInputElement>('input[name="service"]:checked')?.dataset.service ?? '');
+    const isActive = (el: Element) => {
+      const group = el.closest<HTMLElement>('[data-for]');
+      return !group || group.dataset.for!.split(' ').includes(service());
+    };
+
+    // pokazuje tylko pytania dla wybranej usługi; ukryte pola są wyłączone, więc nie trafiają do maila
+    const applyService = () => {
+      form.querySelectorAll<HTMLElement>('[data-for]').forEach((g) => {
+        const on = isActive(g);
+        g.hidden = !on;
+        g.querySelectorAll<HTMLInputElement>('input, textarea').forEach((i) => (i.disabled = !on));
+      });
+    };
+
+    const estimate = () => {
+      const s = service();
+      const val = (n: string) => form.querySelector<HTMLInputElement>(`input[name="${n}"]:checked:not(:disabled)`)?.value ?? '';
+      if (s === 'marketing') return { price: 'Wycena indywidualna', note: 'Koszt zależy od zakresu i budżetu reklamowego. Zaproponuję plan dopasowany do Twojej firmy.' };
+      if (s === 'aplikacja') return { price: `od ${fmt(PRICES.unique)} zł netto`, note: 'Aplikacje wyceniam po krótkiej rozmowie o funkcjach. Podana kwota to dolna granica.' };
+      const onePage = s === 'landing' || (s === 'strona' && val('pages') === 'Jedna (one-page)');
+      if (onePage) return { price: `od ${fmt(PRICES.pro)} zł netto`, note: 'Pakiet Pro: strona one-page lub landing page, wersja na telefony, podstawowe SEO.' };
+      return { price: `od ${fmt(PRICES.unique)} zł netto`, note: 'Pakiet Unique: indywidualny projekt, panel do edycji treści, szkolenie z obsługi.' };
+    };
+    const fmt = (n: number) => n.toLocaleString('pl-PL');
+
+    const show = (i: number) => {
+      current = i;
+      steps.forEach((s, n) => (s.hidden = n !== i));
+      back.hidden = i === 0;
+      next.hidden = i === steps.length - 1;
+      submit.hidden = i !== steps.length - 1;
+      form.querySelector('[data-step-num]')!.textContent = String(i + 1);
+      form.querySelector('[data-step-title]')!.textContent = STEP_TITLES[i];
+      bar.style.width = `${((i + 1) / steps.length) * 100}%`;
+      status.textContent = '';
+      if (i === steps.length - 1) {
+        const e = estimate();
+        form.querySelector('[data-estimate-price]')!.textContent = e.price;
+        form.querySelector('[data-estimate-note]')!.textContent = e.note;
+        (form.elements.namedItem('estimate') as HTMLInputElement).value = e.price;
+      }
+      push({ event: 'wizard_step', wizard_step: i + 1, wizard_service: service() || undefined });
+    };
+
+    const reduceMotion = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const focusStep = () => {
+      const legend = steps[current].querySelector<HTMLElement>('legend')!;
+      legend.tabIndex = -1;
+      legend.focus({ preventScroll: true });
+    };
+    const scrollToForm = () => {
+      const top = form.getBoundingClientRect().top + scrollY - 100;
+      if (top < scrollY) scrollTo({ top, behavior: reduceMotion() ? 'auto' : 'smooth' });
+    };
+
+    // --- lewa kolumna: odpowiedzi z poprzednich kroków + powrót do nich ---
+    const picked = (i: number) =>
+      [...steps[i].querySelectorAll<HTMLInputElement>('input:checked:not(:disabled), input[type="text"]:not(:disabled), textarea:not(:disabled)')]
+        .filter((el) => el.type !== 'text' || el.value.trim())
+        .filter((el) => el.tagName !== 'TEXTAREA')
+        .map((el) => el.value.trim());
+    const updateToc = () => {
+      form.querySelectorAll<HTMLElement>('[data-toc]').forEach((li) => {
+        const i = Number(li.dataset.toc);
+        li.classList.toggle('is-current', i === current);
+        li.classList.toggle('is-done', i < current);
+        li.querySelector<HTMLButtonElement>('button')!.disabled = i >= current;
+        const sum = li.querySelector<HTMLElement>('[data-sum]')!;
+        let text = i < current && i < steps.length - 1 ? picked(i).join(', ') : '';
+        if (i < current && i === 1 && service() === 'aplikacja' && !text) text = 'Opis aplikacji';
+        if (text.length > 90) text = text.slice(0, 88).trimEnd() + '…';
+        sum.textContent = text || sum.dataset.hint!;
+      });
+    };
+
+    const go = (to: number) => {
+      if (to === current || to < 0 || to >= steps.length) return;
+      scrollToForm();
+      show(to);
+      updateToc();
+      focusStep();
+    };
+
+    form.querySelectorAll<HTMLButtonElement>('[data-goto]').forEach((b) => b.addEventListener('click', () => go(Number(b.dataset.goto))));
+
+    // walidacja kroku: wymagane grupy wyboru + pola kontaktowe
+    const fieldRules: Record<string, (el: HTMLInputElement) => string> = {
+      name: (el) => (el.value.trim() ? '' : 'Wpisz imię.'),
+      email: (el) => (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim()) ? '' : 'Wpisz adres e-mail z @, np. jan@firma.pl.'),
+      phone: (el) => (!el.value.trim() || el.value.replace(/\D/g, '').length >= 9 ? '' : 'Numer wygląda na za krótki.'),
+      consent: (el) => (el.checked ? '' : 'Zaznacz zgodę, żebym mógł wysłać wycenę.'),
+    };
+    const validate = () => {
+      const step = steps[current];
+      const errors: string[] = [];
+      let firstBad: HTMLElement | null = null;
+
+      const names = new Set([...step.querySelectorAll<HTMLInputElement>('[data-required]:not(:disabled), input[name="service"]')].map((i) => i.name));
+      names.forEach((n) => {
+        if (!step.querySelector(`input[name="${n}"]:checked`)) {
+          const first = step.querySelector<HTMLInputElement>(`input[name="${n}"]`)!;
+          const q = first.closest('.wz__group')?.querySelector('.wz__label')?.textContent?.replace('*', '').trim();
+          errors.push(q ? `Odpowiedz na pytanie: ${q}` : 'Wybierz jedną z opcji.');
+          firstBad ??= first;
+        }
+      });
+      step.querySelectorAll<HTMLTextAreaElement>('[data-required-for]:not(:disabled)').forEach((t) => {
+        if (t.value.trim().length < 10) { errors.push('Opisz krótko aplikację (kilka zdań wystarczy).'); firstBad ??= t; }
+      });
+      step.querySelectorAll<HTMLInputElement>('[data-rule]').forEach((el) => {
+        const msg = fieldRules[el.dataset.rule!](el);
+        const err = el.parentElement!.querySelector<HTMLElement>('[data-field-error]')!;
+        err.textContent = msg;
+        el.toggleAttribute('aria-invalid', !!msg);
+        if (msg) { errors.push(msg); firstBad ??= el; }
+      });
+
+      const box = step.querySelector<HTMLElement>('[data-error]')!;
+      box.textContent = errors.length && !step.querySelector('[data-rule]') ? errors[0] : '';
+      if (firstBad) (firstBad as HTMLElement).focus();
+      return !errors.length;
+    };
+
+    let pointer = false;
+    form.addEventListener('pointerdown', () => (pointer = true));
+    form.addEventListener('keydown', () => (pointer = false));
+
+    form.addEventListener('input', (e) => {
+      const t = e.target as HTMLInputElement;
+      if (!t.matches('[data-budget]')) return;
+      // tylko cyfry, z odstępem co trzy (5 000)
+      const digits = t.value.replace(/\D/g, '').slice(0, 9);
+      t.value = digits ? Number(digits).toLocaleString('pl-PL') : '';
+      if (digits) t.closest('.budget')!.querySelector<HTMLInputElement>('[data-budget-unknown]')!.checked = false;
+    });
+
+    form.addEventListener('change', (e) => {
+      const t = e.target as HTMLInputElement;
+      if (!started) { started = true; push({ event: 'wizard_start' }); }
+      if (t.name === 'service') {
+        applyService();
+        steps[0].querySelector<HTMLElement>('[data-error]')!.textContent = '';
+        // wybór usługi od razu przenosi dalej (tylko myszą/dotykiem, nie przy nawigacji strzałkami)
+        if (pointer) go(1);
+      }
+      if (t.matches('[data-budget-unknown]') && t.checked) {
+        const inp = t.closest('.budget')!.querySelector<HTMLInputElement>('[data-budget]')!;
+        inp.value = '';
+      }
+      if (t.closest('.chips')) steps[current].querySelector<HTMLElement>('[data-error]')!.textContent = '';
+      // "Nic z tych rzeczy" wyklucza pozostałe materiały
+      if (t.name === 'materials[]') {
+        const all = [...form.querySelectorAll<HTMLInputElement>('input[name="materials[]"]')];
+        const none = all.find((i) => i.value === 'Nic z tych rzeczy')!;
+        if (t === none && none.checked) all.forEach((i) => i !== none && (i.checked = false));
+        else if (t !== none && t.checked) none.checked = false;
+      }
+    });
+
+    next.addEventListener('click', () => { if (validate()) go(current + 1); });
+    back.addEventListener('click', () => go(current - 1));
+
+    // Enter w polu tekstowym nie wysyła formularza przed ostatnim krokiem
+    form.addEventListener('keydown', (e) => {
+      const t = e.target as HTMLElement;
+      if (e.key === 'Enter' && t.tagName === 'INPUT' && current < steps.length - 1) { e.preventDefault(); next.click(); }
+    });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (current !== steps.length - 1 || !validate()) return;
+      submit.disabled = true;
+      const t = setTimeout(() => { status.dataset.state = ''; status.textContent = 'Wysyłanie…'; }, 300);
+      try {
+        const res = await fetch(form.action, { method: 'POST', body: new FormData(form) });
+        const data = await res.json().catch(() => ({}));
+        clearTimeout(t);
+        if (res.ok && data.success !== 'false') {
+          status.textContent = '';
+          steps.forEach((s) => (s.hidden = true));
+          form.querySelector<HTMLElement>('[data-nav]')!.hidden = true;
+          form.querySelector<HTMLElement>('.wz__progress')!.hidden = true;
+          const done = form.querySelector<HTMLElement>('[data-done]')!;
+          done.hidden = false;
+          done.focus();
+          current = steps.length;
+          updateToc();
+          push({ event: 'form_submit', form_type: 'wizard', wizard_service: service(), ...tracking });
+          push({ event: 'generate_lead', form_type: 'wizard' });
+        } else {
+          status.dataset.state = 'error';
+          status.textContent = data.message || 'Nie udało się wysłać. Spróbuj ponownie albo napisz na kontakt@web-canvas.pl.';
+        }
+      } catch {
+        clearTimeout(t);
+        status.dataset.state = 'error';
+        status.textContent = 'Brak połączenia. Spróbuj ponownie albo napisz na kontakt@web-canvas.pl.';
+      } finally {
+        submit.disabled = false;
+      }
+    });
+
+    applyService();
+    show(0);
+    updateToc();
+  }
+</script>
+
+<style>
+  .wz {
+    position: relative; overflow: hidden;
+    padding: clamp(40px, 6vw, 96px) 0 var(--sec-y);
+    min-height: calc(100svh - var(--nav-h));
+  }
+  .wz::before {
+    content: ''; position: absolute; inset: -20% 40% auto -15%; height: 80%; pointer-events: none;
+    background: radial-gradient(closest-side, rgb(225 29 72 / 0.16), transparent); filter: blur(20px);
+  }
+  .wz__intro { position: relative; display: grid; gap: 20px 64px; align-items: end; }
+  @media (min-width: 960px) { .wz__intro { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); } }
+
+  .wz__intro h1 { font-size: clamp(2.2rem, 1.3rem + 3vw, 4rem); font-weight: 680; letter-spacing: -0.04em; line-height: 1.03; }
+  .wz__intro h1 .accent { color: var(--rose); }
+  .wz__lead { font-size: var(--t-lead); line-height: 1.55; color: var(--snow-muted); max-width: 42ch; }
+  .wz__facts { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 10px 22px; color: var(--snow); font-weight: 540; }
+  .wz__facts li { display: inline-flex; align-items: center; gap: 8px; }
+  .wz__facts :global(svg) { color: var(--rose-soft); }
+
+  /* ---------- kreator: lewa kolumna = kroki z odpowiedziami, prawa = pytanie ---------- */
+  .wizard {
+    --pad: clamp(22px, 4vw, 52px);
+    position: relative; margin-top: clamp(36px, 4vw, 56px);
+    display: grid; grid-template-columns: minmax(0, 1fr);
+    background: var(--paper); color: var(--ink); border-radius: var(--r-lg);
+    box-shadow: 0 30px 80px -40px rgb(0 0 0 / 0.6);
+  }
+  .wizard__left { display: none; }
+  .wizard__right { display: flex; flex-direction: column; }
+  .wizard__content { flex: 1; display: flex; flex-direction: column; padding: var(--pad); }
+
+  @media (min-width: 1040px) {
+    .wizard { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
+    .wizard__left {
+      display: flex; flex-direction: column;
+      padding: var(--pad); background: var(--paper-2); border-radius: var(--r-lg) 0 0 var(--r-lg);
+    }
+    .wizard__right { min-height: 640px; }
+    .wz__bar { display: none; }
+  }
+
+  .wizard__kicker { font-size: var(--t-label); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--rose-strong); }
+  .toc { margin-top: 20px; display: grid; }
+  .toc__item + .toc__item { border-top: 1px dashed rgb(26 21 19 / 0.18); }
+  .toc__btn {
+    width: 100%; display: grid; grid-template-columns: 2.2em 1fr auto; gap: 14px; align-items: start;
+    padding: 18px 14px; margin: 4px 0; border: 0; border-radius: var(--r-sm); background: none;
+    text-align: left; color: var(--ink-muted); cursor: pointer;
+    transition: background-color .25s var(--ease);
+  }
+  .toc__btn:disabled { cursor: default; }
+  .toc__btn:not(:disabled):hover { background: rgb(26 21 19 / 0.05); }
+  .toc__num { font-size: 1.05rem; font-weight: 700; color: rgb(26 21 19 / 0.32); font-variant-numeric: tabular-nums; line-height: 1.5; transition: color .25s; }
+  .toc__title { display: block; font-weight: 620; color: var(--ink); }
+  .toc__sum { display: block; margin-top: 2px; font-size: var(--t-small); line-height: 1.45; overflow-wrap: anywhere; }
+  .toc__edit { display: none; font-size: var(--t-small); font-weight: 580; color: var(--rose-strong); line-height: 1.5; }
+  .is-current .toc__btn { background: var(--paper); box-shadow: 0 1px 2px rgb(26 21 19 / 0.08); }
+  .is-current .toc__num { color: var(--rose); }
+  .is-done .toc__num { color: var(--rose-strong); }
+  .is-done .toc__sum { color: var(--ink); }
+  .is-done .toc__edit { display: block; }
+  .wizard__alt { margin-top: auto; padding-top: 40px; color: var(--ink-muted); }
+
+  .wz__hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+  .wz__progress { margin-bottom: 28px; }
+  .wz__count { font-size: var(--t-small); font-weight: 560; color: var(--ink-muted); margin-bottom: 10px; }
+  .wz__bar { height: 4px; border-radius: 4px; background: var(--paper-2); overflow: hidden; }
+  .wz__bar span { display: block; height: 100%; width: 25%; background: var(--rose); border-radius: inherit; transition: width .45s var(--ease); }
+
+  .wz__step { border: 0; margin: 0; padding: 0; min-width: 0; display: grid; gap: 28px; align-content: start; }
+  .wz__step[hidden] { display: none; }
+  .wz__step { margin-bottom: 32px; }
+  .wz__progress[hidden] { display: none; }
+  .wz__q { padding: 0; font-size: clamp(1.45rem, 1.2rem + 0.9vw, 1.9rem); font-weight: 640; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 4px; }
+  .wz__q:focus { outline: none; }
+  .wz__group { display: grid; gap: 10px; }
+  .wz__group[hidden] { display: none; }
+  .wz__label { font-weight: 600; }
+  .wz__hint { font-size: var(--t-small); color: var(--ink-muted); margin-top: -6px; }
+  .wz__req { color: var(--rose-strong); }
+  .wz__error:empty, .wz__status:empty { display: none; }
+  .wz__error, .wz__status[data-state='error'] { color: var(--rose-strong); font-weight: 540; }
+  .wz__status { margin-top: 14px; font-weight: 540; }
+
+  /* kafelki usług */
+  .wz__tiles { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr)); }
+  .tile {
+    position: relative; display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; align-items: center;
+    padding: 18px; border-radius: var(--r-md); cursor: pointer;
+    background: var(--white); border: 1px solid var(--line-light);
+    transition: border-color .2s var(--ease), box-shadow .2s var(--ease), transform .2s var(--ease);
+  }
+  .tile:hover { border-color: rgb(26 21 19 / 0.3); transform: translateY(-1px); }
+  .tile input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+  .tile__icon { grid-row: span 2; width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: var(--rose-tint); color: var(--rose-strong); transition: background-color .2s, color .2s; }
+  .tile__label { font-weight: 620; letter-spacing: -0.01em; }
+  .tile__text { grid-column: 2; font-size: var(--t-small); line-height: 1.4; color: var(--ink-muted); }
+  .tile:has(input:checked) { border-color: var(--rose); box-shadow: 0 0 0 1px var(--rose); }
+  .tile:has(input:checked) .tile__icon { background: var(--rose); color: #fff; }
+  .tile:has(input:focus-visible) { outline: 2px solid var(--rose); outline-offset: 3px; }
+
+  /* odpowiedzi jako "pigułki" */
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { position: relative; cursor: pointer; }
+  .chip input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+  .chip span {
+    display: inline-flex; align-items: center; min-height: 44px; padding: 8px 18px; border-radius: 999px;
+    background: var(--white); border: 1px solid var(--line-light); font-weight: 520; line-height: 1.3;
+    transition: background-color .2s var(--ease), border-color .2s var(--ease), color .2s var(--ease);
+  }
+  .chip:hover span { border-color: rgb(26 21 19 / 0.32); }
+  .chip input:checked + span { background: var(--ink); border-color: var(--ink); color: var(--white); }
+  .chip input:focus-visible + span { outline: 2px solid var(--rose); outline-offset: 2px; }
+
+  .input {
+    width: 100%; min-height: 50px; padding: 12px 16px;
+    font: inherit; font-size: 16px; color: var(--ink);
+    background: var(--white); border: 1px solid var(--line-light); border-radius: var(--r-sm);
+    transition: border-color .2s var(--ease), box-shadow .2s var(--ease);
+  }
+  textarea.input { resize: vertical; min-height: 110px; }
+  .input:hover { border-color: rgb(26 21 19 / 0.3); }
+  .input:focus { outline: none; border-color: var(--rose); box-shadow: 0 0 0 3px rgb(225 29 72 / 0.18); }
+  .input[aria-invalid] { border-color: var(--rose-strong); }
+
+  .wz__row { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .field { display: grid; gap: 8px; align-content: start; }
+  .field > label { font-weight: 600; }
+  .field__error { color: var(--rose-strong); font-size: var(--t-small); font-weight: 520; }
+  .field__error:empty { display: none; }
+  .field--check { grid-template-columns: auto 1fr; align-items: start; column-gap: 12px; }
+  .field--check input { width: 22px; height: 22px; margin: 2px 0 0; accent-color: var(--rose); }
+  .field--check label { font-weight: 400; color: var(--ink-muted); line-height: 1.5; font-size: var(--t-small); }
+  .field--check label a { color: var(--rose-strong); }
+  .field--check .field__error { grid-column: 2; }
+
+  .estimate {
+    padding: 20px 22px; border-radius: var(--r-md);
+    background: var(--night); color: var(--snow);
+    display: grid; gap: 4px;
+  }
+  .estimate__label { font-size: var(--t-label); font-weight: 560; color: var(--rose-soft); }
+  .estimate__price { font-size: clamp(1.6rem, 1.3rem + 1vw, 2.1rem); font-weight: 680; letter-spacing: -0.03em; }
+  .estimate__note { font-size: var(--t-small); color: var(--snow-muted); line-height: 1.5; }
+
+  .wz__nav { display: flex; justify-content: space-between; gap: 12px; margin-top: auto; padding-top: 24px; border-top: 1px solid var(--line-light); }
+  .wz__nav[hidden] { display: none; }
+  .wz__nav > [hidden] { display: none; }
+  .wz__next { margin-left: auto; }
+  .wz__back { border-color: var(--line-light); color: var(--ink); }
+  .wz__back:hover { border-color: var(--ink); background: rgb(0 0 0 / 0.03); }
+  @media (max-width: 520px) {
+    .wz__nav .btn { padding: 0 20px; }
+    .wz__next { flex: 1; }
+  }
+
+  .wz__done { display: grid; gap: 16px; justify-items: start; padding: 12px 0; }
+  .wz__done[hidden] { display: none; }
+  .wz__done:focus { outline: none; }
+  .wz__done-icon { width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; background: var(--rose); color: #fff; }
+  .wz__done h2 { font-size: clamp(1.6rem, 1.3rem + 1vw, 2.2rem); }
+  .wz__done p { color: var(--ink-muted); max-width: 52ch; }
+  .wz__done .btn { border-color: var(--line-light); color: var(--ink); }
+  .budget { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .budget__field { position: relative; flex: 0 1 240px; }
+  .budget__input { padding-right: 92px; font-weight: 560; }
+  .budget__suffix { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); color: var(--ink-muted); pointer-events: none; font-size: var(--t-small); }
+  @media (max-width: 520px) { .budget__field { flex: 1 1 100%; } }
+</style>

@@ -384,10 +384,11 @@ const opt = (name: string, values: string[], type: 'radio' | 'checkbox' = 'radio
 
     const go = (to: number) => {
       if (to === current || to < 0 || to >= steps.length) return;
-      scrollToForm();
       show(to);
       updateToc();
       focusStep();
+      // przewijamy dopiero po podmianie kroku: zmiana wysokości w trakcie płynnego przewijania przerywa je (Safari)
+      requestAnimationFrame(() => requestAnimationFrame(scrollToForm));
     };
 
     form.querySelectorAll<HTMLButtonElement>('[data-goto]').forEach((b) => b.addEventListener('click', () => go(Number(b.dataset.goto))));

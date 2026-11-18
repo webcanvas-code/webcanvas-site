@@ -2,7 +2,7 @@
   "slug": "program-partnerski",
   "kind": "program-partnerski",
   "title": "Program partnerski dla biur rachunkowych | WebCanvas",
-  "description": "Program poleceń WebCanvas dla biur rachunkowych: 300 zł za każdą stronę zamówioną przez poleconego klienta, 10% rabatu dla klienta biura. Bez opłat i zobowiązań.",
+  "description": "Program poleceń WebCanvas dla biur rachunkowych: 300 zł za każdą stronę zamówioną przez poleconego klienta, 10% od kampanii i SEO, 10% rabatu dla klienta biura. Bez opłat i zobowiązań.",
   "ogTitle": "Program partnerski dla biur rachunkowych | WebCanvas",
   "ogImage": "/img/og-image.png",
   "robots": "noindex, follow",
@@ -35,7 +35,7 @@
       "eyebrow": "Jak to działa",
       "h2": "Cztery kroki, z czego Państwa dotyczy jeden",
       "intro": [],
-      "before": "<ol>\n <li>\n <p>Klient pyta Państwa o stronę albo reklamę lub właśnie zakłada działalność.</p>\n </li>\n <li>\n <p><strong>Przekazują mu Państwo mój kontakt</strong> i mówią, że polecają mnie Państwo.</p>\n </li>\n <li>\n <p>Gdy klient się odezwie, w 24&nbsp;h przygotowuję bezpłatną wycenę i zajmuję się resztą.</p>\n </li>\n <li>\n <p>Gdy klient opłaci stronę, wypłacam Państwu prowizję.</p>\n </li>\n </ol>"
+      "before": "<ol>\n <li>\n <p>Klient pyta Państwa o stronę albo reklamę lub właśnie zakłada działalność.</p>\n </li>\n <li>\n <p><strong>Przekazują mu Państwo mój kontakt</strong> i mówią, że polecają mnie Państwo.</p>\n </li>\n <li>\n <p>Gdy klient się odezwie, w 24&nbsp;h przygotowuję bezpłatną wycenę i zajmuję się resztą.</p>\n </li>\n <li>\n <p>Gdy klient opłaci zlecenie, wypłacam Państwu prowizję.</p>\n </li>\n </ol>"
     },
     {
       "eyebrow": "Korzyści",
@@ -44,7 +44,7 @@
       "items": [
         {
           "title": "Dla biura",
-          "html": "<p class=\"sx-stat\">300 zł</p>\n <p>za każdą stronę zamówioną przez poleconego klienta</p>\n <ul>\n <li>Bez limitu poleceń, bez opłat i zobowiązań</li>\n <li>Polecają Państwo tylko wtedy, gdy uznają to za stosowne</li>\n </ul>"
+          "html": "<p class=\"sx-stat\">300 zł</p>\n <p>za każdą stronę zamówioną przez poleconego klienta</p>\n <ul>\n <li><strong>10% miesięcznej opłaty przez 6 miesięcy</strong>, jeśli klient zleci prowadzenie kampanii Google Ads, Meta Ads lub SEO</li>\n <li><strong>10% wartości netto faktury</strong>, jednorazowo, jeśli klient zamówi płatną usługę wizytówki Google</li>\n <li>Bez limitu poleceń, bez opłat i zobowiązań</li>\n <li>Polecają Państwo tylko wtedy, gdy uznają to za stosowne</li>\n </ul>"
         },
         {
           "title": "Dla Państwa klienta",
@@ -91,7 +91,8 @@
       "h2": "Co mogą Państwo polecać",
       "intro": [],
       "moreLabel": "Zobacz ofertę",
-      "after": "<p>Prowizja 300 zł dotyczy stron internetowych. Za polecenie kampanii reklamowych lub SEO prowizja nie jest wypłacana.</p>",
+      "afterWide": true,
+      "after": "<table class=\"sx-offer\"><thead><tr><th scope=\"col\">Usługa</th><th scope=\"col\">Komu polecić</th><th scope=\"col\">Korzyść dla biura</th></tr></thead><tbody><tr><th scope=\"row\">Strona internetowa (od 3000&nbsp;zł netto)</th><td data-label=\"Komu polecić\">Nowym i istniejącym firmom</td><td data-label=\"Korzyść dla biura\"><strong>300&nbsp;zł</strong> za stronę</td></tr><tr><th scope=\"row\">Wizytówka Google + lokalne SEO</th><td data-label=\"Komu polecić\">Firmom lokalnym (gabinety, warsztaty, usługi)</td><td data-label=\"Korzyść dla biura\"><p><strong>10%</strong> wartości netto faktury za wizytówkę Google, jednorazowo</p><p><strong>10%</strong> miesięcznej opłaty przez 6&nbsp;miesięcy za lokalne SEO</p></td></tr><tr><th scope=\"row\">Google Ads / Meta Ads</th><td data-label=\"Komu polecić\">Firmom, które chcą więcej zleceń</td><td data-label=\"Korzyść dla biura\"><strong>10%</strong> miesięcznej opłaty przez 6&nbsp;miesięcy</td></tr></tbody></table><p>Prowizja od wizytówki Google dotyczy tylko płatnej usługi. Za wizytówkę przygotowaną gratis przy zamówieniu strony prowizja nie jest wypłacana.</p>",
       "items": [
         {
           "title": "Strony internetowe",

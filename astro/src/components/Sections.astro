@@ -150,7 +150,7 @@ const rendered = sections.map((s, i) => {
           </ol>
         )}
 
-        {s.after && <div class:list={[proseCls, 'sx-after']} set:html={s.after} />}
+        {s.after && <div class:list={[proseCls, 'sx-after', { 'sx-after--wide': s.afterWide }]} set:html={s.after} />}
       </div>
     </section>
   );
@@ -165,6 +165,24 @@ const rendered = sections.map((s, i) => {
   .sx-plain .sx-before { max-width: 720px; margin-inline: auto; }
   .sx-before + * { margin-top: 48px; }
   .sx-after { margin-top: 40px; max-width: 760px; }
+  .sx-after--wide { max-width: none; }
+
+  /* tabela oferty (program partnerski) */
+  .sx-after :global(.sx-offer) { display: table; table-layout: fixed; border: 1px solid var(--line); border-radius: var(--r-lg); border-collapse: separate; border-spacing: 0; overflow: hidden; background: var(--card); font-size: 1rem; line-height: 1.5; }
+  .sx-after :global(.sx-offer th), .sx-after :global(.sx-offer td) { padding: 18px 22px; }
+  .sx-after :global(.sx-offer tbody tr:last-child > *) { border-bottom: 0; }
+  .sx-after :global(.sx-offer tbody th) { background: none; }
+  .sx-after :global(.sx-offer td p + p) { margin-top: 10px; }
+  .sx-after :global(.sx-offer td strong) { color: var(--rose-strong); font-size: 1.15rem; }
+  @media (max-width: 720px) {
+    .sx-after :global(.sx-offer), .sx-after :global(.sx-offer tbody), .sx-after :global(.sx-offer tr), .sx-after :global(.sx-offer tbody th), .sx-after :global(.sx-offer td) { display: block; width: 100%; }
+    .sx-after :global(.sx-offer thead) { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+    .sx-after :global(.sx-offer tbody tr) { padding: 20px; border-bottom: 1px solid var(--line); }
+    .sx-after :global(.sx-offer tbody tr:last-child) { border-bottom: 0; }
+    .sx-after :global(.sx-offer tbody th), .sx-after :global(.sx-offer td) { padding: 0; border-bottom: 0; }
+    .sx-after :global(.sx-offer td) { margin-top: 12px; }
+    .sx-after :global(.sx-offer td::before) { content: attr(data-label); display: block; font-size: var(--t-label); font-weight: 540; color: var(--ink-muted); }
+  }
 
   /* karty */
   .sx-cards { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }

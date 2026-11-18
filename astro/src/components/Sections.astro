@@ -130,7 +130,7 @@ const rendered = sections.map((s, i) => {
                 <a class="sx-link" href={it.href}>
                   <h3>{it.title}</h3>
                   <div class="sx-link__text" set:html={it.html} />
-                  <span class="sx-link__more">Czytaj <Icon name="arrow" size={16} /></span>
+                  <span class="sx-link__more">{s.moreLabel ?? 'Czytaj'} <Icon name="arrow" size={16} /></span>
                 </a>
               </li>
             ))}
@@ -138,7 +138,7 @@ const rendered = sections.map((s, i) => {
         )}
 
         {(kind === 'cards' || kind === 'steps') && (
-          <ol class:list={['sx-cards', { 'sx-cards--steps': kind === 'steps', 'sx-cards--many': s.items.length > 4 && s.items.length % 3 === 0 }]}>
+          <ol class:list={['sx-cards', { 'sx-cards--steps': kind === 'steps', 'sx-cards--many': s.items.length > 4 && s.items.length % 3 === 0, 'sx-cards--3-2': s.layout === '3-2' }]}>
             {s.items.map((it: any, n: number) => (
               <li class="sx-card">
                 {kind === 'steps' ? <span class="sx-card__no" aria-hidden="true">{String(n + 1).padStart(2, '0')}</span> : null}
@@ -169,6 +169,11 @@ const rendered = sections.map((s, i) => {
   /* karty */
   .sx-cards { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
   @media (min-width: 1000px) { .sx-cards--many { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (min-width: 1000px) {
+    .sx-cards--3-2 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+    .sx-cards--3-2 > .sx-card { grid-column: span 2; }
+    .sx-cards--3-2 > .sx-card:nth-child(n + 4) { grid-column: span 3; }
+  }
   .sx-card {
     display: flex; flex-direction: column; gap: 12px; padding: clamp(24px, 2.4vw, 32px);
     border-radius: var(--r-lg); border: 1px solid var(--line); background: var(--card);
@@ -181,6 +186,7 @@ const rendered = sections.map((s, i) => {
   .sx-card__body { font-size: 1rem; line-height: 1.65; color: var(--ink-muted); }
   .section--dark .sx-card__body { color: var(--fg-muted); }
   .sx-card__body > :global(* + *) { margin-top: 0.7em; }
+  .sx-card__body :global(.sx-stat) { font-size: clamp(2.25rem, 1.9rem + 1.4vw, 3rem); font-weight: 640; letter-spacing: -0.03em; line-height: 1.05; color: var(--rose-strong); }
   .sx-card .link { margin-top: auto; }
 
   .sx-cards--steps { counter-reset: s; }

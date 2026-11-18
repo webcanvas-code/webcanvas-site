@@ -24,7 +24,7 @@
         "primary": true
       },
       {
-        "label": "Strona dla biura rachunkowego: meritoros.pl",
+        "label": "Zobacz przykład: meritoros.pl",
         "href": "https://meritoros.pl",
         "primary": false
       }
@@ -35,7 +35,7 @@
       "eyebrow": "Jak to działa",
       "h2": "Cztery kroki, z czego Państwa dotyczy jeden",
       "intro": [],
-      "before": "<ol>\n <li>\n <p>Klient pyta Państwa o stronę albo reklamę lub właśnie zakłada działalność.</p>\n </li>\n <li>\n <p><strong>Przekazują mu Państwo mój kontakt</strong> i mówią, że polecają mnie Państwo.</p>\n </li>\n <li>\n <p>Kontaktuję się z klientem, w 24&nbsp;h przygotowuję bezpłatną wycenę i zajmuję się resztą.</p>\n </li>\n <li>\n <p>Gdy klient opłaci zlecenie, wypłacam Państwu prowizję.</p>\n </li>\n </ol>"
+      "before": "<ol>\n <li>\n <p>Klient pyta Państwa o stronę albo reklamę lub właśnie zakłada działalność.</p>\n </li>\n <li>\n <p><strong>Przekazują mu Państwo mój kontakt</strong> i mówią, że polecają mnie Państwo.</p>\n </li>\n <li>\n <p>Gdy klient się odezwie, w 24&nbsp;h przygotowuję bezpłatną wycenę i zajmuję się resztą.</p>\n </li>\n <li>\n <p>Gdy klient opłaci stronę, wypłacam Państwu prowizję.</p>\n </li>\n </ol>"
     },
     {
       "eyebrow": "Korzyści",
@@ -44,11 +44,11 @@
       "items": [
         {
           "title": "Dla biura",
-          "html": "<p>300 zł</p>\n <p>za każdą stronę zamówioną przez poleconego klienta</p>\n <ul>\n <li><strong>10% miesięcznej opłaty przez 6 miesięcy</strong>, jeśli klient zleci prowadzenie kampanii Google Ads, Meta Ads lub SEO</li>\n <li>Bez limitu poleceń, bez opłat i zobowiązań</li>\n <li>Polecają Państwo tylko wtedy, gdy uznają to za stosowne</li>\n </ul>"
+          "html": "<p class=\"sx-stat\">300 zł</p>\n <p>za każdą stronę zamówioną przez poleconego klienta</p>\n <ul>\n <li>Bez limitu poleceń, bez opłat i zobowiązań</li>\n <li>Polecają Państwo tylko wtedy, gdy uznają to za stosowne</li>\n </ul>"
         },
         {
           "title": "Dla Państwa klienta",
-          "html": "<p>10% rabatu</p>\n <p>na stronę internetową dzięki poleceniu biura</p>\n <ul>\n <li>Wizytówka Google przygotowana gratis</li>\n <li>Bezpłatna wycena w 24 godziny</li>\n <li>Jedna osoba do kontaktu, od projektu do publikacji</li>\n </ul>"
+          "html": "<p class=\"sx-stat\">10% rabatu</p>\n <p>na stronę internetową dzięki poleceniu biura</p>\n <ul>\n <li>Wizytówka Google przygotowana gratis</li>\n <li>Bezpłatna wycena w 24 godziny</li>\n <li>Jedna osoba do kontaktu, od projektu do publikacji</li>\n </ul>"
         }
       ]
     },
@@ -56,6 +56,7 @@
       "eyebrow": "Zasady",
       "h2": "Proste i przejrzyste zasady współpracy",
       "intro": [],
+      "layout": "3-2",
       "items": [
         {
           "title": "Kiedy polecenie jest przypisane do biura?",
@@ -89,6 +90,8 @@
       "eyebrow": "Co robię dla firm",
       "h2": "Co mogą Państwo polecać",
       "intro": [],
+      "moreLabel": "Zobacz ofertę",
+      "after": "<p>Prowizja 300 zł dotyczy stron internetowych. Za polecenie kampanii reklamowych lub SEO prowizja nie jest wypłacana.</p>",
       "items": [
         {
           "title": "Strony internetowe",

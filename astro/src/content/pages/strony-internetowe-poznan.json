@@ -180,10 +180,49 @@
       "before": "<p>Poznań to jeden z najbardziej konkurencyjnych rynków w Polsce. Na frazę „strony internetowe Poznań” walczą dziesiątki agencji, a w każdej branży usługowej jest podobnie: dentysta, księgowa czy firma remontowa z Poznania konkuruje z setkami innych. Dlatego ogólna strona „o wszystkim” w Poznaniu po prostu nie działa.</p>\n <p>Dla firm z Poznania buduję strony wokół konkretnych usług i konkretnego obszaru. Firma z Jeżyc, Wildy czy Rataj ma większą szansę na frazę z nazwą dzielnicy niż na samo „Poznań”. Podobnie firmy ze Swarzędza, Lubonia, Suchego Lasu czy Tarnowa Podgórnego mogą wygrywać lokalnie z dużymi graczami z centrum.</p>\n <p>Moje realizacje z Poznania opisuję jako case study: <a href=\"/case-study-zkzl.html\">strona ZKZL i Dworca Autobusowego w Poznaniu</a> z naciskiem na dostępność (WCAG) oraz <a href=\"/case-study-woodbud.html\">strona stolarni Woodbud</a>, która działa w Poznaniu i Wrocławiu. Jak podejść do kilku lokalizacji naraz, piszę też w artykule o <a href=\"/blog-pozycjonowanie-lokalne-dla-malych-firm.html\">pozycjonowaniu lokalnym</a>.</p>\n <p>Jak mała firma może przebić się w Google w tak dużym mieście, opisuję w artykule o <a href=\"/blog-pozycjonowanie-lokalne-poznan-dzielnice.html\">pozycjonowaniu lokalnym w Poznaniu</a>.</p>"
     },
     {
+      "eyebrow": "Branże",
+      "h2": "Jakie strony tworzę dla firm z Poznania",
+      "intro": [],
+      "items": [
+        {
+          "title": "Gabinety i usługi w dzielnicach",
+          "html": "<p>Strona zbudowana wokół konkretnej usługi i miejsca, np. Jeżyc, Wildy czy Rataj, z cennikiem, dojazdem i prostym umówieniem wizyty.</p>"
+        },
+        {
+          "title": "Firmy z gmin powiatu",
+          "html": "<p>Oferta dla klientów ze Swarzędza, Lubonia, Suchego Lasu czy Tarnowa Podgórnego, którzy szukają wykonawcy blisko siebie.</p>"
+        },
+        {
+          "title": "Firmy B2B",
+          "html": "<p>Jasno opisane usługi, przykłady realizacji i formularz zapytania, które pomagają klientowi biznesowemu szybko ocenić, czy warto rozpocząć rozmowę.</p>"
+        }
+      ]
+    },
+    {
       "eyebrow": "Dlaczego ja",
       "h2": "Co dostajesz w WebCanvas",
       "intro": [],
       "before": "<ul>\n <li><strong>Projekt mobile-first:</strong> większość klientów ogląda stronę na telefonie.</li>\n <li><strong>SEO od pierwszego dnia:</strong> nagłówki, meta dane, dane strukturalne i szybkość ustawione przy wdrożeniu.</li>\n <li><strong>Lekki, szybki kod:</strong> bez zbędnych wtyczek i bibliotek.</li>\n <li><strong>Jedna osoba:</strong> projekt, kod i wdrożenie bez pośredników i podwykonawców.</li>\n <li><strong>Wsparcie po starcie:</strong> drobne zmiany, hosting i domena.</li>\n <li><strong>Jasna wycena:</strong> zakres i cena znane przed rozpoczęciem prac.</li>\n </ul>\n<p>\n Poza stronami zajmuję się też <a href=\"/pozycjonowanie-seo.html\">pozycjonowaniem SEO</a>,\n <a href=\"/kampanie-google-ads.html\">kampaniami Google Ads</a> i <a href=\"/kampanie-meta-ads.html\">Meta Ads</a>.\n Przykłady mojej pracy, opisane jako case study, znajdziesz w <a href=\"/realizacje.html\">realizacjach</a>.\n </p>"
+    },
+    {
+      "eyebrow": "Opinie",
+      "h2": "Co klienci piszą o współpracy",
+      "intro": [],
+      "items": [
+        {
+          "title": "Maciej Nath",
+          "html": "<p>„Zamówiliśmy dwie strony internetowe i jesteśmy bardzo zadowoleni ze współpracy. Strony zostały wykonane estetycznie, funkcjonalnie i zgodnie z naszymi oczekiwaniami. Na każdym etapie mogliśmy liczyć na pełne wsparcie i szybki kontakt. Dodatkowym plusem była korzystna cena. Zdecydowanie polecam!”</p>"
+        },
+        {
+          "title": "Filip",
+          "html": "<p>„Strona wykonana na najwyższym poziomie, kontakt wzorowy. Strona zrobiona według moich oczekiwań i wymagań. Podejście super, ludzie z pasją, którzy robią to z czystą przyjemnością. POLECAM SERDECZNIE!”</p>"
+        },
+        {
+          "title": "Dorota Rosół",
+          "html": "<p>„Bardzo solidna firma. Zawsze dotrzymują terminu. Zawsze pod telefonem, bez względu na to czy jest dzień wolny, czy dzień pracy. Ogromna wiedza, pracowitość i solidność. Szczerze polecam!”</p>"
+        }
+      ],
+      "after": "<p><a href=\"https://share.google/e6KXzabuprV7YYIPx\" target=\"_blank\" rel=\"noopener\">Zobacz wszystkie opinie w Google</a> (5,0 na podstawie 6 opinii).</p>"
     },
     {
       "eyebrow": "Inwestycja",

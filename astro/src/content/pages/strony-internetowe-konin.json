@@ -1,9 +1,9 @@
 {
   "slug": "strony-internetowe-konin",
   "kind": "city",
-  "title": "Strony internetowe Konin | Tworzenie stron www | WebCanvas",
+  "title": "Tworzenie stron internetowych Konin | WebCanvas",
   "description": "Tworzenie stron internetowych dla firm z Konina i okolic. Projekt, wdrożenie, SEO lokalne i opieka po starcie. Bezpłatna wycena w ciągu 24 godzin.",
-  "ogTitle": "Strony internetowe Konin | Tworzenie stron www | WebCanvas",
+  "ogTitle": "Tworzenie stron internetowych Konin | WebCanvas",
   "ogImage": "/img/og-image.png",
   "path": "/strony-internetowe-konin.html",
   "schema": [
@@ -180,10 +180,49 @@
       "before": "<p>Konin to dwa miasta w jednym: Stare Miasto po południowej stronie Warty i osiedla Nowego Konina po północnej. Dla firmy usługowej ma to praktyczne znaczenie. Klient z Chorznia czy Glinki szuka w Google „hydraulik Konin” albo „mechanik Konin”, ale wybiera tego, kto jest blisko i ma porządną stronę z opisem usług, cennikiem i numerem, w który można kliknąć z telefonu.</p>\n <p>Wschodnia Wielkopolska przechodzi transformację po zakończeniu wydobycia węgla. Powstaje dużo nowych firm, zwłaszcza w budownictwie, fotowoltaice, pompach ciepła i usługach dla domu, a istniejące przebranżawiają się. Każda z nich potrzebuje strony, która od razu jasno mówi, czym się zajmuje i dla kogo. Tego nie zrobi szablon z kreatora.</p>\n <p>Na stronie dla firmy z Konina od początku ustawiam SEO lokalne: osobne sekcje lub podstrony dla usług, nazwy miejscowości tam, gdzie faktycznie pracujesz, dane NAP zgodne z <a href=\"/blog-google-moja-firma-wizytowka.html\">wizytówką Google</a> i dane strukturalne. Jeśli obsługujesz też Koło, Turek czy Słupcę, zobacz <a href=\"/blog-firma-w-kilku-miastach-konin-turek-kolo-slupca.html\">jak być widocznym w kilku miastach naraz</a>.</p>\n <p>Prowadzisz firmę budowlaną, fotowoltaiczną lub montujesz pompy ciepła? Przeczytaj, <a href=\"/blog-strona-internetowa-firma-budowlana-oze-konin.html\">co musi mieć strona firmy budowlanej i OZE z regionu konińskiego</a>.</p>"
     },
     {
+      "eyebrow": "Branże",
+      "h2": "Jakie strony tworzę dla firm z Konina",
+      "intro": [],
+      "items": [
+        {
+          "title": "Budownictwo, fotowoltaika i pompy ciepła",
+          "html": "<p>Opis usług, galeria realizacji z lokalizacją, obszar działania i formularz wyceny. Więcej w poradniku o <a href=\"/blog-strona-internetowa-firma-budowlana-oze-konin.html\">stronie firmy budowlanej i OZE</a>.</p>"
+        },
+        {
+          "title": "Warsztaty i usługi dla domu",
+          "html": "<p>Zakres usług, widełki cen, godziny pracy, dojazd i numer telefonu, który klient z Chorznia, Glinki czy Starówki kliknie od razu na telefonie.</p>"
+        },
+        {
+          "title": "Firmy B2B i nowe działalności",
+          "html": "<p>W regionie powstają nowe firmy, a istniejące zmieniają profil. Strona jasno pokazuje ofertę, doświadczenie i sposób współpracy z klientem biznesowym.</p>"
+        }
+      ]
+    },
+    {
       "eyebrow": "Dlaczego ja",
       "h2": "Co dostajesz w WebCanvas",
       "intro": [],
       "before": "<ul>\n <li><strong>Projekt mobile-first:</strong> większość klientów ogląda stronę na telefonie.</li>\n <li><strong>SEO od pierwszego dnia:</strong> nagłówki, meta dane, dane strukturalne i szybkość ustawione przy wdrożeniu.</li>\n <li><strong>Lekki, szybki kod:</strong> bez zbędnych wtyczek i bibliotek.</li>\n <li><strong>Jedna osoba:</strong> projekt, kod i wdrożenie bez pośredników i podwykonawców.</li>\n <li><strong>Wsparcie po starcie:</strong> drobne zmiany, hosting i domena.</li>\n <li><strong>Jasna wycena:</strong> zakres i cena znane przed rozpoczęciem prac.</li>\n </ul>\n<p>\n Poza stronami zajmuję się też <a href=\"/pozycjonowanie-stron-konin.html\">pozycjonowaniem stron w Koninie</a>,\n <a href=\"/kampanie-google-ads.html\">kampaniami Google Ads</a> i <a href=\"/kampanie-meta-ads.html\">Meta Ads</a>.\n Przykłady mojej pracy, opisane jako case study, znajdziesz w <a href=\"/realizacje.html\">realizacjach</a>.\n </p>"
+    },
+    {
+      "eyebrow": "Opinie",
+      "h2": "Co klienci piszą o współpracy",
+      "intro": [],
+      "items": [
+        {
+          "title": "Sławomir Szczotka",
+          "html": "<p>„Współpracuję z Panem Adamem WebCanvas od kilku lat w sprawie strony internetowej dla mojej firmy. Za każdym razem mogłem liczyć na fachową pomoc, pełen profesjonalizm, bardzo sprawne działanie i super podejście do klienta. Zdecydowanie polecam :)”</p>"
+        },
+        {
+          "title": "Maciej Nath",
+          "html": "<p>„Zamówiliśmy dwie strony internetowe i jesteśmy bardzo zadowoleni ze współpracy. Strony zostały wykonane estetycznie, funkcjonalnie i zgodnie z naszymi oczekiwaniami. Na każdym etapie mogliśmy liczyć na pełne wsparcie i szybki kontakt. Dodatkowym plusem była korzystna cena. Zdecydowanie polecam!”</p>"
+        },
+        {
+          "title": "Dorota Rosół",
+          "html": "<p>„Bardzo solidna firma. Zawsze dotrzymują terminu. Zawsze pod telefonem, bez względu na to czy jest dzień wolny, czy dzień pracy. Ogromna wiedza, pracowitość i solidność. Szczerze polecam!”</p>"
+        }
+      ],
+      "after": "<p><a href=\"https://share.google/e6KXzabuprV7YYIPx\" target=\"_blank\" rel=\"noopener\">Zobacz wszystkie opinie w Google</a> (5,0 na podstawie 6 opinii).</p>"
     },
     {
       "eyebrow": "Inwestycja",

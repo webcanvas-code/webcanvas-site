@@ -175,3 +175,6 @@
  <a href="/#kontakt">napisz do nas</a>.
  Pierwsze spotkanie jest bezpłatne i nie zobowiązuje do niczego.
  </p>
+ <p>
+ Prowadzisz firmę we wschodniej Wielkopolsce? Zajmuję się tworzeniem stron internetowych w <a href="/strony-internetowe-konin.html">Koninie</a>, <a href="/strony-internetowe-turek.html">Turku</a>, <a href="/strony-internetowe-kolo.html">Kole</a>, <a href="/strony-internetowe-slupca.html">Słupcy</a>, <a href="/strony-internetowe-slesin.html">Ślesinie</a> i <a href="/strony-internetowe-sompolno.html">Sompolnie</a>.
+ </p>

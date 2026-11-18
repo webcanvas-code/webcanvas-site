@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import logo from '../assets/logo-light.png';
+import portrait from '../assets/adam-kubiak.png';
 import Icon from './Icon.astro';
 import { company, mainNav, serviceLinks, cityLinks } from '../data/site';
 
@@ -16,6 +17,7 @@ const year = new Date().getFullYear();
           <a href={`mailto:${company.email}`}><Icon name="mail" size={18} />{company.email}</a>
           <a href={company.phoneHref}><Icon name="phone" size={18} />{company.phone}</a>
         </div>
+        <Image class="person__photo" src={portrait} alt={`${company.person}, WebCanvas`} widths={[200, 400]} sizes="200px" />
       </div>
 
       <div class="footer__cols">
@@ -81,6 +83,7 @@ const year = new Date().getFullYear();
   .person__contact a { display: inline-flex; align-items: center; gap: 10px; min-height: 36px; width: fit-content; font-weight: 520; }
   .person__contact a:hover { color: var(--accent-fg); }
   .person__contact :global(svg) { color: var(--accent-fg); }
+  .person__photo { display: block; width: 200px; height: 200px; margin-top: 24px; border-radius: var(--r-lg); border: 1px solid var(--line); object-fit: cover; object-position: 50% 20%; }
 
   .footer__cols { display: grid; gap: 32px; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); }
   .footer__cols h3 { font-size: var(--t-label); font-weight: 560; letter-spacing: 0.02em; color: var(--fg-muted); margin-bottom: 14px; }

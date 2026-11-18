@@ -1,6 +1,5 @@
 ---
 import { Image } from 'astro:assets';
-import portrait from '../assets/adam-kubiak.png';
 import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
 import BrowserFrame from '../components/BrowserFrame.astro';
@@ -217,19 +216,6 @@ const schema = [
         <p class="eyebrow">Jak pracuję</p>
         <h2 class="h2" id="studio-h">Jeden kontakt. <span class="accent">Cała odpowiedzialność.</span></h2>
         <p class="lead approach__lead">Pracuję z firmami z Konina, Turku, Koła, Słupcy, Poznania i z całej Polski, zdalnie albo na spotkaniu.</p>
-        <div class="portrait">
-          <Image src={portrait} alt="Adam Kubiak, WebCanvas" widths={[400, 640, 960]} sizes="(min-width: 1000px) 42vw, 100vw" />
-          <div class="portrait__bar theme-dark">
-            <div>
-              <p class="portrait__name">{company.person}</p>
-              <p class="portrait__role">Projekt i wdrożenie</p>
-            </div>
-            <a class="portrait__rating" href={company.googleReviews} target="_blank" rel="noopener">
-              <span class="stars" aria-hidden="true">{[1,2,3,4,5].map(() => <Icon name="star" size={14} />)}</span>
-              <strong>{company.rating}</strong> w Google
-            </a>
-          </div>
-        </div>
       </div>
       <ol class="principles">
         {principles.map((p) => (
@@ -506,27 +492,6 @@ const schema = [
   .approach { display: grid; gap: 56px; grid-template-columns: minmax(0, 1fr); }
   @media (min-width: 1000px) { .approach { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 80px; } }
   .approach__lead { margin-top: 28px; }
-  .portrait {
-    position: relative; margin-top: 40px; border-radius: var(--r-lg); overflow: hidden;
-    aspect-ratio: 4 / 3; background: #3a3a3a; border: 1px solid var(--line);
-  }
-  @media (max-width: 999px) { .portrait { aspect-ratio: 1; } .portrait img { object-position: 50% 20%; } }
-  .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 28%; transition: transform .6s var(--ease); }
-  .portrait:hover img { transform: scale(1.02); }
-  .portrait__bar {
-    position: absolute; left: 0; right: 0; bottom: 0;
-    display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap;
-    padding: 72px 24px 20px;
-    background: linear-gradient(to top, rgb(14 12 11 / 0.92), rgb(14 12 11 / 0));
-  }
-  .portrait__name { font-size: 1.2rem; font-weight: 620; letter-spacing: -0.02em; }
-  .portrait__role { color: var(--fg-muted); font-size: var(--t-small); }
-  .portrait__rating {
-    display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 14px;
-    border-radius: 999px; background: rgb(255 255 255 / 0.1); backdrop-filter: blur(8px);
-    font-size: var(--t-small); text-decoration: none; transition: background-color .2s var(--ease);
-  }
-  .portrait__rating:hover { background: rgb(255 255 255 / 0.18); }
   .principles { counter-reset: p; display: grid; }
   .principles li { align-content: center; }
   .principles li { counter-increment: p; display: grid; grid-template-columns: 56px 1fr; gap: 4px 0; padding: 28px 0; border-top: 1px solid var(--line); }

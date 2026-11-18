@@ -23,7 +23,7 @@ function kindOf(s: any, i: number): Kind {
   if (items.some((it: any) => it.price)) return 'pricing';
   if (items.some((it: any) => it.img)) return 'projects';
   if (items.length && items.every((it: any) => it.href && !it.href.startsWith('/#'))) return 'links';
-  if (items.length && /krok|proces|etap|jak pracujemy|jak to działa/i.test((s.h2 ?? '') + (s.eyebrow ?? ''))) return 'steps';
+  if (items.length && /krok|proces|etap|jak pracujemy|jak pracuję|jak to działa/i.test((s.h2 ?? '') + (s.eyebrow ?? ''))) return 'steps';
   if (items.length) return 'cards';
   return 'prose';
 }
@@ -220,7 +220,7 @@ const rendered = sections.map((s, i) => {
   .sx-plans { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
 
   /* faq */
-  .sx-faq { max-width: 900px; }
+  div.sx-faq { max-width: 900px; }
 
   /* projekty */
   .sx-projects { display: grid; gap: 40px 24px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); }

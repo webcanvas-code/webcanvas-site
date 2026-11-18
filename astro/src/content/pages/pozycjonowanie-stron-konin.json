@@ -1,0 +1,363 @@
+{
+  "slug": "pozycjonowanie-stron-konin",
+  "kind": "city-service",
+  "title": "Pozycjonowanie stron Konin | SEO lokalne | WebCanvas",
+  "description": "Pozycjonowanie stron dla firm z Konina i powiatu konińskiego: audyt, wizytówka Google, treści i miesięczny raport. Od 800 zł netto, bez długiej umowy.",
+  "ogTitle": "Pozycjonowanie stron Konin | SEO lokalne | WebCanvas",
+  "ogImage": "/img/og-image.png",
+  "path": "/pozycjonowanie-stron-konin.html",
+  "schema": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Pozycjonowanie stron internetowych w Koninie",
+      "serviceType": "Pozycjonowanie stron internetowych",
+      "description": "Pozycjonowanie stron i SEO lokalne dla firm z Konina i powiatu konińskiego: audyt, optymalizacja strony, wizytówka Google i miesięczne raporty.",
+      "url": "https://web-canvas.pl/pozycjonowanie-stron-konin.html",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Konin",
+          "containedInPlace": {
+            "@type": "AdministrativeArea",
+            "name": "województwo wielkopolskie"
+          }
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "powiat koniński"
+        }
+      ],
+      "offers": {
+        "@type": "Offer",
+        "url": "https://web-canvas.pl/pozycjonowanie-stron-konin.html",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "minPrice": 800,
+          "priceCurrency": "PLN",
+          "unitText": "miesiąc",
+          "valueAddedTaxIncluded": false
+        }
+      },
+      "provider": {
+        "@type": "ProfessionalService",
+        "@id": "https://web-canvas.pl/#business",
+        "name": "WebCanvas",
+        "url": "https://web-canvas.pl/",
+        "telephone": "+48739043596",
+        "email": "kontakt@web-canvas.pl",
+        "priceRange": "od 800 PLN",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Biele 126",
+          "addressLocality": "Sompolno",
+          "postalCode": "62-610",
+          "addressCountry": "PL"
+        }
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Strona główna",
+          "item": "https://web-canvas.pl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Pozycjonowanie SEO",
+          "item": "https://web-canvas.pl/pozycjonowanie-seo.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Pozycjonowanie stron Konin",
+          "item": "https://web-canvas.pl/pozycjonowanie-stron-konin.html"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Ile kosztuje pozycjonowanie strony w Koninie?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Miesięczna obsługa zaczyna się od 800 zł netto. Ostateczna cena zależy od branży, liczby fraz i stanu strony, dlatego podaję ją po bezpłatnym audycie."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kiedy zobaczę pierwsze efekty?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pierwsze zmiany pozycji są zazwyczaj widoczne po 2 do 4 miesiącach. Stabilne wyniki na trudniejszych frazach budują się przez 6 do 12 miesięcy regularnej pracy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy gwarantujesz pierwsze miejsce w Google?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nie. Nikt nie ma wpływu na to, jak Google ułoży wyniki, więc takiej obietnicy nie składam. Po audycie mówię wprost, na które frazy masz realne szanse i ile pracy będą wymagać."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy możemy spotkać się w Koninie?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak. Z Sompolna do Konina jadę około 40 minut, więc na pierwsze spotkanie mogę przyjechać do Twojej firmy. Później wystarczają zwykle telefon, e-mail i miesięczny raport."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy pozycjonujesz firmy z gmin wokół Konina?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak. Pracuję z firmami z całego powiatu konińskiego, m.in. z Goliny, Kleczewa, Ślesina, Kazimierza Biskupiego i Starego Miasta. Frazy dobieram do miejsc, w których naprawdę działasz."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy mogę zrezygnować w dowolnym momencie?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak. Rozliczamy się miesięcznie i na start nie podpisujesz długoterminowej umowy."
+          }
+        }
+      ]
+    }
+  ],
+  "hero": {
+    "crumbs": [
+      {
+        "label": "Strona główna",
+        "href": "/"
+      },
+      {
+        "label": "Pozycjonowanie SEO",
+        "href": "/pozycjonowanie-seo.html"
+      },
+      {
+        "label": "Pozycjonowanie stron Konin"
+      }
+    ],
+    "h1": "Pozycjonowanie stron Konin",
+    "accent": "Konin",
+    "badge": "Konin",
+    "metaLine": "SEO lokalne",
+    "lead": [
+      "Pomagam firmom z Konina i powiatu konińskiego docierać do klientów, którzy szukają ich usług w Google i w Mapach Google. Zaczynam od bezpłatnego audytu, a co miesiąc dostajesz raport z wykonanych prac i wyników."
+    ],
+    "buttons": [
+      {
+        "label": "Zamów bezpłatny audyt SEO",
+        "href": "/#kontakt",
+        "primary": true
+      },
+      {
+        "label": "Sprawdź cennik",
+        "href": "#cennik",
+        "primary": false
+      }
+    ]
+  },
+  "sections": [
+    {
+      "eyebrow": "Lokalnie",
+      "h2": "Jak klienci z Konina szukają firm w Google",
+      "intro": [],
+      "before": "<p>Ktoś, komu zepsuł się samochód albo kto planuje montaż pompy ciepła, wpisuje w telefonie „mechanik Konin” lub „pompy ciepła Konin”. Patrzy na mapę, opinie i pierwsze wyniki, a potem dzwoni. Pozycjonowanie lokalne ma sprawić, żeby Twoja firma była wtedy dobrze widoczna.</p>\n<p>Konin to Stary Konin po południowej stronie Warty, osiedla po północnej i gminy powiatu, w których klienci często wpisują nazwę własnej miejscowości, np. Goliny, Kleczewa czy Ślesina. Dlatego najpierw ustalam, gdzie naprawdę pracujesz i które usługi chcesz sprzedawać, a dopiero potem dobieram frazy.</p>\n<p>Nie tworzę dziesiątek podstron różniących się tylko nazwą miejscowości, bo takie strony nie pomagają klientom i Google traktuje je jak spam. Więcej o tym piszę w artykule o <a href=\"/blog-firma-w-kilku-miastach-konin-turek-kolo-slupca.html\">firmach działających w kilku miastach</a>.</p>"
+    },
+    {
+      "eyebrow": "Zakres",
+      "h2": "Co robię w ramach pozycjonowania",
+      "id": "zakres",
+      "intro": [],
+      "items": [
+        {
+          "title": "Audyt strony i konkurencji",
+          "html": "<p>Sprawdzam stan techniczny strony, frazy, na które już się wyświetlasz, oraz firmy z Konina, które są dziś wyżej od Ciebie.</p>"
+        },
+        {
+          "title": "Wizytówka Google",
+          "html": "<p>Porządkuję kategorie, usługi, obszar działania i dane kontaktowe, żeby firma mogła lepiej pokazywać się w Mapach Google. Podpowiadam też, jak zbierać opinie zgodnie z zasadami Google.</p>"
+        },
+        {
+          "title": "Podstrony usług",
+          "html": "<p>Poprawiam tytuły, nagłówki i treści, a brakujące usługi opisuję na osobnych podstronach. Każda odpowiada na konkretne pytanie klienta.</p>"
+        },
+        {
+          "title": "Technika i szybkość",
+          "html": "<p>Naprawiam błędy indeksowania, poprawiam szybkość na telefonach i ustawiam dane strukturalne z adresem oraz obszarem działania.</p>"
+        },
+        {
+          "title": "Linki i lokalne wzmianki",
+          "html": "<p>W pakietach Rozwój i Intensywny pozyskuję linki z zaufanych serwisów. Nie korzystam z farm linków ani metod grożących karą od Google.</p>"
+        },
+        {
+          "title": "Miesięczny raport",
+          "html": "<p>Dostajesz zestawienie pozycji, ruchu z Google, wykonanych prac i planu na kolejny miesiąc, napisane zrozumiałym językiem.</p>"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Współpraca",
+      "h2": "Jak wygląda współpraca krok po kroku",
+      "intro": [],
+      "items": [
+        {
+          "title": "Rozmowa i audyt",
+          "html": "<p>Opowiadasz o firmie i klientach, a ja sprawdzam stronę, wizytówkę i konkurencję w Koninie.</p>"
+        },
+        {
+          "title": "Plan i wycena",
+          "html": "<p>Dostajesz listę priorytetów, frazy do pracy i miesięczną cenę, zanim cokolwiek zamówisz.</p>"
+        },
+        {
+          "title": "Wdrożenie",
+          "html": "<p>Wprowadzam poprawki na stronie i w wizytówce, zaczynając od zmian, które mogą dać najszybszy efekt.</p>"
+        },
+        {
+          "title": "Praca i raporty",
+          "html": "<p>Co miesiąc realizuję plan, sprawdzam wyniki w Google Search Console i wysyłam raport.</p>"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Oczekiwania",
+      "h2": "Kiedy zobaczysz efekty?",
+      "intro": [],
+      "before": "<p>Pierwsze zmiany pozycji są zazwyczaj widoczne po 2 do 4 miesiącach od startu. Stabilne wyniki na trudniejszych frazach budują się przez 6 do 12 miesięcy regularnej pracy.</p>\n<p>Tempo zależy od branży, konkurencji w Koninie, stanu strony i historii domeny. Nie obiecuję konkretnego miejsca w Google, ale po audycie powiem wprost, na co możesz liczyć w swoim przypadku.</p>"
+    },
+    {
+      "eyebrow": "Cennik",
+      "h2": "Ile kosztuje pozycjonowanie w Koninie?",
+      "id": "cennik",
+      "intro": [
+        "Rozliczamy się miesięcznie. Ostateczną cenę podaję po bezpłatnym audycie, a poniżej znajdziesz orientacyjne widełki."
+      ],
+      "items": [
+        {
+          "title": "Start",
+          "href": "/#kontakt",
+          "price": {
+            "featured": false,
+            "note": "Dla małych firm i lokalnych usługodawców.",
+            "amount": "od 800",
+            "unit": "PLN / mies. netto",
+            "list": [
+              "Audyt SEO na start",
+              "Do 10 fraz kluczowych",
+              "Optymalizacja on-page",
+              "Miesięczny raport"
+            ],
+            "cta": "Zapytaj o wycenę"
+          }
+        },
+        {
+          "title": "Rozwój",
+          "href": "/#kontakt",
+          "price": {
+            "featured": true,
+            "note": "Dla firm chcących budować widoczność na szerszy rynek.",
+            "amount": "od 1500",
+            "unit": "PLN / mies. netto",
+            "list": [
+              "Audyt SEO na start",
+              "Do 30 fraz kluczowych",
+              "Optymalizacja on-page i techniczna",
+              "Budowa linków zewnętrznych",
+              "Miesięczny raport z analizą"
+            ],
+            "cta": "Zapytaj o wycenę"
+          }
+        },
+        {
+          "title": "Intensywny",
+          "href": "/#kontakt",
+          "price": {
+            "featured": false,
+            "note": "Dla firm w konkurencyjnych branżach i na ogólnopolski rynek.",
+            "amount": "od 2500",
+            "unit": "PLN / mies. netto",
+            "list": [
+              "Rozszerzony audyt SEO",
+              "Nieograniczona liczba fraz",
+              "Tworzenie nowych treści SEO",
+              "Intensywna budowa linków",
+              "Raport + call z omówieniem wyników"
+            ],
+            "cta": "Zapytaj o wycenę"
+          }
+        }
+      ]
+    },
+    {
+      "eyebrow": "Warto wiedzieć",
+      "h2": "Przeczytaj, zanim zdecydujesz",
+      "intro": [],
+      "items": [
+        {
+          "title": "Jak promować firmę w internecie w Koninie",
+          "href": "/blog-jak-promowac-firme-w-internecie-konin.html",
+          "html": "<p>Plan działania dla lokalnych firm: wizytówka, strona, opinie, social media i reklamy.</p>"
+        },
+        {
+          "title": "Wizytówka Google krok po kroku",
+          "href": "/blog-google-moja-firma-wizytowka.html",
+          "html": "<p>Jak uzupełnić profil firmy, żeby lepiej pokazywać się w Mapach Google.</p>"
+        },
+        {
+          "title": "Strony internetowe Konin",
+          "href": "/strony-internetowe-konin.html",
+          "html": "<p>Potrzebujesz nowej strony, zanim zaczniesz pozycjonowanie? Zobacz ofertę dla firm z Konina.</p>"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Pytania",
+      "h2": "Najczęstsze pytania o pozycjonowanie w Koninie",
+      "intro": [],
+      "items": [
+        {
+          "title": "Ile kosztuje pozycjonowanie strony w Koninie?",
+          "html": "<p>Miesięczna obsługa zaczyna się od 800 zł netto. Ostateczna cena zależy od branży, liczby fraz i stanu strony, dlatego podaję ją po bezpłatnym audycie.</p>"
+        },
+        {
+          "title": "Kiedy zobaczę pierwsze efekty?",
+          "html": "<p>Pierwsze zmiany pozycji są zazwyczaj widoczne po 2 do 4 miesiącach. Stabilne wyniki na trudniejszych frazach budują się przez 6 do 12 miesięcy regularnej pracy.</p>"
+        },
+        {
+          "title": "Czy gwarantujesz pierwsze miejsce w Google?",
+          "html": "<p>Nie. Nikt nie ma wpływu na to, jak Google ułoży wyniki, więc takiej obietnicy nie składam. Po audycie mówię wprost, na które frazy masz realne szanse i ile pracy będą wymagać.</p>"
+        },
+        {
+          "title": "Czy możemy spotkać się w Koninie?",
+          "html": "<p>Tak. Z Sompolna do Konina jadę około 40 minut, więc na pierwsze spotkanie mogę przyjechać do Twojej firmy. Później wystarczają zwykle telefon, e-mail i miesięczny raport.</p>"
+        },
+        {
+          "title": "Czy pozycjonujesz firmy z gmin wokół Konina?",
+          "html": "<p>Tak. Pracuję z firmami z całego powiatu konińskiego, m.in. z Goliny, Kleczewa, Ślesina, Kazimierza Biskupiego i Starego Miasta. Frazy dobieram do miejsc, w których naprawdę działasz.</p>"
+        },
+        {
+          "title": "Czy mogę zrezygnować w dowolnym momencie?",
+          "html": "<p>Tak. Rozliczamy się miesięcznie i na start nie podpisujesz długoterminowej umowy.</p>"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Kolejny krok",
+      "h2": "Sprawdźmy widoczność Twojej firmy w Koninie",
+      "intro": [],
+      "before": "<p>Opisz krótko firmę i podaj adres strony.</p>"
+    }
+  ]
+}

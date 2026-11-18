@@ -2,7 +2,7 @@
   "slug": "strony-internetowe-turek",
   "kind": "city",
   "title": "Strony internetowe Turek | Tworzenie stron www | WebCanvas",
-  "description": "Strony internetowe dla firm z Turku. Nowoczesny design, lokalne SEO i szybkie wdrożenie. Wyceń projekt bez zobowiązań i sprawdź nasze realizacje.",
+  "description": "Tworzenie stron internetowych dla firm z Turku i okolic. Projekt, wdrożenie, SEO lokalne i opieka po starcie. Bezpłatna wycena w ciągu 24 godzin.",
   "ogTitle": "Strony internetowe Turek | Tworzenie stron www | WebCanvas",
   "ogImage": "/img/og-image.png",
   "path": "/strony-internetowe-turek.html",
@@ -11,16 +11,26 @@
       "@context": "https://schema.org",
       "@type": "WebPage",
       "name": "Strony internetowe Turek",
-      "description": "Projektujemy i wdrażamy strony internetowe dla firm z Turku i powiatu tureckiego. Na pierwsze spotkanie przyjeżdżamy do Ciebie, a jeden zespół odpowiada za cały projekt, od pierwszej rozmowy po wdrożenie.",
+      "description": "Zajmuję się tworzeniem stron internetowych dla firm z Turku i powiatu tureckiego. Na pierwsze spotkanie przyjeżdżam do Ciebie, a za cały projekt odpowiadam osobiście, od pierwszej rozmowy po wdrożenie.",
       "url": "https://web-canvas.pl/strony-internetowe-turek.html",
       "about": {
         "@type": "Service",
-        "name": "Projektowanie stron internetowych",
+        "name": "Tworzenie stron internetowych w Turku",
         "serviceType": "Tworzenie stron internetowych",
-        "areaServed": {
-          "@type": "City",
-          "name": "Turek"
-        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Turek",
+            "containedInPlace": {
+              "@type": "AdministrativeArea",
+              "name": "województwo wielkopolskie"
+            }
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "powiat turecki"
+          }
+        ],
         "provider": {
           "@type": "ProfessionalService",
           "@id": "https://web-canvas.pl/#business",
@@ -77,10 +87,18 @@
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "Ile kosztuje stworzenie strony internetowej w Turku?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Prosta strona (Pakiet Pro) kosztuje od 3000 zł netto, a rozbudowana strona firmowa lub sklep internetowy (Pakiet Unique) od 4000 zł netto. Dokładną cenę podaję po rozmowie o zakresie, zwykle w ciągu 24 godzin."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Czy możemy spotkać się osobiście w Turku?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Tak. Do Turku dojeżdżamy z Sompolna w około godzinę, więc pierwsze spotkanie możemy zrobić w Twojej firmie. Kolejne etapy, czyli akceptację projektu i poprawki, zwykle prowadzimy online."
+            "text": "Tak. Do Turku dojeżdżam z Sompolna w około godzinę, więc pierwsze spotkanie możemy zrobić w Twojej firmie. Kolejne etapy, czyli akceptację projektu i poprawki, zwykle prowadzę online."
           }
         },
         {
@@ -88,7 +106,7 @@
           "name": "Mam klientów w całym powiecie tureckim. Jak pokazać to na stronie?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Opisujemy obszar działania wprost, np. Turek, Tuliszków, Dobra, Przykona, i łączymy go z konkretnymi usługami. Te same dane ustawiamy w wizytówce Google. Dzięki temu Google wie, gdzie Cię pokazywać, a klient od razu widzi, że do niego dojedziesz."
+            "text": "Opisuję obszar działania wprost, np. Turek, Tuliszków, Dobra, Przykona, i łączę go z konkretnymi usługami. Te same dane ustawiam w wizytówce Google. Dzięki temu Google wie, gdzie Cię pokazywać, a klient od razu widzi, że do niego dojedziesz."
           }
         },
         {
@@ -96,15 +114,15 @@
           "name": "Ile trwa realizacja strony internetowej?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Zależy od zakresu. Prosta strona wizytówka to zwykle kilka tygodni, sklep internetowy czy aplikacja dedykowana wymaga więcej czasu. Dokładny harmonogram ustalamy po briefie."
+            "text": "Prosta strona (Pakiet Pro) powstaje zwykle w 7–14 dni roboczych. Sklep internetowy albo aplikacja dedykowana (Pakiet Unique) to od 3 do 8 tygodni, zależnie od zakresu funkcji. Dokładny harmonogram ustalamy po briefie."
           }
         },
         {
           "@type": "Question",
-          "name": "Czy zajmujecie się też hostingiem i domeną?",
+          "name": "Czy zajmujesz się też hostingiem i domeną?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Tak. Pomagamy skonfigurować domenę, hosting i certyfikat SSL, a po wdrożeniu oferujemy opiekę powdrożeniową, żeby strona działała bez przestojów."
+            "text": "Tak. Pomagam skonfigurować domenę, hosting i certyfikat SSL, a po wdrożeniu oferuję opiekę powdrożeniową, żeby strona działała bez przestojów."
           }
         }
       ]
@@ -125,7 +143,7 @@
     "badge": "TUREK",
     "metaLine": "Projektowanie stron internetowych",
     "lead": [
-      "\n Projektujemy i wdrażamy strony internetowe dla firm z Turku i powiatu tureckiego. Na pierwsze spotkanie przyjeżdżamy do Ciebie, a jeden zespół odpowiada za cały projekt, od pierwszej rozmowy po wdrożenie.\n "
+      "\n Zajmuję się tworzeniem stron internetowych dla firm z Turku i powiatu tureckiego. Na pierwsze spotkanie przyjeżdżam do Ciebie, a za cały projekt odpowiadam osobiście, od pierwszej rozmowy po wdrożenie.\n "
     ],
     "buttons": [
       {
@@ -134,7 +152,7 @@
         "primary": true
       },
       {
-        "label": "Zobacz nasze realizacje",
+        "label": "Zobacz realizacje",
         "href": "/realizacje.html",
         "primary": false
       }
@@ -143,15 +161,15 @@
   "sections": [
     {
       "eyebrow": "Lokalnie",
-      "h2": "Strony internetowe dla firm z Turku i powiatu tureckiego",
+      "h2": "Tworzenie stron internetowych w Turku i okolicach",
       "intro": [],
       "items": [
         {
           "title": "Spotkanie na miejscu",
-          "html": "<p>Z Sompolna do Turku jedziemy około godziny. Pierwsze spotkanie robimy u Ciebie, a dalszą część projektu prowadzimy online.</p>"
+          "html": "<p>Z Sompolna do Turku jadę około godziny. Pierwsze spotkanie robię u Ciebie, a dalszą część projektu prowadzę online.</p>"
         },
         {
-          "title": "Obszar, który obsługujemy",
+          "title": "Obszar, który obsługuję",
           "html": "<p>Turek i gminy powiatu tureckiego: Brudzew, Dobra, Kawęczyn, Malanów, Przykona, Tuliszków, Władysławów oraz gmina wiejska Turek.</p>"
         },
         {
@@ -159,13 +177,13 @@
           "html": "<p>W powiecie tureckim konkurencja w wynikach Google jest mała. Dobrze opisana strona i aktywna wizytówka często wystarczą, żeby trafić do pierwszej trójki.</p>"
         }
       ],
-      "before": "<p>Turek to miasto z tradycją tkacką i przemysłową, a po zamknięciu kopalni i elektrowni Adamów lokalny rynek mocno się zmienia. Wiele firm z Turku, Tuliszkowa czy Przykony to dziś małe zakłady produkcyjne, warsztaty, firmy budowlane i usługowe, które klientów szukają nie tylko w mieście, ale w całym powiecie i w sąsiednich regionach.</p>\n <p>Klienci z Turku często szukają usług w Google razem z nazwą miasta, ale równie często z nazwą gminy albo po prostu „w pobliżu”. Dlatego na stronie jasno pokazujemy, gdzie działasz i ile kosztuje dojazd do klienta, a numer telefonu i formularz są pod ręką na każdej podstronie.</p>\n <p>Dla firm z Turku, które pracują też w Koninie lub Kole, przygotowaliśmy poradnik o tym, <a href=\"/blog-firma-w-kilku-miastach-konin-turek-kolo-slupca.html\">jak być widocznym w Google w kilku miastach jednocześnie</a>. Jeśli dopiero zaczynasz z obecnością w sieci, zacznij od <a href=\"/blog-google-moja-firma-wizytowka.html\">wizytówki Google</a>, bo to ona często daje pierwsze telefony.</p>\n <p>Działasz w budownictwie lub OZE? Zobacz nasz poradnik o tym, <a href=\"/blog-strona-internetowa-firma-budowlana-oze-konin.html\">jak zbudować stronę firmy budowlanej i OZE, która daje zapytania z okolicy</a>.</p>"
+      "before": "<p>Turek to miasto z tradycją tkacką i przemysłową, a po zamknięciu kopalni i elektrowni Adamów lokalny rynek mocno się zmienia. Wiele firm z Turku, Tuliszkowa czy Przykony to dziś małe zakłady produkcyjne, warsztaty, firmy budowlane i usługowe, które klientów szukają nie tylko w mieście, ale w całym powiecie i w sąsiednich regionach.</p>\n <p>Klienci z Turku często szukają usług w Google razem z nazwą miasta, ale równie często z nazwą gminy albo po prostu „w pobliżu”. Dlatego na stronie jasno pokazuję, gdzie działasz i ile kosztuje dojazd do klienta, a numer telefonu i formularz są pod ręką na każdej podstronie.</p>\n <p>Dla firm z Turku, które pracują też w Koninie lub Kole, przygotowałem poradnik o tym, <a href=\"/blog-firma-w-kilku-miastach-konin-turek-kolo-slupca.html\">jak być widocznym w Google w kilku miastach jednocześnie</a>. Jeśli dopiero zaczynasz z obecnością w sieci, zacznij od <a href=\"/blog-google-moja-firma-wizytowka.html\">wizytówki Google</a>, bo to ona często daje pierwsze telefony.</p>\n <p>Działasz w budownictwie lub OZE? Zobacz poradnik o tym, <a href=\"/blog-strona-internetowa-firma-budowlana-oze-konin.html\">jak zbudować stronę firmy budowlanej i OZE, która daje zapytania z okolicy</a>.</p>"
     },
     {
-      "eyebrow": "Dlaczego my",
+      "eyebrow": "Dlaczego ja",
       "h2": "Co dostajesz w WebCanvas",
       "intro": [],
-      "before": "<ul>\n <li><strong>Projekt mobile-first:</strong> większość klientów ogląda stronę na telefonie.</li>\n <li><strong>SEO od pierwszego dnia:</strong> nagłówki, meta dane, dane strukturalne i szybkość ustawione przy wdrożeniu.</li>\n <li><strong>Lekki, szybki kod:</strong> bez zbędnych wtyczek i bibliotek.</li>\n <li><strong>Jeden zespół:</strong> projekt, kod i wdrożenie bez pośredników i podwykonawców.</li>\n <li><strong>Wsparcie po starcie:</strong> drobne zmiany, hosting i domena.</li>\n <li><strong>Jasna wycena:</strong> zakres i cena znane przed rozpoczęciem prac.</li>\n </ul>\n<p>\n Poza stronami zajmujemy się też <a href=\"/pozycjonowanie-seo.html\">pozycjonowaniem SEO</a>,\n <a href=\"/kampanie-google-ads.html\">kampaniami Google Ads</a> i <a href=\"/kampanie-meta-ads.html\">Meta Ads</a>.\n Przykłady naszej pracy, opisane jako case study, znajdziesz w <a href=\"/realizacje.html\">realizacjach</a>.\n </p>"
+      "before": "<ul>\n <li><strong>Projekt mobile-first:</strong> większość klientów ogląda stronę na telefonie.</li>\n <li><strong>SEO od pierwszego dnia:</strong> nagłówki, meta dane, dane strukturalne i szybkość ustawione przy wdrożeniu.</li>\n <li><strong>Lekki, szybki kod:</strong> bez zbędnych wtyczek i bibliotek.</li>\n <li><strong>Jedna osoba:</strong> projekt, kod i wdrożenie bez pośredników i podwykonawców.</li>\n <li><strong>Wsparcie po starcie:</strong> drobne zmiany, hosting i domena.</li>\n <li><strong>Jasna wycena:</strong> zakres i cena znane przed rozpoczęciem prac.</li>\n </ul>\n<p>\n Poza stronami zajmuję się też <a href=\"/pozycjonowanie-seo.html\">pozycjonowaniem SEO</a>,\n <a href=\"/kampanie-google-ads.html\">kampaniami Google Ads</a> i <a href=\"/kampanie-meta-ads.html\">Meta Ads</a>.\n Przykłady mojej pracy, opisane jako case study, znajdziesz w <a href=\"/realizacje.html\">realizacjach</a>.\n </p>"
     },
     {
       "eyebrow": "Inwestycja",
@@ -236,20 +254,47 @@
       "intro": [],
       "items": [
         {
+          "title": "Ile kosztuje stworzenie strony internetowej w Turku?",
+          "html": "<p>Prosta strona (Pakiet Pro) kosztuje od 3000 zł netto, a rozbudowana strona firmowa lub sklep internetowy (Pakiet Unique) od 4000 zł netto. Dokładną cenę podaję po rozmowie o zakresie, zwykle w ciągu 24 godzin.</p>"
+        },
+        {
           "title": "Czy możemy spotkać się osobiście w Turku?",
-          "html": "<p>Tak. Do Turku dojeżdżamy z Sompolna w około godzinę, więc pierwsze spotkanie możemy zrobić w Twojej firmie. Kolejne etapy, czyli akceptację projektu i poprawki, zwykle prowadzimy online.</p>"
+          "html": "<p>Tak. Do Turku dojeżdżam z Sompolna w około godzinę, więc pierwsze spotkanie możemy zrobić w Twojej firmie. Kolejne etapy, czyli akceptację projektu i poprawki, zwykle prowadzę online.</p>"
         },
         {
           "title": "Mam klientów w całym powiecie tureckim. Jak pokazać to na stronie?",
-          "html": "<p>Opisujemy obszar działania wprost, np. Turek, Tuliszków, Dobra, Przykona, i łączymy go z konkretnymi usługami. Te same dane ustawiamy w wizytówce Google. Dzięki temu Google wie, gdzie Cię pokazywać, a klient od razu widzi, że do niego dojedziesz.</p>"
+          "html": "<p>Opisuję obszar działania wprost, np. Turek, Tuliszków, Dobra, Przykona, i łączę go z konkretnymi usługami. Te same dane ustawiam w wizytówce Google. Dzięki temu Google wie, gdzie Cię pokazywać, a klient od razu widzi, że do niego dojedziesz.</p>"
         },
         {
           "title": "Ile trwa realizacja strony internetowej?",
-          "html": "<p>Zależy od zakresu. Prosta strona wizytówka to zwykle kilka tygodni, sklep internetowy czy aplikacja dedykowana wymaga więcej czasu. Dokładny harmonogram ustalamy po briefie.</p>"
+          "html": "<p>Prosta strona (Pakiet Pro) powstaje zwykle w 7–14 dni roboczych. Sklep internetowy albo aplikacja dedykowana (Pakiet Unique) to od 3 do 8 tygodni, zależnie od zakresu funkcji. Dokładny harmonogram ustalamy po briefie.</p>"
         },
         {
-          "title": "Czy zajmujecie się też hostingiem i domeną?",
-          "html": "<p>Tak. Pomagamy skonfigurować domenę, hosting i certyfikat SSL, a po wdrożeniu oferujemy opiekę powdrożeniową, żeby strona działała bez przestojów.</p>"
+          "title": "Czy zajmujesz się też hostingiem i domeną?",
+          "html": "<p>Tak. Pomagam skonfigurować domenę, hosting i certyfikat SSL, a po wdrożeniu oferuję opiekę powdrożeniową, żeby strona działała bez przestojów.</p>"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Okolica",
+      "h2": "Pracujesz także poza Turkiem?",
+      "intro": [],
+      "moreLabel": "Zobacz ofertę",
+      "items": [
+        {
+          "title": "Strony internetowe Konin",
+          "html": "<p>Stare Miasto, osiedla Nowego Konina i gminy powiatu konińskiego, m.in. Golina, Kleczew i Ślesin.</p>",
+          "href": "/strony-internetowe-konin.html"
+        },
+        {
+          "title": "Strony internetowe Koło",
+          "html": "<p>Koło, Kłodawa, Dąbie, Przedecz i pozostałe gminy powiatu kolskiego.</p>",
+          "href": "/strony-internetowe-kolo.html"
+        },
+        {
+          "title": "Strony internetowe Słupca",
+          "html": "<p>Słupca, Strzałkowo, Zagórów i okolice Jeziora Powidzkiego.</p>",
+          "href": "/strony-internetowe-slupca.html"
         }
       ]
     },
@@ -257,7 +302,7 @@
       "eyebrow": "Kolejny krok",
       "h2": "Porozmawiajmy o Twojej stronie",
       "intro": [],
-      "before": "<p>\n Opowiedz nam o swojej firmie z Turku i okolic. Bezpłatnie wycenimy projekt i zaproponujemy\n rozwiązanie dopasowane do Twojego budżetu i celów.\n </p>\n<a href=\"/#kontakt\">\n Omówmy Twój projekt\n </a>\n <a href=\"/realizacje.html\">\n Zobacz realizacje\n </a>"
+      "before": "<p>\n Opowiedz mi o swojej firmie z Turku i okolic. Bezpłatnie wycenię projekt i zaproponuję\n rozwiązanie dopasowane do Twojego budżetu i celów.\n </p>\n<a href=\"/#kontakt\">\n Omówmy Twój projekt\n </a>\n <a href=\"/realizacje.html\">\n Zobacz realizacje\n </a>"
     }
   ]
 }

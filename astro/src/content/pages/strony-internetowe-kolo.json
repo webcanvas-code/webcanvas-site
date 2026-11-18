@@ -2,7 +2,7 @@
   "slug": "strony-internetowe-kolo",
   "kind": "city",
   "title": "Strony internetowe Koło | Tworzenie stron www | WebCanvas",
-  "description": "Strony internetowe dla firm z Koła. Projektujemy strony z pozycjonowaniem w pakiecie, szybkim wdrożeniem i opieką po starcie. Bezpłatna wycena.",
+  "description": "Tworzenie stron internetowych dla firm z Koła i okolic. Projekt, wdrożenie, SEO lokalne i opieka po starcie. Bezpłatna wycena w ciągu 24 godzin.",
   "ogTitle": "Strony internetowe Koło | Tworzenie stron www | WebCanvas",
   "ogImage": "/img/og-image.png",
   "path": "/strony-internetowe-kolo.html",
@@ -11,16 +11,26 @@
       "@context": "https://schema.org",
       "@type": "WebPage",
       "name": "Strony internetowe Koło",
-      "description": "Projektujemy i wdrażamy strony internetowe dla firm z Koła i powiatu kolskiego. Z Sompolna mamy do Koła około pół godziny, więc łatwo spotkać się na miejscu. Jeden zespół odpowiada za cały projekt, od pierwszej rozmowy po wdrożenie.",
+      "description": "Zajmuję się tworzeniem stron internetowych dla firm z Koła i powiatu kolskiego. Z Sompolna mam do Koła około pół godziny, więc łatwo spotkać się na miejscu. Za cały projekt odpowiadam osobiście, od pierwszej rozmowy po wdrożenie.",
       "url": "https://web-canvas.pl/strony-internetowe-kolo.html",
       "about": {
         "@type": "Service",
-        "name": "Projektowanie stron internetowych",
+        "name": "Tworzenie stron internetowych w Kole",
         "serviceType": "Tworzenie stron internetowych",
-        "areaServed": {
-          "@type": "City",
-          "name": "Koło"
-        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Koło",
+            "containedInPlace": {
+              "@type": "AdministrativeArea",
+              "name": "województwo wielkopolskie"
+            }
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "powiat kolski"
+          }
+        ],
         "provider": {
           "@type": "ProfessionalService",
           "@id": "https://web-canvas.pl/#business",
@@ -77,10 +87,18 @@
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "Ile kosztuje stworzenie strony internetowej w Kole?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Prosta strona (Pakiet Pro) kosztuje od 3000 zł netto, a rozbudowana strona firmowa lub sklep internetowy (Pakiet Unique) od 4000 zł netto. Dokładną cenę podaję po rozmowie o zakresie, zwykle w ciągu 24 godzin."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Czy możemy spotkać się osobiście w Kole?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Tak. Z Sompolna mamy do Koła około pół godziny, więc na spotkanie przyjeżdżamy do Twojej firmy. Kolejne etapy, czyli akceptację projektu i poprawki, możemy prowadzić online albo na miejscu, jak Ci wygodniej."
+            "text": "Tak. Z Sompolna mam do Koła około pół godziny, więc na spotkanie przyjeżdżam do Twojej firmy. Kolejne etapy, czyli akceptację projektu i poprawki, możemy prowadzić online albo na miejscu, jak Ci wygodniej."
           }
         },
         {
@@ -88,7 +106,7 @@
           "name": "Czy nazwa „Koło” nie utrudnia pozycjonowania?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Trochę tak, bo „koło” to też zwykłe słowo i Google musi zrozumieć, że chodzi o miasto. Pomagają w tym dane strukturalne z adresem, nazwy sąsiednich gmin w treści, spójne dane w wizytówce Google i frazy typu „w Kole” zamiast samego „Koło”. Ustawiamy to od pierwszego dnia."
+            "text": "Trochę tak, bo „koło” to też zwykłe słowo i Google musi zrozumieć, że chodzi o miasto. Pomagają w tym dane strukturalne z adresem, nazwy sąsiednich gmin w treści, spójne dane w wizytówce Google i frazy typu „w Kole” zamiast samego „Koło”. Ustawiam to od pierwszego dnia."
           }
         },
         {
@@ -96,15 +114,15 @@
           "name": "Ile trwa realizacja strony internetowej?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Zależy od zakresu. Prosta strona wizytówka to zwykle kilka tygodni, sklep internetowy czy aplikacja dedykowana wymaga więcej czasu. Dokładny harmonogram ustalamy po briefie."
+            "text": "Prosta strona (Pakiet Pro) powstaje zwykle w 7–14 dni roboczych. Sklep internetowy albo aplikacja dedykowana (Pakiet Unique) to od 3 do 8 tygodni, zależnie od zakresu funkcji. Dokładny harmonogram ustalamy po briefie."
           }
         },
         {
           "@type": "Question",
-          "name": "Czy zajmujecie się też hostingiem i domeną?",
+          "name": "Czy zajmujesz się też hostingiem i domeną?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Tak. Pomagamy skonfigurować domenę, hosting i certyfikat SSL, a po wdrożeniu oferujemy opiekę powdrożeniową, żeby strona działała bez przestojów."
+            "text": "Tak. Pomagam skonfigurować domenę, hosting i certyfikat SSL, a po wdrożeniu oferuję opiekę powdrożeniową, żeby strona działała bez przestojów."
           }
         }
       ]
@@ -125,7 +143,7 @@
     "badge": "KOŁO",
     "metaLine": "Projektowanie stron internetowych",
     "lead": [
-      "\n Projektujemy i wdrażamy strony internetowe dla firm z Koła i powiatu kolskiego. Z Sompolna mamy do Koła około pół godziny, więc łatwo spotkać się na miejscu. Jeden zespół odpowiada za cały projekt, od pierwszej rozmowy po wdrożenie.\n "
+      "\n Zajmuję się tworzeniem stron internetowych dla firm z Koła i powiatu kolskiego. Z Sompolna mam do Koła około pół godziny, więc łatwo spotkać się na miejscu. Za cały projekt odpowiadam osobiście, od pierwszej rozmowy po wdrożenie.\n "
     ],
     "buttons": [
       {
@@ -134,7 +152,7 @@
         "primary": true
       },
       {
-        "label": "Zobacz nasze realizacje",
+        "label": "Zobacz realizacje",
         "href": "/realizacje.html",
         "primary": false
       }
@@ -143,29 +161,29 @@
   "sections": [
     {
       "eyebrow": "Lokalnie",
-      "h2": "Strony internetowe dla firm z Koła i okolic",
+      "h2": "Tworzenie stron internetowych w Kole i okolicach",
       "intro": [],
       "items": [
         {
           "title": "Spotkanie na miejscu",
-          "html": "<p>Do Koła jedziemy z Sompolna około 30 minut, więc spotkanie w Twojej firmie to dla nas standard, nie wyjątek.</p>"
+          "html": "<p>Do Koła jadę z Sompolna około 30 minut, więc spotkanie w Twojej firmie to dla mnie standard, nie wyjątek.</p>"
         },
         {
-          "title": "Obszar, który obsługujemy",
+          "title": "Obszar, który obsługuję",
           "html": "<p>Koło i gminy powiatu kolskiego: Babiak, Chodów, Dąbie, Grzegorzew, Kłodawa, Kościelec, Olszówka, Osiek Mały, Przedecz oraz gmina wiejska Koło.</p>"
         },
         {
           "title": "SEO lokalne",
-          "html": "<p>Frazy z nazwą „Koło” bywają mylące dla Google, bo to też zwykłe słowo. Dlatego na stronie dokładamy kontekst: powiat kolski, kod pocztowy, okoliczne gminy.</p>"
+          "html": "<p>Frazy z nazwą „Koło” bywają mylące dla Google, bo to też zwykłe słowo. Dlatego na stronie dokładam kontekst: powiat kolski, kod pocztowy, okoliczne gminy.</p>"
         }
       ],
-      "before": "<p>Koło to najbliższe nam miasto powiatowe. Leży nad Wartą, przy węźle autostrady A2, i od dziesięcioleci kojarzy się z ceramiką. Lokalne firmy to dziś w dużej mierze usługi, handel, transport i budownictwo, a część z nich obsługuje klientów aż po Kłodawę, Dąbie i Przedecz.</p>\n <p>Dla firmy z Koła strona internetowa ma zwykle dwa zadania: przekonać klienta z okolicy, że warto zadzwonić, i pokazać się komuś spoza regionu, kto szuka dostawcy czy podwykonawcy przy A2. Dlatego projektujemy ją tak, żeby oferta, obszar działania i kontakt były widoczne od razu, także na telefonie.</p>\n <p>Działasz nie tylko w Kole, ale też w Koninie czy Turku? W artykule <a href=\"/blog-firma-w-kilku-miastach-konin-turek-kolo-slupca.html\">o firmach działających w kilku miastach</a> pokazujemy, jak zdobywać klientów z każdej z tych miejscowości bez tworzenia spamowych podstron.</p>\n <p>Firmom budowlanym i instalacyjnym z powiatu kolskiego polecamy artykuł o tym, <a href=\"/blog-strona-internetowa-firma-budowlana-oze-konin.html\">co powinna zawierać strona firmy budowlanej i OZE</a>.</p>"
+      "before": "<p>Koło to najbliższe mi miasto powiatowe. Leży nad Wartą, przy węźle autostrady A2, i od dziesięcioleci kojarzy się z ceramiką. Lokalne firmy to dziś w dużej mierze usługi, handel, transport i budownictwo, a część z nich obsługuje klientów aż po Kłodawę, Dąbie i Przedecz.</p>\n <p>Dla firmy z Koła strona internetowa ma zwykle dwa zadania: przekonać klienta z okolicy, że warto zadzwonić, i pokazać się komuś spoza regionu, kto szuka dostawcy czy podwykonawcy przy A2. Dlatego projektuję ją tak, żeby oferta, obszar działania i kontakt były widoczne od razu, także na telefonie.</p>\n <p>Działasz nie tylko w Kole, ale też w Koninie czy Turku? W artykule <a href=\"/blog-firma-w-kilku-miastach-konin-turek-kolo-slupca.html\">o firmach działających w kilku miastach</a> pokazuję, jak zdobywać klientów z każdej z tych miejscowości bez tworzenia spamowych podstron.</p>\n <p>Firmom budowlanym i instalacyjnym z powiatu kolskiego polecam artykuł o tym, <a href=\"/blog-strona-internetowa-firma-budowlana-oze-konin.html\">co powinna zawierać strona firmy budowlanej i OZE</a>.</p>"
     },
     {
-      "eyebrow": "Dlaczego my",
+      "eyebrow": "Dlaczego ja",
       "h2": "Co dostajesz w WebCanvas",
       "intro": [],
-      "before": "<ul>\n <li><strong>Projekt mobile-first:</strong> większość klientów ogląda stronę na telefonie.</li>\n <li><strong>SEO od pierwszego dnia:</strong> nagłówki, meta dane, dane strukturalne i szybkość ustawione przy wdrożeniu.</li>\n <li><strong>Lekki, szybki kod:</strong> bez zbędnych wtyczek i bibliotek.</li>\n <li><strong>Jeden zespół:</strong> projekt, kod i wdrożenie bez pośredników i podwykonawców.</li>\n <li><strong>Wsparcie po starcie:</strong> drobne zmiany, hosting i domena.</li>\n <li><strong>Jasna wycena:</strong> zakres i cena znane przed rozpoczęciem prac.</li>\n </ul>\n<p>\n Poza stronami zajmujemy się też <a href=\"/pozycjonowanie-seo.html\">pozycjonowaniem SEO</a>,\n <a href=\"/kampanie-google-ads.html\">kampaniami Google Ads</a> i <a href=\"/kampanie-meta-ads.html\">Meta Ads</a>.\n Przykłady naszej pracy, opisane jako case study, znajdziesz w <a href=\"/realizacje.html\">realizacjach</a>.\n </p>"
+      "before": "<ul>\n <li><strong>Projekt mobile-first:</strong> większość klientów ogląda stronę na telefonie.</li>\n <li><strong>SEO od pierwszego dnia:</strong> nagłówki, meta dane, dane strukturalne i szybkość ustawione przy wdrożeniu.</li>\n <li><strong>Lekki, szybki kod:</strong> bez zbędnych wtyczek i bibliotek.</li>\n <li><strong>Jedna osoba:</strong> projekt, kod i wdrożenie bez pośredników i podwykonawców.</li>\n <li><strong>Wsparcie po starcie:</strong> drobne zmiany, hosting i domena.</li>\n <li><strong>Jasna wycena:</strong> zakres i cena znane przed rozpoczęciem prac.</li>\n </ul>\n<p>\n Poza stronami zajmuję się też <a href=\"/pozycjonowanie-seo.html\">pozycjonowaniem SEO</a>,\n <a href=\"/kampanie-google-ads.html\">kampaniami Google Ads</a> i <a href=\"/kampanie-meta-ads.html\">Meta Ads</a>.\n Przykłady mojej pracy, opisane jako case study, znajdziesz w <a href=\"/realizacje.html\">realizacjach</a>.\n </p>"
     },
     {
       "eyebrow": "Inwestycja",
@@ -236,20 +254,47 @@
       "intro": [],
       "items": [
         {
+          "title": "Ile kosztuje stworzenie strony internetowej w Kole?",
+          "html": "<p>Prosta strona (Pakiet Pro) kosztuje od 3000 zł netto, a rozbudowana strona firmowa lub sklep internetowy (Pakiet Unique) od 4000 zł netto. Dokładną cenę podaję po rozmowie o zakresie, zwykle w ciągu 24 godzin.</p>"
+        },
+        {
           "title": "Czy możemy spotkać się osobiście w Kole?",
-          "html": "<p>Tak. Z Sompolna mamy do Koła około pół godziny, więc na spotkanie przyjeżdżamy do Twojej firmy. Kolejne etapy, czyli akceptację projektu i poprawki, możemy prowadzić online albo na miejscu, jak Ci wygodniej.</p>"
+          "html": "<p>Tak. Z Sompolna mam do Koła około pół godziny, więc na spotkanie przyjeżdżam do Twojej firmy. Kolejne etapy, czyli akceptację projektu i poprawki, możemy prowadzić online albo na miejscu, jak Ci wygodniej.</p>"
         },
         {
           "title": "Czy nazwa „Koło” nie utrudnia pozycjonowania?",
-          "html": "<p>Trochę tak, bo „koło” to też zwykłe słowo i Google musi zrozumieć, że chodzi o miasto. Pomagają w tym dane strukturalne z adresem, nazwy sąsiednich gmin w treści, spójne dane w wizytówce Google i frazy typu „w Kole” zamiast samego „Koło”. Ustawiamy to od pierwszego dnia.</p>"
+          "html": "<p>Trochę tak, bo „koło” to też zwykłe słowo i Google musi zrozumieć, że chodzi o miasto. Pomagają w tym dane strukturalne z adresem, nazwy sąsiednich gmin w treści, spójne dane w wizytówce Google i frazy typu „w Kole” zamiast samego „Koło”. Ustawiam to od pierwszego dnia.</p>"
         },
         {
           "title": "Ile trwa realizacja strony internetowej?",
-          "html": "<p>Zależy od zakresu. Prosta strona wizytówka to zwykle kilka tygodni, sklep internetowy czy aplikacja dedykowana wymaga więcej czasu. Dokładny harmonogram ustalamy po briefie.</p>"
+          "html": "<p>Prosta strona (Pakiet Pro) powstaje zwykle w 7–14 dni roboczych. Sklep internetowy albo aplikacja dedykowana (Pakiet Unique) to od 3 do 8 tygodni, zależnie od zakresu funkcji. Dokładny harmonogram ustalamy po briefie.</p>"
         },
         {
-          "title": "Czy zajmujecie się też hostingiem i domeną?",
-          "html": "<p>Tak. Pomagamy skonfigurować domenę, hosting i certyfikat SSL, a po wdrożeniu oferujemy opiekę powdrożeniową, żeby strona działała bez przestojów.</p>"
+          "title": "Czy zajmujesz się też hostingiem i domeną?",
+          "html": "<p>Tak. Pomagam skonfigurować domenę, hosting i certyfikat SSL, a po wdrożeniu oferuję opiekę powdrożeniową, żeby strona działała bez przestojów.</p>"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Okolica",
+      "h2": "Pracujesz także poza Kołem?",
+      "intro": [],
+      "moreLabel": "Zobacz ofertę",
+      "items": [
+        {
+          "title": "Strony internetowe Konin",
+          "html": "<p>Stare Miasto, osiedla Nowego Konina i gminy powiatu konińskiego, m.in. Golina, Kleczew i Ślesin.</p>",
+          "href": "/strony-internetowe-konin.html"
+        },
+        {
+          "title": "Strony internetowe Sompolno",
+          "html": "<p>Sompolno, Biele, Lubstów i pozostałe miejscowości gminy Sompolno.</p>",
+          "href": "/strony-internetowe-sompolno.html"
+        },
+        {
+          "title": "Strony internetowe Turek",
+          "html": "<p>Turek, Tuliszków, Dobra, Przykona i pozostałe gminy powiatu tureckiego.</p>",
+          "href": "/strony-internetowe-turek.html"
         }
       ]
     },
@@ -257,7 +302,7 @@
       "eyebrow": "Kolejny krok",
       "h2": "Porozmawiajmy o Twojej stronie",
       "intro": [],
-      "before": "<p>\n Opowiedz nam o swojej firmie z Koła i okolic. Bezpłatnie wycenimy projekt i zaproponujemy\n rozwiązanie dopasowane do Twojego budżetu i celów.\n </p>\n<a href=\"/#kontakt\">\n Omówmy Twój projekt\n </a>\n <a href=\"/realizacje.html\">\n Zobacz realizacje\n </a>"
+      "before": "<p>\n Opowiedz mi o swojej firmie z Koła i okolic. Bezpłatnie wycenię projekt i zaproponuję\n rozwiązanie dopasowane do Twojego budżetu i celów.\n </p>\n<a href=\"/#kontakt\">\n Omówmy Twój projekt\n </a>\n <a href=\"/realizacje.html\">\n Zobacz realizacje\n </a>"
     }
   ]
 }

@@ -165,7 +165,7 @@
  </ol>
  <h2>Czy małe miasto to łatwiejsze SEO</h2>
  <p>
- Tak, i to znacząco. W Koninie, Turku, Kole czy Słupcy liczba firm walczących o tę samą
+ Tak, i to znacząco. W <a href="/strony-internetowe-konin.html">Koninie</a>, <a href="/strony-internetowe-turek.html">Turku</a>, <a href="/strony-internetowe-kolo.html">Kole</a> czy <a href="/strony-internetowe-slupca.html">Słupcy</a> liczba firm walczących o tę samą
  frazę jest kilkakrotnie mniejsza niż w Poznaniu czy Warszawie. Przy solidnej podstawie,
  czyli dobrej wizytówce, zoptymalizowanej stronie i regularnych treściach, realne efekty
  pojawiają się wyraźnie szybciej niż w dużych miastach.

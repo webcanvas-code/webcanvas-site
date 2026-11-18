@@ -2,7 +2,7 @@
   "slug": "pozycjonowanie-seo",
   "kind": "pozycjonowanie-seo",
   "title": "Pozycjonowanie stron internetowych SEO dla firm | WebCanvas",
-  "description": "Pozycjonowanie stron internetowych dla firm z całej Polski. Audyt SEO, regularne działania i miesięczne raportowanie. Sprawdź jak pracujemy i jakie efekty osiągamy.",
+  "description": "Pozycjonowanie stron internetowych dla firm z całej Polski. Audyt SEO, regularne działania i miesięczne raportowanie. Sprawdź, jak pracuję i czego możesz się spodziewać.",
   "ogTitle": "Pozycjonowanie stron internetowych SEO dla firm | WebCanvas",
   "ogImage": "/img/og-image.png",
   "path": "/pozycjonowanie-seo.html",
@@ -57,7 +57,7 @@
           "name": "Kiedy pojawią się pierwsze efekty pozycjonowania?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Pierwsze zmiany pozycji w Google są zazwyczaj widoczne po 2 do 4 miesiącach od startu. Pozycjonowanie to proces długofalowy — stabilne i trwałe wyniki budują się przez 6 do 12 miesięcy regularnych działań. Unikamy technik, które dają szybki efekt, ale kończą się karą od Google."
+            "text": "Pierwsze zmiany pozycji w Google są zazwyczaj widoczne po 2 do 4 miesiącach od startu. Pozycjonowanie to proces długofalowy — stabilne i trwałe wyniki budują się przez 6 do 12 miesięcy regularnych działań. Unikam technik, które dają szybki efekt, ale kończą się karą od Google."
           }
         },
         {
@@ -65,7 +65,7 @@
           "name": "Ile kosztuje pozycjonowanie strony internetowej?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Miesięczna obsługa SEO w WebCanvas zaczyna się od 800 zł netto. Ostateczna cena zależy od konkurencyjności branży, zakresu słów kluczowych i stanu technicznego strony. Każdy projekt wyceniamy indywidualnie po audycie."
+            "text": "Miesięczna obsługa SEO w WebCanvas zaczyna się od 800 zł netto. Ostateczna cena zależy od konkurencyjności branży, zakresu słów kluczowych i stanu technicznego strony. Każdy projekt wyceniam indywidualnie po audycie."
           }
         },
         {
@@ -73,15 +73,15 @@
           "name": "Co wchodzi w skład miesięcznej obsługi SEO?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "W ramach miesięcznej obsługi wykonujemy: monitoring pozycji i ruchu organicznego, optymalizację treści i meta danych, budowę profilu linków, poprawki techniczne oraz przygotowujemy miesięczny raport z wynikami i planem działań."
+            "text": "W ramach miesięcznej obsługi wykonuję: monitoring pozycji i ruchu organicznego, optymalizację treści i meta danych, budowę profilu linków, poprawki techniczne oraz przygotowuję miesięczny raport z wynikami i planem działań."
           }
         },
         {
           "@type": "Question",
-          "name": "Czy pozycjonujecie strony spoza Konina?",
+          "name": "Czy pozycjonujesz strony spoza Konina?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Tak, obsługujemy firmy z całej Polski. Pozycjonowanie prowadzimy zdalnie niezależnie od lokalizacji klienta."
+            "text": "Tak, obsługuję firmy z całej Polski. Pozycjonowanie prowadzę zdalnie niezależnie od lokalizacji klienta."
           }
         }
       ]
@@ -102,7 +102,7 @@
     "badge": "Usługa",
     "metaLine": "Dla firm z całej Polski",
     "lead": [
-      "\n Audyt, regularne działania i miesięczne raportowanie. Pomagamy firmom pojawiać się wyżej\n w wynikach Google na frazy, które szukają ich potencjalni klienci. Bez obietnic bez pokrycia\n i bez długoterminowych umów na start.\n "
+      "\n Audyt, regularne działania i miesięczne raportowanie. Pomagam firmom pojawiać się wyżej\n w wynikach Google na frazy, które szukają ich potencjalni klienci. Bez obietnic bez pokrycia\n i bez długoterminowych umów na start.\n "
     ],
     "buttons": [
       {
@@ -111,7 +111,7 @@
         "primary": true
       },
       {
-        "label": "Zobacz nasze realizacje",
+        "label": "Zobacz realizacje",
         "href": "/realizacje.html",
         "primary": false
       }
@@ -127,50 +127,50 @@
       "items": [
         {
           "title": "Audyt SEO na start",
-          "html": "<p>Każdą współpracę zaczynamy od audytu technicznego strony, analizy słów kluczowych i sprawdzenia konkurencji. Na tej podstawie budujemy plan działań z konkretnymi priorytetami, nie listą życzeń.</p>"
+          "html": "<p>Każdą współpracę zaczynam od audytu technicznego strony, analizy słów kluczowych i sprawdzenia konkurencji. Na tej podstawie buduję plan działań z konkretnymi priorytetami, nie listą życzeń.</p>"
         },
         {
           "title": "Optymalizacja treści i meta danych",
-          "html": "<p>Aktualizujemy tytuły, opisy, nagłówki i treści podstron pod frazy z realnym potencjałem. Dbamy o to, żeby każda podstrona odpowiadała na konkretne zapytanie użytkownika, a nie tylko zawierała słowo kluczowe.</p>"
+          "html": "<p>Aktualizuję tytuły, opisy, nagłówki i treści podstron pod frazy z realnym potencjałem. Dbam o to, żeby każda podstrona odpowiadała na konkretne zapytanie użytkownika, a nie tylko zawierała słowo kluczowe.</p>"
         },
         {
           "title": "Budowa profilu linków",
-          "html": "<p>Pozyskujemy wartościowe linki z zewnętrznych serwisów, które zwiększają autorytet strony w oczach Google. Pracujemy wyłącznie z zaufanymi źródłami, bez farm linków i technik grożących karą algorytmiczną.</p>"
+          "html": "<p>Pozyskuję wartościowe linki z zewnętrznych serwisów, które zwiększają autorytet strony w oczach Google. Pracuję wyłącznie z zaufanymi źródłami, bez farm linków i technik grożących karą algorytmiczną.</p>"
         },
         {
           "title": "Optymalizacja techniczna",
-          "html": "<p>Monitorujemy prędkość ładowania, strukturę URL, dane strukturalne, indeksowanie i Core Web Vitals. Błędy techniczne naprawiamy na bieżąco, bo Google ocenia stronę całościowo, nie tylko jej treść.</p>"
+          "html": "<p>Monitoruję prędkość ładowania, strukturę URL, dane strukturalne, indeksowanie i Core Web Vitals. Błędy techniczne naprawiam na bieżąco, bo Google ocenia stronę całościowo, nie tylko jej treść.</p>"
         },
         {
           "title": "Miesięczne raportowanie",
-          "html": "<p>Co miesiąc dostajesz raport z pozycjami na kluczowe frazy, ruchem organicznym, wykonanymi działaniami i planem na kolejny miesiąc. Widzisz co robimy i jakie to przynosi efekty.</p>"
+          "html": "<p>Co miesiąc dostajesz raport z pozycjami na kluczowe frazy, ruchem organicznym, wykonanymi działaniami i planem na kolejny miesiąc. Widzisz, co robię i jakie to przynosi efekty.</p>"
         },
         {
           "title": "Pozycjonowanie lokalne",
-          "html": "<p>Dla firm obsługujących lokalny rynek dbamy o widoczność na frazy z nazwą miasta, optymalizację wizytówki Google oraz pojawianie się w Mapach Google. Klienci z okolicy powinni znajdować Cię jako pierwsi.</p>"
+          "html": "<p>Dla firm obsługujących lokalny rynek dbam o widoczność na frazy z nazwą miasta, optymalizację wizytówki Google oraz pojawianie się w Mapach Google. Klienci z okolicy powinni znajdować Cię jako pierwsi.</p><p>Działam m.in. w <a href=\"/strony-internetowe-konin.html\">Koninie</a>, <a href=\"/strony-internetowe-turek.html\">Turku</a>, <a href=\"/strony-internetowe-kolo.html\">Kole</a>, <a href=\"/strony-internetowe-slupca.html\">Słupcy</a> i <a href=\"/strony-internetowe-poznan.html\">Poznaniu</a>. Masz firmę w regionie konińskim? Zobacz ofertę <a href=\"/pozycjonowanie-stron-konin.html\">pozycjonowania stron w Koninie</a>.</p>"
         }
       ]
     },
     {
-      "eyebrow": "Jak pracujemy",
+      "eyebrow": "Jak pracuję",
       "h2": "Proces współpracy SEO krok po kroku",
       "intro": [],
       "items": [
         {
           "title": "Audyt i analiza",
-          "html": "<p>Sprawdzamy stan techniczny strony, analizujemy słowa kluczowe i badamy konkurencję. Na tej podstawie ustalamy plan działań i priorytety.</p>"
+          "html": "<p>Sprawdzam stan techniczny strony, analizuję słowa kluczowe i badam konkurencję. Na tej podstawie ustalam plan działań i priorytety.</p>"
         },
         {
           "title": "Wdrożenie optymalizacji",
-          "html": "<p>Wprowadzamy zmiany techniczne i treściowe na stronie. Optymalizujemy istniejące podstrony i tworzymy nowe treści pod zidentyfikowane frazy.</p>"
+          "html": "<p>Wprowadzam zmiany techniczne i treściowe na stronie. Optymalizuję istniejące podstrony i tworzę nowe treści pod zidentyfikowane frazy.</p>"
         },
         {
           "title": "Regularne działania",
-          "html": "<p>Co miesiąc realizujemy zaplanowane działania: budowa linków, aktualizacja treści, poprawki techniczne i monitoring wyników w Google Search Console.</p>"
+          "html": "<p>Co miesiąc realizuję zaplanowane działania: budowa linków, aktualizacja treści, poprawki techniczne i monitoring wyników w Google Search Console.</p>"
         },
         {
           "title": "Raport i planowanie",
-          "html": "<p>Na koniec miesiąca przesyłamy raport z wynikami i rozmawiamy o planie na kolejny miesiąc. Strategia ewoluuje razem z wynikami.</p>"
+          "html": "<p>Na koniec miesiąca przesyłam raport z wynikami i rozmawiamy o planie na kolejny miesiąc. Strategia ewoluuje razem z wynikami.</p>"
         }
       ]
     },
@@ -178,13 +178,13 @@
       "eyebrow": "Oczekiwania",
       "h2": "Kiedy pojawią się efekty pozycjonowania?",
       "intro": [],
-      "before": "<p>Pozycjonowanie to inwestycja w widoczność, która buduje się przez kilka miesięcy, ale procentuje przez lata. Pierwsze zmiany pozycji w Google są zazwyczaj widoczne po 2 do 4 miesiącach od startu. Stabilne wyniki na konkurencyjnych frazach budują się przez 6 do 12 miesięcy regularnych działań.</p>\n <p>Firmy, które oczekują efektów po 2 tygodniach, najczęściej kończą z agencją stosującą techniki dające chwilowy wzrost, po którym następuje kara algorytmiczna i utrata całego dorobku. My pracujemy metodami, które są bezpieczne i których efekty nie znikają po zakończeniu współpracy.</p>\n <p>Tempo wzrostu zależy od branży, konkurencyjności fraz, stanu technicznego strony i historii domeny. Dlatego przed startem robimy audyt i mówimy wprost, czego możesz się spodziewać w Twoim konkretnym przypadku.</p>\n<a href=\"/blog-pozycjonowanie-lokalne-dla-malych-firm.html\">\n Przeczytaj jak działa pozycjonowanie lokalne dla małych firm\n </a>\n <br>\n <a href=\"/blog-firma-w-kilku-miastach-konin-turek-kolo-slupca.html\">\n Działasz w kilku miastach? Zobacz, jak zdobywać klientów w każdym z nich\n </a>"
+      "before": "<p>Pozycjonowanie to inwestycja w widoczność, która buduje się przez kilka miesięcy, ale procentuje przez lata. Pierwsze zmiany pozycji w Google są zazwyczaj widoczne po 2 do 4 miesiącach od startu. Stabilne wyniki na konkurencyjnych frazach budują się przez 6 do 12 miesięcy regularnych działań.</p>\n <p>Firmy, które oczekują efektów po 2 tygodniach, najczęściej kończą z agencją stosującą techniki dające chwilowy wzrost, po którym następuje kara algorytmiczna i utrata całego dorobku. Pracuję metodami, które są bezpieczne i których efekty nie znikają po zakończeniu współpracy.</p>\n <p>Tempo wzrostu zależy od branży, konkurencyjności fraz, stanu technicznego strony i historii domeny. Dlatego przed startem robię audyt i mówię wprost, czego możesz się spodziewać w Twoim konkretnym przypadku.</p>\n<a href=\"/blog-pozycjonowanie-lokalne-dla-malych-firm.html\">\n Przeczytaj jak działa pozycjonowanie lokalne dla małych firm\n </a>\n <br>\n <a href=\"/blog-firma-w-kilku-miastach-konin-turek-kolo-slupca.html\">\n Działasz w kilku miastach? Zobacz, jak zdobywać klientów w każdym z nich\n </a>"
     },
     {
       "eyebrow": "Inwestycja",
       "h2": "Ile kosztuje pozycjonowanie strony?",
       "intro": [
-        "Rozliczamy się miesięcznie. Każdy projekt wyceniamy indywidualnie po audycie, ale poniżej znajdziesz orientacyjne widełki."
+        "Rozliczamy się miesięcznie. Każdy projekt wyceniam indywidualnie po audycie, ale poniżej znajdziesz orientacyjne widełki."
       ],
       "items": [
         {
@@ -244,7 +244,7 @@
           "href": "/#kontakt"
         }
       ],
-      "after": "<p>Nie wiesz który pakiet wybrać? <a href=\"/#kontakt\">Napisz do nas</a> i doradzimy po rozmowie i bezpłatnym audycie.</p>"
+      "after": "<p>Nie wiesz który pakiet wybrać? <a href=\"/#kontakt\">Napisz do mnie</a>, a doradzę po rozmowie i bezpłatnym audycie.</p>"
     },
     {
       "eyebrow": "Wiedza",
@@ -275,11 +275,11 @@
       "items": [
         {
           "title": "Kiedy pojawią się pierwsze efekty pozycjonowania?",
-          "html": "<p>Pierwsze zmiany pozycji w Google są zazwyczaj widoczne po 2 do 4 miesiącach od startu. Stabilne i trwałe wyniki budują się przez 6 do 12 miesięcy regularnych działań. Unikamy technik, które dają szybki efekt, ale kończą się karą od Google.</p>"
+          "html": "<p>Pierwsze zmiany pozycji w Google są zazwyczaj widoczne po 2 do 4 miesiącach od startu. Stabilne i trwałe wyniki budują się przez 6 do 12 miesięcy regularnych działań. Unikam technik, które dają szybki efekt, ale kończą się karą od Google.</p>"
         },
         {
           "title": "Ile kosztuje pozycjonowanie strony internetowej?",
-          "html": "<p>Miesięczna obsługa SEO zaczyna się od 800 zł netto. Ostateczna cena zależy od konkurencyjności branży, zakresu słów kluczowych i stanu technicznego strony. Każdy projekt wyceniamy indywidualnie po bezpłatnym audycie.</p>"
+          "html": "<p>Miesięczna obsługa SEO zaczyna się od 800 zł netto. Ostateczna cena zależy od konkurencyjności branży, zakresu słów kluczowych i stanu technicznego strony. Każdy projekt wyceniam indywidualnie po bezpłatnym audycie.</p>"
         },
         {
           "title": "Co wchodzi w skład miesięcznej obsługi SEO?",
@@ -287,11 +287,11 @@
         },
         {
           "title": "Czy mogę zrezygnować z pozycjonowania w dowolnym momencie?",
-          "html": "<p>Tak. Rozliczamy się miesięcznie bez długoterminowych umów na start. Zależy nam na tym, żebyś zostawał bo widzisz efekty, a nie dlatego że podpisałeś umowę na 12 miesięcy.</p>"
+          "html": "<p>Tak. Rozliczamy się miesięcznie bez długoterminowych umów na start. Zależy mi na tym, żebyś zostawał bo widzisz efekty, a nie dlatego że podpisałeś umowę na 12 miesięcy.</p>"
         },
         {
-          "title": "Czy pozycjonujecie strony dla firm spoza Konina?",
-          "html": "<p>Tak, obsługujemy firmy z całej Polski. Całą współpracę prowadzimy zdalnie. Lokalizacja klienta nie ma znaczenia dla jakości i zakresu działań.</p>"
+          "title": "Czy pozycjonujesz strony dla firm spoza Konina?",
+          "html": "<p>Tak, obsługuję firmy z całej Polski. Całą współpracę prowadzę zdalnie. Lokalizacja klienta nie ma znaczenia dla jakości i zakresu działań.</p>"
         }
       ]
     },
@@ -299,7 +299,7 @@
       "eyebrow": "Kolejny krok",
       "h2": "Zacznijmy od bezpłatnego audytu",
       "intro": [],
-      "before": "<p>\n Opowiedz nam o swojej firmie i stronie. Przeprowadzimy bezpłatny audyt SEO i powiemy wprost, jakie masz szanse na wzrost widoczności i co stoi temu na przeszkodzie.\n </p>\n<a href=\"/#kontakt\">\n Zamów bezpłatny audyt SEO\n </a>\n <a href=\"/realizacje.html\">\n Zobacz realizacje\n </a>"
+      "before": "<p>\n Opowiedz mi o swojej firmie i stronie. Przeprowadzę bezpłatny audyt SEO i powiem wprost, jakie masz szanse na wzrost widoczności i co stoi temu na przeszkodzie.\n </p>\n<a href=\"/#kontakt\">\n Zamów bezpłatny audyt SEO\n </a>\n <a href=\"/realizacje.html\">\n Zobacz realizacje\n </a>"
     }
   ]
 }

@@ -42,6 +42,9 @@ export const cityLinks = [
   { label: 'Strony internetowe Koło', href: '/strony-internetowe-kolo.html' },
   { label: 'Strony internetowe Słupca', href: '/strony-internetowe-slupca.html' },
   { label: 'Strony internetowe Poznań', href: '/strony-internetowe-poznan.html' },
+  { label: 'Strony internetowe Ślesin', href: '/strony-internetowe-slesin.html' },
+  { label: 'Strony internetowe Sompolno', href: '/strony-internetowe-sompolno.html' },
+  { label: 'Pozycjonowanie stron Konin', href: '/pozycjonowanie-stron-konin.html' },
 ];
 
 export const reviews = [

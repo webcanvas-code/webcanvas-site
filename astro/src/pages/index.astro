@@ -75,7 +75,7 @@ const schema = [
     openingHoursSpecification: [
       { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '09:00', closes: '17:00' },
     ],
-    description: 'WebCanvas projektuje i wdraża nowoczesne strony internetowe oraz sklepy e-commerce dla firm z całej Polski. Pracujemy zdalnie, obsługując klientów z całego kraju.',
+    description: 'WebCanvas z Sompolna projektuje i wdraża strony internetowe oraz sklepy e-commerce dla firm z Konina, Turku, Koła, Słupcy, Ślesina, Sompolna, Poznania i całej Polski.',
     email: company.email,
     telephone: '+48739043596',
     image: 'https://web-canvas.pl/img/og-image.png',
@@ -86,6 +86,7 @@ const schema = [
       { '@type': 'City', name: 'Słupca' },
       { '@type': 'City', name: 'Poznań' },
       { '@type': 'City', name: 'Sompolno' },
+      { '@type': 'City', name: 'Ślesin' },
       { '@type': 'AdministrativeArea', name: 'Wielkopolska' },
     ],
     sameAs: [company.socials.facebook, company.socials.instagram, company.googleReviews],
@@ -215,7 +216,7 @@ const schema = [
       <div>
         <p class="eyebrow">Jak pracuję</p>
         <h2 class="h2" id="studio-h">Jeden kontakt. <span class="accent">Cała odpowiedzialność.</span></h2>
-        <p class="lead approach__lead">Pracuję z firmami z Konina, Turku, Koła, Słupcy, Poznania i z całej Polski, zdalnie albo na spotkaniu.</p>
+        <p class="lead approach__lead">Pracuję z firmami z <a href="/strony-internetowe-konin.html">Konina</a>, <a href="/strony-internetowe-turek.html">Turku</a>, <a href="/strony-internetowe-kolo.html">Koła</a>, <a href="/strony-internetowe-slupca.html">Słupcy</a>, <a href="/strony-internetowe-slesin.html">Ślesina</a>, <a href="/strony-internetowe-sompolno.html">Sompolna</a>, <a href="/strony-internetowe-poznan.html">Poznania</a> i z całej Polski, zdalnie albo na spotkaniu.</p>
       </div>
       <ol class="principles">
         {principles.map((p) => (
@@ -492,6 +493,8 @@ const schema = [
   .approach { display: grid; gap: 56px; grid-template-columns: minmax(0, 1fr); }
   @media (min-width: 1000px) { .approach { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 80px; } }
   .approach__lead { margin-top: 28px; }
+  .approach__lead a { color: inherit; text-decoration: underline; text-decoration-color: var(--rose); text-underline-offset: 3px; }
+  .approach__lead a:hover { color: var(--accent-fg); }
   .principles { counter-reset: p; display: grid; }
   .principles li { align-content: center; }
   .principles li { counter-increment: p; display: grid; grid-template-columns: 56px 1fr; gap: 4px 0; padding: 28px 0; border-top: 1px solid var(--line); }

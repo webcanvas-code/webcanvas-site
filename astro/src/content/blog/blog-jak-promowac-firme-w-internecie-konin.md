@@ -86,7 +86,7 @@
  Wizytówka Google to punkt wejścia, ale bez strony internetowej Twoja obecność online jest niepełna. Strona daje Ci pełną kontrolę nad tym, jak firma jest prezentowana: jakie usługi oferujesz, dla kogo pracujesz, ile to kosztuje, jakie masz realizacje. To miejsce, do którego prowadzą wszystkie inne kanały, od wizytówki Google, przez social media, po reklamy płatne.
  </p>
  <p>
- Dla firm z Konina i okolic strona internetowa pełni jeszcze jedną kluczową funkcję: pozwala pozycjonować się na lokalne frazy kluczowe. Jeśli prowadzisz firmę remontową, podstrona zoptymalizowana pod frazę „remonty Konin" może przyciągać dziesiątki odwiedzin miesięcznie od osób, które aktywnie szukają wykonawcy w Twoim mieście. Profil na Facebooku tego nie zrobi.
+ Dla firm z Konina i okolic strona internetowa pełni jeszcze jedną kluczową funkcję: pozwala pozycjonować się na lokalne frazy kluczowe. Jeśli prowadzisz firmę remontową, podstrona zoptymalizowana pod frazę „remonty Konin" może przyciągać dziesiątki odwiedzin miesięcznie od osób, które aktywnie szukają wykonawcy w Twoim mieście. Profil na Facebooku tego nie zrobi. Jak podchodzimy do takich stron, opisujemy na podstronach dla firm z <a href="/strony-internetowe-konin.html">Konina</a>, <a href="/strony-internetowe-turek.html">Turku</a>, <a href="/strony-internetowe-kolo.html">Koła</a> i <a href="/strony-internetowe-slupca.html">Słupcy</a>.
  </p>
  <p>
  Strona nie musi być rozbudowana ani droga. Dla wielu lokalnych firm wystarczy profesjonalna wizytówka z kilkoma podstronami. Ważne, żeby była szybka, wyglądała dobrze na telefonie i zawierała treści pisane językiem Twojego klienta. Więcej o kosztach w artykule
@@ -103,7 +103,7 @@
  Równie ważne jest odpowiadanie na opinie. Zarówno na pozytywne (krótkie podziękowanie), jak i na negatywne (rzeczowa, spokojna odpowiedź). Google to widzi i premiuje firmy, które są aktywne. Klienci też to widzą i wyciągają wnioski o tym, jak firma traktuje swoich odbiorców.
  </p>
  <p>
- Chcesz sprawdzić, jak Twoja firma wypada w lokalnych wynikach Google w Koninie? Bezpłatnie przeanalizujemy Twoją widoczność i podpowiemy, od czego zacząć.
+ Chcesz sprawdzić, jak Twoja firma wypada w lokalnych wynikach Google w Koninie? Bezpłatnie przeanalizujemy Twoją widoczność i podpowiemy, od czego zacząć. Szczegóły znajdziesz na stronie o <a href="/pozycjonowanie-stron-konin.html">pozycjonowaniu stron w Koninie</a>.
  </p>
  <a href="/#kontakt">
  Zamów bezpłatną analizę

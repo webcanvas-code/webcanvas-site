@@ -4,20 +4,26 @@ import Icon from './Icon.astro';
 interface Props {
   name: string;
   note?: string;
+  /** dla kogo jest pakiet, jedno zdanie */
+  who?: string;
   amount: string;
   unit?: string;
+  /** czas realizacji, np. „Gotowe w 7–14 dni” */
+  time?: string;
   items: string[];
   cta: string;
   href?: string;
   featured?: boolean;
 }
-const { name, note, amount, unit, items, cta, href = '#kontakt', featured = false } = Astro.props;
+const { name, note, who, amount, unit, time, items, cta, href = '#kontakt', featured = false } = Astro.props;
 ---
 <li class:list={['plan', { 'plan--featured': featured }]}>
   {featured && <span class="plan__badge">Najczęściej wybierany</span>}
+  {note && <p class="plan__kicker">{note}</p>}
   <h3>{name}</h3>
-  {note && <p class="plan__note">{note}</p>}
+  {who && <p class="plan__note">{who}</p>}
   <p class="plan__price"><strong>{amount}</strong> {unit && <span>{unit}</span>}</p>
+  {time && <p class="plan__time"><Icon name="clock" size={16} />{time}</p>}
   <ul class="plan__items">
     {items.map((it) => <li><Icon name="check" size={18} />{it}</li>)}
   </ul>
@@ -26,7 +32,7 @@ const { name, note, amount, unit, items, cta, href = '#kontakt', featured = fals
 
 <style>
   .plan {
-    position: relative; display: flex; flex-direction: column; gap: 14px;
+    position: relative; display: flex; flex-direction: column; gap: 12px;
     padding: clamp(28px, 3vw, 40px); border-radius: var(--r-lg);
     background: var(--card); border: 1px solid var(--line); color: var(--fg);
     transition: transform .3s var(--ease), border-color .3s var(--ease);
@@ -35,12 +41,15 @@ const { name, note, amount, unit, items, cta, href = '#kontakt', featured = fals
   .plan--featured { background: linear-gradient(180deg, rgb(225 29 72 / 0.13), var(--card) 42%); border-color: rgb(225 29 72 / 0.55); }
   .plan--featured:hover { border-color: var(--rose); }
   .plan__badge { position: absolute; top: -13px; left: clamp(28px, 3vw, 40px); background: var(--rose); color: #fff; font-size: var(--t-label); font-weight: 580; padding: 4px 12px; border-radius: 999px; }
+  .plan__kicker { font-size: var(--t-label); font-weight: 580; letter-spacing: .04em; text-transform: uppercase; color: var(--fg-muted); }
   h3 { font-size: var(--t-h3); }
   .plan__note { color: var(--fg-muted); }
-  .plan__price { margin: 12px 0 8px; display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px; }
+  .plan__price { margin: 10px 0 0; display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px; }
   .plan__price strong { font-size: clamp(2.3rem, 2rem + 1.2vw, 3rem); font-weight: 680; letter-spacing: -0.04em; line-height: 1; }
   .plan__price span { color: var(--fg-muted); }
-  .plan__items { display: grid; gap: 12px; padding: 20px 0 28px; border-top: 1px solid var(--line); margin-bottom: auto; }
+  .plan__time { display: flex; align-items: center; gap: 8px; color: var(--fg-muted); font-size: 0.95rem; }
+  .plan__time :global(svg) { flex: none; }
+  .plan__items { display: grid; gap: 12px; padding: 20px 0 28px; margin-top: 6px; border-top: 1px solid var(--line); margin-bottom: auto; }
   .plan__items li { display: flex; gap: 12px; align-items: flex-start; }
   .plan__items :global(svg) { flex: none; margin-top: 3px; color: var(--accent-fg); }
   .btn--ghost { border-color: var(--line-strong); color: var(--fg); }

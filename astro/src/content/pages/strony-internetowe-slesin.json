@@ -38,7 +38,7 @@
           "url": "https://web-canvas.pl/",
           "telephone": "+48739043596",
           "email": "kontakt@web-canvas.pl",
-          "priceRange": "od 3000 PLN",
+          "priceRange": "od 1500 PLN",
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "Biele 126",
@@ -106,7 +106,7 @@
           "name": "Ile kosztuje stworzenie strony internetowej w Ślesinie?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Prosta strona (Pakiet Pro) kosztuje od 3000 zł netto, a rozbudowana strona firmowa lub sklep internetowy (Pakiet Unique) od 4000 zł netto. Dokładną cenę podaję po rozmowie o zakresie, zwykle w ciągu 24 godzin."
+            "text": "Landing page (Pakiet Pro) kosztuje od 1 500 zł netto, strona firmowa (Pakiet Unique) od 2 500 zł netto, a sklep internetowy od 5 000 zł netto. Dokładną cenę podaję po rozmowie o zakresie, zwykle w ciągu 24 godzin."
           }
         },
         {
@@ -230,62 +230,7 @@
       "intro": [
         "Przejrzyste zasady współpracy. Wybierz rozwiązanie idealnie dopasowane do Twoich potrzeb biznesowych."
       ],
-      "items": [
-        {
-          "price": {
-            "featured": false,
-            "note": "Dla firm potrzebujących solidnego startu w sieci.",
-            "amount": "od 3000",
-            "unit": "PLN netto",
-            "list": [
-              "Strona One-Page / Landing",
-              "Responsywny Design (RWD)",
-              "Podstawowa optymalizacja SEO",
-              "Konfiguracja domeny i hostingu"
-            ],
-            "cta": "Wybieram Pro"
-          },
-          "title": "Pakiet Pro",
-          "html": "<p>Dla firm potrzebujących solidnego startu w sieci.</p>\n od 3000\n PLN netto\n <ul>\n <li> Strona One-Page / Landing</li>\n <li> Responsywny Design (RWD)</li>\n <li> Podstawowa optymalizacja SEO</li>\n <li> Konfiguracja domeny i hostingu</li>\n </ul>\n Wybieram Pro",
-          "href": "/#kontakt"
-        },
-        {
-          "price": {
-            "featured": true,
-            "note": "Kompleksowe wdrożenie sklepu lub zaawansowanej strony.",
-            "amount": "od 4000",
-            "unit": "PLN netto",
-            "list": [
-              "Indywidualny projekt graficzny UI",
-              "System CMS / E-commerce",
-              "Zaawansowane animacje",
-              "Szkolenie z obsługi panelu"
-            ],
-            "cta": "Wybieram Unique"
-          },
-          "title": "Pakiet Unique",
-          "html": "Polecany\n <p>Kompleksowe wdrożenie sklepu lub zaawansowanej strony.</p>\n od 4000\n PLN netto\n <ul>\n <li> Indywidualny projekt graficzny UI</li>\n <li> System CMS / E-commerce</li>\n <li> Zaawansowane animacje</li>\n <li> Szkolenie z obsługi panelu</li>\n </ul>\n Wybieram Unique",
-          "href": "/#kontakt"
-        },
-        {
-          "price": {
-            "featured": false,
-            "note": "Prace programistyczne i rozwój istniejących projektów.",
-            "amount": "200",
-            "unit": "PLN / h",
-            "list": [
-              "Audyt i optymalizacja kodu",
-              "Wdrażanie nowych funkcji",
-              "Naprawa błędów",
-              "Konsultacje technologiczne"
-            ],
-            "cta": "Zapytaj o dostępność"
-          },
-          "title": "Pakiet Hourly",
-          "html": "<p>Prace programistyczne i rozwój istniejących projektów.</p>\n 200\n PLN / h\n <ul>\n <li> Audyt i optymalizacja kodu</li>\n <li> Wdrażanie nowych funkcji</li>\n <li> Naprawa błędów</li>\n <li> Konsultacje technologiczne</li>\n </ul>\n Zapytaj o dostępność",
-          "href": "/#kontakt"
-        }
-      ]
+      "plans": "web"
     },
     {
       "eyebrow": "Pytania",
@@ -302,7 +247,7 @@
         },
         {
           "title": "Ile kosztuje stworzenie strony internetowej w Ślesinie?",
-          "html": "<p>Prosta strona (Pakiet Pro) kosztuje od 3000 zł netto, a rozbudowana strona firmowa lub sklep internetowy (Pakiet Unique) od 4000 zł netto. Dokładną cenę podaję po rozmowie o zakresie, zwykle w ciągu 24 godzin.</p>"
+          "html": "<p>Landing page (Pakiet Pro) kosztuje od 1 500 zł netto, strona firmowa (Pakiet Unique) od 2 500 zł netto, a sklep internetowy od 5 000 zł netto. Dokładną cenę podaję po rozmowie o zakresie, zwykle w ciągu 24 godzin.</p>"
         },
         {
           "title": "Ile trwa realizacja strony internetowej?",

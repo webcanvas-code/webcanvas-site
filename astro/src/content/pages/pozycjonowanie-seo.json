@@ -98,7 +98,7 @@
       }
     ],
     "h1": "Pozycjonowanie stron internetowych dla firm",
-    "accent": "internetowych",
+    "accent": "dla firm",
     "badge": "Usługa",
     "metaLine": "Dla firm z całej Polski",
     "lead": [
@@ -111,8 +111,8 @@
         "primary": true
       },
       {
-        "label": "Zobacz realizacje",
-        "href": "/realizacje.html",
+        "label": "Zadzwoń: 739 043 596",
+        "href": "tel:+48739043596",
         "primary": false
       }
     ]

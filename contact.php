@@ -40,7 +40,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email_content .= "Email: $from\n";
         $project_type = mb_substr(strip_tags(trim($_POST['project_type'] ?? '')), 0, 100);
         if ($project_type !== '') $email_content .= "Rodzaj projektu: $project_type\n";
+        // Źródło wizyty (UTM, gclid) z ukrytego pola, żeby było widać zapytania z reklam
+        $tracking = mb_substr(strip_tags(trim($_POST['tracking'] ?? '')), 0, 1500);
         $email_content .= "\nWiadomość:\n$message\n\n";
+        if ($tracking !== '') $email_content .= "ŹRÓDŁO (UTM / gclid)\n$tracking\n\n";
 
     } elseif ($form_type === 'wizard') {
         // --- KREATOR WYCENY (/wycena.html) ---

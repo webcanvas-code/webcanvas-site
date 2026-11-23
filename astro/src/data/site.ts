@@ -20,6 +20,69 @@ export const company = {
   },
 };
 
+// Cennik stron i sklepów: jedno źródło dla strony głównej, podstron miast,
+// „Tworzenie stron” i kreatora wyceny. Kwoty netto.
+export const webPlans = [
+  {
+    name: 'Landing page',
+    note: 'Pakiet Pro',
+    who: 'Dla firmy z jedną usługą albo na start w internecie.',
+    amount: 'od 1 500 zł',
+    unit: 'netto',
+    time: 'Gotowe w 7–14 dni',
+    items: [
+      'Jedna przewijana strona z całą ofertą',
+      'Dobrze wygląda na telefonie',
+      'Formularz kontaktowy i klikalny telefon',
+      'Podstawowe SEO, żeby Google znalazł stronę',
+      'Domena i hosting ustawione za Ciebie',
+    ],
+    cta: 'Wyceń landing page',
+    featured: false,
+  },
+  {
+    name: 'Strona firmowa',
+    note: 'Pakiet Unique',
+    who: 'Dla firmy z kilkoma usługami, która chce sama zmieniać treści.',
+    amount: 'od 2 500 zł',
+    unit: 'netto',
+    time: 'Gotowe w 2–4 tygodnie',
+    items: [
+      'Kilka podstron: oferta, realizacje, kontakt',
+      'Projekt graficzny pod Twoją firmę',
+      'Panel do samodzielnej edycji (WordPress)',
+      'SEO lokalne i wizytówka Google',
+      'Szkolenie z obsługi panelu',
+    ],
+    cta: 'Wyceń stronę firmową',
+    featured: true,
+  },
+  {
+    name: 'Sklep internetowy',
+    note: 'WooCommerce',
+    who: 'Dla firmy, która chce sprzedawać produkty online.',
+    amount: 'od 5 000 zł',
+    unit: 'netto',
+    time: 'Gotowy w 3–6 tygodni',
+    items: [
+      'Koszyk i płatności online (BLIK, przelewy, karty)',
+      'Wysyłki: kurier, paczkomaty, odbiór osobisty',
+      'Panel do produktów i zamówień',
+      'Projekt graficzny i wersja na telefony',
+      'Szkolenie z obsługi sklepu',
+    ],
+    cta: 'Wyceń sklep',
+    featured: false,
+  },
+];
+
+export const hourlyRate = {
+  label: 'Poprawki i rozwój istniejących stron',
+  amount: '200 zł / h netto',
+};
+
+export const pricingNote = 'Ceny netto, doliczam 23% VAT. Dokładną kwotę podaję po krótkiej rozmowie, w ciągu 24 godzin.';
+
 export const mainNav = [
   { label: 'Usługi', href: '/#uslugi' },
   { label: 'Realizacje', href: '/realizacje.html' },
@@ -83,7 +146,7 @@ export const reviews = [
 export const faq = [
   {
     q: 'Ile czasu trwa realizacja strony internetowej?',
-    a: 'Prosta strona (Pakiet Pro) powstaje w około 7–14 dni roboczych. Sklep internetowy albo dedykowana aplikacja (Pakiet Unique) to zwykle od 3 do 8 tygodni, zależnie od zakresu funkcji.',
+    a: 'Landing page (Pakiet Pro) powstaje w około 7–14 dni roboczych, strona firmowa (Pakiet Unique) w 2–4 tygodnie, a sklep internetowy w 3–6 tygodni, zależnie od zakresu funkcji.',
   },
   {
     q: 'Czy otrzymam fakturę VAT?',
@@ -91,7 +154,7 @@ export const faq = [
   },
   {
     q: 'Co muszę przygotować przed rozpoczęciem współpracy?',
-    a: 'Na początek wystarczy ogólny pomysł. Warto przygotować teksty, logo i zdjęcia. Jeśli ich nie masz, w Pakiecie Unique pomagam dobrać materiały, napisać treści i przygotować identyfikację wizualną.',
+    a: 'Na początek wystarczy ogólny pomysł. Warto przygotować teksty, logo i zdjęcia. Jeśli ich nie masz, przy stronie firmowej i sklepie pomagam dobrać materiały, napisać treści i przygotować identyfikację wizualną.',
   },
   {
     q: 'Czy będę mógł samodzielnie edytować stronę?',

@@ -4,7 +4,8 @@ import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
 import BrowserFrame from '../components/BrowserFrame.astro';
 import ContactSection from '../components/ContactSection.astro';
-import { company, reviews, faq } from '../data/site';
+import PlanCard from '../components/PlanCard.astro';
+import { company, reviews, faq, webPlans, hourlyRate, pricingNote } from '../data/site';
 import { projects } from '../data/projects';
 
 const [featured, ...rest] = projects.filter((p) => p.home !== false);
@@ -34,27 +35,6 @@ const steps = [
   { title: 'Projekt graficzny', text: 'Przygotowuję układ i wygląd. Oglądasz go na żywo i zgłaszasz uwagi, zanim zacznę kodować.' },
   { title: 'Wdrożenie', text: 'Koduję stronę, wgrywam treści, ustawiam SEO, analitykę i formularze. Sprawdzam ją na telefonach i komputerach.' },
   { title: 'Start i opieka', text: 'Publikuję stronę, pokazuję, jak ją edytować, i pomagam, kiedy firma rośnie.' },
-];
-
-const plans = [
-  {
-    name: 'Pakiet Pro', note: 'Dla firm, które potrzebują solidnego startu w sieci.',
-    price: 'od 3000', unit: 'PLN netto',
-    items: ['Strona one-page lub landing page', 'Wygląd dopasowany do telefonów', 'Podstawowa optymalizacja SEO', 'Konfiguracja domeny i hostingu'],
-    cta: 'Wybieram Pro',
-  },
-  {
-    name: 'Pakiet Unique', note: 'Rozbudowana strona firmowa albo sklep internetowy.',
-    price: 'od 4000', unit: 'PLN netto', featured: true,
-    items: ['Indywidualny projekt graficzny', 'System CMS albo sklep e-commerce', 'Dopracowane animacje', 'Szkolenie z obsługi panelu'],
-    cta: 'Wybieram Unique',
-  },
-  {
-    name: 'Pakiet godzinowy', note: 'Rozwój i poprawki istniejących stron.',
-    price: '200', unit: 'PLN / h netto',
-    items: ['Audyt i optymalizacja kodu', 'Nowe funkcje', 'Naprawa błędów', 'Konsultacje technologiczne'],
-    cta: 'Zapytaj o termin',
-  },
 ];
 
 const posts = [
@@ -90,7 +70,7 @@ const schema = [
       { '@type': 'AdministrativeArea', name: 'Wielkopolska' },
     ],
     sameAs: [company.socials.facebook, company.socials.instagram, company.googleReviews],
-    priceRange: 'od 3000 PLN',
+    priceRange: 'od 1500 PLN',
     address: { '@type': 'PostalAddress', streetAddress: company.street, addressLocality: company.city, postalCode: company.postalCode, addressCountry: 'PL' },
     aggregateRating: { '@type': 'AggregateRating', ratingValue: '5.0', reviewCount: String(company.reviewCount) },
   },
@@ -120,7 +100,7 @@ const schema = [
       <ul class="hero__facts">
         <li><a href={company.googleReviews} target="_blank" rel="noopener"><span class="stars" aria-hidden="true">{[1,2,3,4,5].map(() => <Icon name="star" size={15} />)}</span><strong>{company.rating}</strong> w Google · {company.reviewCount} opinii</a></li>
         <li><Icon name="clock" size={17} />Wycena w 24 godziny</li>
-        <li><Icon name="check" size={17} />Strony od 3000 zł netto</li>
+        <li><Icon name="check" size={17} />Strony od 1 500 zł netto</li>
       </ul>
     </div>
 
@@ -287,22 +267,14 @@ const schema = [
           <p class="eyebrow">Cennik</p>
           <h2 class="h2" id="cennik-h">Przejrzyste ceny <span class="accent">na start.</span></h2>
         </div>
-        <p class="lead">Dokładną kwotę podaję po rozmowie, w ciągu 24 godzin. Wszystkie ceny są netto, doliczam VAT 23%.</p>
+        <p class="lead">{pricingNote}</p>
       </div>
       <ul class="plans">
-        {plans.map((p) => (
-          <li class:list={['plan', { 'plan--featured': p.featured }]}>
-            {p.featured && <span class="plan__badge">Najczęściej wybierany</span>}
-            <h3>{p.name}</h3>
-            <p class="plan__note">{p.note}</p>
-            <p class="plan__price"><strong>{p.price}</strong> <span>{p.unit}</span></p>
-            <ul class="plan__items">
-              {p.items.map((it) => <li><Icon name="check" size={18} />{it}</li>)}
-            </ul>
-            <a class:list={['btn', p.featured ? 'btn--primary' : 'btn--ghost']} href="#kontakt">{p.cta}</a>
-          </li>
+        {webPlans.map((p) => (
+          <PlanCard name={p.name} note={p.note} who={p.who} amount={p.amount} unit={p.unit} time={p.time} items={p.items} cta={p.cta} href="/wycena.html" featured={p.featured} />
         ))}
       </ul>
+      <p class="plans__extra">{hourlyRate.label}: <strong>{hourlyRate.amount}</strong></p>
     </div>
   </section>
 
@@ -528,24 +500,8 @@ const schema = [
 
   /* ---------- cennik ---------- */
   .plans { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); align-items: stretch; }
-  .plan {
-    position: relative; display: flex; flex-direction: column; gap: 14px;
-    padding: clamp(28px, 3vw, 40px); border-radius: var(--r-lg);
-    background: var(--card); border: 1px solid var(--line);
-    transition: transform .3s var(--ease), border-color .3s var(--ease);
-  }
-  .plan:hover { transform: translateY(-2px); border-color: var(--line-strong); }
-  .plan--featured { background: linear-gradient(180deg, rgb(225 29 72 / 0.13), var(--card) 42%); border-color: rgb(225 29 72 / 0.55); }
-  .plan--featured:hover { border-color: var(--rose); }
-  .plan__badge { position: absolute; top: -13px; left: clamp(28px, 3vw, 40px); background: var(--rose); color: #fff; font-size: var(--t-label); font-weight: 580; padding: 4px 12px; border-radius: 999px; }
-  .plan h3 { font-size: var(--t-h3); }
-  .plan__note { color: var(--fg-muted); }
-  .plan__price { margin: 12px 0 8px; display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px; }
-  .plan__price strong { font-size: clamp(2.5rem, 2rem + 1.5vw, 3.25rem); font-weight: 680; letter-spacing: -0.04em; line-height: 1; }
-  .plan__price span { color: var(--fg-muted); }
-  .plan__items { display: grid; gap: 12px; padding: 20px 0 28px; border-top: 1px solid var(--line); margin-bottom: auto; }
-  .plan__items li { display: flex; gap: 12px; align-items: flex-start; }
-  .plan__items :global(svg) { flex: none; margin-top: 3px; color: var(--accent-fg); }
+  .plans__extra { margin-top: 28px; color: var(--fg-muted); text-align: center; }
+  .plans__extra strong { color: var(--fg); font-weight: 620; }
 
   /* ---------- blog ---------- */
   .posts { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }

@@ -156,7 +156,7 @@ const opt = (name: string, values: string[], type: 'radio' | 'checkbox' = 'radio
             <p class="wz__label">Jaki budżet bierzesz pod uwagę?</p>
             <p class="wz__hint">Kwoty netto. Pomoże dobrać zakres do Twoich możliwości. Opcjonalnie.</p>
             <div class="chips" role="radiogroup" aria-label="Jaki budżet bierzesz pod uwagę?">
-              {['2 000–3 000 zł', '3 000–5 000 zł', '5 000–8 000 zł', '8 000–12 000 zł', 'Powyżej 12 000 zł', 'Nie wiem, doradź'].map((v) => (
+              {['Do 1 500 zł', '1 500–2 500 zł', '2 500–5 000 zł', '5 000–10 000 zł', 'Powyżej 10 000 zł', 'Nie wiem, doradź'].map((v) => (
                 <label class="chip"><input type="radio" name="budget" value={v} /><span>{v}</span></label>
               ))}
             </div>
@@ -259,13 +259,16 @@ const opt = (name: string, values: string[], type: 'radio' | 'checkbox' = 'radio
 <script>
   // Orientacyjne ceny (PLN netto) spójne z cennikiem na stronie głównej.
   // Zmień tutaj, jeśli zmieni się cennik. null = wycena indywidualna.
+  import { getTracking, trackingText } from '../scripts/tracking';
+
   const PRICES = {
-    pro: 2000,     // strona one-page / landing page
-    unique: 4000,  // Pakiet Unique
+    pro: 1500,     // landing page (Pakiet Pro)
+    unique: 2500,  // strona firmowa (Pakiet Unique)
+    sklep: 5000,   // sklep internetowy
+    app: 5000,     // aplikacja: dolna granica, wycena indywidualna
   };
 
   const STEP_TITLES = ['Usługa', 'Zakres', 'Materiały i termin', 'Kontakt'];
-  const TRACK_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'utm_id', 'gclid', 'fbclid'];
 
   const form = document.querySelector<HTMLFormElement>('[data-wizard]');
   if (form) {
@@ -281,14 +284,8 @@ const opt = (name: string, values: string[], type: 'radio' | 'checkbox' = 'radio
     const push = (data: Record<string, unknown>) => (window as any).dataLayer?.push(data);
 
     // --- śledzenie źródła (UTM, gclid, fbclid), zapamiętane na czas sesji ---
-    const tracking: Record<string, string> = {};
-    try { Object.assign(tracking, JSON.parse(sessionStorage.getItem('wc_utm') || '{}')); } catch {}
-    const params = new URLSearchParams(location.search);
-    TRACK_KEYS.forEach((k) => { const v = params.get(k); if (v) tracking[k] = v.slice(0, 200); });
-    if (!tracking.landing) tracking.landing = location.pathname;
-    if (!tracking.referrer && document.referrer && !document.referrer.includes(location.host)) tracking.referrer = document.referrer.slice(0, 200);
-    try { sessionStorage.setItem('wc_utm', JSON.stringify(tracking)); } catch {}
-    (form.elements.namedItem('tracking') as HTMLInputElement).value = Object.entries(tracking).map(([k, v]) => `${k}=${v}`).join('\n');
+    const tracking = getTracking();
+    (form.elements.namedItem('tracking') as HTMLInputElement).value = trackingText(tracking);
 
     const service = () => (form.querySelector<HTMLInputElement>('input[name="service"]:checked')?.dataset.service ?? '');
     const isActive = (el: Element) => {
@@ -312,22 +309,28 @@ const opt = (name: string, values: string[], type: 'radio' | 'checkbox' = 'radio
       // budżet nie zmienia ceny; gdy jego górna granica jest niższa niż cena, dopisujemy wyjaśnienie
       const budget = val('budget');
       const budgetMax = Number((budget.match(/[\d\s]+(?= zł)/)?.[0] ?? '').replace(/\s/g, '')) || Infinity;
-      const tooLow = (min: number) => /^\d/.test(budget) && !budget.startsWith('Powyżej') && budgetMax < min;
+      const tooLow = (min: number) => (/^\d/.test(budget) || budget.startsWith('Do ')) && budgetMax < min;
       const budgetLabel = budget;
 
       if (s === 'aplikacja') return {
-        price: `od ${fmt(PRICES.unique)} zł netto`,
-        note: tooLow(PRICES.unique)
+        price: `od ${fmt(PRICES.app)} zł netto`,
+        note: tooLow(PRICES.app)
           ? `Aplikacje wyceniam po krótkiej rozmowie o funkcjach. Przy budżecie ${budgetLabel} zaproponuję prostszą pierwszą wersję, która się w nim zmieści.`
           : 'Aplikacje wyceniam po krótkiej rozmowie o funkcjach. Podana kwota to dolna granica.',
       };
       const onePage = s === 'landing' || (s === 'strona' && val('pages') === 'Jedna (one-page)');
-      if (onePage) return { price: `od ${fmt(PRICES.pro)} zł netto`, note: 'Pakiet Pro: strona one-page lub landing page, wersja na telefony, podstawowe SEO.' };
+      if (onePage) return { price: `od ${fmt(PRICES.pro)} zł netto`, note: 'Landing page (Pakiet Pro): jedna strona z całą ofertą, wersja na telefony, formularz i podstawowe SEO.' };
+      if (s === 'sklep') return {
+        price: `od ${fmt(PRICES.sklep)} zł netto`,
+        note: tooLow(PRICES.sklep)
+          ? `Sklep internetowy: koszyk, płatności online, wysyłki i panel zamówień. Przy budżecie ${budgetLabel} zaproponuję prostszy start, np. kilka produktów albo stronę z zamówieniem przez formularz.`
+          : 'Sklep internetowy (WooCommerce): koszyk, płatności online, wysyłki, panel zamówień i szkolenie.',
+      };
       return {
         price: `od ${fmt(PRICES.unique)} zł netto`,
         note: tooLow(PRICES.unique)
-          ? `Pełny zakres to Pakiet Unique. Przy budżecie ${budgetLabel} zaproponuję prostszą wersję, która się w nim zmieści.`
-          : 'Pakiet Unique: indywidualny projekt, panel do edycji treści, szkolenie z obsługi.',
+          ? `Pełny zakres to strona firmowa (Pakiet Unique). Przy budżecie ${budgetLabel} zaproponuję prostszą wersję, która się w nim zmieści.`
+          : 'Strona firmowa (Pakiet Unique): indywidualny projekt, panel do edycji treści, szkolenie z obsługi.',
       };
     };
     const fmt = (n: number) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '\u00a0');

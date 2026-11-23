@@ -21,6 +21,7 @@ const { heading = 'Rozpocznijmy współpracę.' } = Astro.props;
 
     <form class="form" action="/contact.php" method="post" novalidate data-contact-form>
       <input type="hidden" name="form_type" value="contact" />
+      <input type="hidden" name="tracking" value="" />
       <div class="form__row">
         <div class="field">
           <label for="f-name">Imię i nazwisko</label>
@@ -64,8 +65,11 @@ const { heading = 'Rozpocznijmy współpracę.' } = Astro.props;
 </section>
 
 <script>
+  import { pushEvent, trackingText } from '../scripts/tracking';
+
   const form = document.querySelector<HTMLFormElement>('[data-contact-form]');
   if (form) {
+    (form.elements.namedItem('tracking') as HTMLInputElement).value = trackingText();
     const status = form.querySelector<HTMLElement>('[data-form-status]')!;
     const submit = form.querySelector<HTMLButtonElement>('.form__submit')!;
     const rules: Record<string, (el: HTMLInputElement) => string> = {
@@ -104,7 +108,9 @@ const { heading = 'Rozpocznijmy współpracę.' } = Astro.props;
           status.dataset.state = 'ok';
           status.textContent = 'Dziękuję, zapytanie dotarło. Odpowiem w ciągu 24 godzin.';
           form.reset();
-          (window as any).dataLayer?.push({ event: 'form_submit', form_type: 'contact' });
+          (form.elements.namedItem('tracking') as HTMLInputElement).value = trackingText();
+          pushEvent({ event: 'form_submit', form_type: 'contact' });
+          pushEvent({ event: 'generate_lead', form_type: 'contact' });
         } else {
           status.dataset.state = 'error';
           status.textContent = data.message || 'Nie udało się wysłać. Spróbuj ponownie albo napisz na kontakt@web-canvas.pl.';

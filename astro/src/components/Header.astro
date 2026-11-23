@@ -2,7 +2,10 @@
 import { Image } from 'astro:assets';
 import logo from '../assets/logo-dark.png';
 import Icon from './Icon.astro';
-import { mainNav } from '../data/site';
+import { mainNav, company } from '../data/site';
+
+// numer bez prefiksu kraju, czytelniejszy w nagłówku
+const phoneShort = company.phone.replace(/^\+48\s*/, '');
 
 const current = Astro.url.pathname;
 ---
@@ -23,6 +26,10 @@ const current = Astro.url.pathname;
     </nav>
 
     <div class="nav__actions">
+      <a class="nav__phone" href={company.phoneHref} data-track="header" aria-label={`Zadzwoń: ${company.phone}`}>
+        <Icon name="phone" size={18} />
+        <span class="nav__phone-num">{phoneShort}</span>
+      </a>
       <a class="btn btn--primary nav__cta" href="/wycena.html">Wyceń projekt</a>
       <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu-mobilne" aria-label="Otwórz menu" data-nav-toggle>
         <Icon name="menu" size={22} class="i-open" />
@@ -40,6 +47,7 @@ const current = Astro.url.pathname;
     </ul>
     <div class="wrap nav__sheet-cta">
       <a class="btn btn--primary" href="/wycena.html">Wyceń projekt <Icon name="arrow" /></a>
+      <a class="btn btn--ghost nav__sheet-call" href={company.phoneHref} data-track="menu"><Icon name="phone" /> Zadzwoń: {company.phone}</a>
     </div>
   </div>
 </header>
@@ -95,6 +103,15 @@ const current = Astro.url.pathname;
 
   .nav__actions { display: flex; align-items: center; gap: 10px; }
   .nav__cta { --bh: 46px; padding-inline: 22px; }
+  .nav__phone {
+    display: inline-flex; align-items: center; gap: 8px; height: 46px; padding: 0 14px;
+    border-radius: 999px; color: var(--fg); font-weight: 600; font-size: 0.98rem;
+    text-decoration: none; white-space: nowrap; font-variant-numeric: tabular-nums;
+    transition: background-color .2s var(--ease), color .2s var(--ease);
+  }
+  .nav__phone:hover { background: var(--tint); color: var(--rose); }
+  .nav__phone :global(svg) { flex: none; color: var(--rose); }
+  .nav__sheet-call { margin-top: 12px; }
   .nav__toggle {
     display: none; width: 46px; height: 46px; border-radius: 999px;
     border: 1px solid var(--line-strong); background: transparent; cursor: pointer;
@@ -116,9 +133,17 @@ const current = Astro.url.pathname;
   .nav__sheet-cta { margin-top: 28px; }
   .nav__sheet-cta .btn { width: 100%; }
 
+  @media (max-width: 1080px) and (min-width: 960px) {
+    .nav__links a { padding-inline: 10px; }
+  }
   @media (max-width: 959px) {
     .nav__links { display: none; }
     .nav__toggle { display: inline-flex; }
+  }
+  @media (max-width: 640px) {
+    /* na telefonie sama ikona: okrągły przycisk jak przełącznik menu */
+    .nav__phone { width: 46px; padding: 0; justify-content: center; border: 1px solid var(--line-strong); }
+    .nav__phone-num { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   }
   @media (max-width: 480px) {
     .nav__cta { display: none; }

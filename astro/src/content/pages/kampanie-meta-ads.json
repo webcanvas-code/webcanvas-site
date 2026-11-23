@@ -1,16 +1,16 @@
 {
   "slug": "kampanie-meta-ads",
   "kind": "kampanie-meta-ads",
-  "title": "Kampanie Meta Ads Facebook Instagram dla firm | WebCanvas",
-  "description": "Kampanie reklamowe na Facebooku i Instagramie dla firm z całej Polski. Konfiguracja, optymalizacja i miesięczne raportowanie. Płatności bezpośrednio do Meta. Bezpłatna analiza konta.",
-  "ogTitle": "Kampanie Meta Ads Facebook Instagram dla firm | WebCanvas",
+  "title": "Kampanie Facebook Ads i Instagram Ads (Meta Ads) dla firm | WebCanvas",
+  "description": "Kampanie Facebook Ads i Instagram Ads (Meta Ads) dla firm z całej Polski. Konfiguracja, optymalizacja i miesięczne raportowanie. Budżet płacisz bezpośrednio do Meta. Bezpłatna analiza konta.",
+  "ogTitle": "Kampanie Facebook Ads i Instagram Ads dla firm | WebCanvas",
   "ogImage": "/img/og-image.png",
   "path": "/kampanie-meta-ads.html",
   "schema": [
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "name": "Kampanie Meta Ads",
+      "name": "Kampanie Facebook Ads i Instagram Ads (Meta Ads)",
       "description": "Kompleksowa obsługa kampanii reklamowych na Facebooku i Instagramie: konfiguracja, targetowanie grup odbiorców, tworzenie kreacji, zarządzanie budżetem i miesięczne raportowanie wyników.",
       "url": "https://web-canvas.pl/kampanie-meta-ads.html",
       "provider": {
@@ -105,8 +105,8 @@
         "label": "Kampanie Meta Ads"
       }
     ],
-    "h1": "Kampanie Meta Ads dla firm",
-    "accent": "Meta Ads",
+    "h1": "Kampanie Facebook Ads i Instagram Ads dla firm",
+    "accent": "Facebook Ads",
     "badge": "Usługa",
     "metaLine": "Dla firm z całej Polski",
     "lead": [
@@ -119,8 +119,8 @@
         "primary": true
       },
       {
-        "label": "Zobacz realizacje",
-        "href": "/realizacje.html",
+        "label": "Zadzwoń: 739 043 596",
+        "href": "tel:+48739043596",
         "primary": false
       }
     ]
@@ -128,7 +128,7 @@
   "sections": [
     {
       "eyebrow": "Zakres usługi",
-      "h2": "Rodzaje kampanii Meta Ads, które prowadzę",
+      "h2": "Rodzaje kampanii Facebook Ads i Meta Ads, które prowadzę",
       "intro": [
         "Dobieram format i cel kampanii do branży i etapu lejka sprzedażowego klienta."
       ],

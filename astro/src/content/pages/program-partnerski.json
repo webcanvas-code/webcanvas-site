@@ -92,11 +92,11 @@
       "intro": [],
       "moreLabel": "Zobacz ofertę",
       "afterWide": true,
-      "after": "<table class=\"sx-offer\"><thead><tr><th scope=\"col\">Usługa</th><th scope=\"col\">Komu polecić</th><th scope=\"col\">Korzyść dla biura</th></tr></thead><tbody><tr><th scope=\"row\">Strona internetowa (od 3000&nbsp;zł netto)</th><td data-label=\"Komu polecić\">Nowym i istniejącym firmom</td><td data-label=\"Korzyść dla biura\"><strong>300&nbsp;zł</strong> za stronę</td></tr><tr><th scope=\"row\">Wizytówka Google + lokalne SEO</th><td data-label=\"Komu polecić\">Firmom lokalnym (gabinety, warsztaty, usługi)</td><td data-label=\"Korzyść dla biura\"><p><strong>10%</strong> wartości netto faktury za wizytówkę Google, jednorazowo</p><p><strong>10%</strong> miesięcznej opłaty przez 6&nbsp;miesięcy za lokalne SEO</p></td></tr><tr><th scope=\"row\">Google Ads / Meta Ads</th><td data-label=\"Komu polecić\">Firmom, które chcą więcej zleceń</td><td data-label=\"Korzyść dla biura\"><strong>10%</strong> miesięcznej opłaty przez 6&nbsp;miesięcy</td></tr></tbody></table><p>Prowizja od wizytówki Google dotyczy tylko płatnej usługi. Za wizytówkę przygotowaną gratis przy zamówieniu strony prowizja nie jest wypłacana.</p>",
+      "after": "<table class=\"sx-offer\"><thead><tr><th scope=\"col\">Usługa</th><th scope=\"col\">Komu polecić</th><th scope=\"col\">Korzyść dla biura</th></tr></thead><tbody><tr><th scope=\"row\">Strona internetowa (od 1&nbsp;500&nbsp;zł netto)</th><td data-label=\"Komu polecić\">Nowym i istniejącym firmom</td><td data-label=\"Korzyść dla biura\"><strong>300&nbsp;zł</strong> za stronę</td></tr><tr><th scope=\"row\">Wizytówka Google + lokalne SEO</th><td data-label=\"Komu polecić\">Firmom lokalnym (gabinety, warsztaty, usługi)</td><td data-label=\"Korzyść dla biura\"><p><strong>10%</strong> wartości netto faktury za wizytówkę Google, jednorazowo</p><p><strong>10%</strong> miesięcznej opłaty przez 6&nbsp;miesięcy za lokalne SEO</p></td></tr><tr><th scope=\"row\">Google Ads / Meta Ads</th><td data-label=\"Komu polecić\">Firmom, które chcą więcej zleceń</td><td data-label=\"Korzyść dla biura\"><strong>10%</strong> miesięcznej opłaty przez 6&nbsp;miesięcy</td></tr></tbody></table><p>Prowizja od wizytówki Google dotyczy tylko płatnej usługi. Za wizytówkę przygotowaną gratis przy zamówieniu strony prowizja nie jest wypłacana.</p>",
       "items": [
         {
           "title": "Strony internetowe",
-          "html": "<p>Od 3000 zł netto, dopasowane do telefonów, z formularzem zapytania.</p>",
+          "html": "<p>Od 1 500 zł netto, dopasowane do telefonów, z formularzem zapytania.</p>",
           "href": "/tworzenie-stron-internetowych.html"
         },
         {

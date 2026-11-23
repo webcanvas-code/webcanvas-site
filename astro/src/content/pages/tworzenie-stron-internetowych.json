@@ -17,7 +17,7 @@
         "@type": "ProfessionalService",
         "name": "WebCanvas",
         "url": "https://web-canvas.pl/",
-        "priceRange": "od 3000 PLN",
+        "priceRange": "od 1500 PLN",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Biele 126",
@@ -58,7 +58,7 @@
           "name": "Ile kosztuje tworzenie strony internetowej?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Koszt tworzenia strony internetowej zależy od zakresu projektu. Prosta strona wizytówkowa lub landing page zaczyna się od 3000 zł netto. Rozbudowana strona firmowa z CMS to wydatek rzędu 4000 zł netto wzwyż. Każdy projekt wyceniam indywidualnie po rozmowie o potrzebach."
+            "text": "Koszt tworzenia strony internetowej zależy od zakresu projektu. Landing page (Pakiet Pro) zaczyna się od 1 500 zł netto. Strona firmowa z panelem do edycji (Pakiet Unique) kosztuje od 2 500 zł netto, a sklep internetowy od 5 000 zł netto. Każdy projekt wyceniam indywidualnie po rozmowie o potrzebach."
           }
         },
         {
@@ -221,63 +221,8 @@
       "intro": [
         "Przejrzyste pakiety bez ukrytych kosztów. Każdy projekt wyceniam indywidualnie po rozmowie o zakresie."
       ],
-      "items": [
-        {
-          "price": {
-            "featured": false,
-            "note": "Dla firm potrzebujących solidnego startu w sieci.",
-            "amount": "od 3000",
-            "unit": "PLN netto",
-            "list": [
-              "Strona One-Page lub Landing",
-              "Responsywny design RWD",
-              "Podstawowa optymalizacja SEO",
-              "Konfiguracja domeny i hostingu"
-            ],
-            "cta": "Wybieram Pro"
-          },
-          "title": "Pakiet Pro",
-          "html": "<p>Dla firm potrzebujących solidnego startu w sieci.</p>\n od 3000\n PLN netto\n <ul>\n <li> Strona One-Page lub Landing</li>\n <li> Responsywny design RWD</li>\n <li> Podstawowa optymalizacja SEO</li>\n <li> Konfiguracja domeny i hostingu</li>\n </ul>\n Wybieram Pro",
-          "href": "/#kontakt"
-        },
-        {
-          "price": {
-            "featured": true,
-            "note": "Kompleksowe wdrożenie strony firmowej lub sklepu.",
-            "amount": "od 4000",
-            "unit": "PLN netto",
-            "list": [
-              "Indywidualny projekt graficzny UI",
-              "System CMS lub e-commerce",
-              "Zaawansowane animacje",
-              "Szkolenie z obsługi panelu"
-            ],
-            "cta": "Wybieram Unique"
-          },
-          "title": "Pakiet Unique",
-          "html": "Polecany\n <p>Kompleksowe wdrożenie strony firmowej lub sklepu.</p>\n od 4000\n PLN netto\n <ul>\n <li> Indywidualny projekt graficzny UI</li>\n <li> System CMS lub e-commerce</li>\n <li> Zaawansowane animacje</li>\n <li> Szkolenie z obsługi panelu</li>\n </ul>\n Wybieram Unique",
-          "href": "/#kontakt"
-        },
-        {
-          "price": {
-            "featured": false,
-            "note": "Prace programistyczne i rozwój istniejących projektów.",
-            "amount": "200",
-            "unit": "PLN / h",
-            "list": [
-              "Audyt i optymalizacja kodu",
-              "Wdrażanie nowych funkcji",
-              "Naprawa błędów",
-              "Konsultacje technologiczne"
-            ],
-            "cta": "Zapytaj o dostępność"
-          },
-          "title": "Pakiet Hourly",
-          "html": "<p>Prace programistyczne i rozwój istniejących projektów.</p>\n 200\n PLN / h\n <ul>\n <li> Audyt i optymalizacja kodu</li>\n <li> Wdrażanie nowych funkcji</li>\n <li> Naprawa błędów</li>\n <li> Konsultacje technologiczne</li>\n </ul>\n Zapytaj o dostępność",
-          "href": "/#kontakt"
-        }
-      ],
-      "after": "<p>Nie wiesz który pakiet wybrać? <a href=\"/#kontakt\">Napisz do mnie</a>, a doradzę po rozmowie o projekcie.</p>"
+      "after": "<p>Nie wiesz który pakiet wybrać? <a href=\"/#kontakt\">Napisz do mnie</a>, a doradzę po rozmowie o projekcie.</p>",
+      "plans": "web"
     },
     {
       "eyebrow": "Wiedza",
@@ -308,7 +253,7 @@
       "items": [
         {
           "title": "Ile kosztuje tworzenie strony internetowej?",
-          "html": "<p>Koszt zależy od zakresu projektu. Prosta strona wizytówkowa lub landing page zaczyna się od 3000 zł netto. Rozbudowana strona firmowa z CMS to wydatek rzędu 4000 zł netto wzwyż. Każdy projekt wyceniam indywidualnie po rozmowie o potrzebach.</p>"
+          "html": "<p>Koszt zależy od zakresu projektu. Landing page (Pakiet Pro) zaczyna się od 1 500 zł netto. Strona firmowa z panelem do edycji (Pakiet Unique) kosztuje od 2 500 zł netto, a sklep internetowy od 5 000 zł netto. Każdy projekt wyceniam indywidualnie po rozmowie o potrzebach.</p>"
         },
         {
           "title": "Ile trwa tworzenie strony internetowej?",

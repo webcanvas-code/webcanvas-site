@@ -12,7 +12,7 @@
   "dateText": "18 października 2026",
   "readTime": "8 min",
   "datePublished": "2026-10-18",
-  "dateModified": "2026-11-01",
+  "dateModified": "2026-11-23",
   "crumb": "Ile kosztuje strona internetowa",
   "excerpt": "Co realnie wpływa na cenę i dlaczego nie da się podać jednej kwoty bez rozmowy o zakresie projektu.",
   "ctaHeading": "Poznaj koszt strony dla Twojej firmy.",
@@ -33,7 +33,7 @@
         "url": "https://web-canvas.pl/"
       },
       "datePublished": "2026-10-18",
-      "dateModified": "2026-11-01",
+      "dateModified": "2026-11-23",
       "mainEntityOfPage": "https://web-canvas.pl/blog-ile-kosztuje-strona-internetowa.html"
     },
     {
@@ -83,6 +83,9 @@
  Strona wizytówkowa nie oznacza jednak strony niskiej jakości. Dobrze zaprojektowana wizytówka z przemyślanymi treściami może skutecznie przyciągać klientów z Google, zwłaszcza w połączeniu z dobrze uzupełnioną
  <a href="/blog-google-moja-firma-wizytowka.html">wizytówką Google Moja Firma</a>.
  </p>
+ <p>
+ <strong>W WebCanvas:</strong> landing page (jedna strona z całą ofertą) od 1 500 zł netto, a strona firmowa z kilkoma podstronami od 2 500 zł netto. <a href="/#cennik">Zobacz cennik</a>.
+ </p>
  <h2>Rozbudowana strona firmowa: od 5 000 do 15 000 zł</h2>
  <p>
  Kiedy firma ma kilka usług, chce prowadzić blog, potrzebuje podstron dla różnych lokalizacji lub planuje regularnie aktualizować treści, prosta wizytówka nie wystarczy. Rozbudowana strona firmowa to projekt, który wymaga więcej pracy na etapie planowania, projektowania i wdrożenia.
@@ -93,6 +96,9 @@
  <p>
  To jest zakres, w którym inwestycja zaczyna się zwracać najszybciej, bo strona nie tylko „jest w internecie", ale aktywnie pracuje na pozycje w wyszukiwarce i pozyskuje zapytania od klientów. Jeśli zastanawiasz się, czy Twoja firma potrzebuje rozbudowanej strony czy wystarczy wizytówka, przeczytaj artykuł o
  <a href="/blog-rodzaje-stron-internetowych.html">rodzajach stron internetowych</a>.
+ </p>
+ <p>
+ <strong>W WebCanvas:</strong> strona firmowa z panelem do samodzielnej edycji (Pakiet Unique) od 2 500 zł netto. Ostateczna kwota zależy od liczby podstron i funkcji.
  </p>
  <h2>Sklep internetowy: od 8 000 do 30 000 zł i więcej</h2>
  <p>
@@ -110,6 +116,9 @@
  <a href="/#kontakt">
  Wyceń swój projekt
  </a>
+ <p>
+ <strong>W WebCanvas:</strong> sklep na WooCommerce z płatnościami online, wysyłkami i panelem zamówień od 5 000 zł netto.
+ </p>
  <h2>Co wpływa na cenę strony internetowej</h2>
  <p>
  Cena strony to suma wielu składników. Samo „zakodowanie" to tylko część pracy. Zanim programista napisze pierwszą linijkę kodu, ktoś musi zaplanować strukturę strony, zaprojektować wygląd, przygotować treści i przemyśleć ścieżki użytkownika. Każdy z tych etapów kosztuje czas, a czas to pieniądze.
@@ -195,8 +204,8 @@
  </p>
  <p>
  Jeśli chcesz poznać dokładny koszt strony dopasowanej do potrzeb Twojej firmy,
- <a href="/#kontakt">odezwij się do nas</a>.
- Bezpłatnie wycenimy projekt i podpowiemy, jakie rozwiązanie będzie dla Ciebie najlepsze.
+ <a href="/wycena.html">skorzystaj z bezpłatnej wyceny</a>
+ albo sprawdź <a href="/#cennik">cennik WebCanvas</a>: landing page od 1 500 zł, strona firmowa od 2 500 zł, sklep internetowy od 5 000 zł netto.
  </p>
  <p>
  Prowadzisz firmę we wschodniej Wielkopolsce? Zajmuję się tworzeniem stron internetowych w <a href="/strony-internetowe-konin.html">Koninie</a>, <a href="/strony-internetowe-turek.html">Turku</a>, <a href="/strony-internetowe-kolo.html">Kole</a>, <a href="/strony-internetowe-slupca.html">Słupcy</a>, <a href="/strony-internetowe-slesin.html">Ślesinie</a> i <a href="/strony-internetowe-sompolno.html">Sompolnie</a>.

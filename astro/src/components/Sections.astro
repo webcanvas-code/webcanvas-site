@@ -4,6 +4,7 @@ import Icon from './Icon.astro';
 import Faq from './Faq.astro';
 import PlanCard from './PlanCard.astro';
 import ContactSection from './ContactSection.astro';
+import { webPlans, hourlyRate, pricingNote } from '../data/site';
 
 interface Props { sections: any[]; ctaMode?: 'form' | 'buttons' | 'none'; plain?: boolean }
 const { sections, ctaMode = 'form', plain = false } = Astro.props;
@@ -18,6 +19,7 @@ function kindOf(s: any, i: number): Kind {
   if (s.type === 'shot') return 'shot';
   if (s.type === 'facts') return 'facts';
   if (i === lastIdx) return 'cta';
+  if (s.plans === 'web') return 'pricing';
   const items = s.items ?? [];
   if (items.length && /pytani/i.test(s.h2 ?? '')) return 'faq';
   if (items.some((it: any) => it.price)) return 'pricing';
@@ -101,7 +103,18 @@ const rendered = sections.map((s, i) => {
           </div>
         )}
 
-        {kind === 'pricing' && (
+        {kind === 'pricing' && s.plans === 'web' && (
+          <>
+            <ul class="sx-plans">
+              {webPlans.map((p) => (
+                <PlanCard name={p.name} note={p.note} who={p.who} amount={p.amount} unit={p.unit} time={p.time} items={p.items} cta={p.cta} href="/wycena.html" featured={p.featured} />
+              ))}
+            </ul>
+            <p class="sx-plans__extra">{hourlyRate.label}: <strong>{hourlyRate.amount}</strong>. {pricingNote}</p>
+          </>
+        )}
+
+        {kind === 'pricing' && s.plans !== 'web' && (
           <ul class="sx-plans">
             {s.items.map((it: any) => (
               <PlanCard name={it.title} note={it.price.note} amount={it.price.amount} unit={it.price.unit} items={it.price.list} cta={it.price.cta} href={it.href ?? '#kontakt'} featured={it.price.featured} />
@@ -217,6 +230,8 @@ const rendered = sections.map((s, i) => {
   .section--dark .sx-card__no { -webkit-text-stroke-color: rgb(253 164 175 / 0.6); }
 
   /* cennik */
+  .sx-plans__extra { margin-top: 28px; color: var(--fg-muted); text-align: center; }
+  .sx-plans__extra strong { color: var(--fg); font-weight: 620; }
   .sx-plans { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
 
   /* faq */

@@ -21,8 +21,17 @@ Adres: Biele 126, 62-610 Sompolno
 - [Pozycjonowanie SEO](https://web-canvas.pl/pozycjonowanie-seo.html): Pozycjonowanie stron i SEO lokalne dla firm z Wielkopolski
 - [Pozycjonowanie stron Konin](https://web-canvas.pl/pozycjonowanie-stron-konin.html): SEO lokalne dla firm z Konina i powiatu konińskiego
 - [Kampanie Google Ads](https://web-canvas.pl/kampanie-google-ads.html): Prowadzenie kampanii Google Ads, także z kierowaniem lokalnym
-- [Kampanie Meta Ads](https://web-canvas.pl/kampanie-meta-ads.html): Reklamy na Facebooku i Instagramie dla lokalnych firm
+- [Kampanie Meta Ads](https://web-canvas.pl/kampanie-meta-ads.html): Reklamy Facebook Ads i Instagram Ads dla firm
 - [Program partnerski](https://web-canvas.pl/program-partnerski.html): Współpraca z biurami rachunkowymi
+
+## Cennik (kwoty netto, + 23% VAT)
+
+- Landing page (Pakiet Pro): od 1 500 zł netto, realizacja 7–14 dni
+- Strona firmowa z panelem do edycji (Pakiet Unique): od 2 500 zł netto, realizacja 2–4 tygodnie
+- Sklep internetowy (WooCommerce, płatności online): od 5 000 zł netto, realizacja 3–6 tygodni
+- Poprawki i rozwój istniejących stron: 200 zł/h netto
+- Obsługa kampanii Google Ads i Meta Ads: od 600 zł/mies. netto; pozycjonowanie SEO: od 800 zł/mies. netto
+- Bezpłatna wycena: https://web-canvas.pl/wycena.html
 
 ## Realizacje
 

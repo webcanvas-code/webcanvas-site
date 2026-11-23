@@ -114,7 +114,7 @@
           "name": "Ile trwa realizacja strony internetowej?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Prosta strona (Pakiet Pro) powstaje zwykle w 7–14 dni roboczych. Sklep internetowy albo aplikacja dedykowana (Pakiet Unique) to od 3 do 8 tygodni, zależnie od zakresu funkcji. Dokładny harmonogram ustalamy po briefie."
+            "text": "Landing page (Pakiet Pro) powstaje zwykle w 5–10 dni roboczych, strona firmowa (Pakiet Unique) w 10–15 dni roboczych, a sklep internetowy w 2–6 tygodni, zależnie od zakresu funkcji. Dokładny harmonogram ustalamy po briefie."
           }
         },
         {
@@ -212,7 +212,7 @@
         },
         {
           "title": "Ile trwa realizacja strony internetowej?",
-          "html": "<p>Prosta strona (Pakiet Pro) powstaje zwykle w 7–14 dni roboczych. Sklep internetowy albo aplikacja dedykowana (Pakiet Unique) to od 3 do 8 tygodni, zależnie od zakresu funkcji. Dokładny harmonogram ustalamy po briefie.</p>"
+          "html": "<p>Landing page (Pakiet Pro) powstaje zwykle w 5–10 dni roboczych, strona firmowa (Pakiet Unique) w 10–15 dni roboczych, a sklep internetowy w 2–6 tygodni, zależnie od zakresu funkcji. Dokładny harmonogram ustalamy po briefie.</p>"
         },
         {
           "title": "Czy zajmujesz się też hostingiem i domeną?",

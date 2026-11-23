@@ -66,7 +66,7 @@
           "name": "Ile trwa tworzenie strony internetowej?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Prosta strona wizytówkowa lub landing page to zwykle 2 do 4 tygodni od zatwierdzenia briefu. Rozbudowana strona firmowa lub sklep internetowy wymaga 4 do 8 tygodni. Dokładny harmonogram ustalamy przed startem projektu."
+            "text": "Landing page (Pakiet Pro) to zwykle 5–10 dni roboczych od zatwierdzenia briefu, strona firmowa (Pakiet Unique) 10–15 dni roboczych, a sklep internetowy 2–6 tygodni. Dokładny harmonogram ustalamy przed startem projektu."
           }
         },
         {
@@ -257,7 +257,7 @@
         },
         {
           "title": "Ile trwa tworzenie strony internetowej?",
-          "html": "<p>Prosta strona wizytówkowa lub landing page to zwykle 2 do 4 tygodni od zatwierdzenia briefu. Rozbudowana strona firmowa lub sklep internetowy wymaga 4 do 8 tygodni. Dokładny harmonogram ustalamy przed startem projektu.</p>"
+          "html": "<p>Landing page (Pakiet Pro) to zwykle 5–10 dni roboczych od zatwierdzenia briefu, strona firmowa (Pakiet Unique) 10–15 dni roboczych, a sklep internetowy 2–6 tygodni. Dokładny harmonogram ustalamy przed startem projektu.</p>"
         },
         {
           "title": "Czy mogę samodzielnie edytować stronę po wdrożeniu?",

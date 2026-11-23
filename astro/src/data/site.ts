@@ -29,7 +29,7 @@ export const webPlans = [
     who: 'Dla firmy z jedną usługą albo na start w internecie.',
     amount: 'od 1 500 zł',
     unit: 'netto',
-    time: 'Gotowe w 7–14 dni',
+    time: 'Gotowe w 5–10 dni roboczych',
     items: [
       'Jedna przewijana strona z całą ofertą',
       'Dobrze wygląda na telefonie',
@@ -46,7 +46,7 @@ export const webPlans = [
     who: 'Dla firmy z kilkoma usługami, która chce sama zmieniać treści.',
     amount: 'od 2 500 zł',
     unit: 'netto',
-    time: 'Gotowe w 2–4 tygodnie',
+    time: 'Gotowe w 10–15 dni roboczych',
     items: [
       'Kilka podstron: oferta, realizacje, kontakt',
       'Projekt graficzny pod Twoją firmę',
@@ -63,7 +63,7 @@ export const webPlans = [
     who: 'Dla firmy, która chce sprzedawać produkty online.',
     amount: 'od 5 000 zł',
     unit: 'netto',
-    time: 'Gotowy w 3–6 tygodni',
+    time: 'Gotowy w 2–6 tygodni',
     items: [
       'Koszyk i płatności online (BLIK, przelewy, karty)',
       'Wysyłki: kurier, paczkomaty, odbiór osobisty',
@@ -146,7 +146,7 @@ export const reviews = [
 export const faq = [
   {
     q: 'Ile czasu trwa realizacja strony internetowej?',
-    a: 'Landing page (Pakiet Pro) powstaje w około 7–14 dni roboczych, strona firmowa (Pakiet Unique) w 2–4 tygodnie, a sklep internetowy w 3–6 tygodni, zależnie od zakresu funkcji.',
+    a: 'Landing page (Pakiet Pro) powstaje w około 5–10 dni roboczych, strona firmowa (Pakiet Unique) w 10–15 dni roboczych, a sklep internetowy w 2–6 tygodni, zależnie od zakresu funkcji.',
   },
   {
     q: 'Czy otrzymam fakturę VAT?',

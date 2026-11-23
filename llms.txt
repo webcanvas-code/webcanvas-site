@@ -26,9 +26,9 @@ Adres: Biele 126, 62-610 Sompolno
 
 ## Cennik (kwoty netto, + 23% VAT)
 
-- Landing page (Pakiet Pro): od 1 500 zł netto, realizacja 7–14 dni
-- Strona firmowa z panelem do edycji (Pakiet Unique): od 2 500 zł netto, realizacja 2–4 tygodnie
-- Sklep internetowy (WooCommerce, płatności online): od 5 000 zł netto, realizacja 3–6 tygodni
+- Landing page (Pakiet Pro): od 1 500 zł netto, realizacja 5–10 dni roboczych
+- Strona firmowa z panelem do edycji (Pakiet Unique): od 2 500 zł netto, realizacja 10–15 dni roboczych
+- Sklep internetowy (WooCommerce, płatności online): od 5 000 zł netto, realizacja 2–6 tygodni
 - Poprawki i rozwój istniejących stron: 200 zł/h netto
 - Obsługa kampanii Google Ads i Meta Ads: od 600 zł/mies. netto; pozycjonowanie SEO: od 800 zł/mies. netto
 - Bezpłatna wycena: https://web-canvas.pl/wycena.html

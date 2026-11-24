@@ -170,7 +170,7 @@
         },
         {
           "title": "Obszar, który obsługuję",
-          "html": "<p>Konin i gminy powiatu konińskiego: Stare Miasto, Golina, Kazimierz Biskupi, Kleczew, Ślesin, Kramsk, Krzymów, Rychwał, Rzgów, Grodziec, Skulsk, Wilczyn, Wierzbinek, Sompolno.</p>"
+          "html": "<p>Konin i gminy powiatu konińskiego: Stare Miasto, Golina, Kazimierz Biskupi, Kleczew, <a href=\"/strony-internetowe-slesin.html\">Ślesin</a>, Kramsk, Krzymów, Rychwał, Rzgów, Grodziec, Skulsk, Wilczyn, Wierzbinek, <a href=\"/strony-internetowe-sompolno.html\">Sompolno</a>.</p>"
         },
         {
           "title": "SEO lokalne",
@@ -185,14 +185,17 @@
       "intro": [],
       "items": [
         {
+          "icon": "sun",
           "title": "Budownictwo, fotowoltaika i pompy ciepła",
           "html": "<p>Opis usług, galeria realizacji z lokalizacją, obszar działania i formularz wyceny. Więcej w poradniku o <a href=\"/blog-strona-internetowa-firma-budowlana-oze-konin.html\">stronie firmy budowlanej i OZE</a>.</p>"
         },
         {
+          "icon": "wrench",
           "title": "Warsztaty i usługi dla domu",
           "html": "<p>Zakres usług, widełki cen, godziny pracy, dojazd i numer telefonu, który klient z Chorznia, Glinki czy Starówki kliknie od razu na telefonie.</p>"
         },
         {
+          "icon": "briefcase",
           "title": "Firmy B2B i nowe działalności",
           "html": "<p>W regionie powstają nowe firmy, a istniejące zmieniają profil. Strona jasno pokazuje ofertę, doświadczenie i sposób współpracy z klientem biznesowym.</p>"
         }
@@ -247,7 +250,7 @@
         },
         {
           "title": "Czy strona będzie widoczna też w gminach wokół Konina?",
-          "html": "<p>Tak, jeśli tam działasz. Wpisuję na stronie obszar, który faktycznie obsługujesz, np. Golinę, Kleczew czy Ślesin, i dopasowuję do niego treści usług. Nie tworzę jednak dziesiątek podstron różniących się tylko nazwą miejscowości, bo Google traktuje je jak spam.</p>"
+          "html": "<p>Tak, jeśli tam działasz. Wpisuję na stronie obszar, który faktycznie obsługujesz, np. Golinę, Kleczew czy <a href=\"/strony-internetowe-slesin.html\">Ślesin</a>, i dopasowuję do niego treści usług. Nie tworzę jednak dziesiątek podstron różniących się tylko nazwą miejscowości, bo Google traktuje je jak spam.</p>"
         },
         {
           "title": "Ile trwa realizacja strony internetowej?",

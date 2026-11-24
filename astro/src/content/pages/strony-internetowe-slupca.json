@@ -185,14 +185,17 @@
       "intro": [],
       "items": [
         {
+          "icon": "truck",
           "title": "Transport i firmy przy A2",
           "html": "<p>Zakres usług, zaplecze, obszar działania i dane dla klientów biznesowych, którzy szukają dostawcy lub podwykonawcy w Wielkopolsce.</p>"
         },
         {
+          "icon": "bed",
           "title": "Noclegi nad Jeziorem Powidzkim",
           "html": "<p>Zdjęcia, cennik sezonowy, opis okolicy i zapytanie o termin. Szczegóły znajdziesz w poradniku o <a href=\"/blog-strona-internetowa-obiekt-noclegowy-jezioro-powidzkie.html\">stronie obiektu noclegowego</a>.</p>"
         },
         {
+          "icon": "store",
           "title": "Usługi i handel",
           "html": "<p>Oferta, godziny otwarcia, dojazd i szybki kontakt dla klientów ze Słupcy, Strzałkowa i Zagórowa.</p>"
         }

@@ -170,7 +170,7 @@
         },
         {
           "title": "Obszar, który obsługuję",
-          "html": "<p>Sompolno, Biele, Lubstów i pozostałe miejscowości gminy oraz okoliczne gminy: Wierzbinek, Ślesin, Osiek Mały i Babiak.</p>"
+          "html": "<p>Sompolno, Biele, Lubstów i pozostałe miejscowości gminy oraz okoliczne gminy: Wierzbinek, <a href=\"/strony-internetowe-slesin.html\">Ślesin</a>, Osiek Mały i Babiak.</p>"
         },
         {
           "title": "SEO lokalne",
@@ -185,14 +185,17 @@
       "intro": [],
       "items": [
         {
+          "icon": "wrench",
           "title": "Usługi i warsztaty",
           "html": "<p>Zakres usług, godziny pracy, dojazd i numer telefonu pod ręką, żeby klient z polecenia mógł szybko potwierdzić, że trafił pod właściwy adres.</p>"
         },
         {
+          "icon": "home",
           "title": "Budownictwo i instalacje",
-          "html": "<p>Zdjęcia realizacji, opis usług i miejscowości, w których pracujesz, także poza gminą Sompolno: w Kole, Koninie czy Kłodawie.</p>"
+          "html": "<p>Zdjęcia realizacji, opis usług i miejscowości, w których pracujesz, także poza gminą Sompolno: w <a href=\"/strony-internetowe-kolo.html\">Kole</a>, <a href=\"/strony-internetowe-konin.html\">Koninie</a> czy Kłodawie.</p>"
         },
         {
+          "icon": "leaf",
           "title": "Obsługa rolnictwa",
           "html": "<p>Lista usług lub maszyn, sezonowa dostępność, obszar dojazdu i szybki kontakt dla gospodarstw z gminy Sompolno i okolic.</p>"
         }

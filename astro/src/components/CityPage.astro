@@ -1,0 +1,423 @@
+---
+// Strona miasta (kind: "city") w układzie strony głównej.
+// Treść 1:1 z src/content/pages/strony-internetowe-*.json; zmienia się tylko układ i kolejność sekcji:
+// hero → lokalnie → branże → cennik → opinie → realizacje → FAQ → dlaczego ja → okolica → kontakt.
+import { Image } from 'astro:assets';
+import Icon from './Icon.astro';
+import Faq from './Faq.astro';
+import BrowserFrame from './BrowserFrame.astro';
+import PlanCard from './PlanCard.astro';
+import ContactSection from './ContactSection.astro';
+import { company, reviews, webPlans, hourlyRate, pricingNote } from '../data/site';
+import { projects } from '../data/projects';
+
+interface Props { data: any }
+const { data: d } = Astro.props;
+
+const sections: any[] = d.sections ?? [];
+const by = (eyebrow: string) => sections.find((s) => s.eyebrow === eyebrow);
+const local = by('Lokalnie');
+const trades = by('Branże');
+const why = by('Dlaczego ja');
+const opinions = by('Opinie');
+const pricing = sections.find((s) => s.plans === 'web');
+const questions = by('Pytania');
+const near = by('Okolica');
+const cta = sections.at(-1);
+
+// H1 z wyróżnioną nazwą miasta
+const h1: string = d.hero.h1;
+const accent: string | undefined = d.hero.accent;
+let parts: { text: string; accent?: boolean }[] = [{ text: h1 }];
+if (accent && h1.includes(accent) && accent !== h1) {
+  const i = h1.indexOf(accent);
+  parts = [{ text: h1.slice(0, i) }, { text: accent, accent: true }, { text: h1.slice(i + accent.length) }].filter((p) => p.text);
+}
+const crumbs: { label: string; href?: string }[] = d.hero.crumbs ?? [];
+const buttons: { label: string; href: string; primary?: boolean }[] = (d.hero.buttons ?? []).map((b: any) => ({
+  ...b,
+  href: b.href === '/#kontakt' ? '#kontakt' : b.href,
+}));
+
+const byName = Object.fromEntries(projects.map((p) => [p.name, p]));
+const work = projects.filter((p) => p.home !== false).slice(0, 3);
+const reviewUrl = (name: string) => reviews.find((r) => r.name === name)?.url ?? company.googleReviews;
+const initials = (name: string) => name.split(' ').map((w) => w[0]).join('').slice(0, 2);
+const plain = (h = '') => h.replace(/<[^>]+>/g, '').trim();
+
+// tła: krem / biel na przemian, cennik ciemny
+let paper = true;
+const tone = () => ((paper = !paper) ? 'section--paper' : 'section--white');
+---
+<!-- HERO -->
+<section class="c-hero" aria-labelledby="c-hero-h">
+  <div class="wrap c-hero__text" data-enter>
+    {crumbs.length > 0 && (
+      <nav class="crumbs" aria-label="Okruszki">
+        <ol>
+          {crumbs.map((c, i) => (
+            <li>{c.href && i < crumbs.length - 1 ? <a href={c.href}>{c.label}</a> : <span aria-current="page">{c.label}</span>}</li>
+          ))}
+        </ol>
+      </nav>
+    )}
+    <h1 id="c-hero-h">{parts.map((p) => (p.accent ? <span>{p.text}</span> : p.text))}</h1>
+    {(d.hero.lead ?? []).map((l: string) => <p class="c-hero__lead" set:html={l} />)}
+    <div class="btn-row c-hero__btns">
+      {buttons.map((b) => (
+        <a class:list={['btn', b.primary ? 'btn--primary' : 'btn--ghost']} href={b.href}>{b.label}{b.primary && <Icon name="arrow" />}</a>
+      ))}
+    </div>
+    <ul class="c-hero__facts">
+      <li><a href={company.googleReviews} target="_blank" rel="noopener"><span class="stars" aria-hidden="true">{[1,2,3,4,5].map(() => <Icon name="star" size={15} />)}</span><strong>{company.rating}</strong> w Google · {company.reviewCount} opinii</a></li>
+      <li><Icon name="clock" size={17} />Wycena w 24 godziny</li>
+      <li><Icon name="check" size={17} />Strony od 1 500 zł netto</li>
+    </ul>
+  </div>
+
+  <div class="c-hero__stage">
+    <div class="wrap c-hero__shots" aria-label="Przykładowe strony zaprojektowane przez WebCanvas">
+      <BrowserFrame class="shot shot--left" src={byName['Dworzec Autobusowy Poznań'].image} alt={byName['Dworzec Autobusowy Poznań'].alt} url="dworzecautobusowy.poznan.pl" widths={[400, 640]} sizes="(min-width: 1000px) 34vw, 0px" />
+      <BrowserFrame class="shot shot--main" src={byName['Meritoros'].image} alt={byName['Meritoros'].alt} url="meritoros.pl" widths={[480, 800, 1100, 1400]} sizes="(min-width: 1000px) 56vw, 92vw" eager />
+      <BrowserFrame class="shot shot--right" src={byName['Woodbud'].image} alt={byName['Woodbud'].alt} url="woodbud.pl" widths={[400, 640]} sizes="(min-width: 1000px) 34vw, 0px" />
+    </div>
+  </div>
+</section>
+
+<!-- LOKALNIE -->
+{local && (
+  <section class:list={['section', tone()]} aria-labelledby="c-local-h">
+    <div class="wrap c-split">
+      <div>
+        <p class="eyebrow">{local.eyebrow}</p>
+        <h2 class="h2" id="c-local-h">{local.h2}</h2>
+        {local.before && <div class="prose c-split__prose" set:html={local.before} />}
+      </div>
+      {local.items?.length > 0 && (
+        <ol class="c-points">
+          {local.items.map((it: any) => (
+            <li>
+              <h3>{it.title}</h3>
+              <div class="c-points__text" set:html={it.html} />
+            </li>
+          ))}
+        </ol>
+      )}
+    </div>
+  </section>
+)}
+
+<!-- BRANŻE -->
+{trades && (
+  <section class:list={['section', tone()]} aria-labelledby="c-trades-h">
+    <div class="wrap">
+      <div class="sec-head sec-head--solo">
+        <div>
+          <p class="eyebrow">{trades.eyebrow}</p>
+          <h2 class="h2" id="c-trades-h">{trades.h2}</h2>
+        </div>
+      </div>
+      {trades.before && <div class="prose c-before" set:html={trades.before} />}
+      <ul class="c-services">
+        {trades.items.map((it: any, i: number) => (
+          <li>
+            <div class="c-service">
+              <div class="c-service__top">
+                <span class="c-service__icon"><Icon name={it.icon ?? 'browser'} size={24} /></span>
+                <span class="c-service__no" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+              </div>
+              <h3>{it.title}</h3>
+              <div class="c-service__text" set:html={it.html} />
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+)}
+
+<!-- CENNIK -->
+{pricing && (
+  <section class="section section--dark" aria-labelledby="c-price-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">{pricing.eyebrow}</p>
+          <h2 class="h2" id="c-price-h">{pricing.h2}</h2>
+        </div>
+        {(pricing.intro ?? []).length > 0 && <div class="lead">{pricing.intro.map((p: string) => <p set:html={p} />)}</div>}
+      </div>
+      <ul class="c-plans">
+        {webPlans.map((p) => (
+          <PlanCard name={p.name} note={p.note} who={p.who} amount={p.amount} unit={p.unit} time={p.time} items={p.items} cta={p.cta} href="/wycena.html" featured={p.featured} />
+        ))}
+      </ul>
+      <p class="c-plans__extra">{hourlyRate.label}: <strong>{hourlyRate.amount}</strong>. {pricingNote}</p>
+    </div>
+  </section>
+)}
+
+<!-- OPINIE -->
+{opinions && (
+  <section class:list={['section', tone(), 'on-light']} aria-labelledby="c-reviews-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">{opinions.eyebrow}</p>
+          <h2 class="h2" id="c-reviews-h">{opinions.h2}</h2>
+        </div>
+        {opinions.after && <div class="lead c-reviews__after" set:html={opinions.after} />}
+      </div>
+      <ul class="c-reviews">
+        {opinions.items.map((it: any) => (
+          <li class="c-review">
+            <span class="stars" aria-label="Ocena 5 na 5">{[1,2,3,4,5].map(() => <Icon name="star" size={16} />)}</span>
+            <blockquote set:html={it.html} />
+            <p class="c-review__who">
+              <span class="c-review__avatar" aria-hidden="true">{initials(it.title)}</span>
+              <a href={reviewUrl(it.title)} target="_blank" rel="noopener">{it.title}</a>
+            </p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+)}
+
+<!-- REALIZACJE -->
+<section class:list={['section', tone(), 'on-light']} aria-labelledby="c-work-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">Realizacje</p>
+        <h2 class="h2" id="c-work-h">Wybrane realizacje</h2>
+      </div>
+      <div class="sec-head__side">
+        <a class="link" href="/realizacje.html">Wszystkie realizacje <Icon name="arrow" /></a>
+      </div>
+    </div>
+    <ul class="c-work">
+      {work.map((p) => (
+        <li>
+          <a class="c-work__card" href={p.href}>
+            <div class="c-work__img">
+              <Image src={p.image} alt={p.alt} widths={[480, 720, 960]} sizes="(min-width: 1000px) 30vw, (min-width: 640px) 50vw, 100vw" />
+            </div>
+            <p class="c-work__trade">{p.trade}</p>
+            <h3>{p.name} <Icon name="arrow-up-right" size={20} /></h3>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<!-- FAQ -->
+{questions && (
+  <section class:list={['section', tone(), 'on-light']} aria-labelledby="c-faq-h">
+    <div class="wrap c-faq">
+      <div>
+        <p class="eyebrow">{questions.eyebrow}</p>
+        <h2 class="h2" id="c-faq-h">{questions.h2}</h2>
+        <p class="lead c-faq__lead">Nie ma tu Twojego pytania? Zadzwoń: <a class="link" href={company.phoneHref}>{company.phone}</a></p>
+      </div>
+      <Faq items={questions.items.map((it: any) => ({ q: it.title, a: it.html }))} />
+    </div>
+  </section>
+)}
+
+<!-- DLACZEGO JA -->
+{why && (
+  <section class:list={['section', tone()]} aria-labelledby="c-why-h">
+    <div class="wrap c-split">
+      <div>
+        <p class="eyebrow">{why.eyebrow}</p>
+        <h2 class="h2" id="c-why-h">{why.h2}</h2>
+      </div>
+      <div class="prose c-why" set:html={why.before} />
+    </div>
+  </section>
+)}
+
+<!-- OKOLICA -->
+{near && (
+  <section class:list={['section', tone()]} aria-labelledby="c-near-h">
+    <div class="wrap">
+      <div class="sec-head sec-head--solo">
+        <div>
+          <p class="eyebrow">{near.eyebrow}</p>
+          <h2 class="h2" id="c-near-h">{near.h2}</h2>
+        </div>
+      </div>
+      <ul class="c-near">
+        {near.items.map((it: any) => (
+          <li>
+            <a class="c-near__card" href={it.href}>
+              <span class="c-near__title">{it.title}</span>
+              <span class="c-near__text">{plain(it.html)}</span>
+              <span class="c-near__more">{near.moreLabel ?? 'Zobacz ofertę'} <Icon name="arrow" size={16} /></span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+)}
+
+<ContactSection heading={cta?.h2} />
+
+<style>
+  /* ---------- hero (jak na stronie głównej) ---------- */
+  .c-hero { position: relative; overflow: hidden; background: var(--paper); --peek: clamp(110px, 16vh, 200px); }
+  .c-hero::before {
+    content: ''; position: absolute; inset: -20% 10% auto; height: 70%; pointer-events: none;
+    background: radial-gradient(closest-side, rgb(225 29 72 / 0.18), transparent); filter: blur(20px);
+  }
+  .c-hero__text {
+    position: relative; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    min-height: calc(100vh - var(--nav-h) - var(--peek)); min-height: calc(100svh - var(--nav-h) - var(--peek));
+    padding-block: 48px;
+  }
+  .c-hero h1 {
+    margin-top: 0; font-size: clamp(2.4rem, 1.1rem + 4vw, 4.6rem); font-weight: 680; letter-spacing: -0.045em; line-height: 1.02;
+    max-width: 18ch;
+  }
+  .c-hero h1 span { color: var(--rose); }
+  .c-hero__lead { margin-top: 28px; font-size: var(--t-lead); color: var(--fg-muted); max-width: 62ch; line-height: 1.55; }
+  .c-hero__btns { margin-top: 36px; justify-content: center; }
+  .c-hero__facts {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 28px; margin-top: 32px;
+    font-size: var(--t-small); color: var(--fg-muted);
+  }
+  .c-hero__facts li, .c-hero__facts a { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; }
+  .c-hero__facts a:hover { color: var(--fg); }
+  .c-hero__facts strong { color: var(--fg); font-weight: 620; }
+  .c-hero__facts :global(svg) { color: var(--accent-fg); }
+  .stars { display: inline-flex; gap: 2px; color: var(--amber); }
+  .c-hero__facts .stars :global(svg) { color: var(--amber); }
+
+  .crumbs { margin-bottom: 28px; }
+  .crumbs ol { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 0; font-size: var(--t-small); color: var(--fg-muted); }
+  .crumbs li { display: inline-flex; align-items: center; }
+  .crumbs li + li::before { content: '/'; margin: 0 10px; opacity: 0.5; }
+  .crumbs a { text-decoration: none; display: inline-flex; align-items: center; min-height: 32px; }
+  .crumbs a:hover, .crumbs [aria-current] { color: var(--fg); }
+
+  .c-hero__stage { position: relative; }
+  .c-hero__stage::after { content: ''; position: absolute; inset: 42% 0 0; background: var(--white); z-index: 0; }
+  .c-hero__shots { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr; }
+  .c-hero__shots :global(.shot--left), .c-hero__shots :global(.shot--right) { display: none; }
+  @media (min-width: 1000px) {
+    .c-hero__shots { grid-template-columns: 1fr 2.2fr 1fr; align-items: end; }
+    .c-hero__shots :global(.shot--main) { grid-column: 2; grid-row: 1; position: relative; z-index: 2; }
+    .c-hero__shots :global(.shot--left), .c-hero__shots :global(.shot--right) {
+      display: block; grid-row: 1; margin-bottom: 48px; opacity: 0.9;
+      transition: transform .5s var(--ease), opacity .3s var(--ease);
+    }
+    .c-hero__shots :global(.shot--left) { grid-column: 1 / 2; width: 150%; justify-self: start; }
+    .c-hero__shots :global(.shot--left .browser__url) { margin-left: 0; max-width: 220px; }
+    .c-hero__shots :global(.shot--right) { grid-column: 3 / 4; width: 150%; justify-self: end; }
+    .c-hero__shots:hover :global(.shot--left) { transform: translateX(-12px); }
+    .c-hero__shots:hover :global(.shot--right) { transform: translateX(12px); }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .c-hero__stage { animation: rise 1.1s .25s var(--ease) both; }
+    @keyframes rise { from { opacity: 0; transform: translateY(40px); } }
+  }
+
+  /* ---------- wspólne ---------- */
+  .sec-head--solo { grid-template-columns: minmax(0, 1fr) !important; }
+  .sec-head--solo .h2 { max-width: 22ch; }
+  .sec-head__side { display: grid; gap: 20px; justify-items: start; align-content: end; }
+  .c-before { max-width: 760px; margin-bottom: 48px; }
+
+  /* ---------- lokalnie / dlaczego ja: dwie kolumny ---------- */
+  .c-split { display: grid; gap: 48px; grid-template-columns: minmax(0, 1fr); }
+  @media (min-width: 1000px) { .c-split { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 80px; } }
+  .c-split .h2 { font-size: clamp(2rem, 1.4rem + 1.9vw, 3rem); }
+  .c-split__prose { margin-top: 28px; color: var(--fg-muted); }
+  .c-split__prose :global(p) { color: var(--fg-muted); }
+  .c-points { counter-reset: p; display: grid; align-content: start; }
+  .c-points li { counter-increment: p; display: grid; grid-template-columns: 56px 1fr; gap: 4px 0; padding: 28px 0; border-top: 1px solid var(--line); }
+  .c-points li:last-child { border-bottom: 1px solid var(--line); }
+  .c-points li::before { content: counter(p, decimal-leading-zero); grid-row: span 2; font-size: var(--t-label); color: var(--accent-fg); padding-top: 6px; }
+  .c-points h3 { font-size: var(--t-h3); }
+  .c-points__text { color: var(--fg-muted); margin-top: 6px; }
+  .c-points__text :global(a), .c-service__text :global(a) { color: var(--accent-fg); }
+  .c-why { align-self: center; }
+
+  /* ---------- branże (siatka usług) ---------- */
+  .c-services {
+    display: grid; grid-template-columns: minmax(0, 1fr);
+    border-top: 1px solid var(--line); border-left: 1px solid var(--line);
+  }
+  @media (min-width: 800px) { .c-services { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  .c-services > li { display: flex; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .c-service { flex: 1; display: flex; flex-direction: column; gap: 14px; padding: clamp(24px, 2.6vw, 36px); transition: background-color .3s var(--ease); }
+  .c-service:hover { background: var(--surface-2); }
+  .c-service__top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+  .c-service__icon {
+    width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center;
+    background: rgb(225 29 72 / 0.12); color: var(--accent-fg);
+    transition: background-color .3s var(--ease), color .3s var(--ease), transform .3s var(--ease);
+  }
+  .c-service:hover .c-service__icon { background: var(--rose); color: #fff; transform: rotate(-6deg); }
+  .c-service__no { font-size: var(--t-label); color: var(--fg-muted); font-variant-numeric: tabular-nums; }
+  .c-service h3 { font-size: var(--t-h3); }
+  .c-service__text { color: var(--fg-muted); }
+
+  /* ---------- cennik ---------- */
+  .c-plans { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); align-items: stretch; }
+  .c-plans__extra { margin-top: 28px; color: var(--fg-muted); text-align: center; }
+  .c-plans__extra strong { color: var(--fg); font-weight: 620; }
+
+  /* ---------- opinie ---------- */
+  .c-reviews__after :global(a) { color: var(--rose-strong); }
+  .c-reviews { columns: 3 300px; column-gap: 24px; }
+  .c-review {
+    break-inside: avoid; margin-bottom: 24px; padding: 28px;
+    background: var(--card); border: 1px solid var(--line); border-radius: var(--r-lg);
+    display: grid; gap: 18px;
+  }
+  .c-review blockquote { margin: 0; font-size: 1.05rem; line-height: 1.6; }
+  .c-review__who { display: flex; align-items: center; gap: 12px; font-weight: 580; }
+  .c-review__who a { text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; }
+  .c-review__who a:hover { color: var(--rose); }
+  .c-review__avatar { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: var(--rose-tint); color: var(--rose-strong); font-size: var(--t-small); font-weight: 640; }
+
+  /* ---------- realizacje ---------- */
+  .c-work { display: grid; gap: 40px 24px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
+  .c-work__card { display: flex; flex-direction: column; gap: 10px; text-decoration: none; }
+  .c-work__img {
+    aspect-ratio: 4 / 3; overflow: hidden; border-radius: var(--r-md); margin-bottom: 10px;
+    border: 1px solid var(--line-light); background: var(--paper-2);
+    transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+  }
+  .c-work__img :global(img) { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform .6s var(--ease); }
+  .c-work__card:hover .c-work__img { transform: translateY(-2px); box-shadow: 0 24px 48px -28px rgb(26 21 19 / 0.4); }
+  .c-work__card:hover .c-work__img :global(img) { transform: scale(1.03); }
+  .c-work__trade { font-size: var(--t-label); font-weight: 560; color: var(--rose-strong); }
+  .c-work__card h3 { font-size: var(--t-h3); display: flex; align-items: center; gap: 8px; }
+  .c-work__card h3 :global(svg) { color: var(--rose); transition: transform .25s var(--ease); }
+  .c-work__card:hover h3 :global(svg) { transform: translate(3px, -3px); }
+
+  /* ---------- faq ---------- */
+  .c-faq { display: grid; gap: 48px; grid-template-columns: minmax(0, 1fr); }
+  @media (min-width: 1000px) { .c-faq { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 96px; } }
+  .c-faq__lead { margin-top: 24px; }
+
+  /* ---------- okolica ---------- */
+  .c-near { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
+  .c-near > li { display: flex; }
+  .c-near__card {
+    flex: 1; display: flex; flex-direction: column; gap: 10px; padding: clamp(22px, 2.2vw, 30px); text-decoration: none;
+    border-radius: var(--r-lg); border: 1px solid var(--line); background: var(--card);
+    transition: transform .3s var(--ease), border-color .3s var(--ease);
+  }
+  .c-near__card:hover { transform: translateY(-2px); border-color: var(--rose); }
+  .c-near__title { font-size: var(--t-h3); font-weight: 620; letter-spacing: -0.02em; line-height: 1.2; }
+  .c-near__text { color: var(--ink-muted); }
+  .c-near__more { margin-top: auto; padding-top: 6px; display: inline-flex; align-items: center; gap: 8px; font-weight: 580; color: var(--rose-strong); }
+  .c-near__more :global(svg) { transition: transform .25s var(--ease); }
+  .c-near__card:hover .c-near__more :global(svg) { transform: translateX(4px); }
+</style>

@@ -185,14 +185,17 @@
       "intro": [],
       "items": [
         {
+          "icon": "store",
           "title": "Gabinety i usługi w dzielnicach",
           "html": "<p>Strona zbudowana wokół konkretnej usługi i miejsca, np. Jeżyc, Wildy czy Rataj, z cennikiem, dojazdem i prostym umówieniem wizyty.</p>"
         },
         {
+          "icon": "pin",
           "title": "Firmy z gmin powiatu",
           "html": "<p>Oferta dla klientów ze Swarzędza, Lubonia, Suchego Lasu czy Tarnowa Podgórnego, którzy szukają wykonawcy blisko siebie.</p>"
         },
         {
+          "icon": "briefcase",
           "title": "Firmy B2B",
           "html": "<p>Jasno opisane usługi, przykłady realizacji i formularz zapytania, które pomagają klientowi biznesowemu szybko ocenić, czy warto rozpocząć rozmowę.</p>"
         }

@@ -11,7 +11,10 @@ export const company = {
   postalCode: '62-610',
   city: 'Sompolno',
   hours: 'pn–pt 9:00–17:00',
-  googleReviews: 'https://share.google/e6KXzabuprV7YYIPx',
+  // Profil Firmy w Google (kgmid z linku udostępniania)
+  googleReviews: 'https://www.google.com/maps?kgmid=/g/11hzn4j607',
+  mapsUrl: 'https://www.google.com/maps?kgmid=/g/11hzn4j607',
+  mapsEmbed: 'https://www.google.com/maps?q=WebCanvas,+Biele+126,+62-610+Sompolno&z=12&output=embed',
   rating: '5,0',
   reviewCount: 6,
   socials: {
@@ -93,6 +96,7 @@ export const mainNav = [
 
 export const serviceLinks = [
   { label: 'Strony internetowe', href: '/tworzenie-stron-internetowych.html' },
+  { label: 'Sklepy internetowe', href: '/tworzenie-sklepow-internetowych.html' },
   { label: 'Pozycjonowanie SEO', href: '/pozycjonowanie-seo.html' },
   { label: 'Kampanie Google Ads', href: '/kampanie-google-ads.html' },
   { label: 'Kampanie Meta Ads', href: '/kampanie-meta-ads.html' },

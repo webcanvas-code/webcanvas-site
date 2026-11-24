@@ -185,14 +185,17 @@
       "intro": [],
       "items": [
         {
+          "icon": "bed",
           "title": "Noclegi i agroturystyka",
           "html": "<p>Zdjęcia, cennik sezonowy, opis okolicy, dojazd i zapytanie o wolny termin dla gości Jeziora Ślesińskiego i Lichenia.</p>"
         },
         {
+          "icon": "cup",
           "title": "Gastronomia",
           "html": "<p>Aktualne menu, godziny otwarcia w sezonie i poza nim, mapa dojazdu oraz telefon do rezerwacji dostępny jednym kliknięciem.</p>"
         },
         {
+          "icon": "store",
           "title": "Usługi i handel",
           "html": "<p>Oferta, obszar działania i kontakt dla klientów ze Ślesina, Kleczewa, Skulska i pozostałych okolicznych gmin.</p>"
         }

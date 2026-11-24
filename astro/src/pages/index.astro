@@ -13,7 +13,7 @@ const byName = Object.fromEntries(projects.map((p) => [p.name, p]));
 
 const services = [
   { icon: 'browser', title: 'Strony internetowe', text: 'Strony firmowe, wizytówki i landing page, które jasno pokazują ofertę i prowadzą klienta do kontaktu.', tags: ['WordPress', 'Landing page', 'SEO'], href: '/tworzenie-stron-internetowych.html' },
-  { icon: 'cart', title: 'Sklepy internetowe', text: 'Sklepy na WooCommerce z płatnościami online, wygodnym koszykiem i panelem, który obsłużysz bez programisty.', tags: ['WooCommerce', 'Płatności online'] },
+  { icon: 'cart', title: 'Sklepy internetowe', text: 'Sklepy na WooCommerce z płatnościami online, wygodnym koszykiem i panelem, który obsłużysz bez programisty.', tags: ['WooCommerce', 'Płatności online'], href: '/tworzenie-sklepow-internetowych.html' },
   { icon: 'app', title: 'Aplikacje webowe', text: 'Panele klienta, dashboardy i systemy B2B / B2C, które porządkują procesy w firmie.', tags: ['B2B / B2C', 'Dashboard'] },
   { icon: 'pen', title: 'Projekt graficzny', text: 'Układ i wygląd zaprojektowane pod Twoją markę i klientów, bez gotowych szablonów.', tags: ['UI / UX', 'Identyfikacja'] },
   { icon: 'search', title: 'Pozycjonowanie SEO', text: 'Audyt techniczny, treści, linki i lokalne SEO, żeby klienci z okolicy znajdowali Cię w Google.', tags: ['Audyt SEO', 'Local SEO'], href: '/pozycjonowanie-seo.html' },
@@ -51,7 +51,7 @@ const schema = [
     name: 'WebCanvas',
     url: 'https://web-canvas.pl/',
     logo: 'https://web-canvas.pl/img/logo.png',
-    hasMap: company.googleReviews,
+    hasMap: company.mapsUrl,
     openingHoursSpecification: [
       { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '09:00', closes: '17:00' },
     ],
@@ -83,7 +83,7 @@ const schema = [
 ---
 <Base
   title="Tworzenie stron internetowych dla firm | WebCanvas"
-  description="Projektujemy i wdrażamy nowoczesne strony internetowe oraz sklepy e-commerce dla firm z całej Polski. Szybkie wdrożenia, SEO od pierwszego dnia i wsparcie po starcie."
+  description="Tworzę strony internetowe i sklepy dla firm z Konina, Turku, Koła, Słupcy i całej Wielkopolski. SEO od pierwszego dnia, opieka po starcie, wycena w 24 h."
   ogTitle="WebCanvas | Projektowanie i tworzenie stron internetowych"
   path="/"
   schema={schema}

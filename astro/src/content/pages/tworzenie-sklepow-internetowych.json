@@ -1,0 +1,303 @@
+{
+  "slug": "tworzenie-sklepow-internetowych",
+  "kind": "tworzenie-sklepow-internetowych",
+  "title": "Tworzenie sklepów internetowych WooCommerce | WebCanvas",
+  "description": "Tworzę sklepy internetowe na WooCommerce dla firm z Konina i Wielkopolski: płatności BLIK, InPost, faktury, Allegro. Od 5 000 zł netto, gotowe w 2–6 tygodni.",
+  "ogTitle": "Tworzenie sklepów internetowych na WooCommerce | WebCanvas",
+  "ogImage": "/img/og-image.png",
+  "path": "/tworzenie-sklepow-internetowych.html",
+  "hero": {
+    "crumbs": [
+      {
+        "label": "Strona główna",
+        "href": "/"
+      },
+      {
+        "label": "Tworzenie sklepów internetowych"
+      }
+    ],
+    "h1": "Tworzenie sklepów internetowych na WooCommerce",
+    "accent": "WooCommerce",
+    "lead": [
+      "Buduję sklepy, w których klient płaci BLIK-iem, wybiera Paczkomat i dostaje fakturę bez Twojego udziału. Ty dodajesz produkty i wysyłasz paczki, resztę ustawiam raz, porządnie."
+    ],
+    "buttons": [
+      {
+        "label": "Wyceń sklep",
+        "href": "/wycena.html",
+        "primary": true
+      },
+      {
+        "label": "Napisz do mnie",
+        "href": "/#kontakt",
+        "primary": false
+      }
+    ]
+  },
+  "sections": [
+    {
+      "type": "facts",
+      "facts": [
+        {
+          "label": "Cena",
+          "value": "od 5 000 zł netto"
+        },
+        {
+          "label": "Czas",
+          "value": "2–6 tygodni"
+        },
+        {
+          "label": "Platforma",
+          "value": "WooCommerce (WordPress)"
+        },
+        {
+          "label": "Po starcie",
+          "value": "Szkolenie z panelu"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Zakres",
+      "h2": "Co dostaje Twój sklep",
+      "intro": [
+        "Każdy sklep ustawiam pod to, jak naprawdę sprzedajesz: jakie masz produkty, jak wysyłasz i kto wystawia faktury."
+      ],
+      "items": [
+        {
+          "title": "Płatności online",
+          "html": "<p>Przelewy24, PayU albo Tpay: BLIK, karty i szybkie przelewy. Pieniądze trafiają na Twoje konto, a status zamówienia zmienia się sam po opłaceniu.</p>"
+        },
+        {
+          "title": "Wysyłki",
+          "html": "<p>InPost Paczkomaty z mapą wyboru punktu, kurierzy i odbiór osobisty. Etykiety generujesz z panelu zamówienia, bez przepisywania adresów.</p>"
+        },
+        {
+          "title": "Faktury",
+          "html": "<p>Połączenie z Fakturownią albo wFirmą. Faktura wystawia się po opłaceniu zamówienia i trafia do klienta mailem.</p>"
+        },
+        {
+          "title": "Allegro i hurtownie",
+          "html": "<p>Synchronizacja ofert i stanów z Allegro oraz import produktów z hurtowni, żeby nie wpisywać setek pozycji ręcznie.</p>"
+        },
+        {
+          "title": "Panel produktów i zamówień",
+          "html": "<p>Dodajesz produkty, warianty (rozmiary, kolory), promocje i kody rabatowe. Zamówienia, zwroty i stany magazynowe masz w jednym miejscu.</p>"
+        },
+        {
+          "title": "Projekt i telefon",
+          "html": "<p>Wygląd pod Twoją markę, nie gotowy motyw. Koszyk i zamówienie sprawdzam na telefonie, bo tam robi zakupy większość klientów.</p>"
+        },
+        {
+          "title": "SEO sklepu",
+          "html": "<p>Kategorie i adresy produktów ułożone pod wyszukiwania, dane strukturalne produktów (cena, dostępność) i szybkie ładowanie zdjęć.</p>"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Platforma",
+      "h2": "Dlaczego robię sklepy na WooCommerce",
+      "intro": [],
+      "before": "<p>WooCommerce to sklep na WordPressie, który stoi na Twoim hostingu i należy do Ciebie. Nie płacisz abonamentu platformy ani prowizji od sprzedaży, tylko za hosting, domenę i opłaty bramki płatności.</p><p>Sklep da się rozbudować o niemal wszystko: program lojalnościowy, sprzedaż hurtową z osobnymi cenami, kilka języków czy nowe metody dostawy. Panel jest prosty, więc codzienną obsługę robisz sam.</p><p>Uczciwie: WooCommerce wymaga aktualizacji i kopii zapasowych. Jeśli nie chcesz o tym pamiętać, biorę to na siebie w ramach opieki po starcie.</p>"
+    },
+    {
+      "eyebrow": "Proces",
+      "h2": "Jak powstaje sklep krok po kroku",
+      "intro": [],
+      "items": [
+        {
+          "title": "Rozmowa i wycena",
+          "html": "<p>Ustalamy, co sprzedajesz, ile masz produktów, jak wysyłasz i z czym sklep ma się łączyć. W ciągu 24 godzin dostajesz wycenę i termin.</p>"
+        },
+        {
+          "title": "Projekt",
+          "html": "<p>Przygotowuję wygląd strony głównej, kategorii, karty produktu i koszyka. Oglądasz go i zgłaszasz uwagi, zanim zacznę wdrożenie.</p>"
+        },
+        {
+          "title": "Wdrożenie i integracje",
+          "html": "<p>Stawiam sklep, podpinam płatności, wysyłki i faktury, importuję albo wgrywam produkty.</p>"
+        },
+        {
+          "title": "Testowe zamówienia",
+          "html": "<p>Składam zamówienia jak klient: płatność, wybór Paczkomatu, mail z potwierdzeniem, faktura. Poprawiam wszystko, co nie działa idealnie.</p>"
+        },
+        {
+          "title": "Start i szkolenie",
+          "html": "<p>Uruchamiam sklep, pokazuję, jak obsłużyć zamówienie od początku do końca, i zostaję pod telefonem.</p>"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Cena",
+      "h2": "Ile kosztuje sklep internetowy",
+      "intro": [],
+      "before": "<p>Sklep na WooCommerce zaczyna się od 5 000 zł netto. W tej kwocie jest projekt, wersja na telefony, płatności online, wysyłki, panel do produktów i zamówień oraz szkolenie.</p><p>Cenę podnoszą: duża liczba produktów i wariantów, import z hurtowni, połączenie z Allegro, kilka wersji językowych i nietypowe funkcje, np. konfigurator produktu.</p><p>Po starcie płacisz za hosting i domenę oraz prowizje bramki płatności. Wszystkie stałe koszty wypisuję w wycenie.</p><p><a href=\"/wycena.html\">Sprawdź orientacyjną cenę w kreatorze wyceny</a></p>"
+    },
+    {
+      "eyebrow": "Okolica",
+      "h2": "Sklepy dla firm z Konina i Wielkopolski",
+      "intro": [],
+      "before": "<p>Pracuję z Sompolna, więc z firmami z <a href=\"/strony-internetowe-konin.html\">Konina</a>, <a href=\"/strony-internetowe-turek.html\">Turku</a>, <a href=\"/strony-internetowe-kolo.html\">Koła</a> i <a href=\"/strony-internetowe-slupca.html\">Słupcy</a> mogę spotkać się na miejscu, obejrzeć produkty i od razu ustalić, jak je sfotografować i opisać. Z resztą Polski pracuję zdalnie, przez telefon i wideorozmowy.</p>"
+    },
+    {
+      "eyebrow": "Pytania",
+      "h2": "Najczęstsze pytania o sklepy internetowe",
+      "intro": [],
+      "items": [
+        {
+          "title": "Ile kosztuje sklep internetowy na WooCommerce?",
+          "html": "<p>Sklep internetowy zaczyna się od 5 000 zł netto. Cena rośnie z liczbą produktów i wariantów, importem z hurtowni, połączeniem z Allegro i wersjami językowymi. Dokładną kwotę podaję po krótkiej rozmowie, w ciągu 24 godzin.</p>"
+        },
+        {
+          "title": "Ile trwa stworzenie sklepu internetowego?",
+          "html": "<p>Zwykle od 2 do 6 tygodni. Prosty sklep z kilkudziesięcioma produktami i jedną bramką płatności powstaje szybciej, sklep z importem z hurtowni i Allegro trwa dłużej. Termin ustalamy przed startem prac.</p>"
+        },
+        {
+          "title": "Czy sam dodam produkty i obsłużę zamówienia?",
+          "html": "<p>Tak. W panelu WooCommerce dodajesz produkty, zmieniasz ceny i stany magazynowe, obsługujesz zamówienia i zwroty. Po starcie sklepu robię szkolenie z panelu i zostawiam krótką instrukcję.</p>"
+        },
+        {
+          "title": "WooCommerce czy Shopify albo Shoper?",
+          "html": "<p>Shopify i Shoper to platformy abonamentowe: płacisz co miesiąc za dostęp, a część funkcji kosztuje dodatkowo. WooCommerce działa na Twoim hostingu i należy do Ciebie, bez abonamentu platformy i bez prowizji od sprzedaży. Wymaga za to aktualizacji, którymi mogę się zająć w ramach opieki.</p>"
+        },
+        {
+          "title": "Jakie są stałe koszty sklepu po starcie?",
+          "html": "<p>Hosting i domena (zwykle kilkaset złotych rocznie), prowizje bramki płatności od każdej transakcji i ewentualnie płatne wtyczki, np. do Allegro albo hurtowni. Wszystkie te koszty wypisuję w wycenie, zanim zaczniemy.</p>"
+        },
+        {
+          "title": "Kto przygotowuje regulamin sklepu?",
+          "html": "<p>Przygotowuję w sklepie miejsce na regulamin, politykę prywatności i zasady zwrotów oraz wymagane zgody przy zamówieniu. Treść regulaminu najlepiej zlecić prawnikowi albo kupić gotowy pakiet dokumentów, bo odpowiada za nią sprzedawca.</p>"
+        }
+      ]
+    },
+    {
+      "eyebrow": "Kontakt",
+      "h2": "Porozmawiajmy o Twoim sklepie",
+      "intro": [],
+      "before": "<p>Napisz, co sprzedajesz i z czym sklep ma się łączyć. Bezpłatną wycenę odeślę w ciągu 24 godzin.</p>"
+    }
+  ],
+  "schema": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Tworzenie sklepów internetowych na WooCommerce",
+      "serviceType": "Tworzenie sklepów internetowych",
+      "url": "https://web-canvas.pl/tworzenie-sklepow-internetowych.html",
+      "description": "Projekt i wdrożenie sklepów internetowych na WooCommerce z płatnościami online, wysyłkami InPost, fakturami i integracją z Allegro.",
+      "provider": {
+        "@type": "ProfessionalService",
+        "@id": "https://web-canvas.pl/#business",
+        "name": "WebCanvas",
+        "url": "https://web-canvas.pl/"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Konin"
+        },
+        {
+          "@type": "City",
+          "name": "Turek"
+        },
+        {
+          "@type": "City",
+          "name": "Koło"
+        },
+        {
+          "@type": "City",
+          "name": "Słupca"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Wielkopolska"
+        },
+        {
+          "@type": "Country",
+          "name": "Polska"
+        }
+      ],
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "PLN",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": 5000,
+          "priceCurrency": "PLN",
+          "valueAddedTaxIncluded": false
+        }
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Strona główna",
+          "item": "https://web-canvas.pl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tworzenie sklepów internetowych",
+          "item": "https://web-canvas.pl/tworzenie-sklepow-internetowych.html"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Ile kosztuje sklep internetowy na WooCommerce?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sklep internetowy zaczyna się od 5 000 zł netto. Cena rośnie z liczbą produktów i wariantów, importem z hurtowni, połączeniem z Allegro i wersjami językowymi. Dokładną kwotę podaję po krótkiej rozmowie, w ciągu 24 godzin."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ile trwa stworzenie sklepu internetowego?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Zwykle od 2 do 6 tygodni. Prosty sklep z kilkudziesięcioma produktami i jedną bramką płatności powstaje szybciej, sklep z importem z hurtowni i Allegro trwa dłużej. Termin ustalamy przed startem prac."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy sam dodam produkty i obsłużę zamówienia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tak. W panelu WooCommerce dodajesz produkty, zmieniasz ceny i stany magazynowe, obsługujesz zamówienia i zwroty. Po starcie sklepu robię szkolenie z panelu i zostawiam krótką instrukcję."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "WooCommerce czy Shopify albo Shoper?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Shopify i Shoper to platformy abonamentowe: płacisz co miesiąc za dostęp, a część funkcji kosztuje dodatkowo. WooCommerce działa na Twoim hostingu i należy do Ciebie, bez abonamentu platformy i bez prowizji od sprzedaży. Wymaga za to aktualizacji, którymi mogę się zająć w ramach opieki."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Jakie są stałe koszty sklepu po starcie?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hosting i domena (zwykle kilkaset złotych rocznie), prowizje bramki płatności od każdej transakcji i ewentualnie płatne wtyczki, np. do Allegro albo hurtowni. Wszystkie te koszty wypisuję w wycenie, zanim zaczniemy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kto przygotowuje regulamin sklepu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Przygotowuję w sklepie miejsce na regulamin, politykę prywatności i zasady zwrotów oraz wymagane zgody przy zamówieniu. Treść regulaminu najlepiej zlecić prawnikowi albo kupić gotowy pakiet dokumentów, bo odpowiada za nią sprzedawca."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -148,7 +148,7 @@
         },
         {
           "title": "Sklep internetowy",
-          "html": "<p>Kompletne rozwiązanie e-commerce z obsługą płatności, zarządzaniem zamówieniami i magazynem. Projektuję pod konwersję, nie tylko pod wygląd.</p>\n <p>Dla kogo: firmy sprzedające produkty online, producenci, dystrybutorzy</p>"
+          "html": "<p>Kompletne rozwiązanie e-commerce z obsługą płatności, zarządzaniem zamówieniami i magazynem. Projektuję pod konwersję, nie tylko pod wygląd.</p>\n <p><a href=\"/tworzenie-sklepow-internetowych.html\">Więcej o tworzeniu sklepów na WooCommerce</a></p>\n <p>Dla kogo: firmy sprzedające produkty online, producenci, dystrybutorzy</p>"
         }
       ]
     },

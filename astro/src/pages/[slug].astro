@@ -6,6 +6,7 @@ import Base from '../layouts/Base.astro';
 import PageHero from '../components/PageHero.astro';
 import Sections from '../components/Sections.astro';
 import ArticleBody from '../components/ArticleBody.astro';
+import CityPage from '../components/CityPage.astro';
 
 export async function getStaticPaths() {
   // te podstrony mają własne pliki w src/pages
@@ -22,7 +23,11 @@ const { type, entry } = Astro.props as any;
 const d = entry.data;
 const localContact = (href: string) => (href === '/#kontakt' ? '#kontakt' : href);
 ---
-{type === 'page' ? (
+{type === 'page' && d.kind === 'city' ? (
+  <Base title={d.title} description={d.description} ogTitle={d.ogTitle} ogImage={d.ogImage} path={d.path} schema={d.schema} robots={d.robots}>
+    <CityPage data={d} />
+  </Base>
+) : type === 'page' ? (
   <Base title={d.title} description={d.description} ogTitle={d.ogTitle} ogImage={d.ogImage} path={d.path} schema={d.schema} robots={d.robots}>
     <PageHero
       crumbs={d.hero.crumbs}

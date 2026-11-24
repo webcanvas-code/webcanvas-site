@@ -185,14 +185,17 @@
       "intro": [],
       "items": [
         {
+          "icon": "factory",
           "title": "Zakłady produkcyjne",
           "html": "<p>Oferta, możliwości produkcyjne, przykłady wyrobów i kontakt handlowy. Taka strona pomaga zdobywać klientów także spoza powiatu tureckiego.</p>"
         },
         {
+          "icon": "wrench",
           "title": "Warsztaty i firmy usługowe",
           "html": "<p>Zakres usług, koszt dojazdu, godziny pracy i szybki kontakt dla klientów z Turku, Tuliszkowa, Dobrej i Przykony.</p>"
         },
         {
+          "icon": "home",
           "title": "Budownictwo i instalacje",
           "html": "<p>Realizacje z opisem miejsca, przebieg współpracy i formularz wyceny, dzięki którym klient wie, czego się spodziewać, zanim zadzwoni.</p>"
         }

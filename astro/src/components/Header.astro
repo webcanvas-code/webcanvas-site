@@ -17,7 +17,19 @@ const current = Astro.url.pathname;
 
     <nav class="nav__links" aria-label="Główna nawigacja">
       <ul>
-        {mainNav.map((item) => (
+        {mainNav.map((item) => item.children ? (
+          <li class="nav__dd" data-dd>
+            <a href={item.href} aria-haspopup="true" aria-expanded="false" data-dd-trigger>
+              {item.label}
+              <svg class="nav__chev" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <ul class="nav__menu">
+              {item.children.map((c) => (
+                <li><a href={c.href} aria-current={current === c.href ? 'page' : undefined}>{c.label}</a></li>
+              ))}
+            </ul>
+          </li>
+        ) : (
           <li>
             <a href={item.href} aria-current={current === item.href ? 'page' : undefined}>{item.label}</a>
           </li>
@@ -41,7 +53,14 @@ const current = Astro.url.pathname;
   <div class="nav__sheet" id="menu-mobilne" hidden data-nav-sheet>
     <ul class="wrap">
       {mainNav.map((item) => (
-        <li><a href={item.href}>{item.label}</a></li>
+        <li>
+          <a href={item.href}>{item.label}</a>
+          {item.children && (
+            <ul class="nav__sub">
+              {item.children.map((c) => <li><a href={c.href}>{c.label}</a></li>)}
+            </ul>
+          )}
+        </li>
       ))}
       <li><a href="/#kontakt">Kontakt</a></li>
     </ul>
@@ -73,6 +92,30 @@ const current = Astro.url.pathname;
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
   window.matchMedia('(min-width: 960px)').addEventListener('change', (m) => { if (m.matches) setOpen(false); });
 
+  // rozwijane menu „Usługi”: hover/focus w CSS, tu dotyk i klawiatura
+  document.querySelectorAll<HTMLElement>('[data-dd]').forEach((dd) => {
+    const trigger = dd.querySelector<HTMLAnchorElement>('[data-dd-trigger]');
+    const set = (open: boolean) => {
+      dd.classList.toggle('is-open', open);
+      trigger?.setAttribute('aria-expanded', String(open));
+    };
+    dd.addEventListener('mouseenter', () => set(true));
+    dd.addEventListener('mouseleave', () => set(false));
+    dd.addEventListener('focusout', (e) => { if (!dd.contains(e.relatedTarget as Node)) set(false); });
+    // pierwsze stuknięcie na ekranie dotykowym otwiera listę zamiast przechodzić do sekcji
+    trigger?.addEventListener('click', (e) => {
+      if (window.matchMedia('(hover: none)').matches && !dd.classList.contains('is-open')) {
+        e.preventDefault();
+        set(true);
+      }
+    });
+    trigger?.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowDown') { e.preventDefault(); set(true); dd.querySelector<HTMLAnchorElement>('.nav__menu a')?.focus(); }
+    });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && dd.classList.contains('is-open')) { set(false); trigger?.focus(); } });
+    document.addEventListener('click', (e) => { if (!dd.contains(e.target as Node)) set(false); });
+  });
+
   const onScroll = () => nav?.classList.toggle('is-scrolled', window.scrollY > 8);
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
@@ -81,12 +124,19 @@ const current = Astro.url.pathname;
 <style>
   .nav {
     position: sticky; top: 0; z-index: 50;
-    background: rgb(255 253 250 / 0.9);
-    backdrop-filter: saturate(1.4) blur(14px);
-    -webkit-backdrop-filter: saturate(1.4) blur(14px);
     border-bottom: 1px solid transparent;
     transition: border-color .25s var(--ease);
   }
+  /* Rozmycie tła na pseudo-elemencie: backdrop-filter na samym .nav tworzy blok
+     zawierający dla position: fixed, przez co panel menu mobilnego był przycinany
+     do wysokości nagłówka i przykrywała go sekcja Hero. */
+  .nav::before {
+    content: ''; position: absolute; inset: 0; z-index: -1;
+    background: rgb(255 253 250 / 0.9);
+    backdrop-filter: saturate(1.4) blur(14px);
+    -webkit-backdrop-filter: saturate(1.4) blur(14px);
+  }
+  .nav.is-open::before { background: var(--bg); }
   .nav.is-scrolled, .nav.is-open { border-bottom-color: var(--line); }
   .nav__bar { height: var(--nav-h); display: flex; align-items: center; gap: 24px; }
   .nav__logo { display: block; flex: none; margin-right: auto; padding: 6px 0; }
@@ -100,6 +150,24 @@ const current = Astro.url.pathname;
   }
   .nav__links a:hover { color: var(--fg); background: var(--tint); }
   .nav__links a[aria-current='page'] { color: var(--fg); }
+
+  .nav__dd { position: relative; }
+  .nav__dd > a { display: inline-flex; align-items: center; gap: 6px; }
+  .nav__chev { transition: transform .2s var(--ease); }
+  .nav__dd.is-open .nav__chev, .nav__dd:focus-within .nav__chev { transform: rotate(180deg); }
+  .nav__links .nav__menu {
+    position: absolute; top: 100%; left: 0; min-width: 250px;
+    display: block; padding: 8px; margin-top: 6px;
+    background: var(--white, #fff); border: 1px solid var(--line); border-radius: 16px;
+    box-shadow: 0 18px 40px -18px rgb(0 0 0 / 0.25);
+    opacity: 0; visibility: hidden; transform: translateY(-4px);
+    transition: opacity .18s var(--ease), transform .18s var(--ease), visibility .18s;
+  }
+  /* mostek, żeby kursor nie gubił menu w szczelinie pod przyciskiem */
+  .nav__links .nav__menu::before { content: ''; position: absolute; left: 0; right: 0; top: -10px; height: 10px; }
+  .nav__dd.is-open .nav__menu, .nav__dd:focus-within .nav__menu { opacity: 1; visibility: visible; transform: none; }
+  .nav__links .nav__menu a { border-radius: 10px; padding: 10px 12px; color: var(--fg); white-space: nowrap; }
+  .nav__links .nav__menu a[aria-current='page'] { color: var(--rose); }
 
   .nav__actions { display: flex; align-items: center; gap: 10px; }
   .nav__cta { --bh: 46px; padding-inline: 22px; }
@@ -129,6 +197,11 @@ const current = Astro.url.pathname;
     display: flex; align-items: center; min-height: 60px;
     border-bottom: 1px solid var(--line);
     font-size: 1.5rem; font-weight: 600; letter-spacing: -0.02em; text-decoration: none;
+  }
+  .nav__sheet ul.nav__sub { padding: 4px 0 8px 16px; border-bottom: 1px solid var(--line); }
+  .nav__sheet ul.nav__sub a {
+    min-height: 44px; border-bottom: 0;
+    font-size: 1.05rem; font-weight: 500; letter-spacing: 0; color: var(--fg-muted);
   }
   .nav__sheet-cta { margin-top: 28px; }
   .nav__sheet-cta .btn { width: 100%; }

@@ -86,14 +86,6 @@ export const hourlyRate = {
 
 export const pricingNote = 'Ceny netto, doliczam 23% VAT. Dokładną kwotę podaję po krótkiej rozmowie, w ciągu 24 godzin.';
 
-export const mainNav = [
-  { label: 'Usługi', href: '/#uslugi' },
-  { label: 'Realizacje', href: '/realizacje.html' },
-  { label: 'Proces', href: '/#proces' },
-  { label: 'Cennik', href: '/#cennik' },
-  { label: 'Blog', href: '/blog.html' },
-];
-
 export const serviceLinks = [
   { label: 'Strony internetowe', href: '/tworzenie-stron-internetowych.html' },
   { label: 'Sklepy internetowe', href: '/tworzenie-sklepow-internetowych.html' },
@@ -101,6 +93,14 @@ export const serviceLinks = [
   { label: 'Kampanie Google Ads', href: '/kampanie-google-ads.html' },
   { label: 'Kampanie Meta Ads', href: '/kampanie-meta-ads.html' },
   { label: 'Dla biur rachunkowych', href: '/program-partnerski.html' },
+];
+
+export const mainNav = [
+  { label: 'Usługi', href: '/#uslugi', children: serviceLinks },
+  { label: 'Realizacje', href: '/realizacje.html' },
+  { label: 'Proces', href: '/#proces' },
+  { label: 'Cennik', href: '/#cennik' },
+  { label: 'Blog', href: '/blog.html' },
 ];
 
 export const cityLinks = [

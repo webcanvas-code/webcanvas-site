@@ -40,6 +40,8 @@ const buttons: { label: string; href: string; primary?: boolean }[] = (d.hero.bu
 }));
 
 const byName = Object.fromEntries(projects.map((p) => [p.name, p]));
+// prawy zrzut w nagłówku: domyślnie Woodbud, strona miasta może wskazać inny projekt (hero.shotRight)
+const shotRight = byName[d.hero.shotRight ?? 'Woodbud'];
 const work = projects.filter((p) => p.home !== false).slice(0, 3);
 const reviewUrl = (name: string) => reviews.find((r) => r.name === name)?.url ?? company.googleReviews;
 const initials = (name: string) => name.split(' ').map((w) => w[0]).join('').slice(0, 2);
@@ -79,7 +81,7 @@ const tone = () => ((paper = !paper) ? 'section--paper' : 'section--white');
     <div class="wrap c-hero__shots" aria-label="Przykładowe strony zaprojektowane przez WebCanvas">
       <BrowserFrame class="shot shot--left" src={byName['Dworzec Autobusowy Poznań'].image} alt={byName['Dworzec Autobusowy Poznań'].alt} url="dworzecautobusowy.poznan.pl" widths={[400, 640]} sizes="(min-width: 1000px) 34vw, 0px" />
       <BrowserFrame class="shot shot--main" src={byName['Meritoros'].image} alt={byName['Meritoros'].alt} url="meritoros.pl" widths={[480, 800, 1100, 1400]} sizes="(min-width: 1000px) 56vw, 92vw" eager />
-      <BrowserFrame class="shot shot--right" src={byName['Woodbud'].image} alt={byName['Woodbud'].alt} url="woodbud.pl" widths={[400, 640]} sizes="(min-width: 1000px) 34vw, 0px" />
+      <BrowserFrame class="shot shot--right" src={shotRight.image} alt={shotRight.alt} url={shotRight.domain} widths={[400, 640]} sizes="(min-width: 1000px) 34vw, 0px" />
     </div>
   </div>
 </section>

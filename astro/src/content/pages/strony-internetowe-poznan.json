@@ -11,7 +11,7 @@
       "@context": "https://schema.org",
       "@type": "WebPage",
       "name": "Strony internetowe Poznań",
-      "description": "Zajmuję się tworzeniem stron internetowych dla firm z Poznania i powiatu poznańskiego. Dla ZKZL zaprojektowałem stronę Dworca Autobusowego w Poznaniu, a dla stolarni Woodbud stronę, która zdobywa klientów w Poznaniu i Wrocławiu.",
+      "description": "Zajmuję się tworzeniem stron internetowych dla firm z Poznania i powiatu poznańskiego. Dla ZKZL zaprojektowałem stronę Dworca Autobusowego w Poznaniu.",
       "url": "https://web-canvas.pl/strony-internetowe-poznan.html",
       "about": {
         "@type": "Service",
@@ -140,10 +140,11 @@
     ],
     "h1": "Strony internetowe Poznań",
     "accent": "Poznań",
+    "shotRight": "Opti Group",
     "badge": "Poznań",
     "metaLine": "Projektowanie stron internetowych",
     "lead": [
-      "\n Zajmuję się tworzeniem stron internetowych dla firm z Poznania i powiatu poznańskiego. Dla ZKZL zaprojektowałem stronę Dworca Autobusowego w Poznaniu, a dla stolarni Woodbud stronę, która zdobywa klientów w Poznaniu i Wrocławiu.\n "
+      "\n Zajmuję się tworzeniem stron internetowych dla firm z Poznania i powiatu poznańskiego. Dla ZKZL zaprojektowałem stronę Dworca Autobusowego w Poznaniu.\n "
     ],
     "buttons": [
       {
@@ -177,7 +178,7 @@
           "html": "<p>W Poznaniu zamiast walczyć o najdroższe frazy, celuję w usługę + dzielnicę lub gminę. To szybciej daje telefony i zapytania.</p>"
         }
       ],
-      "before": "<p>Poznań to jeden z najbardziej konkurencyjnych rynków w Polsce. Na frazę „strony internetowe Poznań” walczą dziesiątki agencji, a w każdej branży usługowej jest podobnie: dentysta, księgowa czy firma remontowa z Poznania konkuruje z setkami innych. Dlatego ogólna strona „o wszystkim” w Poznaniu po prostu nie działa.</p>\n <p>Dla firm z Poznania buduję strony wokół konkretnych usług i konkretnego obszaru. Firma z Jeżyc, Wildy czy Rataj ma większą szansę na frazę z nazwą dzielnicy niż na samo „Poznań”. Podobnie firmy ze Swarzędza, Lubonia, Suchego Lasu czy Tarnowa Podgórnego mogą wygrywać lokalnie z dużymi graczami z centrum.</p>\n <p>Moje realizacje z Poznania opisuję jako case study: <a href=\"/case-study-zkzl.html\">strona ZKZL i Dworca Autobusowego w Poznaniu</a> z naciskiem na dostępność (WCAG) oraz <a href=\"/case-study-woodbud.html\">strona stolarni Woodbud</a>, która działa w Poznaniu i Wrocławiu. Jak podejść do kilku lokalizacji naraz, piszę też w artykule o <a href=\"/blog-pozycjonowanie-lokalne-dla-malych-firm.html\">pozycjonowaniu lokalnym</a>.</p>\n <p>Jak mała firma może przebić się w Google w tak dużym mieście, opisuję w artykule o <a href=\"/blog-pozycjonowanie-lokalne-poznan-dzielnice.html\">pozycjonowaniu lokalnym w Poznaniu</a>.</p>"
+      "before": "<p>Klient z Poznania zwykle porównuje kilka firm, zanim zadzwoni. Twoja strona ma mu w kilka sekund pokazać, co robisz, gdzie działasz i ile to kosztuje.</p>\n <p>Dla firm z Poznania buduję strony wokół konkretnych usług i konkretnego obszaru. Firma z Jeżyc, Wildy czy Rataj ma większą szansę na frazę z nazwą dzielnicy niż na samo „Poznań”. Podobnie firmy ze Swarzędza, Lubonia, Suchego Lasu czy Tarnowa Podgórnego mogą wygrywać lokalnie z dużymi graczami z centrum.</p>\n <p>Moją realizację z Poznania opisuję jako case study: <a href=\"/case-study-zkzl.html\">strona ZKZL i Dworca Autobusowego w Poznaniu</a> z naciskiem na dostępność (WCAG). Jak podejść do kilku lokalizacji naraz, piszę też w artykule o <a href=\"/blog-pozycjonowanie-lokalne-dla-malych-firm.html\">pozycjonowaniu lokalnym</a>.</p>\n <p>Jak mała firma może przebić się w Google w tak dużym mieście, opisuję w artykule o <a href=\"/blog-pozycjonowanie-lokalne-poznan-dzielnice.html\">pozycjonowaniu lokalnym w Poznaniu</a>.</p>"
     },
     {
       "eyebrow": "Branże",

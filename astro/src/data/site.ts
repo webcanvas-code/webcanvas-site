@@ -16,7 +16,7 @@ export const company = {
   mapsUrl: 'https://www.google.com/maps?kgmid=/g/11hzn4j607',
   mapsEmbed: 'https://www.google.com/maps?q=WebCanvas,+Biele+126,+62-610+Sompolno&z=12&output=embed',
   rating: '5,0',
-  reviewCount: 6,
+  reviewCount: 7,
   socials: {
     facebook: 'https://www.facebook.com/webcanvaspl',
     instagram: 'https://www.instagram.com/_webcanvas/',

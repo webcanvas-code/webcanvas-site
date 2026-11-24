@@ -1,27 +1,27 @@
 ---
 {
-  "title": "Jak promować firmę w internecie w Koninie i okolicach | WebCanvas",
-  "description": "Praktyczny przewodnik po marketingu internetowym dla firm z Konina, Turku, Koła i okolic. Google, social media, opinie, katalogi lokalne. Konkretne działania, które przynoszą klientów.",
-  "ogTitle": "Jak promować firmę w internecie w Koninie i okolicach",
+  "title": "Jak promować lokalną firmę w internecie: poradnik krok po kroku | WebCanvas",
+  "description": "Poradnik promocji lokalnej firmy w internecie: wizytówka Google, opinie, social media, katalogi i reklamy. Kolejność działań na przykładach z Konina i okolic.",
+  "ogTitle": "Jak promować lokalną firmę w internecie: poradnik krok po kroku",
   "ogImage": "/img/og-image.png",
-  "h1": "Jak promować firmę w internecie w Koninie i okolicach",
+  "h1": "Jak promować lokalną firmę w internecie: poradnik krok po kroku",
   "lead": [
-    "\n Prowadzisz firmę w Koninie, Turku, Kole lub Słupcy i zastanawiasz się, jak dotrzeć do klientów przez internet? W tym artykule pokazuję konkretny plan działania dla lokalnych firm z Wielkopolski wschodniej. Bez teorii, bez żargonu. Tylko sprawdzone kanały i metody, które realnie przynoszą zapytania od klientów z Twojego regionu.\n "
+    "\n Prowadzisz lokalną firmę i zastanawiasz się, jak dotrzeć do klientów przez internet? W tym poradniku pokazuję konkretny plan działania, na przykładach z Konina, Turku, Koła i Słupcy. Bez teorii, bez żargonu. Tylko sprawdzone kanały i metody, które realnie przynoszą zapytania od klientów z Twojej okolicy.\n "
   ],
   "category": "Strategia",
   "dateText": "18 października 2026",
   "readTime": "9 min",
   "datePublished": "2026-10-18",
-  "dateModified": "",
-  "crumb": "Jak promować firmę w internecie w Koninie",
-  "excerpt": "Wizytówka Google, strona, social media, opinie, reklamy. Praktyczny plan działania dla lokalnych firm z Konina, Turku, Koła i Słupcy.",
-  "ctaHeading": "Wypromuj swoją firmę w Koninie i okolicach.",
+  "dateModified": "2026-11-24",
+  "crumb": "Jak promować lokalną firmę w internecie",
+  "excerpt": "Wizytówka Google, strona, social media, opinie, reklamy. Praktyczny plan działania dla lokalnych firm, krok po kroku.",
+  "ctaHeading": "Zdobywaj klientów ze swojej okolicy.",
   "schema": [
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
-      "headline": "Jak promować firmę w internecie w Koninie i okolicach",
-      "description": "Praktyczny przewodnik po marketingu internetowym dla firm z Konina, Turku, Koła i okolic. Google, social media, opinie, katalogi lokalne. Konkretne działania, które przynoszą klientów.",
+      "headline": "Jak promować lokalną firmę w internecie: poradnik krok po kroku",
+      "description": "Poradnik promocji lokalnej firmy w internecie: wizytówka Google, opinie, social media, katalogi i reklamy. Kolejność działań na przykładach z Konina i okolic.",
       "image": "https://web-canvas.pl/img/og-image.png",
       "author": {
         "@type": "Person",
@@ -33,6 +33,7 @@
         "url": "https://web-canvas.pl/"
       },
       "datePublished": "2026-10-18",
+      "dateModified": "2026-11-24",
       "mainEntityOfPage": "https://web-canvas.pl/blog-jak-promowac-firme-w-internecie-konin.html"
     },
     {
@@ -54,7 +55,7 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Jak promować firmę w internecie w Koninie",
+          "name": "Jak promować lokalną firmę w internecie",
           "item": "https://web-canvas.pl/blog-jak-promowac-firme-w-internecie-konin.html"
         }
       ]
@@ -63,7 +64,10 @@
 }
 ---
 
-<h2>Dlaczego marketing internetowy jest kluczowy dla firm z mniejszych miast</h2>
+<p>
+ <strong>Szukasz wykonawcy, a nie poradnika?</strong> Zobacz, jak pracuję przy <a href="/strony-internetowe-konin.html">tworzeniu stron internetowych w Koninie</a> i przy <a href="/pozycjonowanie-stron-konin.html">pozycjonowaniu stron w Koninie</a>.
+ </p>
+ <h2>Dlaczego marketing internetowy jest kluczowy dla firm z mniejszych miast</h2>
  <p>
  Jeszcze kilka lat temu firma z Konina mogła liczyć na klientów z polecenia i z tradycyjnej reklamy. Ulotki, banery przy drodze, ogłoszenia w lokalnej gazecie. Te kanały nadal istnieją, ale coraz mniej osób z nich korzysta. Kiedy ktoś w 2026 roku szuka hydraulika, dentysty, firmy remontowej czy salonu kosmetycznego, pierwszym odruchem jest wpisanie zapytania w Google lub sprawdzenie opinii w social mediach.
  </p>
@@ -86,7 +90,7 @@
  Wizytówka Google to punkt wejścia, ale bez strony internetowej Twoja obecność online jest niepełna. Strona daje Ci pełną kontrolę nad tym, jak firma jest prezentowana: jakie usługi oferujesz, dla kogo pracujesz, ile to kosztuje, jakie masz realizacje. To miejsce, do którego prowadzą wszystkie inne kanały, od wizytówki Google, przez social media, po reklamy płatne.
  </p>
  <p>
- Dla firm z Konina i okolic strona internetowa pełni jeszcze jedną kluczową funkcję: pozwala pozycjonować się na lokalne frazy kluczowe. Jeśli prowadzisz firmę remontową, podstrona zoptymalizowana pod frazę „remonty Konin" może przyciągać dziesiątki odwiedzin miesięcznie od osób, które aktywnie szukają wykonawcy w Twoim mieście. Profil na Facebooku tego nie zrobi. Jak podchodzimy do takich stron, opisujemy na podstronach dla firm z <a href="/strony-internetowe-konin.html">Konina</a>, <a href="/strony-internetowe-turek.html">Turku</a>, <a href="/strony-internetowe-kolo.html">Koła</a> i <a href="/strony-internetowe-slupca.html">Słupcy</a>.
+ Dla firm z Konina i okolic strona internetowa pełni jeszcze jedną kluczową funkcję: pozwala pozycjonować się na lokalne frazy kluczowe. Jeśli prowadzisz firmę remontową, podstrona zoptymalizowana pod frazę „remonty Konin" może przyciągać dziesiątki odwiedzin miesięcznie od osób, które aktywnie szukają wykonawcy w Twoim mieście. Profil na Facebooku tego nie zrobi. Jak podchodzę do takich stron, opisuję na podstronach o <a href="/strony-internetowe-konin.html">stronach internetowych w Koninie</a> oraz dla firm z, <a href="/strony-internetowe-turek.html">Turku</a>, <a href="/strony-internetowe-kolo.html">Koła</a> i <a href="/strony-internetowe-slupca.html">Słupcy</a>.
  </p>
  <p>
  Strona nie musi być rozbudowana ani droga. Dla wielu lokalnych firm wystarczy profesjonalna wizytówka z kilkoma podstronami. Ważne, żeby była szybka, wyglądała dobrze na telefonie i zawierała treści pisane językiem Twojego klienta. Więcej o kosztach w artykule
@@ -103,7 +107,7 @@
  Równie ważne jest odpowiadanie na opinie. Zarówno na pozytywne (krótkie podziękowanie), jak i na negatywne (rzeczowa, spokojna odpowiedź). Google to widzi i premiuje firmy, które są aktywne. Klienci też to widzą i wyciągają wnioski o tym, jak firma traktuje swoich odbiorców.
  </p>
  <p>
- Chcesz sprawdzić, jak Twoja firma wypada w lokalnych wynikach Google w Koninie? Bezpłatnie przeanalizujemy Twoją widoczność i podpowiemy, od czego zacząć. Szczegóły znajdziesz na stronie o <a href="/pozycjonowanie-stron-konin.html">pozycjonowaniu stron w Koninie</a>.
+ Chcesz sprawdzić, jak Twoja firma wypada w lokalnych wynikach Google? Bezpłatnie przeanalizuję Twoją widoczność i podpowiem, od czego zacząć. Szczegóły znajdziesz na stronie o <a href="/pozycjonowanie-stron-konin.html">pozycjonowaniu stron w Koninie</a>.
  </p>
  <a href="/#kontakt">
  Zamów bezpłatną analizę
@@ -153,7 +157,7 @@
  Każdy taki artykuł to nowa podstrona, która może pozycjonować się na lokalne zapytania. Im więcej wartościowych treści z kontekstem regionalnym, tym mocniejszy sygnał dla Google, że Twoja firma jest ekspertem w swoim mieście. O tym, jak pisać skuteczne treści na stronę, piszę w artykule o
  <a href="/blog-tresci-na-strone-internetowa.html">treściach na stronę internetową</a>.
  </p>
- <h2>Plan działania: od czego zacząć promocję firmy w Koninie</h2>
+ <h2>Plan działania: od czego zacząć promocję lokalnej firmy</h2>
  <p>
  Nie musisz robić wszystkiego naraz. Oto kolejność działań, która przynosi najszybsze efekty przy ograniczonym budżecie i czasie:
  </p>
@@ -173,7 +177,7 @@
  Firmy z mniejszych miast mają jedną wielką przewagę: mniejszą konkurencję w internecie. Większość lokalnych firm w Koninie, Turku, Kole czy Słupcy nadal nie ma dobrze zoptymalizowanej strony, aktywnej wizytówki Google ani strategii treści. To oznacza, że firma, która zacznie działać teraz, ma realne szanse na zajęcie czołowych pozycji w lokalnych wynikach wyszukiwania w stosunkowo krótkim czasie.
  </p>
  <p>
- Jeśli chcesz, żebyśmy pomogli Ci zaplanować i wdrożyć marketing internetowy dla Twojej firmy w Koninie lub okolicach,
- <a href="/#kontakt">odezwij się do nas</a>.
- Przygotujemy plan dopasowany do Twojej branży, budżetu i celów.
+ Jeśli chcesz, żebym pomógł Ci zaplanować i wdrożyć marketing internetowy dla Twojej firmy,
+ <a href="/#kontakt">odezwij się</a>.
+ Przygotuję plan dopasowany do Twojej branży, budżetu i celów.
  </p>

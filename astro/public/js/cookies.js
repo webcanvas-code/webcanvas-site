@@ -34,12 +34,12 @@
         try { localStorage.removeItem('cookieConsent'); } catch (e) { /* stary klucz */ }
     }
 
-    // Usuwa cookies Google Analytics po wycofaniu zgody.
+    // Usuwa cookies Google Analytics i Piksela Meta po wycofaniu zgody.
     function clearAnalyticsCookies() {
         var host = location.hostname.replace(/^www\./, '');
         document.cookie.split(';').forEach(function (c) {
             var name = c.split('=')[0].trim();
-            if (/^(_ga|_gid|_gat|_gcl_)/.test(name)) {
+            if (/^(_ga|_gid|_gat|_gcl_|_fbp|_fbc)/.test(name)) {
                 ['', host, '.' + host].forEach(function (domain) {
                     document.cookie = name + '=; Max-Age=0; path=/' + (domain ? '; domain=' + domain : '');
                 });
@@ -90,7 +90,7 @@
         banner.innerHTML =
             '<div><strong>Pliki cookies</strong>' +
             '<p>Używamy cookies analitycznych (Google Analytics), żeby wiedzieć, jak korzystasz ze strony, ' +
-            'oraz marketingowych do mierzenia skuteczności reklam. Włączymy je tylko za Twoją zgodą. ' +
+            'oraz marketingowych (Google Ads, Piksel Meta) do mierzenia skuteczności reklam. Włączymy je tylko za Twoją zgodą. ' +
             'Decyzję możesz zmienić w każdej chwili w stopce („Ustawienia cookies”). ' +
             '<a href="/polityka-prywatnosci.html#cookies">Polityka prywatności</a></p></div>' +
             '<div class="wc-btns">' +
@@ -123,6 +123,7 @@
         gtag('consent', 'update', accepted ? GRANTED : DENIED);
         if (accepted) {
             window.dataLayer.push({ event: 'cookie_consent_update' });
+            if (window.wcMetaPixel) window.wcMetaPixel.enable();
         } else {
             clearAnalyticsCookies();
             // Wycofanie wcześniej udzielonej zgody: przeładowanie zatrzymuje już działające tagi.

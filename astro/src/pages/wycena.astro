@@ -259,7 +259,7 @@ const opt = (name: string, values: string[], type: 'radio' | 'checkbox' = 'radio
 <script>
   // Orientacyjne ceny (PLN netto) spójne z cennikiem na stronie głównej.
   // Zmień tutaj, jeśli zmieni się cennik. null = wycena indywidualna.
-  import { getTracking, trackingText } from '../scripts/tracking';
+  import { getTracking, trackingText, trackMetaLead } from '../scripts/tracking';
 
   const PRICES = {
     pro: 1500,     // landing page (Pakiet Pro)
@@ -487,6 +487,7 @@ const opt = (name: string, values: string[], type: 'radio' | 'checkbox' = 'radio
           updateToc();
           push({ event: 'form_submit', form_type: 'wizard', wizard_service: service(), ...tracking });
           push({ event: 'generate_lead', form_type: 'wizard' });
+          trackMetaLead({ content_name: 'wizard' });
         } else {
           status.dataset.state = 'error';
           status.textContent = data.message || 'Nie udało się wysłać. Spróbuj ponownie albo napisz na kontakt@web-canvas.pl.';

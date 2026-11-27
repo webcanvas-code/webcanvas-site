@@ -94,7 +94,8 @@ const schemas = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
       <slot />
     </main>
     <Footer />
-    <script is:inline src="/js/cookies.js?v=2" defer></script>
+    <script is:inline src="/js/meta-pixel.js?v=1" defer></script>
+    <script is:inline src="/js/cookies.js?v=3" defer></script>
     <script>
       import { initClickTracking } from '../scripts/tracking';
       initClickTracking();

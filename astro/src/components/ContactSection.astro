@@ -86,7 +86,7 @@ const { heading = 'Rozpocznijmy współpracę.' } = Astro.props;
 </script>
 
 <script>
-  import { pushEvent, trackingText } from '../scripts/tracking';
+  import { pushEvent, trackingText, trackMetaLead } from '../scripts/tracking';
 
   const form = document.querySelector<HTMLFormElement>('[data-contact-form]');
   if (form) {
@@ -132,6 +132,7 @@ const { heading = 'Rozpocznijmy współpracę.' } = Astro.props;
           (form.elements.namedItem('tracking') as HTMLInputElement).value = trackingText();
           pushEvent({ event: 'form_submit', form_type: 'contact' });
           pushEvent({ event: 'generate_lead', form_type: 'contact' });
+          trackMetaLead({ content_name: 'contact' });
         } else {
           status.dataset.state = 'error';
           status.textContent = data.message || 'Nie udało się wysłać. Spróbuj ponownie albo napisz na kontakt@web-canvas.pl.';

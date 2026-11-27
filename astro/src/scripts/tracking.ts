@@ -6,6 +6,11 @@
 const TRACK_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'utm_id', 'gclid', 'gbraid', 'wbraid', 'fbclid'];
 const STORAGE_KEY = 'wc_utm';
 
+/** Zdarzenie Lead w Pikselu Meta (działa tylko, gdy użytkownik zgodził się na cookies). */
+export const trackMetaLead = (params: Record<string, unknown> = {}) => {
+  (window as any).wcMetaPixel?.lead(params);
+};
+
 export const pushEvent = (data: Record<string, unknown>) => {
   const w = window as any;
   w.dataLayer = w.dataLayer || [];
